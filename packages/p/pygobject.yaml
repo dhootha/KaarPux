@@ -1,0 +1,50 @@
+package:
+  name: pygobject
+  version: 3.14.0
+  www: http://python-gtk-3-tutorial.readthedocs.org/en/latest/index.html
+  short: Python dynamic module that enables developers to use the power of GObject, which is part of the GNOME platform.
+
+download:
+  gnomexz: ~
+  checksum: 779effa93f4b59cdb72f4ab0128fb3fd82900bf686193b570fd3a8ce63392d54
+
+version: 
+  installed_pkgconfig: pygobject-3.0
+  upstream_gnome: pygobject
+
+linux:
+
+  - build:
+    - python3: ~
+
+    - configure_kx: --disable-static  --with-python=python3
+    - make: ~
+
+#  Tests are failing
+#  But it does not seem fatal... just warnings treated as errors
+#  TODO: fix test failures
+#  - test:
+#    - check: ~
+
+  - install:
+    - install: ~
+
+
+verify_cli: |
+
+  kx_cli_send_match_success /bin/python3 {
+    "from gi.repository import GObject"
+    "from gi.repository import GLib"
+    "print(GObject.glib_version)"
+    "print(GLib.glib_version)"
+    "print(GLib.pyglib_version)"
+    "print('Hello World')"
+    "exit()"
+  } {
+    "Python 3."
+    "(2, "
+    "(2, "
+    "(3, "
+    "Hello World"
+  }
+

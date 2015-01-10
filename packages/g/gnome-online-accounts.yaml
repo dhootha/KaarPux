@@ -1,0 +1,23 @@
+package:
+  name: gnome-online-accounts
+  version: 3.14.2
+
+download:
+  gnomexz: ~
+  checksum: 341a2c79cd26770ccbf4476f7ce7222cfe026f442cfbd05dc7f7612f7b30dae9
+
+version:
+  installed_pkgconfig: goa-1.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - use_gcc: ~
+    - configure_kx: --disable-gtk-doc --disable-static
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

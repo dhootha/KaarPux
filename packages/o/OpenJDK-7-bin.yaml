@@ -1,0 +1,49 @@
+package:
+  name: OpenJDK-7-bin
+  version: 1.7.0.51
+  short: Binary version of icedtea Java 7.
+
+doc: |
+  <para>
+    <systemitem>OpenJDK-7-bin</systemitem> has been created by the 
+    <ulink url="http://www.linuxfromscratch.org/blfs/view/svn/">
+    Linux from Scratch</ulink> team.
+  </para><para>
+    We are using it in <application>KaarPux</application>
+    to bootstrap <xref linkend="pkg_icedtea7" /> (<systemitem>Java 7</systemitem>),
+    and also to build <xref linkend="pkg_rhino" /> and <xref linkend="pkg_apache-ant" />,
+    which are in turn used when building <xref linkend="pkg_icedtea7" />
+  </para><para>
+    <systemitem>OpenJDK-7-bin</systemitem> is not installed on the system as such,
+    but left in the build directory, where the abovementioned packages
+    reference it directly.
+  </para>
+
+
+download_32:
+  url: http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-${KX_OPENJDK_7_BIN_VERSION}
+  file: OpenJDK-${KX_OPENJDK_7_BIN_VERSION}-i686-bin.tar.xz
+  checksum: c4a5097fe08dc95defa65d1eb072752f
+
+download_64:
+  url: http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-${KX_OPENJDK_7_BIN_VERSION}
+  file: OpenJDK-${KX_OPENJDK_7_BIN_VERSION}-x86_64-bin.tar.xz
+  checksum: cbd28cd7f89dadb6534b87ed712aedea
+
+version:
+  installed_na: ~
+  upstream: kxver_scrape_url("OpenJDK", "http://anduin.linuxfromscratch.org/files/BLFS/");
+
+opt:
+
+  - build:
+    - echo: "No build."
+    - echo: "Moving directory"
+    - sh: |
+        cd ..
+        rm -rf ${KX_OPENJDK_7_BIN}
+        mv OpenJDK-${KX_OPENJDK_7_BIN_VERSION}*-bin ${KX_OPENJDK_7_BIN}
+
+  - install_keep:
+    - echo: "No Install. Only used for bootstrapping."
+

@@ -1,0 +1,25 @@
+package:
+  name: gnome-backgrounds
+  version: 3.14.1
+  short: |
+      The GNOME Backgrounds package contains a collection of graphics files which can be used as backgrounds in the GNOME Desktop environment.
+      Additionally, the package creates the proper framework and directory structure so that you can add your own files to the collection.
+
+download:
+  gnomexz: ~
+  checksum: deeea0499f34b118d27d94e3ac8d23e3b210bd602b2c1aa0e0242a75ae78c126
+
+version:
+  installed_na: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

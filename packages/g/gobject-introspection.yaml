@@ -1,0 +1,26 @@
+package:
+  name: gobject-introspection
+  version: 1.42.0
+
+download:
+  gnomexz: ~
+  checksum: 3ba2edfad4f71d4f0de16960b5d5f2511335fa646b2c49bbb93ce5942b3f95f7
+
+version:
+  installed_pkgconfig: gobject-introspection-1.0
+  upstream_gnome: ~
+
+linux:
+  - build:
+    - configure_kx_posix: --disable-static --disable-gtk-doc
+    - make: ~
+
+#  Tests are failing.
+#  Seems to be due to dependencies (such as cairo) not being installed yet.
+#  TODO: See if we can fix the testcases
+  - test:
+    - check_ignore: ~
+
+  - install:
+    - install: ~     
+

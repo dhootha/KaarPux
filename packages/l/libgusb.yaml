@@ -1,0 +1,32 @@
+package:
+  name: libgusb
+  version: 0.1.6
+  www: https://gitorious.org/gusb/
+  short: GLib libusb wrapper
+
+download:
+  url: http://people.freedesktop.org/~hughsient/releases
+  file_tar_xz: ~
+  checksum: 900103ff24a851ef8395b992236ced0aedb4c265ef2264f6ad8349300095198b
+
+version:
+  installed_pkgconfig: gusb
+  
+linux:
+  - build:
+    - configure_kx: >
+        --disable-gtk-doc
+        --disable-static
+        --disable-dependency-tracking
+        --enable-vala
+        --enable-gudev
+        --enable-tests
+    - make: ~
+
+  - test:
+    # Note that if 'make check' fails, it may be due no usb devices being available
+    # If running under qemu, launch qemu with something like -usb -device usb-audio
+    - check: ~
+
+  - install:
+    - install: ~

@@ -1,0 +1,176 @@
+package:
+  name: icedtea7
+  version: 2.5.3
+  www: http://icedtea.classpath.org/
+  short: |
+      The IcedTea project provides a harness to build the source code from OpenJDK
+      using Free Software build tools
+      and adds a number of key features to the upstream OpenJDK codebase
+doc: |
+  <para>
+    We bootstrap <systemitem>icedtea</systemitem> (<systemitem>Java 7</systemitem>)
+    using a binary distribution of 
+    <systemitem>Java 7</systemitem>: <xref linkend="pkg_OpenJDK-7-bin" />
+  </para>
+  <para>
+    <systemitem>icedtea</systemitem> versions:
+    <table id="building_overview_table_duration"><title></title><tgroup cols='3' align='left' colsep='1' rowsep='1'>
+      <tbody>
+        <row>
+          <entry>2.5.0</entry>
+          <entry>u60 b30</entry>
+          <entry>14-jun-2014</entry>
+          <entry>OpenJDK u60</entry>
+        </row>
+        <row>
+          <entry>2.4.7</entry>
+          <entry>u55 b14</entry>
+          <entry>16-apr-2014</entry>
+          <entry>april security fixes</entry>
+        </row>
+        <row>
+          <entry>2.4.6</entry>
+          <entry>u51 b31</entry>
+          <entry>28-mar-2014</entry>
+          <entry>ARM</entry>
+        </row>
+        <row>
+          <entry>2.4.5</entry>
+          <entry>u51 b31</entry>
+          <entry>29-jan-2014</entry>
+          <entry>upstream u51 b31</entry>
+        </row>
+        <row>
+          <entry>2.4.4</entry>
+          <entry>u51 b00</entry>
+          <entry>15-jan-2014</entry>
+          <entry>known bootstrap issues</entry>
+        </row>
+        <row>
+          <entry>2.4.3</entry>
+          <entry>u45 b31</entry>
+          <entry>21-oct-2014</entry>
+          <entry>synchronise with the upstream u45 b31</entry>
+        </row>
+      </tbody>
+    </tgroup></table>
+  </para>
+
+download:
+  url: http://icedtea.classpath.org/download/source
+  file: icedtea-${KX_ICEDTEA7_VERSION}.tar.gz
+  dir: icedtea-${KX_ICEDTEA7_VERSION}
+  checksum: 44df11ac8e5ace7194e7372ef169909e0dab31d6b2f6bbae9a9c33af2cc54540
+  verify: sig
+
+
+additional_downloads:
+  # see Makefile.am and hotspot.map
+  # No need to verify GPG signatures, as SHA checksums where taken from signed icedtea tarball
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/hotspot.tar.bz2 hotspot.tar.bz2 8c8e1f7e97f47fe4029e0b0ba42b3515474adabe64e1fbee15c0e2e22a13aa28 /icedtea-2.5.3
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/corba.tar.bz2 corba.tar.bz2 8ceb2cd60782b7fc14b88e3d366f273873fa5436cf0e36b86406c0905b7dc43c /icedtea-2.5.3
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/jaxp.tar.bz2 jaxp.tar.bz2 2d13a82078f3f2b8831d1e670e5e75719336a56490df64f16ab7647674a272ef /icedtea-2.5.3
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/jaxws.tar.bz2 jaxws.tar.bz2 5a63d85307203f1aed1e31459ad5e32687909e0640d424ff6f540d9b1cceeb1e /icedtea-2.5.3
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/jdk.tar.bz2 jdk.tar.bz2 40c4dda969be0ecd213e79269184e19cfc32100b83777dc529b3cf4b6aa3e12f /icedtea-2.5.3
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/langtools.tar.bz2 langtools.tar.bz2 516f6c21719f4b5a2092847c147cde7890c5a30d4aed9425ff667c0164ef1dd0 /icedtea-2.5.3
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/openjdk.tar.bz2 openjdk.tar.bz2 3ba1a30762f5d5890e8ee6af11f52213ab9c574c01f07c75a081c42034f5d5c9 /icedtea-2.5.3
+
+version:
+  sensitive: 1
+  installed: >
+      kxver_sh_pattern("readlink /opt/bin/java",
+      qr|/opt/kaarpux/icedtea-([0-9]+[0-9\.]*[0-9]+)/bin/java|);
+  upstream: >
+      kxver_scrape_url(undef, $url, qr|icedtea-([0-9]+[0-9.]*[0-9]+)\.tar|);
+  source: http://icedtea.classpath.org/hg
+  news: http://blog.fuseyism.com/
+  changelog: NEWS
+  wiz_yaml: |
+      my ($pkg, $ver, $dir, $file, $url) = @_;
+      my $makefile = "${dir}/icedtea-${ver}/Makefile.am";
+      my %definitions = ();
+      my $fh;
+      open($fh, "<", "$makefile") or print "cannot open [$makefile]: $!\n";
+      while (<$fh>) {
+        $definitions{$1}=$2 if $_ =~ /^\s*(\w+)\s*=\s*(\S.*)$/;
+      }
+      close($fh);
+      my $hotspot = "${dir}/icedtea-${ver}/hotspot.map.in";
+      open($fh, "<", "$hotspot") or print "cannot open [$hotspot]: $!\n";
+      while (<$fh>) {
+        if ($_ =~ /^default\s+\S+\s+(\S+)\s+(\S+)\s+(\S+)\s*$/) {
+          print "  - http://icedtea.classpath.org/download/drops/icedtea7/${ver}/hotspot.tar.bz2 hotspot.tar.bz2 $3 /icedtea-${ver}\n";
+        }
+      }
+      close($fh);
+      for my $f ('CORBA', 'JAXP', 'JAXWS', 'JDK', 'LANGTOOLS', 'OPENJDK') {
+      my $u = $definitions{"${f}_URL"};
+      my $ff = $f;
+      $ff =~ tr/A-Z/a-z/;
+      $ff = '' if $ff eq 'openjdk';
+      my $c = $definitions{"${f}_CHANGESET"};
+      my $s = $definitions{"${f}_SHA256SUM"};
+      my $z = $definitions{"${f}_SRC_ZIP"};
+      $z =~ s/\$\(TAR_SUFFIX\)/tar.bz2/;
+      print "  - http://icedtea.classpath.org/download/drops/icedtea7/${ver}/${z} ${z} ${s} /icedtea-${ver}\n";
+      }
+
+
+opt:
+
+  - build:
+
+    - sh: |
+        # Additional downloads
+        DL="$(cd ../../../../downloads/icedtea-${KX_ICEDTEA7_VERSION}; pwd -P)"
+        ln -sv ${DL}/* .
+
+    - sh: | 
+        unset JAVA_HOME JDK_HOME CLASSPATH JAVAC JAVACFLAGS
+        JDK="$(cd ../${KX_OPENJDK_7_BIN}; pwd -P)"
+        PATH="${JDK}/bin:$PATH"; export PATH
+
+    - patch: configure.patch
+
+    - sh: |
+        export CFLAGS="-Wno-return-type -Wno-unused-parameter"
+        export OTHER_CFLAGS="-Wno-return-type -Wno-unused-parameter"
+
+    - configure_kx_bash: >
+        --disable-system-gif
+        --enable-nss
+        --enable-pulse-java
+        --disable-docs
+        --with-pkgversion="KaarPux"
+        --with-jar="${JDK}/bin/jar"
+        --with-javac="${JDK}/bin/javac"
+        --with-jdk-home="${JDK}"
+        --with-rhino="/opt/share/java/js.jar"
+        --with-abs-install-dir="${KX_PREFIX}"
+        --with-parallel-jobs="${KX_JOBS}"
+
+    - echo: "Download and extract"
+    - sh: make download
+    - sh: make extract-openjdk
+    - sh: make extract-hotspot
+
+    - echo: "Patch"
+    - sh: sed '/getDefaultScopeID/,/__solaris__/s/CHECK_NULL(c)/CHECK_NULL_RETURN(c, 0)/' -i openjdk/jdk/src/solaris/native/java/net/net_util_md.c
+    - sh: >
+        sed 's/^_HAS_HASH_STYLE_GNU:=.*$/_HAS_HASH_STYLE_GNU:=y/' -i
+        openjdk/jdk/make/common/Defs-linux.gmk
+        openjdk/hotspot/make/linux/makefiles/gcc.make
+        openjdk/hotspot/agent/src/os/linux/Makefile
+    - sh: sed 's/-fpch-deps//' -i openjdk/hotspot/make/linux/makefiles/gcc.make
+
+    - make: ~
+
+  - test:
+    # TODO: investigate why checks are failing
+    - check_ignore: ~
+
+  - install:
+    - sh: |
+        mkdir "${KX_PREFIX}"
+        cp -rp openjdk.build/j2sdk-image/* "${KX_PREFIX}"
+

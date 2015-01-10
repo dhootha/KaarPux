@@ -1,0 +1,41 @@
+package:
+  name: libjpeg-turbo
+  version: 1.3.1
+  www: http://www.libjpeg-turbo.org
+  short: |
+      libjpeg-turbo is a derivative of libjpeg that uses SIMD instructions
+      (MMX, SSE2, NEON) to accelerate baseline JPEG compression and decompression
+      on x86, x86-64, and ARM systems.
+
+download:
+  sourceforge: ~
+  file_tar_gz: ~
+  checksum: c132907417ddc40ed552fe53d6b91d5fecbb14a356a60ddc7ea50d6be9666fb9
+
+version:
+  installed: kxver_sh_pattern("cjpeg -v /dev/null 2>&1 | head -1", qr|version\s(\S*)\s|);
+  upstream: kxver_upstream_sourceforge("libjpeg-turbo", ".", undef, qr|([0-9]+\.+[0-9.]*[0-9]+([a-z][0-9]+)?)|);
+
+doc: |
+  <section id="pkg_libjpeg_turbo_vs_libjpeg">
+    <title>libjpeg-turbo vs libjpeg</title>
+    <para>
+      We are using <ulink url="http://www.libjpeg-turbo.org">libjpeg-turbo</ulink>,
+      which is a derivative of <ulink url="http://www.ijg.org/">libjpeg</ulink>.
+    </para><para>
+      See the <ulink url="http://en.wikipedia.org/wiki/Libjpeg#libjpeg-turbo">Wikipedia entry on libjpeg</ulink>
+    </para>
+  </section>
+
+
+linux:
+
+  - build:
+    - configure_kx: --sysconfdir=/etc --localstatedir=/var --disable-static
+    - make: ~
+
+  - test:
+    - check: ~
+ 
+  - install:
+    - install: ~

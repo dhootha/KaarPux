@@ -1,0 +1,43 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="system_time">
+<title>System Time Adjustment</title>
+
+<para>
+The computers hardware clock stores the date and time in either UTC
+or the local timezone. Unfortunately, there is no way for the software
+to tell which!
+</para>
+
+<para>
+When the <application>Linux kernel</application> boots,
+it assumes that the hardware clock is set in UTC.
+However, <application>systemd</application> later updates the
+system (software) time according to the contents of the file
+<filename>/etc/adjtime</filename>.
+</para>
+
+<para>
+If your system (software) time is off by a number of hours
+corresponding to your local timezone, try replacing
+<code>UTC</code> with <code>LOCAL</code> or vice versa.
+This change should take effect after the next reboot.
+</para>
+
+<para>
+When building &kx;, the third line in
+<filename>/etc/adjtime</filename>
+is filled with the value of <systemitem>KX_UTC_OR_LOCAL</systemitem> from 
+<filename>kaarpux/master/default_definitions.shinc</filename>
+or
+<filename>kaarpux/custom_definitions.shinc</filename>.
+</para>
+
+</section>
+

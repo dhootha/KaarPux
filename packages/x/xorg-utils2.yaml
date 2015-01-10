@@ -1,0 +1,11 @@
+package:
+  name: xorg-utils
+  version: 7.7
+
+xorg:
+
+  - app_modules: |
+
+      P ba215daaa78c415fce11b9e58c365d03bb602eaa5ea916578d76861a468cc3d9  xsetroot-1.1.1.tar.bz2
+      . 35c6e43d3b68ef5d93d013b4517014fb890bad96b2c801abf4f607927a94cb1c  xdriinfo-1.0.4.tar.bz2
+

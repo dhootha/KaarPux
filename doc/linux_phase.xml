@@ -1,0 +1,29 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="linux_phase">
+<title>Linux base, xorg and gnome</title>
+
+<!-- ============================================================ -->
+
+<para>
+All of the phases 
+<itemizedlist>
+	<listitem><para>linux_base</para></listitem>
+	<listitem><para>linux_xorg</para></listitem>
+	<listitem><para>linux_gnome</para></listitem>
+</itemizedlist>
+are build on the target system, and installs into the
+root <filename class="directory">/</filename> and
+<filename class="directory">/usr</filename> directories.
+</para>
+
+<!-- ============================================================ -->
+
+</section>
+

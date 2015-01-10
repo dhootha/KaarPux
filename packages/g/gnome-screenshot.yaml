@@ -1,0 +1,22 @@
+package:
+  name: gnome-screenshot
+  version: 3.14.0
+
+download:
+  gnomexz: ~
+  checksum: d96f108421ab04ee5d26387387df3858764e61d7718c7376cbf87890bf33912a
+
+version:
+  installed_na: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-schemas-compile
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

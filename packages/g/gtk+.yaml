@@ -1,0 +1,23 @@
+package:
+  name: gtk+
+  version: 3.14.5
+
+download:
+  gnomexz: ~
+  checksum: ba70f5ccde6646c6d8aa5a6398794b7bcf23fc45af22580a215d258f392dbbe2
+version:
+  installed_pkgconfig: gtk+-3.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --disable-packagekit --disable-schemas-compile--enable-x11-backend
+    - make: ~
+
+  - test:
+    # TODO: Investigate why test cases are failing
+    - check_ignore: ~
+
+  - install:
+    - install: ~

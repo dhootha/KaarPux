@@ -1,0 +1,27 @@
+package:
+  name: gnuplot
+  version: 4.6.5
+  www: http://www.gnuplot.info/
+  short: portable command-line driven graphing utility
+
+download:
+  sourceforge: ~
+  file_tar_gz: ~
+  checksum: a74558d145344422674dea4f58c9cb0931872c36
+
+version:
+  installed: my $v=kxver_sh_pattern("gnuplot --version", qr|gnuplot\s+(.*)|); $v =~ s/ patchlevel /./; return $v;
+  upstream: kxver_upstream_sourceforge("gnuplot", "gnuplot", "gnuplot", qr|gnuplot-([0-9.]+)\.tar.*/download|);
+
+opt:
+
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  - test:
+    # TODO: investigate why the default GNUTERM=wx fails
+    - check: GNUTERM=x11
+
+  - install:
+    - install: ~

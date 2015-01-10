@@ -1,0 +1,33 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="gdm_startup">
+<title>Enable GDM at startup</title>
+
+<para>
+To start the Graphical Display Manager
+(<application>GDM</application>):
+<programlisting>
+systemctl enable gdm.service
+systemctl start graphical.target
+</programlisting>
+</para>
+
+<para>
+To enable the Graphical Display Manager
+(<application>GDM</application>) 
+at system startup:
+<programlisting>
+systemctl enable gdm.service
+ln -svf /usr/lib/systemd/system/graphical.target /etc/systemd/system/default.target
+</programlisting>
+</para>
+
+
+</section>
+

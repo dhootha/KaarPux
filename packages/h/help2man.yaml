@@ -1,0 +1,25 @@
+package:
+  name: help2man
+  version: 1.46.4
+  www: http://www.gnu.org/software/help2man
+  short: Produces simple manual pages from the --help and --version output of other commands.
+
+download:
+  gnux: ~
+  checksum: 1ae7f15f53b0cc55b070ae49df2ee5caa942c71529054e157599427bba3c5633
+
+version:
+  source: http://anonscm.debian.org/git/users/bod/help2man.git
+  news: NEWS
+  changelog: ChangeLog
+
+bootstrap_8:
+  - configure_kx: ~
+  - make: ~
+  # No testsuite
+  - install: ~
+
+verify_cli: |
+  kx_cli_match_success "/bin/help2man --version"  { "GNU help2man" }
+
+# TODO: Real testcase

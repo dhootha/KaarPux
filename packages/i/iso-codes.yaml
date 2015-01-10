@@ -1,0 +1,28 @@
+package:
+  name: iso-codes
+  version: 3.56
+  www: http://pkg-isocodes.alioth.debian.org/
+  short: |
+      This package provides lists of various ISO standards (e.g. country,
+      language, language scripts, and currency names) in one place, rather
+      than repeated in many programs throughout the system.
+
+download:
+  url: http://pkg-isocodes.alioth.debian.org/downloads
+  file_tar_xz: ~
+  checksum: 55d0e6e582ec9331c706d3aae14819170acf4121160d914f0ce2c901daf3ce6e
+  verify: sig
+
+version:
+ installed_pkgconfig: ~
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

@@ -1,0 +1,246 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_6_5">
+<title>Changes in KaarPux version 3.6.5</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.6.5</systemitem> released on <systemitem>2013-jun-27</systemitem>
+</para>
+
+<itemizedlist>
+
+	<listitem><para>
+		Mozilla and LibreOffice Updated
+	</para></listitem>
+	<listitem><para>
+		Other packages updated and added
+	</para></listitem>
+	<listitem><para>
+		Signature check on many upstream packages
+	</para></listitem>
+	<listitem><para>
+		Bugs fixed and minor improvements
+	</para></listitem>
+
+</itemizedlist>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_5_upd1">
+<title>Mozilla and LibreOffice Updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: firefox: v 22.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d5b24faba02df9215155aa855bf74e901e64a89b/">d5b24fab</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.291
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8be0525ef0d6cb558ee6ee40a1d93344a04874b2/">8be0525e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.6.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/eb6ceab2610099bcbf68288d7465dd76eaade1c0/">eb6ceab2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 17.0.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7c6183fc132e860a02c3033eba00fe0d8f9ad721/">7c6183fc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libreoffice: v 4.0.4.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/17f6e32288263962160df20908366876c54d9e63/">17f6e322</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_5_upd2">
+<title>Other packages updated and added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: nemiver: v 0.9.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9aa306cbd1622f8d1d37265853611023ef0fca8d/">9aa306cb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: freetype: v 2.5.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/96f46b7f8a87f11757ddba362feca2197f902111/">96f46b7f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: graphviz: v 2.30.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2cec746600b43e97065a54bc78859118a81c4e54/">2cec7466</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dhcpcd: v 6.0.2; also small configuration changes
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6a49c25d57abfef8887e4ca196d032e1d62b1f93/">6a49c25d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: sqlite: v 3.7.17
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/28a39ca66a9fd32449ce46c2d76698d9c22abae5/">28a39ca6</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: wxWidgets codelite
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/92a807f3df2e3c072c23b3c43bcc28ed557b31c7/">92a807f3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: gd: prereq for graphviz
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2359cc698a60de52e3b597dc6b158f58dc351fb3/">2359cc69</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_5_sig">
+<title>Signature check on many upstream packages</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KxBuild: add functions for verifying GPG signatures on upstream tarballs
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e7e9be2365714e3659291e0e922fcdc90de65d67/">e7e9be23</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: add trusted keys for verifying GPG signatures on upstream tarballs
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/41b1e3f3094e3c823a4f1d9970824b86aaf3462e/">41b1e3f3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: *: verify GPG signature on upstream tarball
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ce46d3605bfdb83f9202add1b60c47e43831bbd3/">ce46d360</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: Gracefully handle file downloads when no GnuPG is available
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d504209365cb5bead54ca051105826459d70b849/">d5042093</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_5_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: libpng freetype: move libpng before freetype
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62ca5b5cb9320bb6da0939bcfcd3996b40134bbf/">62ca5b5c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: kx_version.plinc: replace  in url and filename
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/aed3dfd1b2cad58754c155d5f52776f02836718a/">aed3dfd1</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_5_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		MINOR: man-pages: use kernelxz for download
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9ea042f90038f60f577fe7cee7c1003b33619ba1/">9ea042f9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: pciutils: use kernelxz for download
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/81529a9e941c40c6747942e8b43fb423db969ef2/">81529a9e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: kmod: use kernelxz for download
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/17c338d27d6205c0cf693346244f536fb79b8e5c/">17c338d2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: usbutils: use kernelxz for download
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f93d55fb3e53c173c58e34cf5cc9cb15048431cd/">f93d55fb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: *: add verify_cli testcases
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4ee91e34823c81938524a6d999ba700f711d4a34/">4ee91e34</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: kx_ver_wiz: option to update to specified upstream version
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/50bb3cc8878fc2d531cf9ef6edf584232784d7be/">50bb3cc8</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

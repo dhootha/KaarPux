@@ -1,0 +1,22 @@
+package:
+  name: astroid
+  version: 1.1.1
+  www: http://www.logilab.org/project/logilab-common
+  short: |
+      Astroid is the new name for the former logilab-astng python package, the core of the pylint code checker:
+      a common base representation of python source code for projects such as pychecker, pyreverse, pylint.
+
+download:
+  url: https://pypi.python.org/packages/source/a/astroid/
+  file_tar_gz: ~
+  checksum: 780735cb451f5ae982bfa8a6b80866305e3eb9cbdd68e58d79afd94feb00e1f4
+
+version: ~
+
+linux:
+  - build:
+    - sh: python setup.py build
+  - test:
+    - sh: python setup.py test
+  - install:
+    - sh: python setup.py install

@@ -1,0 +1,31 @@
+package:
+  name: pyatspi3
+  version: 2.12.0
+  www: https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
+
+download:
+  url: ftp://ftp.gnome.org/pub/gnome/sources/pyatspi/${KX_PYATSPI3_VERSION_MM}
+  checksum: 4e6cd801412a090dcc7ec2a27298dee5e84dc0af11479d5d5c061254b8ea6ac4
+  file: pyatspi-${KX_PYATSPI3_VERSION}.tar.xz
+  dir:  pyatspi-${KX_PYATSPI3_VERSION}
+
+doc: |
+  <para>
+    Note that we have 2 related packages:
+    <xref linkend="pkg_pyatspi" /> for Python2, and
+    <xref linkend="pkg_pyatspi3" /> for Python3.
+  </para>
+
+version:
+  upstream_gnome: pyatspi
+
+linux:
+
+  - build:
+    - python3: ~
+    - configure_kx: ~
+    - make: ~
+
+  - install:
+    - python3: ~
+    - install: ~

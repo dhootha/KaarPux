@@ -1,0 +1,25 @@
+package:
+  name: clutter-gst
+  version: 2.0.12
+  www: http://developer.gnome.org/clutter-gst/
+  short: Clutter-GStreamer provides a ClutterMedia interface implementation using GStreamer for basic video and audio playback.
+
+download:
+  gnomexz: ~
+  checksum: c2f1453692b0c3ff6a500113bc1d2c95d2bde11caca0809610a6d1424bbbffb5
+
+version:
+  installed_pkgconfig: clutter-gst-2.0
+  upstream_gnome: ~
+
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

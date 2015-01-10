@@ -1,0 +1,375 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<chapter id="copying_kaarpux">
+<title>Copying KaarPux to another machine</title>
+
+<!-- ============================================================ -->
+
+<section id="copying_kaarpux_overview">
+<title>Overview</title>
+
+<para>
+Copying &kx; to a different machine is simple:
+
+<procedure>
+<step>
+	<xref linkend="copying_kaarpux_create_tarball" />
+	on the source machine
+</step>
+<step>
+	copy the <systemitem>tarball</systemitem>
+	from the source machine
+	to the target machine
+</step>
+<step>
+	<xref linkend="copying_kaarpux_unpack_tarball" />
+	on the target machine
+</step>
+<step>
+	<xref linkend="copying_kaarpux_configure" />
+	on the target machine
+</step>
+</procedure>
+</para>
+
+<para>
+	&kx; also provides a <xref linkend="copying_kaarpux_script_remote" />
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="copying_kaarpux_create_tarball">
+<title>Create a KaarPux tarball</title>
+
+<para>
+In order to copy &kx; to a different machine,
+first create a <systemitem>tarball</systemitem>
+containing the original &kx; system.
+The size of the <systemitem>tarball</systemitem>
+will be around 5GB.
+</para>
+
+<para>
+It might be possible to create the <systemitem>tarball</systemitem>
+directly from the running &kx; system with a command like:
+
+<programlisting>
+&kx_as_root;
+MNT=/
+TARBALL=/tmp/kaarpux.tar.gz
+
+cd ${MNT}
+tar czf ${TARBALL} \
+	--format=pax \
+	--one-file-system \
+	--anchored \
+	--exclude=./home/kaarpux/kaarpux/downloads \
+	--exclude=./home/kaarpux/kaarpux/bootstrap/build \
+	--exclude=./home/kaarpux/kaarpux/linux/build \
+	--exclude=./tools* \
+	--exclude=./lost+found \
+	.
+</programlisting>
+
+This command will only archive the root file system, 
+not any mounted file systems (<systemitem>--one-file-system</systemitem>).
+However, files in e.g. <filename class="directory">/var</filename>
+and <filename class="directory">/home</filename> might be 
+modified during archiving, so this approach is not really recommended.
+
+</para><para>
+
+A much better approach is to boot from another partition
+(e.g. the original host system used to build &kx;),
+and mount the &kx; partition on <filename class="directory">/mnt</filename>.
+
+Then the <systemitem>tarball</systemitem> can be created with:
+
+<programlisting>
+&kx_as_root;
+MNT=/mnt
+TARBALL=/tmp/kaarpux.tar.gz
+
+cd ${MNT}
+tar czf ${TARBALL} \
+	--format=pax \
+	--anchored \
+	--exclude=./home/kaarpux/kaarpux/downloads \
+	--exclude=./home/kaarpux/kaarpux/bootstrap/build \
+	--exclude=./home/kaarpux/kaarpux/linux/build \
+	--exclude=./tools* \
+	--exclude=./lost+found \
+	.
+</programlisting>
+
+</para><para>
+
+If you have <application>pigz</application> installed,
+the compression can be done in parallel (i.e. faster):
+
+<programlisting>
+&kx_as_root;
+MNT=/mnt
+TARBALL=/tmp/kaarpux.tar.gz
+
+cd ${MNT}
+tar cf - \
+	--format=pax \
+	--anchored \
+	--exclude=./home/kaarpux/kaarpux/downloads \
+	--exclude=./home/kaarpux/kaarpux/bootstrap/build \
+	--exclude=./home/kaarpux/kaarpux/linux/build \
+	--exclude=./tools* \
+	--exclude=./lost+found \
+	. \
+	| pigz --stdout - \
+	> ${TARBALL}
+</programlisting>
+
+</para><para>
+
+Or, if you are willing to wait for an even more compressed snapshot:
+
+<programlisting>
+&kx_as_root;
+MNT=/mnt
+TARBALL=/tmp/kaarpux.tar.gz
+
+cd ${MNT}
+tar cJf ${TARBALL} \
+	--format=pax \
+	--anchored \
+	--exclude=./home/kaarpux/kaarpux/downloads \
+	--exclude=./home/kaarpux/kaarpux/bootstrap/build \
+	--exclude=./home/kaarpux/kaarpux/linux/build \
+	--exclude=./tools* \
+	--exclude=./lost+found \
+	.
+</programlisting>
+
+</para><para>
+
+If you have build &kx; in a Virtual Machine
+(see <xref linkend="kvm" />),
+the image file may be mounted with a command like:
+
+<programlisting>
+&kx_as_root;
+IMG=kx_50.img
+MNT=/mnt
+
+mount -o loop,offset=$((2048 * 512)) ${IMG} ${MNT}</programlisting>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="copying_kaarpux_unpack_tarball">
+<title>Unpack the KaarPux tarball</title>
+
+<para>
+Boot into an existing linux distribution on the target machine, and
+prepare a partition for &kx;.
+
+<warning>
+Be <emphasis>very</emphasis> careful here.
+Check and double check that you are pointing to the right partition!
+</warning>
+
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+DEV=/dev/sdb2
+
+mke2fs -t ext4 -jv ${DEV}
+fsck ${DEV}
+</programlisting>
+
+</para><para>
+
+Mount the partition and unpack the &kx; <systemitem>tarball</systemitem>
+(see <xref linkend="copying_kaarpux_create_tarball" />):
+
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+MNT=/mnt
+DEV=/dev/sdb2
+TARBALL=/tmp/kaarpux.tar.gz
+
+mount ${DEV} ${MNT}
+cd ${MNT}
+tar xf ${TARBALL} --numeric-owner
+</programlisting>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="copying_kaarpux_configure">
+<title>Configure KaarPux after copying</title>
+
+<para>
+
+After copying &kx; to another machine
+(see <xref linkend="copying_kaarpux_unpack_tarball" />)
+a few things need to be configured.
+
+</para><para>
+
+<filename>/etc/fstab</filename> will need to be updated.
+
+</para><para>
+
+You should have one line for the root file system like:
+<programlisting>
+UUID=75bac34a-d535-4e51-9467-0b94e27d72ac / ext4 defaults 1 1
+</programlisting>
+where the <systemitem>UUID</systemitem> can
+(depending on the linux distribution you booted into) be found with a command like
+<programlisting>
+blkid
+</programlisting>
+
+</para><para>
+
+For swap, you may have zero or more lines like:
+
+<programlisting>
+UUID=066af73a-d8fd-49b7-b806-05f625681d4d swap swap pri=1 0 0
+</programlisting>
+
+</para><para>
+
+Add &kx; to the bootloader already found on the target machine.
+
+</para><para>
+
+Depending on the linux distribution you booted into,
+the command may be something like:
+
+<programlisting>
+CFG=/boot/grub/grub.cfg
+grub-mkconfig -o ${CFG}
+</programlisting>
+
+</para><para>
+
+You should now be ready to boot into &kx;!
+
+</para><para>
+
+After booting into &kx; you may want further configurations
+as described in <xref linkend="post_install" />.
+
+</para><para>
+
+You may also want to install <application>grub</application>
+from &kx; as your bootloader.
+Follow the instructions in <xref linkend="prepare_boot_grub" />,
+but do <emphasis>not</emphasis> enter the <application>chroot</application>.
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="copying_kaarpux_script_remote">
+<title>Script to install KaarPux on a remote machine</title>
+
+<para>
+<procedure>
+	<step>
+		Boot the remote machine
+		(from a different partition than where you want &kx;)
+	</step>
+	<step>
+		Create and install ssh key
+<para>
+On the <emphasis>local</emphasis> machine:
+<programlisting>
+&kx_as_regular_user;&kx_envwarn;
+REMOTE_IP=192.168.42.42
+KEY_NAME=id_remote
+
+ssh-keygen -f ~/.ssh/${KEY_NAME}
+scp ~/.ssh/${KEY_NAME}.pub ${REMOTE_IP}:
+</programlisting>
+<programlisting>
+&kx_as_root;&kx_envwarn;
+REGULAR_USER=kaarpux
+
+cd /root
+mkdir -pv -m 700 .ssh
+cp -rp /home/${REGULAR_USER}/.ssh/${KEY_NAME}* .ssh
+</programlisting>
+
+On the <emphasis>remote</emphasis> machine:
+<programlisting>
+&kx_as_root;&kx_envwarn;
+KEY_NAME=id_remote
+REGULAR_USER=kaarpux
+
+cd /root
+mkdir -pv -m 700 .ssh
+touch .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+cat /home/${REGULAR_USER}/${KEY_NAME}.pub >> .ssh/authorized_keys
+</programlisting>
+On the <emphasis>local</emphasis> machine:
+<programlisting>
+&kx_as_root;&kx_envwarn;
+REMOTE_IP=192.168.42.42
+ssh root@${REMOTE_IP} id
+</programlisting>
+</para>
+	</step>
+	<step>
+		Run the install script
+<para>
+On the <emphasis>local</emphasis> machine:
+<programlisting>
+&kx_as_root;&kx_envwarn;
+LOCAL_IMG=/kvm/kx_50.img
+LOCAL_MNT=/mnt
+REMOTE_IP=192.168.42.42
+REMOTE_PARTITION=/dev/sdccc
+REMOTE_MNT=/mnt
+REMOTE_KEEP=Y
+
+master/expert/dangerous_install_remote.sh \
+"${LOCAL_IMG}" "${LOCAL_MNT}" \
+"${REMOTE_IP}" "${REMOTE_PARTITION}" "${REMOTE_MNT}" \
+"${REMOTE_KEEP}"
+</programlisting>
+</para>
+
+	</step>
+	<step>
+		Grub set-up
+<para>
+Update the remote grub configuration,
+either by using the distro's grub configuration update utilities,
+or by adding the output from the command above to the grub.cfg file.
+</para>
+	</step>
+</procedure>
+
+</para>
+
+</section>
+
+</chapter>

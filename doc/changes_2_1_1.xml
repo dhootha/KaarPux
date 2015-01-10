@@ -1,0 +1,72 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_2_1_1">
+<title>Changes in KaarPux version 2.1.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; version <systemitem>2.1.1</systemitem> released on <systemitem>2012-08-31</systemitem>
+</para>
+
+<para>
+Upstream security-updates for <systemitem>icedtea</systemitem> / <systemitem>Java</systemitem>.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_1_java">
+<title>SECURITY: icedtea: v 2.3.1 to fix CVE-2012-4681</title>
+<para>
+	(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/92c1d61a82f65fd41ecba7cc13a27b79016a8741/">92c1d61a</ulink>)
+</para><para>
+	Oracle Java 7 Update 6, and possibly other versions,
+	allows remote attackers to execute arbitrary code via a crafted applet,
+	as exploited in the wild in August 2012 using Gondzz.class and Gondvv.class. 
+</para><para>
+	See
+	<itemizedlist>
+	<listitem>
+		<ulink url="http://blog.fuseyism.com/index.php/2012/08/30/security-icedtea-2-3-1-released/">[SECURITY] IcedTea 2.3.1 Released!</ulink>
+	</listitem><listitem>
+		<ulink url="http://cve.mitre.org/cgi-bin/cvename.cgi?name=2012-4681">CVE-2012-4681 from CVE database</ulink>
+	</listitem><listitem>
+		<ulink url="http://www.oracle.com/technetwork/topics/security/alert-cve-2012-4681-1835715.html">Oracle Security Alert for CVE-2012-4681</ulink>
+	</listitem>
+	</itemizedlist>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_1_upgrade">
+<title>Upgrade instructions</title>
+
+<para>
+
+The security fix can be applied to a
+&kx; version <systemitem>2.1.0</systemitem> system:
+
+<programlisting>
+rm -rf /opt/kaarpux/icedtea*
+linux/scripts/opt/icedtea_BUILD.sh
+linux/scripts/opt/icedtea_INSTALL.sh
+linux/scripts/opt/icedtea-web_BUILD.sh
+linux/scripts/opt/icedtea-web_INSTALL.sh
+master/tools/kx_opt.pl
+</programlisting>
+
+</para>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

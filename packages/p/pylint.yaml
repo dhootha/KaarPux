@@ -1,0 +1,34 @@
+package:
+  name: pylint
+  version: 1.2.0
+  www: http://www.logilab.org/project/pylint
+  short: Analyzes Python source code looking for bugs and signs of poor quality.
+
+download:
+  url: http://download.logilab.org/pub/pylint/
+  file_tar_gz: ~
+  checksum: e66102a0550d7b1f8905d88ae11e93431822ef85662db4e1567eeda489bc39bc
+
+version: 
+  installed: kxver_sh_pattern("pylint --version", qr|pylint ([0-9]+[0-9.]*[0-9]+),|);
+
+linux:
+  - build:
+    - sh: python setup.py build
+  - test:
+    - sh: python setup.py test
+  - install:
+    - sh: python setup.py install
+    - echo:  "Install manual pages"
+    - sh: install -v -m644 man/*.1 "${KX_PREFIX}/man/man1"
+
+verify_cli: |
+  kx_cli_match_success "/bin/pylint --version" { pylint Python }
+  kx_cli_success /bin/pylint /bin/pylint
+
+# TODO: verify_cli testcases for other binaries:
+# /bin/symilar
+# /bin/epylint
+# /bin/pylint-gui
+# /bin/pyreverse
+# /bin/pytest

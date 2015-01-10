@@ -1,0 +1,49 @@
+package:
+  name: gdm
+  version: 3.14.1
+
+download:
+  gnomexz: ~
+  checksum: ed83498131bcea69ce60f882783c669c24b007d2b7e1219b4bdde18f6c94deb1
+
+version:
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+
+    # we should install gdm-service, also if the systemdsystemunit already exists
+    - patch: systemdsystemunit.patch
+
+    # show the error message which caused
+    # Failed to give slave programs access to the display. Trying to proceed.
+    - patch: slave-show-error.patch
+
+    # gdm_slave_connect_to_x11_display tries to authenticate non-existing user
+    - patch: slave-no-gnome-initial-setup.patch
+
+    - configure_kx_bash: >
+        --disable-static
+        --with-initial-vt=7
+        --with-pid-file=/run/gdm/gdm.pid
+        --with-pam-prefix=/etc/pam.d
+        --disable-wayland-support
+        --without-console-kit
+        --with-systemd=yes
+        --with-systemdsystemunitdir=/lib/systemd/system
+        --disable-schemas-compile
+    - make_repeat: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - echo: Adding [gdm] group and user
+    - sh: groupadd -fg ${KX_GDM_GID} gdm
+    - sh: useradd -c "GDM Daemon Owner" -d /var/lib/gdm -u ${KX_GDM_UID} -g gdm -s /bin/false gdm || test "$?" = "9"
+    - sh: id gdm
+    - install: ~
+    - install_pkg_file: 644 gdm-launch-environment /etc/pam.d
+    - install_pkg_file: 644 gdm-password /etc/pam.d
+

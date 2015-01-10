@@ -1,0 +1,146 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_1_0_1">
+<title>Changes in KaarPux version 1.0.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; version <systemitem>1.0.1</systemitem> released on <systemitem>2012-08-19</systemitem>
+</para>
+
+<para>
+Includes upstream security-updates!
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_1_0_1_sec">
+<title>Security updates</title>
+
+	<section id="changes_1_0_1_skype">
+	<title>UPD: skype: v. 4.0.0.8 - SECURITY UPDATE</title>
+	<para>
+		See <ulink url="http://blogs.skype.com/garage/2012/07/hotfix_for_multiple_skype_clie.html/">
+			Hotfix for multiple Skype clients</ulink>
+	</para><para>
+		Skype client crashes during a Skype IM session, which may in some cases
+		result in the last IM entered or sent prior to the crash being delivered
+		to a different IM contact after the Skype client is rebooted or logged
+		in as a new user.
+	</para>
+	</section>
+
+	<section id="changes_1_0_1_java">
+	<title>UPD: icedtea-web: v. 1.2.1 - SECURITY UPDATE</title>
+	<para>
+		See <ulink url="http://dbhole.wordpress.com/2012/07/31/icedtea-web-1-1-6-and-1-2-1-security-releases-released/">
+			IcedTea-Web 1.1.6 and 1.2.1 [security releases] released</ulink>
+	</para><para>
+		The security issues fixed are:
+		<itemizedlist><listitem><para>
+			RH840592, CVE-2012-3422: Use of uninitialized instance pointers
+		</para></listitem><listitem><para>
+			RH841345, CVE-2012-3423: Incorrect handling of non 0-terminated strings
+		</para></listitem></itemizedlist>
+	</para>
+	</section>
+
+	<section id="changes_1_0_1_flash">
+	<title>UPD: flash_player_11: v. 11.2.202.238 - SECURITY UPDATE</title>
+	<para>
+		See <ulink url="http://www.adobe.com/support/security/bulletins/apsb12-18.html">
+			Security update available for Adobe Flash Player</ulink>
+	</para><para>
+		These updates address a vulnerability (CVE-2012-1535)
+		that could cause the application to crash
+		and potentially allow an attacker to take control of the affected system.
+	</para>
+	</section>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_1_0_1_upd">
+<title>Other package updates</title>
+
+	<itemizedlist><listitem><para>
+		UPD: pinentry: v. 0.8.2
+	</para></listitem><listitem><para>
+		UPD: noscript: v. 2.5.1
+	</para></listitem></itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_1_0_1_minor">
+<title>Minor changes</title>
+
+	<itemizedlist><listitem><para>
+		IMPROVE: linux: add init= target to boot commandline in initramfs
+	</para></listitem><listitem><para>
+		FIX: kmod: install pkgconfig file in /usr/lib/pkgconfig
+	</para></listitem><listitem><para>
+		ADD: os-release: /etc/os-release
+	</para></listitem><listitem><para>
+		MINOR: lsb-release: correct version number
+	</para></listitem><listitem><para>
+		MINOR: common_functions: better kx_git_describe
+	</para></listitem><listitem><para>
+		DOC: www: complete.xml: qt is build in opt_desktop
+	</para></listitem><listitem><para>
+		DOC: www: correct git clone command
+	</para></listitem><listitem><para>
+		DOC: www: improved download instructions
+	</para></listitem><listitem><para>
+		Many minor improvements to documentation, in particular for installed packages.
+	</para></listitem></itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_1_0_1_upgrade">
+<title>Upgrade instructions</title>
+
+<para>
+
+The security fixes and package updates can be applied to a
+&kx; version <systemitem>1.0.0</systemitem> system
+simply by removing the old packages and installing the new ones:
+
+<programlisting>
+rm -rf /opt/kaarpux/flash_player_11*
+rm -rf /opt/kaarpux/icedtea-web*
+rm -rf /opt/kaarpux/noscript*
+rm -rf /opt/kaarpux/pinentry*
+rm -rf /opt/kaarpux/skype*
+linux/scripts/opt/flash_player_11_BUILD.sh
+linux/scripts/opt/flash_player_11_INSTALL.sh
+linux/scripts/opt/icedtea-web_BUILD.sh
+linux/scripts/opt/icedtea-web_INSTALL.sh
+linux/scripts/opt/noscript_BUILD.sh
+linux/scripts/opt/noscript_INSTALL.sh
+linux/scripts/opt/pinentry_BUILD.sh
+linux/scripts/opt/pinentry_INSTALL.sh
+linux/scripts/opt/skype_BUILD.sh
+linux/scripts/opt/skype_INSTALL.sh
+master/tools/kx_opt.pl
+</programlisting>
+
+</para>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

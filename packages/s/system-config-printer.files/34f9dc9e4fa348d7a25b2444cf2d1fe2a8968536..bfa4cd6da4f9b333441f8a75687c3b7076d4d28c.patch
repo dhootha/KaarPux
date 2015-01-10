@@ -1,0 +1,22 @@
+From bfa4cd6da4f9b333441f8a75687c3b7076d4d28c Mon Sep 17 00:00:00 2001
+From: Tim Waugh <twaugh@redhat.com>
+Date: Fri, 5 Sep 2014 13:35:38 +0100
+Subject: Use GLib.idle_add, not GObject.idle_add.
+
+
+diff --git a/system-config-printer.py b/system-config-printer.py
+index 71a6dbd..faaf24d 100755
+--- a/system-config-printer.py
++++ b/system-config-printer.py
+@@ -736,7 +736,7 @@ class GUI(GtkGUI):
+                                   self.cups_connection_error)
+             self.monitor.connect ('cups-connection-recovered',
+                                   self.cups_connection_recovered)
+-            GObject.idle_add (self.monitor.refresh)
++            GLib.idle_add (self.monitor.refresh)
+             self.propertiesDlg.set_monitor (self.monitor)
+ 
+         if connected:
+-- 
+cgit v0.10.2
+

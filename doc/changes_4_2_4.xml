@@ -1,0 +1,318 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_2_4">
+<title>Changes in KaarPux version 4.2.4</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.2.4</systemitem> released on <systemitem>2014-apr-17</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		linux version 3.13.10
+		</para></listitem>
+
+		<listitem><para>
+		WebKit version 2.4.1
+		</para></listitem>
+
+		<listitem><para>
+		icedtea7 (Java) version 2.4.7
+		</para></listitem>
+
+		<listitem><para>
+		Improved Linux kernel configuration
+		</para></listitem>
+
+		<listitem><para>
+		Bugs fixed, packages and documentation updated 
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_4_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: acpica: v 20140325
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a51cd1637dbab81834a0ec291bcd4f9002dff06c/">a51cd163</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.13.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/988caba79e0584ccda0ab93960e0ddab61070eb1/">988caba7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: WebKit: v 2.4.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8c8fd36975b1a792e6599a2065f8d742d38e3a16/">8c8fd369</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: icedtea7: v 2.4.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/01fed0ec6709a824f8fc82139ee25f89ba6215cd/">01fed0ec</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 5.2.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a416e48d0fd4dc527eb01b5fb4d0e81ab7f5ec7f/">a416e48d</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_4_add">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: smartmontools
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8a21374a76eb9c96a90a4d6b9921b96dbc206a06/">8a21374a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: dmidecode (for sensors)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e123937f3892b30b89d4af3db59d8d583b93e465/">e123937f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pwsafe: add to master.yaml
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/db7faf5e6f9948acd90c17d043c1d681d1d9dc64/">db7faf5e</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_4_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: openhosting: do not check_no_ping
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0f5a8999478e41fe49cc85270bbfbe6c248edd17/">0f5a8999</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: dmidecode: correct signature verification
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7fc0fa3d540e657e57b5557ed314a819f72f24a7/">7fc0fa3d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KaarPux: re-introduce lshw
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a65ff32cb1a9e4ad87e60efda0d0482b114db8ed/">a65ff32c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: pwsafe: move wxWidgets and pwsafe to opt_desktop
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4b38d79c74152f7aab49c865cd6a4339acb4c358/">4b38d79c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: empathy: make_repeat
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/172df90e468958c647e45b19e18f6e6a27cd67d5/">172df90e</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_4_linux">
+<title>Improved Linux kernel configuration</title>
+
+<itemizedlist>
+	<listitem><para>
+		MINOR: linux: configure for W83627EHF
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3e4164b59211ac965b71a192e72857387a3394ee/">3e4164b5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: linux: configure for ATK0110
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bd1be51b988e0eb3922d4d66a453d5a0c14a83d0/">bd1be51b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: remove debug configurations
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/708ab3d077847e50de575ab697cd6dd3ff9b9cb4/">708ab3d0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: remove SELinux configuration
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a14b66964dd3b77b68df8f101416537fe3248315/">a14b6696</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: better config for RCU, JUMP_LABEL and SPINLOCKS
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4cb4793dbcbdf3af0c811bee4942b8118ec96548/">4cb4793d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: better config for NR_CPUS and CPU frequency governor
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a48b2d592b732cad70a7291512ab74bf23b2de2c/">a48b2d59</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: remove unused config settings
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/be16e13f1c934dc7bcafe9d4550945cfd1daef94/">be16e13f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: configure timer at 300Hz; no crash kernel; acpi not as modules
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bf3109f260f390fc9029b65d4bcb18ab6e435fcc/">bf3109f2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: install tools: cpupower, turbostat, perf, acpi
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/184afa0320471df12c1f55d003e5b7eb884a79af/">184afa03</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: build and install tools separatly
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9779add23caa7c92d3443dc40e51c3f46c4fba20/">9779add2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: re-introduce DEBUG_KERNEL for systemtap
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e07acb6588bbae3c8c97f544e34a685807db62fd/">e07acb65</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: add GPIO to config
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/84b621f5ca7366c225ab7d61298cb1fa31c0beda/">84b621f5</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_4_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+
+	<listitem><para>
+		IMPROVE: openhosting: use ubuntu 12.04
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a932ca14d72ca0c2a423833ccbe09ff644748faa/">a932ca14</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: asciidoc: move to bootstrap_8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/73bd99ab7bb66d82258249e974e1a3319e374d6a/">73bd99ab</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: create_bridge: better file name in /etc/systemd/network/
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9b824890f981994bc11a3fd1b511678063765eea/">9b824890</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: KxTools: flist to disregard /share/gtk-doc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/04fdf75aca6428c75dc6d0ad26c6e278d157cbbb/">04fdf75a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: vinagre: move spice-gtk before vinagre to get spice in remote desktop viever
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4e0952e1c4195bd8e04d8066de00868c1a799965/">4e0952e1</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: KxBuild: run kvm with -cpu host
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/52400b37f7a4f07b6ca0ea05a0f26536791d3fda/">52400b37</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: KxBuild: use deadline io scheduler
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0ea86ad4f44ca629a4316f1272863ed9fd26881e/">0ea86ad4</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_4_doc">
+<title>Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/02925319b60aa4360e6e9524581b928fd97e1063/">02925319</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

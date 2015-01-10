@@ -1,0 +1,33 @@
+package:
+  name: gdb
+  version: 7.8.1
+  www: http://www.gnu.org/software/gdb/
+  short: |
+      GDB, the GNU Project debugger, allows you to see what is going on "inside" another program while it executes;
+      or what another program was doing at the moment it crashed. 
+
+download:
+  gnux: ~
+  checksum: 497722b58386f4428c3474281eb3ef1c872404998b6ace907edb3bba1fabdc35
+  
+version:
+  upstream_gnu: ~
+  wiz_sourceware: binutils-gdb
+  changelog: gdb/NEWS
+
+linux:
+  - build:
+    - use_gcc: ~
+    - configure_kx: ~
+    - make: ~
+
+  # Tests are failing, as they are trying to use non-existent dependencies-
+  # TODO: See if we can disable the failing tests
+  # - test:
+  #   - check: ~
+
+  - install:
+    - install: -C gdb
+
+verify_cli: |
+  kx_cli_match_success "gdb --version" { GNU gdb }

@@ -1,0 +1,22 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<chapter id="building_kaarpux_step_by_step">
+<title>Building KaarPux step-by-step</title>
+
+<!-- ============================================================ -->
+
+&kx_host_system;
+&kx_format_disks;
+&kx_download;
+&kx_prepare;
+&kx_bootstrap;
+&kx_prepare_boot;
+&kx_complete;
+
+</chapter>

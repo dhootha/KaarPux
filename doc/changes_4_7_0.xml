@@ -1,0 +1,980 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_7_0">
+<title>Changes in KaarPux version 4.7.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.7.0</systemitem> released on <systemitem>2014-sep-30</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+			glibc updated to version 2.20
+		</para></listitem>
+
+		<listitem><para>
+			llvm/clang updated to version 3.5.0
+		</para></listitem>
+
+		<listitem><para>
+			bash updated to version 4.3.27 (shellshock fix)
+		</para></listitem>
+
+		<listitem><para>
+			Python package cleanup
+		</para></listitem>
+
+		<listitem><para>
+			Improved verification
+		</para></listitem>
+
+		<listitem><para>
+			More fonts added
+		</para></listitem>
+
+		<listitem><para>
+			Install more manual pages
+		</para></listitem>
+
+		<listitem><para>
+			Bugs fixed
+		</para></listitem>
+
+		<listitem><para>
+			Packages added
+		</para></listitem>
+
+		<listitem><para>
+			Packages updated
+		</para></listitem>
+
+		<listitem><para>
+			Minor Changes
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_glibc">
+<title>glibc updated to version 2.20</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: glibc: v 2.20
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/45cfc8703270abbfaaa81b90386f4e14878b9e22/">45cfc870</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: glibc: v 2.20-44-g68870f1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1cf3c66ae8d95283e2550bf1dfe22527a865930e/">1cf3c66a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: linux: patch for glibc 2.20
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6a9162540f5745eeccd61175f2127791089be4dd/">6a916254</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_llvm">
+<title>llvm/clang updated to version 3.5.0</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: llvm: v 3.5.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/558e4aa0138c034ad553f4a10bea4cdb824801e5/">558e4aa0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: firefox: use_gcc (we get coredumps with clang 3.5.0)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3dca60cf5961b757136db49415edb30c899b8e9f/">3dca60cf</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_bash">
+<title>bash updated to version 4.3.27 (shellshock fix)</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: bash: v 4.3.27; CVE-2014-6271 and CVE-2014-7169
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8d325c1a6467062be9ae689c181f90c7791ef8de/">8d325c1a</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_python">
+<title>Python package cleanup</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: setuptools: v 5.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ff0ccef2fb7beb8e2fa2e64532daf70f2c784c56/">ff0ccef2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: pyatspi: use Python 2 (we have pyatspi3 for Python 3)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9762915472653391f05d4a9f0cb1d7a1a97bea91/">97629154</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: pycurl: use Python 3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b5f46c23260d2012fe1725ee0c523326d3432c36/">b5f46c23</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: pycups: use Python 3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e7fb3571462d05675083c525c104d4587f00baa4/">e7fb3571</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: caribou d-feet gnome-tweak-tool itstool pyatspi system-config-printer: use Python3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c1112f8a8cafb5b629bd5999d2a2b02ae976a7e2/">c1112f8a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: py*: pygobject cleanup (now we only have Python3+gtk3 version)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/eb5df73cc2cfd0d459101cee254d3eaa292907cb/">eb5df73c</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_verify">
+<title>Improved verification</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: *: correct verify_cli testcases
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1546eae7c25e9acc87ec30613ea3b4fc3954aea7/">1546eae7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxTest: kx_gui_test: make some errors warnings instead (useful e.g. if application is going away)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6d7acb579305d45f944d8c6ac0d7163ed4c1fae5/">6d7acb57</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxTest: kx_gui_test: add short sleep when simulating ALT-F4 keypress
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/43570ea70109679ebeb552cb8d1ef4c29326cb6f/">43570ea7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxTest: kx_gui_test: on DESKTOP set kxgt_global_current = kxgt_global_desktop
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a756ab6a604e98de230700e8fa7b3a93af094526/">a756ab6a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: *: correct verify_gui testcases
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/623a1154e807c874eefde8221f5038ea6fbd2b84/">623a1154</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxTest: kx_gui_test: Make sure applications are turning on AT-SPI
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2f4bbb8a0e236559af2c1a6bac6366e5b8ff32ac/">2f4bbb8a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: firefox thunderbird libreoffice: correct verify_gui testcases
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a146da487741dbcc1905a128cb7ae668e2928ec3/">a146da48</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTest: kx_gui_test: flush each line of output if run with debug=TRUE
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/25dbf56d4d677c4c93f62451802b77977d6e797b/">25dbf56d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTest: kx_gui_test: allow DO command with no arguments to execute default action
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/323a795819594f7088aed807869665d2752e58b7/">323a7958</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_fonts">
+<title>More fonts added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: cabextract: extracting Microsoft cabinet files, also called .CAB files
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8a323ef60a5f1b46bc2a7f2cc5944f9bdfddb48c/">8a323ef6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: mscorefonts: Microsoft's TrueType core fonts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0dc6779d3aac4fe6b26ad03e044e933e82c33108/">0dc6779d</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_man">
+<title>Install more manual pages</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: Sphinx (and prereqs): for building llvm documentation
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e40ac696ac3cd93652a026fd89917b270f570729/">e40ac696</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: man-pages: v 3.72
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/38322a3f95c923638cee73056fb4277abb52c6b9/">38322a3f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: *: install man pages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/713f8c34bf45c015c21abc41472e3829e6eec6a5/">713f8c34</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: findlib: make_repeat (and remove --with-toolbox)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f9e1e8deef18d157dffc95bf3c8de9f1e1ce05ac/">f9e1e8de</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: caribou: --disable-static (not --disable-shared) --enable-gtk2-module
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5a661e36fee10239763918effe21122eef30ef2a/">5a661e36</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: firefox: correct check for KX_DISABLE_TEST
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c146143d96bde9af37e1b1900c1653195da6ecbe/">c146143d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: wpa_supplicant: do not install bogus man directories
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/714021b3af399b30ed1d66d424dac7fe821a4144/">714021b3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: make_scripts: do not create bogus linux/log/strace directory
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/17ac21e4369f982952b438d708984a42247acef2/">17ac21e4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gdm: Failed to give slave programs access to the display. Trying to proceed.
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2c98489ad1740ed47c6cfeb69ff96cf167c0a8a6/">2c98489a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: xkeyboard-config: remember to put xkeyboard-config in master.yaml
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1d6ccb80924351a211061063a668090f860bbdb1/">1d6ccb80</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libvpx: use_gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d1413a79b01f5dc7a6694e863d714088efe6f153/">d1413a79</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: MesaLib: upstream patches
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5b43f569bfa8a46fd1795759f567b5cf4b5632ef/">5b43f569</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: jasper: patches from ArchLinux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c860ff01f8b604a44e910de32c0d9959a5707367/">c860ff01</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: qt: qmake is not installed yet; use local version
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d513f593b8a7cfe2fc802b25f4dcafe90ed39418/">d513f593</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		FIX: bash: actually apply the patches
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4ccbeac84b5dccc977ff8935b2e20b2c79219963/">4ccbeac8</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_add">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: opus; replacing speex
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f5326f3bbb38bd58431627c80e02f8ff0e859b74/">f5326f3b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: libdvdnav
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/56ef4f447a668f03a99075b46a9381a52920b13d/">56ef4f44</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: xcb-util-*; prereq for qt5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0bd9b3d182c9d80a2653764cb39b182f22b542dd/">0bd9b3d1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: libbase58: prereq for cryptocurrencies
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/197a8f8e3c7136e54fd1f287698edcea009df1f8/">197a8f8e</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: ibus: v 1.5.8; from new upstream location
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/db519ca0305dab19daf8d3fcb89471295e54b89c/">db519ca0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.406
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3c2e79882da92870102215af02ca0382f616f352/">3c2e7988</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xkeyboard-config: v 2.12; also move to separate package with non-standard download location
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62a225a1c2cce458839177d6a16c8c1c8a484883/">62a225a1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: MesaLib: v 10.2.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1180e39b9f3cd18be367814252972fda6a279119/">1180e39b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xf86-video-intel: v 2.99.916
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dd1d714043f2000b2a670b02d4661f268201ef56/">dd1d7140</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 31.1.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f3a8d0185906218d75415195c1f669e4b25b06cb/">f3a8d018</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.41
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/689dbe0840706b73912cac6e06bcec89dad65acd/">689dbe08</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: qemu: v 2.1.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/df092eae9cc2988d80e47c7be512a8a5746acc7f/">df092eae</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: system-config-printer: v 1.5.1 plus patches; better upstream version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2fc40656fdfb960cb7502fa69ae1ac3933d569ba/">2fc40656</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		UPD: valgrind: v 3.10.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1addfbbd65c4e224b6c039df1ac8eda508b7e79f/">1addfbbd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: firefox: v 32.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f5a8ecdb82ad16d917ea236079f81ebf977744dc/">f5a8ecdb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.16.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d86ba0d0e7e7376d0706a265014056fcf15fb87a/">d86ba0d0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: lzip: v 1.16
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5f6a0df3d93ed0fa4c27469154614376145f5c2b/">5f6a0df3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: perl: v 5.20.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/92d7ba54add7a530ba68130d5f3132fe93c1dad7/">92d7ba54</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xz: v 5.0.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e1f21c805887e66e455e2ea42631c320d63ef23d/">e1f21c80</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: firefox:v 32.0.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f8a1bd1855afed13245bfd27ae417187a4d90148/">f8a1bd18</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: vte: v 0.38.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0d1079292f97d03f260b68435f6957d883fa88a9/">0d107929</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: MesaLib: v 10.2.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c2814e3bc3597d0d9ffa2ed9632bab20551e1574/">c2814e3b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: accountsservice: v 0.6.38
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0ef0e5cedde71a1e56632946f327ad937cf51c55/">0ef0e5ce</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: brasero: v 3.11.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/22023ee9a5f4e24ae5a620dd061d128d01b8861d/">22023ee9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: colord: v 1.2.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1cb2fb542f777005927a6a59d089ed3bcd8ca949/">1cb2fb54</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dbus: v 1.8.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ba6fcb49f385b3f5f218a68b91f9f25cdabd449d/">ba6fcb49</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dconf: v 0.22.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0ed78b0305e331751ce926cc994224261d42f5e4/">0ed78b03</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dhcpcd: v 6.4.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f5014dd5af4ac18a5c26b5d64f260c83f281708e/">f5014dd5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: empathy: v 3.12.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4b435cc154b4c97eac2fd6cc71b6755937cded65/">4b435cc1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: evolution: v 3.12.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/52cb08359fdf335eda4dd32f95231218b67a0ad6/">52cb0835</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: evolution-data-server: v 3.12.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9a91536f6a0241c3bef6353207b80c4b14227888/">9a91536f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: git: v 2.1.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5e8070f271aee3e8b744ae6295a746ad3be3f528/">5e8070f2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnome-calculator: v 3.12.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/846864cd6e3abc21d5ec9c400fd49429ba95e037/">846864cd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnome-terminal: v 3.14.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/337316a06643e2d505dffb35b50265562955442f/">337316a0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gst*: v 1.4.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3058a2c816f9a68d6e0c819a6bcd6a6238f49561/">3058a2c8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libdvdnav: v 5.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/88328ccb1106a02acddc38286f219ffe9f15c70c/">88328ccb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libdvdread: v 5.0.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f8dc026e986009641253d30b30cb69383e870919/">f8dc026e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libgdata: v 0.16.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c0c83e9b520b81688df56f15fd0dfddbb0d51d03/">c0c83e9b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: librsvg: v 2.40.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a592a7ecb46b7250d6090dbab2ff75efb4e4ec25/">a592a7ec</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libsigc++: v 2.4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c50d1bb1a7d56d2fda7765293b1860a184228b20/">c50d1bb1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libtasn1: v 4.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/989d94c4885074da3a184402fe9b52a31d6a14e4/">989d94c4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ModemManager: v 1.4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d8af27dca829e896bead613263a341080ebbf2ce/">d8af27dc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: mm-common: v 0.9.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ab0853a05d9c1087cd97174d3f97f4456f8dabb2/">ab0853a0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: p11-kit: v 0.21.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6945537a4bd3ef23b1beeaee88485c3af82d57cb/">6945537a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: pinentry: v 0.8.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/06f3cc821958ab6d4c346167a1463bd4598ec774/">06f3cc82</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: pycurl: v 7.19.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dc18aa0c690541ec126a0eb1267e5a38d548aa5a/">dc18aa0c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ruby: v 2.1.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1bb7be82d7125c282653b735a7866f006bac80f1/">1bb7be82</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: tcl: v 8.6.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4355939e4ea08bae24b6e9ade667b5937ead2eb5/">4355939e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: wireshark: v 1.12.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fe4f608f06e30cf8d6c2875fc49f6834c0364c20/">fe4f608f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: x264: v 20140920-2245
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/35bc1983602d80b15da2bfd1edb20344fba59e78/">35bc1983</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xorg-server: v 1.16.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8745df1dc7fee12f3766197ebac4ef93970e3425/">8745df1d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: qt: v 5.3.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/335245c0d4a01a890516709335e9e59656cf5b89/">335245c0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: bfgminer: v 4.8.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/56417075f4457508ffc96edb6ea0fa56e338aa7e/">56417075</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libblkmaker: v 0.5.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/366fa77b4e8a63034c45a5c826a5d60badfca527/">366fa77b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: uthash: v 1.9.9
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ad1517e4f700c7e76d81fc2e3207b4bdfa4c767b/">ad1517e4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: bitcoin: v 0.9.2.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9787bf9dd58d0cafd50b5de5ba526f63a7b97284/">9787bf9d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dogecoin: v 1.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/583881b59447b1ef2b8ae593d93a52e6a3c3f9bf/">583881b5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: litecoin: v 0.8.7.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3d5e0bd0addc7d8ca0685bfb61d9265baed388f3/">3d5e0bd0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: glib: v 2.40.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fd3d399691bf807b4e7b0a65411ec6e80fa7cbbe/">fd3d3996</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnutls: v 3.3.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/56b9e347a0524150b2f65a41041acb5000f23713/">56b9e347</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: samba: v 4.1.12
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/573eb294e1755d9f9cfb8dbf6c4d71577f08ea52/">573eb294</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xz: v 5.0.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5e5758a5693a5fb9da41a6249a3dcb162be379c1/">5e5758a5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostscript: v 9.15
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c61ea7dbf56cca3cd32c47bdf84eb45020e80fe9/">c61ea7db</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libevdev: v 1.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cde45f7db9baedc35f6c9a893d2fba6df9cd7e71/">cde45f7d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libsoup: v 2.48.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e1df78091ad87c9fbd63fc23e5076877dac00873/">e1df7809</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: pango: v 1.36.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5f220fbe985476fd226d6a8dc7cac105e73d06f4/">5f220fbe</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: parallel: v 20140922
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a3e027e70c900fa1b041893d906bef88585a7b53/">a3e027e7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: glib: v 2.42.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1d50d2ef42c47e7cded4fc74f32c35cb0038b1f3/">1d50d2ef</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: glib-networking: v 2.42.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3e45e47aa52ea51c63218b1dd86de0c61cbca7fd/">3e45e47a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: glibmm: v 2.42.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fa0bbdfc24407269ca59206ad132f6df7dfbd4e1/">fa0bbdfc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gtk2+: v 2.24.24
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/612dcdc6f86f1b9e308a9689a949417e47534884/">612dcdc6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 5.4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/58175d9f0e4a0324e506390b81b03aa3782c09a7/">58175d9f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.42
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c78f8c02f3f5eee606c332de7f9c8def130da49b/">c78f8c02</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nss: v 3.17.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e66f29cbddbc35f021c3eaee948ac0a12ca559bb/">e66f29cb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 31.1.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/573e69e41e8f30923cd5421fd51389a9631906af/">573e69e4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: firefox: v 32.0.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/60734a73bced80d84233262f2a49e7d7a16f6215/">60734a73</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dash: v 0.5.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/59243fc918cdd7ecb5d9d5cc3b7fa22d10313699/">59243fc9</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_7_0_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+	<listitem><para>
+		IMPROVE: ghostscript-fonts-*: link into /share/fonts, and process with fc-cache
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fe548b5deebe7a2ecdca45859f7f0c2a11aae830/">fe548b5d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: alsa-firmware alsa-plugins alsa-utils: we are using pulseaudio
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/148f576d57606d54053a7d9eaaafa66336fb0371/">148f576d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: iproute2: move iproute2 after iptables
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/466011a9e7310712b6fc7c617d37d31f5ae22095/">466011a9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: limit output when downloading files
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4601b7c1ada96afd3db5049d5c2e401370ab32ba/">4601b7c1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: xorg-server: remove --enable-xcsecurity; add --without-dtrace
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6b04e7ae2008a69c3cba6b9bf60b41aef3e4b59b/">6b04e7ae</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gdm: better configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f82db33c9eb03cd1ee36e93d0ce9e2b52ef0e01b/">f82db33c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxTools: remove kx_strace; we are now using systemtap
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ff01c643776f0a1af178461e298f462b12b7fa22/">ff01c643</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: libvorbis: -fpic -fPIC
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/39a9be8c37004ced05d5da4ecd61f2dcc1b191c0/">39a9be8c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: thunderbird: better configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dcefa0a7224cec28292ebf1255e81442ddde98b5/">dcefa0a7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: xf86-video-vmware: temporarily disable xf86-video-vmware
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/af8b8983f8097cf5b98f691dc14df451ba324870/">af8b8983</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: add key to gpg_keys
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e7dd2cb40c3538b17bc056270eb6a31101aab451/">e7dd2cb4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: accerciser: upstream_gnome_uneven
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/05b288cc9b941737bbcd3a45a386b3890d2e2024/">05b288cc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: gnome-user-docs: upstream_gnome_uneven
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f0b94026b4775b5d1af1621ad064e4db20e23130/">f0b94026</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: firefox: enable-debug-symbols
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0afc3ed2e15c79b505ca40afed36b86dd188c2ff/">0afc3ed2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gtk2+: --with-xinput and fight unused direct deps
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e111f80febfce3675c817d8510bb114dece88a32/">e111f80f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1ac9c81cd5cb65d8e0de2a0cecb9005962bb8883/">1ac9c81c</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/458b5ee6754ff638620af0b4497c2b671d36d216/">458b5ee6</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/d1096888cb27ccced9cc940c6d107ba5311f57a6/">d1096888</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/c9f8f5e1f81874b1fdbcbcea266ee2e131e73b9a/">c9f8f5e1</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

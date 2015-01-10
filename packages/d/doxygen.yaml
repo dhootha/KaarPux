@@ -1,0 +1,29 @@
+package:
+  name: doxygen
+  version: 1.8.8
+  www: http://www.stack.nl/~dimitri/doxygen/
+  short: Doxygen is a documentation system for C++, C, Java, Objective-C, Python, IDL (Corba and Microsoft flavors), Fortran, VHDL, PHP, C#, and to some extent D.
+
+download:
+  url: ftp://ftp.stack.nl/pub/doxygen
+  file: doxygen-${KX_DOXYGEN_VERSION}.src.tar.gz
+  checksum: 158e7834f05e0aeea5794b23c1e775ddfebafc709543e47f6fff9d81b190ade1
+
+version: ~
+
+linux:
+  - build:
+    - configure: --prefix "${KX_PREFIX}"
+    - make: ~
+
+  - test:
+    # We do not have bibtex installed, so do not test it
+    - sh: rm -r testing/012*
+    - sh: make test
+
+  - install:
+    - install: ~ 
+
+
+verify_cli: |
+  kx_cli_success doxygen --version

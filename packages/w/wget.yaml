@@ -1,0 +1,35 @@
+package:
+  name: wget
+  version: 1.16
+  www: http://www.gnu.org/software/wget/
+  short: Retrieving files using HTTP, HTTPS and FTP, the most widely-used Internet protocols.
+
+download:
+  gnux: ~
+  checksum: 9261dd090a17687b6dc0682a257e90a926def15624b650e8f799af57e5c8b0e7
+
+version:
+  installed: kxver_sh_pattern("wget --version", qr|Wget ([0-9]+[0-9.]*[0-9]+) |);
+  wiz_savannah: ~
+  changelog: NEWS
+
+bootstrap_8:
+  - configure_kx: >
+      --sysconfdir=/etc
+      --with-ssl=openssl
+  - make: ~
+  - check: ~
+  - install: ~
+
+verify_cli: |
+  kx_cli_match_success "/bin/wget -V" { Wget }
+  if [catch {
+    set filename "wgettest_[pid]_[clock microseconds].sh"
+  } reason] then {
+    fail "wget test failed: $reason";
+  } else {
+    kx_cli_match_success "/bin/wget -O ./$filename www.google.com" "google"
+  }
+  catch { file delete "$filename" }
+
+

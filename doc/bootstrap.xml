@@ -1,0 +1,42 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="bootstrap">
+<title>Bootstrapping KaarPux</title>
+
+<!-- ============================================================ -->
+
+<section id="bootstrap_build_all_packages">
+<title>Build all packages</title>
+<para>
+After setting everything up properly as described in <xref linkend="prepare"/>,
+&kx; can now be bootstrapped:
+<programlisting>
+&kx_as_root;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+bootstrap/host_scripts/complete_bootstrap.sh
+</programlisting>
+
+Progress (or error) messages will be shown on the terminal,
+and also piped to <filename>build.log</filename>
+
+</para>
+
+<para>
+You are now ready to <xref linkend="prepare_boot"/>
+</para>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>
+

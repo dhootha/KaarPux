@@ -1,0 +1,767 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_1_0">
+<title>Changes in KaarPux version 4.1.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.1.0</systemitem> released on <systemitem>2014-02-02</systemitem>
+</para>
+
+<para>
+
+	Most packages updated to latest stable version. In particular:
+	<itemizedlist>
+
+		<listitem><para>
+		Java updated to version 7 u 51 b 31 / IcedTea 2.4.5
+		</para></listitem>
+
+		<listitem><para>
+		Gnome packages updated to version 3.10
+		</para></listitem>
+
+		<listitem><para>
+		gcc updated to 4.8.2
+		</para></listitem>
+
+		<listitem><para>
+		Linux Kernel updated to version 3.12.9
+		</para></listitem>
+
+	</itemizedlist>
+
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_0_upd">
+<title>Packages updated</title>
+
+<table id="changes_4_1_0_table"><title></title><tgroup cols='2' align='center' colsep='1' rowsep='1'>
+	<colspec colname='package'/>
+	<colspec colname='version'/>
+	<thead>
+		<row>
+		<entry>package</entry>
+		<entry>version</entry>
+		</row>
+	</thead>
+	<tbody>
+
+<row><entry>accountsservice</entry><entry>0.6.35</entry></row>
+<row><entry>acl</entry><entry>2.2.52</entry></row>
+<row><entry>alsa-firmware</entry><entry>1.0.27</entry></row>
+<row><entry>alsa-lib</entry><entry>1.0.27.2</entry></row>
+<row><entry>alsa-plugins</entry><entry>1.0.27</entry></row>
+<row><entry>alsa-utils</entry><entry>1.0.27.2</entry></row>
+<row><entry>apache-ant</entry><entry>1.9.3</entry></row>
+<row><entry>asciidoc</entry><entry>8.6.9</entry></row>
+<row><entry>astroid</entry><entry>1.0.1</entry></row>
+<row><entry>at-spi2-atk</entry><entry>2.10.2</entry></row>
+<row><entry>at-spi2-core</entry><entry>2.10.2</entry></row>
+<row><entry>atk</entry><entry>2.10.0</entry></row>
+<row><entry>attr</entry><entry>2.4.47</entry></row>
+<row><entry>automake</entry><entry>1.14.1</entry></row>
+<row><entry>baobab</entry><entry>3.10.1</entry></row>
+<row><entry>berkeley-db</entry><entry>6.0.20</entry></row>
+<row><entry>bison</entry><entry>3.0.2</entry></row>
+<row><entry>bluez</entry><entry>5.14</entry></row>
+<row><entry>boost</entry><entry>1.55.0</entry></row>
+<row><entry>busybox</entry><entry>1.22.1</entry></row>
+<row><entry>cairo</entry><entry>1.12.16</entry></row>
+<row><entry>cantarell-fonts</entry><entry>0.0.15</entry></row>
+<row><entry>caribou</entry><entry>0.4.13</entry></row>
+<row><entry>check</entry><entry>0.9.11</entry></row>
+<row><entry>cheese</entry><entry>3.10.2</entry></row>
+<row><entry>clutter</entry><entry>1.16.4</entry></row>
+<row><entry>clutter-gst</entry><entry>2.0.10</entry></row>
+<row><entry>cmake</entry><entry>2.8.12.1</entry></row>
+<row><entry>codelite</entry><entry>5.4</entry></row>
+<row><entry>cogl</entry><entry>1.16.2</entry></row>
+<row><entry>colord</entry><entry>1.1.6</entry></row>
+<row><entry>coq</entry><entry>8.4pl3</entry></row>
+<row><entry>cracklib</entry><entry>2.9.1</entry></row>
+<row><entry>cups</entry><entry>1.7.1</entry></row>
+<row><entry>cups-filters</entry><entry>1.0.44</entry></row>
+<row><entry>curl</entry><entry>7.34.0</entry></row>
+<row><entry>d-feet</entry><entry>0.3.8</entry></row>
+<row><entry>DBD-SQLite</entry><entry>1.38_03</entry></row>
+<row><entry>DBI</entry><entry>1.630</entry></row>
+<row><entry>dbus</entry><entry>1.8.0</entry></row>
+<row><entry>dconf</entry><entry>0.18.0</entry></row>
+<row><entry>dejagnu</entry><entry>1.5.1</entry></row>
+<row><entry>dejavu-fonts-ttf</entry><entry>2.34</entry></row>
+<row><entry>desktop-file-utils</entry><entry>0.22</entry></row>
+<row><entry>device-mapper</entry><entry>2.02.105</entry></row>
+<row><entry>dhcpcd</entry><entry>6.2.1</entry></row>
+<row><entry>diffutils</entry><entry>3.3</entry></row>
+<row><entry>Digest-MD5</entry><entry>2.53</entry></row>
+<row><entry>docbook-xsl</entry><entry>1.78.1</entry></row>
+<row><entry>dosfstools</entry><entry>3.0.25</entry></row>
+<row><entry>doxygen</entry><entry>1.8.6</entry></row>
+<row><entry>e2fsprogs</entry><entry>1.42.9</entry></row>
+<row><entry>ed</entry><entry>1.9</entry></row>
+<row><entry>efibootmgr</entry><entry>0.6.0</entry></row>
+<row><entry>elfutils</entry><entry>0.158</entry></row>
+<row><entry>empathy</entry><entry>3.10.3</entry></row>
+<row><entry>eog</entry><entry>3.10.2</entry></row>
+<row><entry>epiphany</entry><entry>3.10.3</entry></row>
+<row><entry>evince</entry><entry>3.10.3</entry></row>
+<row><entry>evolution</entry><entry>3.10.3</entry></row>
+<row><entry>evolution-data-server</entry><entry>3.10.3</entry></row>
+<row><entry>exiv2</entry><entry>0.24</entry></row>
+<row><entry>farstream</entry><entry>0.2.3</entry></row>
+<row><entry>file</entry><entry>5.16</entry></row>
+<row><entry>file-roller</entry><entry>3.10.2.1</entry></row>
+<row><entry>findlib</entry><entry>1.4</entry></row>
+<row><entry>folks</entry><entry>0.9.6</entry></row>
+<row><entry>fontconfig</entry><entry>2.11.0</entry></row>
+<row><entry>foomatic-db</entry><entry>4.0-20140124</entry></row>
+<row><entry>freetype</entry><entry>2.5.2</entry></row>
+<row><entry>gawk</entry><entry>4.1.0</entry></row>
+<row><entry>gcc</entry><entry>4.8.2</entry></row>
+<row><entry>gcc-libstdc++</entry><entry>4.8.2</entry></row>
+<row><entry>gcr</entry><entry>3.10.1</entry></row>
+<row><entry>gdbm</entry><entry>1.11</entry></row>
+<row><entry>gdk-pixbuf</entry><entry>2.30.3</entry></row>
+<row><entry>gdl</entry><entry>3.10.0</entry></row>
+<row><entry>gdm</entry><entry>3.10.0.1</entry></row>
+<row><entry>gedit</entry><entry>3.10.4</entry></row>
+<row><entry>gedit-plugins</entry><entry>3.10.1</entry></row>
+<row><entry>geoclue2</entry><entry>2.1.0</entry></row>
+<row><entry>geocode-glib</entry><entry>3.10.0</entry></row>
+<row><entry>gettext</entry><entry>0.18.3.2</entry></row>
+<row><entry>ghostscript</entry><entry>9.10</entry></row>
+<row><entry>gimp</entry><entry>2.8.10</entry></row>
+<row><entry>git</entry><entry>1.8.5.3</entry></row>
+<row><entry>gjs</entry><entry>1.38.1</entry></row>
+<row><entry>glade</entry><entry>3.16.1</entry></row>
+<row><entry>glew</entry><entry>1.10.0</entry></row>
+<row><entry>glib</entry><entry>2.38.2</entry></row>
+<row><entry>glib-networking</entry><entry>2.38.2</entry></row>
+<row><entry>glibc</entry><entry>2.18</entry></row>
+<row><entry>glibmm</entry><entry>2.38.1</entry></row>
+<row><entry>glproto</entry><entry>1.4.17</entry></row>
+<row><entry>gmime</entry><entry>2.6.19</entry></row>
+<row><entry>gmp</entry><entry>5.1.3</entry></row>
+<row><entry>gnome-backgrounds</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-bluetooth</entry><entry>3.10.0</entry></row>
+<row><entry>gnome-calculator</entry><entry>3.10.2</entry></row>
+<row><entry>gnome-clocks</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-color-manager</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-common</entry><entry>3.10.0</entry></row>
+<row><entry>gnome-contacts</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-control-center</entry><entry>3.10.2</entry></row>
+<row><entry>gnome-desktop</entry><entry>3.10.2</entry></row>
+<row><entry>gnome-dictionary</entry><entry>3.10.0</entry></row>
+<row><entry>gnome-disk-utility</entry><entry>3.10.0</entry></row>
+<row><entry>gnome-font-viewer</entry><entry>3.10.0</entry></row>
+<row><entry>gnome-icon-theme</entry><entry>3.10.0</entry></row>
+<row><entry>gnome-icon-theme-symbolic</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-keyring</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-menus</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-online-accounts</entry><entry>3.10.2</entry></row>
+<row><entry>gnome-screenshot</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-session</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-settings-daemon</entry><entry>3.10.2</entry></row>
+<row><entry>gnome-shell</entry><entry>3.10.3</entry></row>
+<row><entry>gnome-shell-extensions</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-system-monitor</entry><entry>3.10.2</entry></row>
+<row><entry>gnome-terminal</entry><entry>3.10.2</entry></row>
+<row><entry>gnome-themes-standard</entry><entry>3.10.0</entry></row>
+<row><entry>gnome-tweak-tool</entry><entry>3.10.1</entry></row>
+<row><entry>gnome-user-docs</entry><entry>3.10.2</entry></row>
+<row><entry>gnutls</entry><entry>3.2.10</entry></row>
+<row><entry>gobject-introspection</entry><entry>1.38.0</entry></row>
+<row><entry>gpgme</entry><entry>1.4.3</entry></row>
+<row><entry>gptfdisk</entry><entry>0.8.8</entry></row>
+<row><entry>graphviz</entry><entry>2.36.0</entry></row>
+<row><entry>greenbone-security-assistant</entry><entry>4.0.2</entry></row>
+<row><entry>grep</entry><entry>2.16</entry></row>
+<row><entry>grilo</entry><entry>0.2.7</entry></row>
+<row><entry>grilo-plugins</entry><entry>0.2.9</entry></row>
+<row><entry>groff</entry><entry>1.22.2</entry></row>
+<row><entry>gsettings-desktop-schemas</entry><entry>3.10.1</entry></row>
+<row><entry>gssdp</entry><entry>0.14.6</entry></row>
+<row><entry>gst-libav</entry><entry>1.2.2</entry></row>
+<row><entry>gst-plugins-bad</entry><entry>1.2.2</entry></row>
+<row><entry>gst-plugins-base</entry><entry>1.2.2</entry></row>
+<row><entry>gst-plugins-good</entry><entry>1.2.2</entry></row>
+<row><entry>gst-plugins-ugly</entry><entry>1.2.2</entry></row>
+<row><entry>gstreamer</entry><entry>1.2.2</entry></row>
+<row><entry>gtk+</entry><entry>3.10.7</entry></row>
+<row><entry>gtkhtml</entry><entry>4.6.6</entry></row>
+<row><entry>gtkmm</entry><entry>3.10.1</entry></row>
+<row><entry>gtksourceview</entry><entry>3.10.2</entry></row>
+<row><entry>gucharmap</entry><entry>3.10.1</entry></row>
+<row><entry>gvfs</entry><entry>1.18.3</entry></row>
+<row><entry>harfbuzz</entry><entry>0.9.25</entry></row>
+<row><entry>hdparm</entry><entry>9.43</entry></row>
+<row><entry>help2man</entry><entry>1.43.3</entry></row>
+<row><entry>hicolor-icon-theme</entry><entry>0.13</entry></row>
+<row><entry>hplip</entry><entry>3.14.1</entry></row>
+<row><entry>HTML-Parser</entry><entry>3.71</entry></row>
+<row><entry>HTTP-Message</entry><entry>6.06</entry></row>
+<row><entry>hyphen</entry><entry>2.8.6</entry></row>
+<row><entry>iceauth</entry><entry>1.0.6</entry></row>
+<row><entry>icedtea7</entry><entry>2.4.5</entry></row>
+<row><entry>icu</entry><entry>52.1</entry></row>
+<row><entry>inetutils</entry><entry>1.9.2</entry></row>
+<row><entry>IO-Compress</entry><entry>2.063</entry></row>
+<row><entry>IO-Socket-SSL</entry><entry>1.965</entry></row>
+<row><entry>iproute2</entry><entry>3.12.0</entry></row>
+<row><entry>iptables</entry><entry>1.4.21</entry></row>
+<row><entry>iso-codes</entry><entry>3.50</entry></row>
+<row><entry>itstool</entry><entry>2.0.2</entry></row>
+<row><entry>Jinja2</entry><entry>2.7.2</entry></row>
+<row><entry>json-c</entry><entry>0.11</entry></row>
+<row><entry>json-glib</entry><entry>0.16.2</entry></row>
+<row><entry>kbd</entry><entry>2.0.1</entry></row>
+<row><entry>kmod</entry><entry>16</entry></row>
+<row><entry>krb5</entry><entry>1.12.1</entry></row>
+<row><entry>lablgtk</entry><entry>2.18.0</entry></row>
+<row><entry>ldns</entry><entry>1.6.17</entry></row>
+<row><entry>less</entry><entry>458</entry></row>
+<row><entry>libassuan</entry><entry>2.1.1</entry></row>
+<row><entry>libchamplain</entry><entry>0.12.5</entry></row>
+<row><entry>libclc</entry><entry>d9a654573ace0405ca1c7ef8d3dc2bdd43d8052f</entry></row>
+<row><entry>libdrm</entry><entry>2.4.52</entry></row>
+<row><entry>libdvdread</entry><entry>4.2.1</entry></row>
+<row><entry>libgcrypt</entry><entry>1.6.0</entry></row>
+<row><entry>libgdata</entry><entry>0.14.1</entry></row>
+<row><entry>libgee</entry><entry>0.13.4</entry></row>
+<row><entry>libgnome-keyring</entry><entry>3.10.1</entry></row>
+<row><entry>libgpg-error</entry><entry>1.12</entry></row>
+<row><entry>libgphoto2</entry><entry>2.5.3.1</entry></row>
+<row><entry>libgtop</entry><entry>2.28.5</entry></row>
+<row><entry>libgweather</entry><entry>3.10.1</entry></row>
+<row><entry>libmicrohttpd</entry><entry>0.9.33</entry></row>
+<row><entry>libnetfilter_acct</entry><entry>1.0.2</entry></row>
+<row><entry>libnetfilter_conntrack</entry><entry>1.0.4</entry></row>
+<row><entry>libnfnetlink</entry><entry>1.0.1</entry></row>
+<row><entry>libnl</entry><entry>3.2.24</entry></row>
+<row><entry>libnotify</entry><entry>0.7.6</entry></row>
+<row><entry>libogg</entry><entry>1.3.1</entry></row>
+<row><entry>libpcap</entry><entry>1.5.3</entry></row>
+<row><entry>libpciaccess</entry><entry>0.13.2</entry></row>
+<row><entry>libpeas</entry><entry>1.9.0</entry></row>
+<row><entry>libpipeline</entry><entry>1.2.6</entry></row>
+<row><entry>libpng</entry><entry>1.6.8</entry></row>
+<row><entry>libpwquality</entry><entry>1.2.3</entry></row>
+<row><entry>libquvi-scripts</entry><entry>0.4.21</entry></row>
+<row><entry>librsvg</entry><entry>2.40.1</entry></row>
+<row><entry>libsecret</entry><entry>0.16</entry></row>
+<row><entry>libSM</entry><entry>1.2.2</entry></row>
+<row><entry>libsoup</entry><entry>2.44.2</entry></row>
+<row><entry>libtasn1</entry><entry>3.4</entry></row>
+<row><entry>libtirpc</entry><entry>0.2.4</entry></row>
+<row><entry>libusb-compat</entry><entry>0.1.5</entry></row>
+<row><entry>libvorbis</entry><entry>1.3.4</entry></row>
+<row><entry>libvpx</entry><entry>1.3.0</entry></row>
+<row><entry>libwacom</entry><entry>0.8</entry></row>
+<row><entry>libwebp</entry><entry>0.4.0</entry></row>
+<row><entry>libwnck</entry><entry>3.4.7</entry></row>
+<row><entry>libX11</entry><entry>1.6.2</entry></row>
+<row><entry>libXaw</entry><entry>1.0.12</entry></row>
+<row><entry>libXfont</entry><entry>1.4.7</entry></row>
+<row><entry>libXft</entry><entry>2.3.1</entry></row>
+<row><entry>libXi</entry><entry>1.7.2</entry></row>
+<row><entry>libXmu</entry><entry>1.1.2</entry></row>
+<row><entry>libXpm</entry><entry>3.5.11</entry></row>
+<row><entry>libXrandr</entry><entry>1.4.2</entry></row>
+<row><entry>libXv</entry><entry>1.0.10</entry></row>
+<row><entry>linux</entry><entry>3.12.9</entry></row>
+<row><entry>linux-pam</entry><entry>1.1.8</entry></row>
+<row><entry>lm_sensors</entry><entry>3.3.5</entry></row>
+<row><entry>logilab-common</entry><entry>0.60.1</entry></row>
+<row><entry>lshw</entry><entry>B.02.17</entry></row>
+<row><entry>lua</entry><entry>5.2.3</entry></row>
+<row><entry>LWP-Protocol-https</entry><entry>6.04</entry></row>
+<row><entry>m4</entry><entry>1.4.17</entry></row>
+<row><entry>make</entry><entry>4.0</entry></row>
+<row><entry>makedepend</entry><entry>1.0.5</entry></row>
+<row><entry>man-db</entry><entry>2.6.6</entry></row>
+<row><entry>man-pages</entry><entry>3.57</entry></row>
+<row><entry>MarkupSafe</entry><entry>0.18</entry></row>
+<row><entry>mercurial</entry><entry>2.8.2</entry></row>
+<row><entry>MesaLib</entry><entry>10.0.2</entry></row>
+<row><entry>MIME-Base64</entry><entry>3.14</entry></row>
+<row><entry>mkfontscale</entry><entry>1.1.1</entry></row>
+<row><entry>mousetweaks</entry><entry>3.10.0</entry></row>
+<row><entry>mozjs</entry><entry>17.0.0</entry></row>
+<row><entry>mpc</entry><entry>1.0.2</entry></row>
+<row><entry>mutter</entry><entry>3.10.3</entry></row>
+<row><entry>nasm</entry><entry>2.11</entry></row>
+<row><entry>nautilus</entry><entry>3.10.1</entry></row>
+<row><entry>nautilus-sendto</entry><entry>3.8.1</entry></row>
+<row><entry>nemiver</entry><entry>0.9.5</entry></row>
+<row><entry>neon</entry><entry>0.30.0</entry></row>
+<row><entry>Net-HTTP</entry><entry>6.06</entry></row>
+<row><entry>Net-SSLeay</entry><entry>1.58</entry></row>
+<row><entry>network-manager-applet</entry><entry>0.9.8.8</entry></row>
+<row><entry>NetworkManager</entry><entry>0.9.8.8</entry></row>
+<row><entry>nmap</entry><entry>6.40</entry></row>
+<row><entry>noscript</entry><entry>2.6.8.13</entry></row>
+<row><entry>nose</entry><entry>1.3.0</entry></row>
+<row><entry>ocaml</entry><entry>4.01.0</entry></row>
+<row><entry>OpenJDK-7-bin</entry><entry>1.7.0.51</entry></row>
+<row><entry>openssh</entry><entry>6.5p1</entry></row>
+<row><entry>openvas-administrator</entry><entry>1.3.2</entry></row>
+<row><entry>openvas-libraries</entry><entry>6.0.1</entry></row>
+<row><entry>openvas-manager</entry><entry>4.0.4</entry></row>
+<row><entry>orc</entry><entry>0.4.18</entry></row>
+<row><entry>orca</entry><entry>3.10.2</entry></row>
+<row><entry>os-prober</entry><entry>1.63</entry></row>
+<row><entry>p11-kit</entry><entry>0.20.2</entry></row>
+<row><entry>pango</entry><entry>1.36.1</entry></row>
+<row><entry>pciutils</entry><entry>3.2.1</entry></row>
+<row><entry>pcre</entry><entry>8.34</entry></row>
+<row><entry>pep8</entry><entry>1.4.6</entry></row>
+<row><entry>perl</entry><entry>5.18.2</entry></row>
+<row><entry>pixman</entry><entry>0.32.4</entry></row>
+<row><entry>polkit</entry><entry>0.112</entry></row>
+<row><entry>poppler</entry><entry>0.25.1</entry></row>
+<row><entry>presentproto</entry><entry>1.0</entry></row>
+<row><entry>procps-ng</entry><entry>3.3.9</entry></row>
+<row><entry>pyatspi</entry><entry>2.10.0</entry></row>
+<row><entry>pyatspi3</entry><entry>2.10.0</entry></row>
+<row><entry>pycups</entry><entry>1.9.66</entry></row>
+<row><entry>pycurl</entry><entry>7.19.3</entry></row>
+<row><entry>pygobject</entry><entry>3.10.2</entry></row>
+<row><entry>pygobject33</entry><entry>3.10.2</entry></row>
+<row><entry>pyparsing</entry><entry>2.0.1</entry></row>
+<row><entry>Python</entry><entry>3.3.3</entry></row>
+<row><entry>python-twisted</entry><entry>13.2.0</entry></row>
+<row><entry>Python2</entry><entry>2.7.6</entry></row>
+<row><entry>qpdf</entry><entry>5.1.1</entry></row>
+<row><entry>rdesktop</entry><entry>1.8.1</entry></row>
+<row><entry>rsync</entry><entry>3.1.0</entry></row>
+<row><entry>ruby</entry><entry>2.1.0</entry></row>
+<row><entry>samba</entry><entry>4.1.4</entry></row>
+<row><entry>seahorse</entry><entry>3.10.2</entry></row>
+<row><entry>sg3_utils</entry><entry>1.37</entry></row>
+<row><entry>shared-mime-info</entry><entry>1.2</entry></row>
+<row><entry>spice-gtk</entry><entry>0.22</entry></row>
+<row><entry>sqlite</entry><entry>3.8.2</entry></row>
+<row><entry>strace</entry><entry>4.8</entry></row>
+<row><entry>sudo</entry><entry>1.8.9p4</entry></row>
+<row><entry>sysstat</entry><entry>10.2.0</entry></row>
+<row><entry>system-config-printer</entry><entry>1.4.3</entry></row>
+<row><entry>taglib</entry><entry>1.9.1</entry></row>
+<row><entry>tar</entry><entry>1.27.1</entry></row>
+<row><entry>tcl</entry><entry>8.6.1</entry></row>
+<row><entry>tcpdump</entry><entry>4.5.1</entry></row>
+<row><entry>telepathy-glib</entry><entry>0.23.0</entry></row>
+<row><entry>telepathy-mission-control</entry><entry>5.16.1</entry></row>
+<row><entry>texinfo</entry><entry>5.2</entry></row>
+<row><entry>tk</entry><entry>8.6.1</entry></row>
+<row><entry>totem</entry><entry>3.10.1</entry></row>
+<row><entry>totem-pl-parser</entry><entry>3.10.0</entry></row>
+<row><entry>tracker</entry><entry>0.16.4</entry></row>
+<row><entry>twm</entry><entry>1.0.8</entry></row>
+<row><entry>tzdata</entry><entry>2013i</entry></row>
+<row><entry>udisks</entry><entry>2.1.2</entry></row>
+<row><entry>ulogd</entry><entry>2.0.3</entry></row>
+<row><entry>upower</entry><entry>0.9.23</entry></row>
+<row><entry>usbutils</entry><entry>007</entry></row>
+<row><entry>util-macros</entry><entry>1.18.0</entry></row>
+<row><entry>vala</entry><entry>0.23.1</entry></row>
+<row><entry>valgrind</entry><entry>3.9.0</entry></row>
+<row><entry>videoproto</entry><entry>2.3.2</entry></row>
+<row><entry>vim</entry><entry>7.4</entry></row>
+<row><entry>vinagre</entry><entry>3.10.2</entry></row>
+<row><entry>vino</entry><entry>3.10.1</entry></row>
+<row><entry>vte</entry><entry>0.34.9</entry></row>
+<row><entry>wavpack</entry><entry>4.70.0</entry></row>
+<row><entry>WebKit</entry><entry>2.3.4</entry></row>
+<row><entry>wget</entry><entry>1.15</entry></row>
+<row><entry>wireshark</entry><entry>1.10.5</entry></row>
+<row><entry>wxWidgets</entry><entry>3.0.0</entry></row>
+<row><entry>x264</entry><entry>20140126-2245</entry></row>
+<row><entry>xauth</entry><entry>1.0.8</entry></row>
+<row><entry>xbacklight</entry><entry>1.2.1</entry></row>
+<row><entry>xclock</entry><entry>1.0.7</entry></row>
+<row><entry>xcursor-themes</entry><entry>1.0.4</entry></row>
+<row><entry>xextproto</entry><entry>7.3.0</entry></row>
+<row><entry>xf86-input-evdev</entry><entry>2.8.2</entry></row>
+<row><entry>xf86-input-keyboard</entry><entry>1.8.0</entry></row>
+<row><entry>xf86-input-wacom</entry><entry>0.23.0</entry></row>
+<row><entry>xf86-video-mga</entry><entry>1.6.3</entry></row>
+<row><entry>xf86-video-nouveau</entry><entry>1.0.10</entry></row>
+<row><entry>xf86-video-savage</entry><entry>2.3.7</entry></row>
+<row><entry>xf86-video-vesa</entry><entry>2.3.3</entry></row>
+<row><entry>xfd</entry><entry>1.1.2</entry></row>
+<row><entry>xhost</entry><entry>1.0.6</entry></row>
+<row><entry>xinput</entry><entry>1.6.1</entry></row>
+<row><entry>xkill</entry><entry>1.0.4</entry></row>
+<row><entry>xlsclients</entry><entry>1.1.3</entry></row>
+<row><entry>xmodmap</entry><entry>1.0.8</entry></row>
+<row><entry>xorg-server</entry><entry>1.15.0</entry></row>
+<row><entry>xprop</entry><entry>1.2.2</entry></row>
+<row><entry>xrandr</entry><entry>1.4.1</entry></row>
+<row><entry>xrdb</entry><entry>1.1.0</entry></row>
+<row><entry>xset</entry><entry>1.2.3</entry></row>
+<row><entry>xterm</entry><entry>301</entry></row>
+<row><entry>xtrans</entry><entry>1.3.2</entry></row>
+<row><entry>xwd</entry><entry>1.0.6</entry></row>
+<row><entry>yaml</entry><entry>0.1.4</entry></row>
+<row><entry>yelp</entry><entry>3.10.1</entry></row>
+<row><entry>yelp-tools</entry><entry>3.10.0</entry></row>
+<row><entry>yelp-xsl</entry><entry>3.10.1</entry></row>
+<row><entry>zope.interface</entry><entry>4.0.5</entry></row>
+
+	</tbody>
+</tgroup></table>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_0_upd">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2849ede49aa9283865a45e7b8836a2462d9d38b1/">2849ede4</ulink>, <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9740604d4dd750f1d5a6f94f2027c9d4acf31fc5/">9740604d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: astro: replacement for logilab-astng
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c99665ad1dacdc1b9bd9d9d7c55e6d9d356a29bb/">c99665ad</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: MarkupSafe: prereq for Jinja2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6603cc8a6e29c18bc96683f05364ebf71c1fce71/">6603cc8a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pep8: prereq for d-feet
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5d4e2aed6321baec192aeb77fb20c6575c873d6b/">5d4e2aed</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: geocode-glib
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5f333663c092bea6f1f2d3d4e0fe55f76b404f94/">5f333663</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: geoclue2: newer version of geoclue, but we need to keep the old one around too
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f4bc3dd4b14432a32024a73acabec8503638a2fd/">f4bc3dd4</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_0_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: openssl: LinuxFromScratch patches
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9d44d60550c69d15bdc50f3bc6968e9bb75ce9d2/">9d44d605</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: wget: POD documentation correction
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/164cca5c7a024691831ad04bb8965c7d4831d28d/">164cca5c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gobject-introspection: remove old patch
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/02c06b169a65796403b1b54551fc52e7df2ad94d/">02c06b16</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: LWP-Protocol-https: add LWP-Protocol-https to perl_modules (removed by mistake in 2e6ef694)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ed5446aa329649cbbe05e34fcc0f9f0e8560278c/">ed5446aa</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: ltrace: add --disable-werror flag
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c0a0fc0a51ab78b8be241821d336831a03b3c0c5/">c0a0fc0a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: tcl: correct building and installation scripts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d73338bac01e3fdaf4938cb79c12343a4aa02632/">d73338ba</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libXft: correct tag in master.yaml
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/468997acbf432341f4bd8402140679d9b54a73e1/">468997ac</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: avahi: patch to work with glib 2.38
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dec8f17b5759a18d03fdacb663982d9992e3817e/">dec8f17b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gjs: configure with bash
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/29171eed1ed19daea989f6a3c94a8c9ee6a513d2/">29171eed</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: valgrind: remove old patch
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/003569245bc2fb8cfb9eecabd7c398cde6d9d74f/">00356924</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: lablgtk: correct download location
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bd070c905a096bde595548ce7924d271b6667caf/">bd070c90</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: wxWidgets: better compile options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bc12e6b059e53fb622b7f0953b35b2c47544cdf1/">bc12e6b0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: coq: correct version number
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9b54387216d6488ef3af19cea74cee627e3c78ec/">9b543872</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: configure_kx_bash to run under bash
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/208b7518537dddbafb7fbb9d4340392e8310a8a2/">208b7518</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gjs: run autoreconf under bash
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/522eda62ecd923a9dd8e100b279a0e8f1c1cf193/">522eda62</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: polkit:  work with mozjs-17
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/98c1701d7a8a011dc3d0aa2847827d62833829d6/">98c1701d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gnome-shell: remove old patch
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e7f1bccbeb1e588485542b80e835ef5e16e691c7/">e7f1bccb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gnome-tweak-tool: add DESTDIR= to make install
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/98ea404353710af45a1f2b9a94e0deadb93931bc/">98ea4043</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: cogl: build with gcc (unclear why clang causes crash in gnome-shell)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d8a174bbfd7201a21dca15917fe53252db217ded/">d8a174bb</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_0_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KxBuild: check signatures in kx_ver_wiz
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/39ead8e2c48ee30454c784fc54f0cd86afbe5e92/">39ead8e2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: added gpg keys
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2eb14252bef44abfddaf38578e348c1f5692b66c/">2eb14252</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: silence smartmatch warnings in perl >= 5.18
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a1d3cd03ee96d122b5b438ad42d6b9fea20ec43f/">a1d3cd03</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: replace $KX_PPP when checking for versions
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/66722551d07816cfbd41387813c51b5f90d63814/">66722551</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: new KX_???_VERSION_USCORE variable for packages with underscores instead of dots in version numbers
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6a382b74c965f28887edfd186b228604c95e65c1/">6a382b74</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: shared-color-profiles removed; handled by colord
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/022d19bb72600c54badcbd2ad376db94980d6fef/">022d19bb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: kx_ver_wiz to work with upstream FusionForge repos
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9222e2a1e93293f375dfb83b785a079fa330c0cd/">9222e2a1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: celt: mark as on hold (seems to be the only version working with spice)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/133455506b4fb2f2fde7e46c4f912cd0880dda3e/">13345550</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: yaml: check installed version with pkgconfig
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a2f7959fca14274b762fc81260924e85946105d4/">a2f7959f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: added gpg key
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3292306717032feee5cc5011bec7d5aa2ba38d9e/">32923067</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: pyparsing: add upstream version script
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/65ff8f3d40394cd617bffbc7494ae6a9db0ad449/">65ff8f3d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: added gpg keys
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/310f501767e815ff49536f49b718414827ca118d/">310f5017</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: geoclue: note that it is not adviced to update
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/10e7a2d28d91799f1a2071a34cb41ec946b7def1/">10e7a2d2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: folks: better configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1a2c80a6507c363834148f8a19c9a899243638e0/">1a2c80a6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: move qt before wireshark
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a05439a7d2693a1ba0fae9dae73310564470f115/">a05439a7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: coq: better upstream version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/43bf778d1c3cdd735d98392381f3aa93b590d53f/">43bf778d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: libevent: better upstream version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/98cba15393e7136e3a8c32fd63c0e8eafadeda77/">98cba153</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: rhino: better upstream version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/40c9574ab7902df7b14e94613a9d54a8a44a9220/">40c9574a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: flash_player_11: improve upstream version script
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f94317a8f2c021d4e63a1ee92e835b2446397277/">f94317a8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: codelite: better cmake flags
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8eed2171125905031b929d16f78d80fdc9514a11/">8eed2171</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: codelite: temporarily disable codelite
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/82e1a1edab61e3172a5a63b417bbc97fc190c199/">82e1a1ed</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: geoclue: update comment about geoclue2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/39dcc8f8e9776e5dd4b58ce76fb79932059e496d/">39dcc8f8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: clutter: correct upstream www
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/60315a608a6fe4cbf2b5e4edcec9af99631f4ffa/">60315a60</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: cogl: correct upstream www
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e1ef6fb28481f129d440faf244be614e4313358d/">e1ef6fb2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: MarkupSafe: correct www and description
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/33c159ee92f84bd32358c373e8e6a766d9325df4/">33c159ee</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: customize xref title generation to include only text of titles
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8681db056a1029655c87b6b5f06047417c3babee/">8681db05</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

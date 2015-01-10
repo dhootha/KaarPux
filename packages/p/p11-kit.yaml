@@ -1,0 +1,23 @@
+package:
+  name: p11-kit
+  version: 0.21.3
+  www: http://p11-glue.freedesktop.org/
+  short: An effort to use and promote PKCS#11 as glue between crypto libraries and security applications on the open source desktop.
+
+download:
+  url: http://p11-glue.freedesktop.org/releases
+  file_tar_gz: ~
+  checksum: ad94c0a180be8b19c7aad06f70c2ffe453ff3f8df6d3b013205b90dc4b392b70
+  verify: sig
+
+version:
+  installed_pkgconfig: p11-kit-1
+
+linux:
+  - build:
+    - configure_kx: --with-trust-paths=/etc/ssl/certs
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~

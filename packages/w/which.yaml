@@ -1,0 +1,22 @@
+package:
+  name: which
+  version: 2.20
+  www: http://savannah.gnu.org/projects/which/
+  short: Utility that is used to find which executable (or alias or shell function) is executed when entered on the shell prompt. 
+
+download:
+  gnuz: ~
+  checksum: 95be0501a466e515422cde4af46b2744
+
+version:
+  installed: kxver_sh_pattern("which --version", qr|which v([0-9]+[0-9.]*[0-9]+),|);
+
+bootstrap_8:
+    - configure_kx: ~
+    - make: ~
+    # 'make check' does nothing
+    - install: ~     
+
+verify_cli: |
+  kx_cli_match_success "/bin/which which" { /bin/which }
+

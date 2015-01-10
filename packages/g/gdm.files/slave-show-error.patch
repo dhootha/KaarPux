@@ -1,0 +1,28 @@
+#
+# This patch is part of KaarPux:
+# http://kaarpux.kaarposoft.dk/
+#
+# show the error message which caused
+# Failed to give slave programs access to the display. Trying to proceed.
+#
+
+diff -Naur gdm-3.12.2.ORIG/daemon/gdm-slave.c gdm-3.12.2/daemon/gdm-slave.c
+--- gdm-3.12.2.ORIG/daemon/gdm-slave.c	2014-03-19 16:15:29.000000000 +0100
++++ gdm-3.12.2/daemon/gdm-slave.c	2014-09-11 12:13:33.712377236 +0200
+@@ -296,8 +296,13 @@
+                 }
+ 
+                 XSync (slave->priv->server_display, False);
+-                if (gdm_error_trap_pop ()) {
+-                        g_warning ("Failed to give slave programs access to the display. Trying to proceed.");
++                gint gerror = gdm_error_trap_pop ();
++                if (gerror) {
++                        g_warning ("Failed to give slave programs access to the display.");
++                        gchar buf[64];
++                        XGetErrorText (slave->priv->server_display, gerror, buf, 63);
++                        g_warning ("The error was: %s", buf);
++                        g_warning ("Trying to proceed.");
+                 }
+         } else {
+                 g_debug ("GdmSlave: Connected to display %s", slave->priv->display_name);
+

@@ -1,0 +1,29 @@
+package:
+  name: xmlbeans
+  version: 2.6.0
+  www: http://xmlbeans.apache.org/
+  short: XMLBeans is a technology for accessing XML by binding it to Java types.
+
+doc: |
+  <para>
+    <systemitem>xmlbeans</systemitem> is not installed on the system as such.
+    It is simply left in the build directory, where the building of
+    <xref linkend="pkg_rhino" /> will pick it up as prerequisite.
+  </para>
+
+download:
+  url: http://archive.apache.org/dist/xmlbeans/binaries
+  file_tgz: ~
+  checksum: 08b336b553ea46134abf10536ee00138
+  verify: asc
+
+version: ~
+
+opt:
+
+  - build:
+    - echo: "No build"
+
+  - install_keep:
+    - echo: "No install"
+

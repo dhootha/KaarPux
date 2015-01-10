@@ -1,0 +1,653 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_3_0">
+<title>Changes in KaarPux version 4.3.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.3.0</systemitem> released on <systemitem>2014-may-13</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+			Support for Slackware host
+		</para></listitem>
+
+		<listitem><para>
+			Support for VMware player
+		</para></listitem>
+
+		<listitem><para>
+			Improve sshd usage
+		</para></listitem>
+
+		<listitem><para>
+			Download packages in parallel
+		</para></listitem>
+
+		<listitem><para>
+			Bugs fixed
+		</para></listitem>
+
+		<listitem><para>
+			Packages updated
+		</para></listitem>
+
+		<listitem><para>
+			libaio added
+		</para></listitem>
+
+		<listitem><para>
+			Packages Removed
+		</para></listitem>
+
+		<listitem><para>
+			Minor Changes
+		</para></listitem>
+
+	</itemizedlist>
+
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_slack">
+<title>Support for Slackware host</title>
+
+<itemizedlist>
+	<listitem><para>
+		IMPROVE: KxBuild: include instructions and script for slackware
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8ba12abdc5beb6f36cfd3ddb0b74b4e269641803/">8ba12abd</ulink>)
+	</para></listitem>
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_vmware">
+<title>Support for VMware player</title>
+
+<itemizedlist>
+	<listitem><para>
+		IMPROVE: linux: kernel config settings for VMware Player
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c55573408ab5d0fa4941850cb20d4770c027c60f/">c5557340</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: add CONFIG_DRM_VMWGFX_FBCON for VMware
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/60fdc5fff77f296a884c01d3d24ae334a74fe3d3/">60fdc5ff</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: xorg: add xf86-video-vmware for VMware
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0704d9690c9c7c2019a621c84d804ee4bc3494ff/">0704d969</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_sshd">
+<title>Improve sshd usage</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: haveged: unpredictable random number generator
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1e8e098a19f2d153f90d8d22ec7771662cac5a8c/">1e8e098a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+	IMPROVE: openssh: better config; host key generation on first boot
+	</para><para>
+		<itemizedlist>
+			<listitem><para>
+				generate ssh host keys on first boot
+			</para></listitem><listitem><para>
+				improve entropy harvesting on linux
+			</para></listitem><listitem><para>
+				config files in separate openssh.files
+			</para></listitem><listitem><para>
+				improved sshd_config
+			</para></listitem>
+		</itemizedlist>
+	</para><para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e83fd58167be190a4265d59c381346e271b25d7b/">e83fd581</ulink>
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_par">
+<title>Download packages in parallel</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: parallel: GNU parallel is a shell tool for executing jobs in parallel
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0294e29672745ee61fb271c653ac1152ff706057/">0294e296</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: Note that we now need 'GNU parallel' on the host
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e504c443c8d6ecd55a2cfd4450ef47efa776cdbf/">e504c443</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: note that parallel needs to be at least version 20130822
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ad79f864eb22af8b8267310ff079872a317981e6/">ad79f864</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: download_packages_2.sh
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3119741a821ed745573021d6da906f869cf29754/">3119741a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: use download_packages_2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f7d577799441fc3180d0675c87dfb5c474a0d223/">f7d57779</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: add linux/download_all_packages.sh when 'Building the complete KaarPux system'
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/98e9610dbf67af04f15678c034d9aae217638e4e/">98e9610d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: add 'GNU parallel' to host scripts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0751248393cb8de283f87e478a0e692b35c95e8b/">07512483</ulink>)
+	</para></listitem>
+	<listitem><para>
+		FIX: download_packages_2: do not verify checksum if download failed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/05bf0dd05815c4a7a35935437e8f7310d2625090/">05bf0dd0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: download_packages_2: correct options to wget for downloading keys
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f8eeb5453b6c22c657ce91237f23bb46de9f0a74/">f8eeb545</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: download_packages_2: add --gnu to 'parallel' for borked hosts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/46efa243b9c85e9cdfebc1dba7af74fea09970d0/">46efa243</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: host_fedora to use rawhide version of parallel
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/96695abaa5de8fa4b9d6f7007a7802607ba855b8/">96695aba</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: dangerous_build_bootstrap: make sure downloads get owned by kaarpux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/25bc6994ede56f8ee6e2f8151ff446e6fd0008db/">25bc6994</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: virtual/kvm: use different port number for spice
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1b737687e31878f06c1e18eb1fab3c24e7b051cc/">1b737687</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: cups-filters: make_repeat
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/07d05b6fe28aeabcd6b1263be47af03e59f4d593/">07d05b6f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: curl: patches for testcases
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a0715ab78c39f809ce2f8a0d533ca60f071ad52a/">a0715ab7</ulink>,
+		<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f41e99a31d706c574a52676799d45263e9f8688e/">f41e99a3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: orc: compile with gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/03b3c79043d9ce3137261347668898b8414bd684/">03b3c790</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxTools: skip over malformed lines when listing installed files
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6b19c8746c9948a6197d71723b1c2350e1c1be8e/">6b19c874</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: grub: put GRUB_DISTRIBUTOR in /etc/default/grub
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b6361b90c04ee24592fc16f61b4e4de2c03d8e4f/">b6361b90</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: libcdr libcmis libetonyek liblangtag mdds raptor2 rasqal: LibreOffice prereqs updated
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cc3dd8d4400d59ac34728384f5d5c8249881e2d9/">cc3dd8d4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libreoffice: v 4.2.3.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/74a4f6507feb36f06ce284c0950183dd5ba93423/">74a4f650</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libmicrohttpd: v 0.9.35
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ff61071d65bdb1184f1d2e7e1ae647ca17a8df48/">ff61071d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: liboil: patch to latest upstream
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/810bd4b146bd2d9d86ced61505777b80eca7fe98/">810bd4b1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: at-spi2-core: v 2.12.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/46a57f5a5fef7a2224a375475fc5372d7555aebe/">46a57f5a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libsoup: v 2.46.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7353b323fe0415ecb1caf2c4efe9a706483128ea/">7353b323</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: NetworkManager: v 0.9.8.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7fb3393b2102af132c25219db86dec6961474a63/">7fb3393b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: rest: v 0.7.91
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fbce37e1ceb36d1f96476415d3a63a14791bed9a/">fbce37e1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dbus: v 1.8.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/72391cedb0327bf7b33515a57ee4335002626353/">72391ced</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: lxc: v 1.0.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/77de4ea2019aa216d9ab95feec86104608776a7d/">77de4ea2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: systemtap: v 2.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/eae511d65ef7e35b261e36edbbf9b27b42f84329/">eae511d6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnutls:v 3.2.14
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8f48cdeb142302c4ffe9d8d14f20b8a48e91dd99/">8f48cdeb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nss: v 3.16.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/06207059507edf37e44d84a2b715c6b1d7fc0fb6/">06207059</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: firefox: v 29.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2d43f0fe42623dc42b332cea2cc2cfd6eef95ef6/">2d43f0fe</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: MesaLib: v 10.1.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/94022e369d4e44ea572dcab7e02b1dbd0a8012c9/">94022e36</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a063a3f3a075fffa9fabc9c7cdaaa61436de6b84/">a063a3f3</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_add">
+<title>libaio added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: libaio
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5a6088e58449a3cffb74b5336d7c3d9ba7c7ab71/">5a6088e5</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_rem">
+<title>Packages Removed</title>
+
+<itemizedlist>
+	<listitem><para>
+		REMOVE: gnome-mime-data: used for gnome-vfs which is now removed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/31197b08061ff2112d87c176ae1a5e1b62781305/">31197b08</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: libIDL: used for corba/orbit which has been removed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6a12887b3f8aa4049c98278e8b917b614a5d2f7c/">6a12887b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: nautilus-sendto: we really don't want to send emails from file manager
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/71976882c8d79921e0fe73295efe511d21753ad3/">71976882</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: ragel: not used by anything
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/842a0672b645130f33f2acf3e10e7c93f50edbf6/">842a0672</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: SampleICC: not used by anything
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/213fa89752639557139ec521e9b1969440f09132/">213fa897</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: xf86-input-*: not used since we have xf86-input-evdev
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/95e50da444173b0168ad5af9e62699310ff8716c/">95e50da4</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_0_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		MINOR: KxBuild: add tag append_pkg_file
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/913a2e9071fd23464114653c4c6708f0f4635356/">913a2e90</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/88d9dc9bacde6439453737c0610601380dedd3ec/">88d9dc9b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: default_definitions: remove unused KX_CONSOLE_UNICODE
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/817abe73b15ba07b751e22bcd12ffcaeeb5d73e5/">817abe73</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: initramfs: redirect to stdout/stderr if dropping to busybox
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/23e9dcb8ce33cf6e2cb9a5486e5cbf192f68c6ba/">23e9dcb8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: docbook2X: ignore check results; old and seems unmaintained
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0c2cfc28b6fe39a3e4f560b4cb97ebbfad413259/">0c2cfc28</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: libmicrohttpd: remove unused patch for testcase
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c064111d35dea5602d11ba2d6ea0d8f7a48129a9/">c064111d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: dmidecode: remove 'make check' which is not implemented
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/30bd3aa33a0a3ba88d6e6dfc034314f4273717dc/">30bd3aa3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: lm_sensors: remove 'make check' which is not implemented
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1503c59ed0eef02e7b214d0e6d09d1ecdb4efae7/">1503c59e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: liboil: ignore 'make check' errors; package is unmaintained anyway
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7458a76d19f6d8d341cb7901538e00f260e17389/">7458a76d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: certdata: some packages expect /etc/ssl/certs/ca-certificates.crt
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6aaacae32b0643624a31ed9184dfbaa3efb7bfe0/">6aaacae3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: neon: better configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1bcecf142c23f09d37b6532faa94dff88afdcb4e/">1bcecf14</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: apache-ant: better download location; verify signature
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8ab3290a42c705e2c366d6452858e966b06db040/">8ab3290a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMRPOVE: linux: add TRACEPOINTS, UPROBE, and FTRACE config for systemtap
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/31d3302a970318382f64c1e97b9c9df863040e43/">31d3302a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: systemtap: patch for infinite loop in task_dentry_path
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2f0073ce407dd4889815a5b3553cca7ce745e55e/">2f0073ce</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMRPOVE: KxBuild: ignore pipe and socket files from kx_open in systemtap
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d981854363d148de75ebc3ce5c5059fd3ad79233/">d9818543</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: kx_open: add (commented out) debug line for later use
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c9d75e2c1a3c6556eb7e0ec20bf962bb5fd3d3d9/">c9d75e2c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: install_kx_open_stp: doh, 16348 -> 16384 = 2^14
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e52921af0d3c2cc4e739cde192fe0e9d7d311fa7/">e52921af</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gimp babl gegl: better upstream location
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/325acae935e49102b27205589612d5e0f4144586/">325acae9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: ghc-binary: use a precompiled version from a previous version of KaarPux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/598a64b841bfa442a2ecfcbf1e85fd786b2effe2/">598a64b8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxTools: include /etc directory in list of installed files
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8f54a416fc5b02325d6cf777ca31036f8a288f86/">8f54a416</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: add unused_packages script
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3e1fc84ab621719e5c2889acb860770fa4ef449e/">3e1fc84a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: default_definitions: KX_BUILD_UID=888 to avoid clash with hosts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/aa4924ac5029e5ec990c8e210ffac0a399eca2f5/">aa4924ac</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: host_fedora to install gnupg
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/99f5f8d7265cd44b584d41f9e24b01f94a0653fd/">99f5f8d7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: kx_changelog: default version and revision_range; id in &lt;section&gt;
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/701405f03bdcb248503f5d2b843d8bf856c66a48/">701405f0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: default_definitions: add comment on swap in fstab
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0649b11c068d8a102684770021d31e421cbe2d8e/">0649b11c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: default_definitions: add comments on localization
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c0eedcbda81c333d5603505487ef747c8663884e/">c0eedcbd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: typo in vi ${CFG} command
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3686eb00e3f9a4dd64d59964c30e62aea8aea56c/">3686eb00</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: linux: add comments on allmodconfig
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e91d66b81246c2e1d6fff6c96e828533501630d7/">e91d66b8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: liboil: reference to upstream www
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7032503c788a5e8fa06a379c9b8ee7a011d103ef/">7032503c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: Add upstream links for required host tools
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/49716e8d6d1ce34e17594b491be37650c4ee91d1/">49716e8d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: put id on every section to avoid strange machine-generated id numbers
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c6ff136932dd164d1a95663ea925e3c5c806f35d/">c6ff1369</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: README files for sourceforge
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3cc09c4abc2f7a9c8a20cf7b6bd5e12df1ab0c98/">3cc09c4a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/949be3b4ec6bbc880c79634ffaa50dbf37ea6731/">949be3b4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: better instructions for building in kvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4142249c660a4dbc2a89010cd5573ad241911a8b/">4142249c</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

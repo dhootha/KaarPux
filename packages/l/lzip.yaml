@@ -1,0 +1,21 @@
+package:
+  name: lzip
+  version: 1.16
+  www: http://www.nongnu.org/lzip/lzip.html
+  doc: lossless data compressor with a user interface similar to the one of gzip or bzip2
+
+download:
+  url: http://download.savannah.gnu.org/releases/lzip
+  file_tar_gz: ~
+  checksum: 128cc25baf92c8b69700831e6f984d954016318cc78edca87870d0c033112751
+  verify: sig
+
+version:
+  wiz_savannah: ~
+
+bootstrap_5:
+  - configure_kx: ~
+  - make: ~
+  - check: ~
+  - install: ~ 
+

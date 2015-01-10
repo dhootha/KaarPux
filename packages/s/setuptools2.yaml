@@ -1,0 +1,29 @@
+package:
+  name: setuptools2
+  version: 5.7
+  www: http://pypi.python.org/pypi/setuptools
+  short: Download, build, install, upgrade, and uninstall Python packages -- easily!
+
+download:
+  url: http://pypi.python.org/packages/source/s/setuptools/
+  file: setuptools-${KX_SETUPTOOLS2_VERSION}.tar.gz
+  dir: setuptools-${KX_SETUPTOOLS2_VERSION}
+  checksum: a8bbdb2d67532c5b5cef5ba09553cea45d767378e42c7003347e53ebbe70f482
+
+version:
+  installed_na: ~
+
+linux:
+  - build:
+    - sh: python2 ./setup.py build
+  - test:
+    # Remove testcase failing due to dash
+    # FAIL: test_get_script_header_jython_workaround (setuptools.tests.test_resources.ScriptHeaderTests)
+    - sh: rm setuptools/tests/test_resources.py
+    - sh: python2 ./setup.py test
+  - install:
+    - sh: python2 ./setup.py install
+
+verify_cli: |
+  kx_cli_success /bin/easy_install --help
+

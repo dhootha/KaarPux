@@ -1,0 +1,45 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="devel_opt">
+<title>Developing / Debugging the OPT phase</title>
+
+<!-- ============================================================ -->
+
+<para>
+In order to install a new package in <filename class="directory">/opt</filename>:
+
+<orderedlist>
+	<listitem><para>
+	Build the new package with <command>linux/srcipts/opt/xxx_BUILD.sh</command>
+	</para></listitem>
+	<listitem><para>
+	Move the old package away from <filename class="directory">/opt/kaarpux/xxx</filename>,
+	e.g. into <filename class="directory">/opt/XXX</filename>,
+	or delete <filename class="directory">/opt/kaarpux/xxx</filename> altogether.
+	</para></listitem>
+	<listitem><para>
+	Install the new package with <command>linux/srcipts/opt/xxx_INSTALL.sh</command>
+	</para></listitem>
+	<listitem><para>
+	Run <command>master/tools/kx_opt.sh</command>
+	This will make <systemitem>soft-links</systemitem>
+	into
+	<filename class="directory">/opt/bin</filename>,
+	<filename class="directory">/opt/include</filename>,
+	<filename class="directory">/opt/lib</filename>,
+	etc.
+	</para></listitem>
+</orderedlist>
+</para>
+
+
+<!-- ============================================================ -->
+
+</section>
+

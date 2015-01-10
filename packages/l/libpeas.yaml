@@ -1,0 +1,26 @@
+package:
+  name: libpeas
+  version: 1.12.1
+  www: https://live.gnome.org/Libpeas
+  short: GObject Plugin System
+
+download:
+  gnomexz: ~
+  checksum: e610be31c9d382580fb5d8686f8311149f27413f55af6abf5c033178b99452d6
+
+version:
+  installed_pkgconfig: libpeas-1.0
+  upstream_gnome_uneven: ~
+
+linux:
+
+  - build:
+    - python3: ~
+    - configure_kx: --disable-gtk-doc --disable-static --enable-python3 --disable-gjs
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

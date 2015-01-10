@@ -1,0 +1,347 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_3_1">
+<title>Changes in KaarPux version 4.3.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.3.1</systemitem> released on <systemitem>2014-may-26</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+			Support for Laptop
+		</para></listitem>
+
+		<listitem><para>
+			Building KaarPux under X11
+		</para></listitem>
+
+		<listitem><para>
+			Packages added; packages updated
+		</para></listitem>
+
+		<listitem><para>
+			Bugs fixed; minor changes
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+<!-- ============================================================ -->
+
+<section id="changes_4_3_1_laptop">
+<title>Support for Laptop</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: dhcpcd; prereq for NetworkManager
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a2265be652d8b9c10631c22ec1e775e622851939/">a2265be6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: Support for Broadcom B43xx Wireless
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1a2c4b6c1c8cf6c5afb4a707eb2d719534a9d0b1/">1a2c4b6c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: b43-fwcutter broadcom-wl: Firmware for Broadcom B43xx Wireless
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/eb02d782e1b1ac15a0b1645d60776814f3b7600d/">eb02d782</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: broadcom-wl: no signature checking
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1d8453ea356c906f0c21da4449820e75db998a6f/">1d8453ea</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: wpa_supplicant: support for WPA and WPA2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4a6a6e5b6d0278551e66bbaf24dc3626044878d4/">4a6a6e5b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: wireless_tools
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/429f0ad3a875cd3826efe6db294e0792a9ac05ea/">429f0ad3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: networking: how to enable NetworkManager instead of systemd-networkd
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/35aa34ab316f62d2c2a1e96d4720e2b5d492a4fc/">35aa34ab</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_1_x">
+<title>Building KaarPux under X11</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		DOC: www: running under X11 is only required for testing
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/59085784a83e3b2b9e8365ce9e90369eb87e3ec8/">59085784</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: xf86-video-dummy: dummy video driver for X11
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a2676c76d824c9190c10a0954fc16c0f8fbb865f/">a2676c76</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: start dummy X11 server and dbus; needed for many 'make check'
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3e960e6cb464f9f1d5cf1f469e9243e5eb5d746f/">3e960e6c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: dangerous_build_rest to really kill dummy X11 server at last
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f712e144e5510f154c81dbfae9ead4ae1d91d25e/">f712e144</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_1_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: mutter: patch for cogl 18.*
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/aeca246fcb46196c84e0f5f9aa6cd5233e8c81cc/">aeca246f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: if download file has size zero, download again
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/512d0bafad1d065d67b8ee7ec8c25d2022e768d3/">512d0baf</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: groff: make_repeat
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1515c1cf5779fb07c5f03733c80ca35454c38caa/">1515c1cf</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_1_add">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: xf86-video-qxl; includes Xspice
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7e75f700db127492fcb3e6826aac51784dd32c81/">7e75f700</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_1_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: gst*: v 1.3.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9ec421a95bd91a632079bd9f0438d34fd944a523/">9ec421a9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: cogl: v 1.18.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d5605809bcd94cebcef46035de8ec427b8551122/">d5605809</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xorg-server: v 1.15.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e6cb620403d0c6d8d58b4b14e292f3e1daf9836e/">e6cb6204</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: clutter: v 1.18.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e4a64234e80ba324fc6a10e9093fe465def30f8c/">e4a64234</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: shadow: v 4.2.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c28b4eca08c5b6f7e6a866175020e7f7e9710643/">c28b4eca</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.14.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3017e83bd79629da361ab9d2e9e154d51c475ddb/">3017e83b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.359
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a1c980d76f0a5bed1d5cf84613c44fa6bbe97d90/">a1c980d7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libXfont: v 1.4.8: CVE-2014-0209 -0210 -0211
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7b2c45404b94807f1d10e99b7d9415700fe55887/">7b2c4540</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_3_1_minor">
+<title>Minor Changes and Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: xorg-server: do not install with setuid (we have KMS)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1e8b3d6318bfe93c91be23dbc52df327300347b0/">1e8b3d63</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: xorg-server: do not enable xephyr (not build anyway as prereqs are missing)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1212072b60596b07430b8ebba8f00475be27e1a9/">1212072b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: xorg-server: vendor is KaarPux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ef9578efc853797fc53ef533c5bde31447661987/">ef9578ef</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: move valgrind earlier (useful for some 'make check')
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/01dd56ffc03112ce2f90ee5c82d785bed159b475/">01dd56ff</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: neon: check_ignore
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bdc67270928f7aa6857e319d7452ff2a6e7c5065/">bdc67270</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: udisks: check_ignore
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/54c53b765d9f44cdb770365daadb708c33d4383d/">54c53b76</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: vim: disable test; fails when redirected to files
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8c1a157ecf80a6b96af8060f1787fd02ac34ab60/">8c1a157e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: use -usb -device usb-audio in kvm for libgusb tests
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/57d05a530e8f148735ec79c0d7fbb1d6053b82fa/">57d05a53</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: do not barf if we cannot find gpg
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b95bd5b37aad13739554171779f0e5b090786c2e/">b95bd5b3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: CONFIG_VETH and CONFIG_DEVPTS_MULTIPLE_INSTANCES for lxc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6ba1b10169d42053ef9e2e4167b086958e927fae/">6ba1b101</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: slightly improved performance
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/46e3b4043798d29897e86c878648e87e9bde45c2/">46e3b404</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: possibly better malloc settings (for performance)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3f3b0519a571f4e0c1fbab5a17c287c1c0c93d96/">3f3b0519</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: quiet warnings from lsb_release
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/506aaab408d6711dbab3cf4426eb7bd04096d5af/">506aaab4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: improved instructions for copying KaarPux to another machine
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/16bd620d30be8498e39f286350f3172dff02d59a/">16bd620d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: Unpack KaarPux tarball with --numeric-owner
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b578358435901bdb79f94d9c7a01a1e69346cc16/">b5783584</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/291bdae79acf12f3382c7b0cb46030636e48f972/">291bdae7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: command for loop mounting image
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/073068ee88e04ae14f96869a822cdabe64765b3a/">073068ee</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

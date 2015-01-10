@@ -1,0 +1,252 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="complete">
+<title>Building the complete KaarPux system</title>
+
+<para>
+After bootstrapping and booting into the new system
+as described in <xref linkend="bootstrap"/>,
+we are now ready to build the rest of &kx;.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="complete_downloading">
+<title>Downloading All Packages</title>
+<para>
+Download all the source packages needed:
+<programlisting>
+&kx_as_kaarpux;
+cd /home/kaarpux/kaarpux
+linux/download_all_packages.sh
+</programlisting>
+or
+<programlisting>
+&kx_as_kaarpux;
+cd /home/kaarpux/kaarpux
+linux/download_packages_2.sh
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="complete_linux_base">
+<title>Linux base</title>
+<para>
+
+Build and install <systemitem>linux_base</systemitem>:
+<programlisting>
+&kx_as_root;
+cd /home/kaarpux/kaarpux
+linux/scripts/complete_linux_base.sh
+</programlisting>
+
+Progress (or error) messages will be shown on the terminal,
+and also piped to <filename>build.log</filename>
+
+</para>
+<para>
+
+<systemitem>linux_base</systemitem> contains around 100 packages,
+none of which requres an <application>X11</application> environment
+(but many of which are prerequisites for building <application>Xorg</application>).
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="complete_xorg">
+<title>Xorg</title>
+<para>
+
+Build and install <systemitem>linux_xorg</systemitem>:
+<programlisting>
+&kx_as_root;
+cd /home/kaarpux/kaarpux
+linux/scripts/complete_linux_xorg.sh
+</programlisting>
+
+</para>
+<para>
+
+<systemitem>linux_xorg</systemitem> contains the <application>Xorg</application>
+libraries, server, and a number of <application>Xorg</application> applications and utilities.
+It also contains <application>mesa</application> for hardware accelerated graphics.
+
+</para>
+<para>
+
+Now start the <application>Xorg</application> server:
+<programlisting>
+&kx_as_kaarpux;
+cp /home/kaarpux/kaarpux/master/files/dot.xinitrc ~/.xinitrc
+
+cp /share/X11/twm/system.twmrc ~/.twmrc
+echo 'UsePPosition "on"' >> ~/.twmrc
+echo 'RandomPlacement' >> ~/.twmrc
+
+startx
+</programlisting>
+You should see <application>xterm</application> and <application>xclock</application>
+running under the <application>twm</application> window manager.
+
+</para>
+<para>
+
+<important><para>
+Unless <code class="systemitem">KX_DISABLE_TEST</code> is set,
+the rest of the build process must be run under <application>X11</application>,
+either directly on the target system or from remote by <command>ssh -Y</command>.
+</para></important>
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="complete_gnome">
+<title>Gnome</title>
+<para>
+
+Build and install <systemitem>linux_gnome</systemitem>:
+<programlisting>
+&kx_as_root_X11;
+cd /home/kaarpux/kaarpux
+linux/scripts/complete_linux_gnome_pre.sh
+linux/scripts/complete_linux_gnome.sh
+linux/scripts/complete_linux_gnome_post.sh
+</programlisting>
+
+</para>
+<para>
+
+This will install a complete <ulink url="http://www.gnome.org/gnome-3/">Gnome</ulink>
+desktop environment.
+
+</para>
+<para>
+
+Now exit the <application>Xorg</application>,
+and start the <application>Gnome Display Manager</application>:
+<programlisting>
+&kx_as_root;
+gdm
+</programlisting>
+and try to log in.
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="complete_desktop">
+<title>Desktop applications</title>
+<para>
+
+Build and install <systemitem>opt_desktop</systemitem>:
+<programlisting>
+&kx_as_kaarpux_X11;
+cd /home/kaarpux/kaarpux
+linux/scripts/complete_opt_desktop.sh
+linux/scripts/complete_opt_libreoffice.sh
+</programlisting>
+
+</para>
+<para>
+
+This will install a number of packages including:
+<itemizedlist>
+	<listitem><para>icedtea (Java)</para></listitem>
+	<listitem><para>firefox</para></listitem>
+	<listitem><para>thunderbird</para></listitem>
+	<listitem><para>Qt framework</para></listitem>
+	<listitem><para>libreoffice</para></listitem>
+
+</itemizedlist>
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="complete_programming">
+<title>Programming environment</title>
+
+<para>
+Programming languages and utilities
+</para>
+
+<para>
+
+<programlisting>
+&kx_as_kaarpux_X11;
+cd /home/kaarpux/kaarpux
+linux/scripts/complete_opt_programming.sh
+</programlisting>
+
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="complete_crypto_currencies">
+<title>Crypto currencies</title>
+
+<para>
+Wallets and miners for
+<ulink url="https://bitcoin.org">bitcoin</ulink>,
+<ulink url="https://litecoin.org/">litecoin</ulink>,
+<ulink url="http://dogecoin.com/">dogecoin</ulink>.
+
+</para>
+
+<para>
+
+<programlisting>
+&kx_as_kaarpux_X11;
+cd /home/kaarpux/kaarpux
+linux/scripts/complete_opt_coins.sh
+</programlisting>
+
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="complete_closed_source">
+<title>Closed source applications</title>
+<para>
+
+You may want some applications, even though they are only
+available as closed source:
+<itemizedlist>
+	<listitem><para>Flash Player</para></listitem>
+	<listitem><para>Skype</para></listitem>
+</itemizedlist>
+</para>
+<para>
+<programlisting>
+&kx_as_kaarpux_X11;
+
+cd /home/kaarpux/kaarpux
+linux/scripts/complete_opt_closed_source.sh
+</programlisting>
+
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>
+

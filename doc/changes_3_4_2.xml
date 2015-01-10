@@ -1,0 +1,244 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_4_2">
+<title>Changes in KaarPux version 3.4.2</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.4.2</systemitem> released on <systemitem>2013-jan-13</systemitem>
+</para>
+
+<para>
+	Mozilla, Mesa, and printing updated.
+</para><para>
+	Added expert scripts (to build KaarPux with just two commands) and parallel building.
+</para>
+
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_2_moz">
+<title>Mozilla updated</title>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: sqlite: v 3.7.15.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dffce1aa7b8a55415b2e4965003276683e6ec491/">dffce1aa</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xulrunner firefox: v 18.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/189ed2b6ef68056977c1691182789851abcea1b0/">189ed2b6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 17.0.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5c03ece5e5bc949d8be63b8d2c161e276ecd027c/">5c03ece5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 2.8.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/744ac7293a9fd6568871c48d98094cbb8152f33a/">744ac729</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.4.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0a342e41e12a9bd63a9043fc0720691ec2e46d64/">0a342e41</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.261
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0c2e804c0cece6f318961af677e7f1b42ba70c8f/">0c2e804c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: libjpeg-turbo: replaces libjpeg
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3a1b937a151a8b17b9cc261272aecdc16a526686/">3a1b937a</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_2_mesa">
+<title>MesaLib updated</title>
+<itemizedlist>
+	<listitem><para>
+		UPD: libdrm: v 2.4.40
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c55c471be5ba81f858ed4e81e4fb9c04bb2b504f/">c55c471b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: llvm: v 3.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8cd2296d24b781587f740dd7692e691c44fc421d/">8cd2296d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: MesaLib: v 9.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d4c2fb0332bb853bbfd1b89c6b8ea6809f4a4928/">d4c2fb03</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: glew: v 1.9.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c04a6a82d5a1bde5a42923e09ba22f4c82bfc179/">c04a6a82</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		ADD: glu: OpenGL Utility Library (now separated from MesaLib)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9e1cd608431728a89fefccf0d0bf2a5584e4b7ce/">9e1cd608</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: freeglut: fix incompatibility with new GLU
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/46d54f33087afc52d8beffbdf7fce7c264c56899/">46d54f33</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_2_cups">
+<title>Printing updated</title>
+<itemizedlist>
+	<listitem><para>
+		UPD: cups-filters: v 1.0.29
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5f38fd38ac3f52c67616c12fb73a9f1e00ae1dd8/">5f38fd38</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: qpdf: v 4.0.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bd1a28a8795c3bcb78ea0e204cc3498d05da8f4f/">bd1a28a8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: hplip: v 3.12.11
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/43644541978149ce85ab6b703047276be59dec85/">43644541</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_2_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: kx_flist.pl: Collect build dependencies correctly in bootstrap phase
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f0a2884f84d6e3fbd150de5f90ac932cf9df6c43/">f0a2884f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: kx_dependencies.pl: Correct --merge- and --ignore-bootstrap when --raw specified
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fd23c73b09e9f74599b51c3fcac91b8589a480f9/">fd23c73b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: doc/packages.pl: Correct parser for parallel instructions
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1fa7fdb697f1ad777819873a1aa32a88999f4879/">1fa7fdb6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: build junit before apache-ant
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/54b7352eaceaaf03542a3c1d39113f39f4ef68a9/">54b7352e</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_2_expert">
+<title>Expert scripts - build KaarPux with just two commands</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: KxBuild: expert scripts to build KaarPux with just two commands
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a5366a650133d9407129712d4e265ef1470f0c89/">a5366a65</ulink>)
+	</para></listitem>
+
+
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_2_parallel">
+<title>Build linux/opt packages in parallel</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KxBuild: build linux/opt packages in parallel
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/924fc40b19d4d471d2e7b47d283543e52f041515/">924fc40b</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_2_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		Documentation updates
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

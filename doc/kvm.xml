@@ -1,0 +1,366 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="kvm">
+<title>Building KaarPux in your own KVM</title>
+
+<!-- ============================================================ -->
+
+<para>
+	You can build &kx; in your own KVM by following the steps below.
+</para><para>
+	The first few steps may seem a bit complicated.
+	And they are, because every system is different.
+	But do not panic!
+	You can always reach out for help on our
+	<ulink url="http://sourceforge.net/p/kaarpux/discussion/general/">forum</ulink>.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="kvm_network_bridge">
+<title>Set up a network bridge</title>
+<para>
+	In order to enable the KVM instance to have network connectivity,
+	a network bridge must be created.
+</para><para>
+	In princple, it is as simple as installing the
+	<ulink url="http://sourceforge.net/projects/bridge/">bridge-utils</ulink>
+	package, and running
+<programlisting>
+&kx_as_root;
+brctl addbr br0
+brctl addif br0 eth0
+</programlisting>
+</para><para>
+	However, different linux distributions handle networking differently.
+	Some generic information can be obtained from 
+	<ulink url="http://www.linux-kvm.org/page/Networking#public_bridge">kvm</ulink>
+	and
+	<ulink url="http://wiki.libvirt.org/page/Networking#Bridged_networking_.28aka_.22shared_physical_device.22.29">libvirt</ulink>.
+	Some distribution specific instructions:
+	<itemizedlist>
+		<listitem>
+			<ulink url="http://docs.fedoraproject.org/en-US/Fedora/18/html/System_Administrators_Guide/s2-networkscripts-interfaces_network-bridge.html">fedora</ulink>
+			(<ulink url="http://wiki.libvirt.org/page/Networking#Fedora.2FRHEL_Bridging">libvirt</ulink>)
+		</listitem><listitem>
+			<ulink url="https://help.ubuntu.com/10.04/serverguide/network-configuration.html#bridging">ubuntu</ulink>
+			(<ulink url="http://wiki.libvirt.org/page/Networking#Debian.2FUbuntu_Bridging">libvirt</ulink>)
+		</listitem><listitem>
+			For systemd-based distributions (such as &kx; itself),
+			you may be able to use the script
+			<filename>master/expert/create_bridge.sh</filename>
+		</listitem>
+	</itemizedlist>
+</para><para>
+	Finally, to allow non-root users to use the network bridge in kvm,
+	add this line to <filename>/etc/qemu/bridge.conf</filename>
+<programlisting>
+allow br0
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_dhcp">
+<title>Configuring DHCP</title>
+<para>
+	When kvm is started by the scripts explained below,
+	it will be assigned a MAC address of the form
+	<systemitem>52:54:00:99:00:<replaceable>nn</replaceable></systemitem>,
+	where <systemitem><replaceable>nn</replaceable></systemitem> is two digits
+	you can choose freely.
+</para><para>
+	The DHCP server should be configured to give this MAC an IP address of
+	<systemitem><replaceable>x.y.z</replaceable>.<replaceable>nn</replaceable></systemitem>.
+</para><para>
+	As an example: if you are using the <systemitem>192.168.0/24</systemitem>
+	IP network, and want to run with <systemitem><replaceable>nn</replaceable></systemitem>
+	set to <systemitem>17</systemitem>, make sure that your DHCP server
+	returns IP <systemitem>192.168.0.17</systemitem>
+	for MAC <systemitem>52:54:00:99:00:17</systemitem>.
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_disk_images">
+<title>About disk images</title>
+<para>
+Building &kx; in a kvm involves three disk images:
+<variablelist>
+
+<varlistentry><term><filename>host_<replaceable>nn</replaceable>.img</filename></term>
+	<listitem>
+	<para>
+	This is the disk image for the <emphasis>Host System</emphasis>,
+	i.e. a linux distribution which is used to build &kx;
+	</para>
+	</listitem>
+</varlistentry>
+<varlistentry><term><filename>downloads_<replaceable>nn</replaceable>.img</filename></term>
+	<listitem>
+	<para>
+	This is a disk image used to hold downloaded package tarballs.
+	This image can later be re-used, so the tarballs do not have to be 
+	downloaded again.
+	</para>
+	</listitem>
+	</varlistentry>
+<varlistentry><term><filename>kx_<replaceable>nn</replaceable>.img</filename></term>
+	<listitem>
+	<para>
+	This is the disk image which holds the actual &kx; system
+	</para>
+	</listitem>
+</varlistentry>
+</variablelist>
+</para><para>
+	The disk images are by default located under
+	<filename class="directory">/kvm</filename>, which can be a symbolic link
+	to another location.
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_host_system">
+<title>Creating a host system image</title>
+<para>
+	The <emphasis>Host System</emphasis> is a linux distribution
+	which is used to build &kx;.
+</para><para>
+<procedure>
+<step><para>
+	Download a recent version of e.g. 
+	<ulink url="http://www.ubuntu.com/download/server">ubuntu</ulink> or
+	<ulink url="http://fedoraproject.org/en/get-fedora">fedora</ulink>
+	into <filename class="directory">/kvm</filename>.
+</para></step><step><para>
+	Create an image file to hold the <emphasis>Host System</emphasis>:
+<programlisting>
+NN=17
+qemu-img create -f raw /kvm/host_${NN}.img 16G
+</programlisting>
+</para></step><step><para>
+	Launch kvm:
+<programlisting>
+cd /kvm
+NN=17
+qemu-system-x86_64 \
+	-boot c \
+	-cdrom Fedora-18-x86_64-Live-Desktop.iso \
+	-hda host_${NN}.img \
+	-net nic,macaddr=52:54:00:99:00:${NN} \
+	-net bridge \
+	-smp 12 -m 48G \
+	-vga qxl -spice port=5900,addr=127.0.0.1,disable-ticketing \
+	-cpu SandyBridge -machine pc,accel=kvm
+</programlisting>
+</para></step><step><para>
+Connect to the kvm with your favorite
+<ulink url="http://www.spice-space.org/page/Repositories#client_and_server">Spice Client</ulink>
+</para></step><step><para>
+Install the <emphasis>Host System</emphasis> with default options
+</para></step><step><para>
+Enable the <application>sshd</application> daemon.
+</para></step><step><para>
+<xref linkend="host_system"/>
+</para></step>
+</procedure>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_users">
+<title>Users and SSH keys</title>
+
+<para>
+To avoid using passwords, we connect with SSH using keys.
+</para><para>
+Create a keypair:
+<programlisting>
+ssh-keygen
+</programlisting>
+
+</para><para>
+Copy the public key to the <emphasis>Host System</emphasis>:
+<programlisting>
+scp ~/.ssh/id_rsa.pub root@192.168.99.${NN}:
+</programlisting>
+
+</para><para>
+On the <emphasis>Host System</emphasis> as root:
+<programlisting>
+cd /root
+mkdir -m 700 .ssh
+mv id_rsa.pub .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+# On Fedora:
+/sbin/restorecon -Rv /root/.ssh
+</programlisting>
+
+</para><para>
+Create <systemitem>toor</systemitem> and <systemitem>kaarpux</systemitem> users
+on the <emphasis>Host System</emphasis>:
+<programlisting>
+SUDO=sudo
+#SUDO=wheel for Fedora
+useradd -u 0 -g 0 -o -p '*' -s /bin/bash -d /root toor
+groupadd -g 1000 kaarpux
+useradd -u 1000 -g 1000 -p '*' -G ${SUDO} -s /bin/bash -m kaarpux
+mkdir -p -m700 /home/kaarpux/.ssh
+cp .ssh/authorized_keys /home/kaarpux/.ssh
+chown -R kaarpux:kaarpux /home/kaarpux/.ssh
+chmod 600 /home/kaarpux/.ssh/authorized_keys
+</programlisting>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_downloads_image">
+<title>Creating a downloads image</title>
+<para>
+<programlisting>
+NN=17
+qemu-img create -f raw /kvm/downloads_${NN}.img 16G
+mke2fs -t ext4 -jv /kvm/downloads_${NN}.img
+sudo mount -o loop /kvm/downloads_${NN}.img /mnt
+sudo chown 1000:1000 /mnt
+sudo chmod ugo+rwx /mnt
+sudo umount /mnt
+fsck /kvm/downloads_${NN}.img
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_performance_improvements">
+<title>Small performance improvements</title>
+
+<para>
+You may want to use the <systemitem>deadline</systemitem>
+io scheduler on the host.
+See e.g. <ulink url="http://pic.dhe.ibm.com/infocenter/lnxinfo/v3r0m0/topic/liaat/liaatbestpractices_pdf.pdf">Best practices for KVM</ulink>.
+<programlisting>
+DEV=<parameter>device</parameter>
+echo deadline > /sys/block/${DEV}/queue/scheduler
+</programlisting>
+</para>
+
+<para>
+You may want to use the fastest CPU frequency scaling governor:
+<programlisting>
+for n in $( grep processor /proc/cpuinfo | cut -f2 -d ':'); do
+f=/sys/devices/system/cpu/cpu$n
+echo $f
+echo performance > $f/cpufreq/scaling_governor
+done
+</programlisting>
+</para>
+
+<para>
+You may want to try to improve cpu scheduling.
+</para><para>
+Increase latency, but improve throughput:
+<programlisting>
+MULT=10
+sysctl -w kernel.sched_min_granularity_ns=$(( MULT * 3000000)) || true
+sysctl -w kernel.sched_latency_ns=$(( MULT * 24000000)) || true
+sysctl -w kernel.sched_wakeup_granularity_ns=$(( MULT * 4000000)) || true
+sysctl -w kernel.sched_migration_cost_ns=$(( MULT * 500000)) || true
+sysctl -w kernel.sched_shares_window_ns=$(( MULT * 10000000)) || true
+sysctl -w kernel.sched_child_runs_first=1 || true
+sysctl -w kernel.sched_autogroup_enabled=0 || true
+</programlisting>
+</para>
+
+<para>
+The <filename>master/expert/kernel_kvm_performance_settings.sh</filename> script
+can be used to execute the above commands automatically.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_kvm_sh">
+<title>About kvm.sh</title>
+<para>
+The <filename>master/virtual/kvm.sh</filename> script
+can be used to automate the building of &kx; in KVM.
+It can be called with the following arguments:
+<programlisting>
+<![CDATA[master/virtual/kvm.sh config|downloads|bootstrap|rest|launch <nn>]]>
+</programlisting>
+</para><para>
+To see the default configuration run
+<programlisting>
+<![CDATA[master/virtual/kvm.sh config <nn>]]>
+</programlisting>
+which will also show you the environment variables which can be set
+to control the behaviour of <filename>master/virtual/kvm.sh</filename>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="kvm_bootstrapping">
+<title>Bootstrapping KaarPux</title>
+<para>
+Run
+<programlisting>
+<![CDATA[master/virtual/kvm.sh bootstrap <nn>]]>
+</programlisting>
+</para><para>
+If you do not want to download the latest version of &kx;
+you can run e.g.
+<programlisting>
+<![CDATA[K_TARBALL=<path_to_tarball> master/virtual/kvm.sh bootstrap <nn>]]>
+</programlisting>
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="kvm_rest">
+<title>Building the rest of KaarPux</title>
+<para>
+Run
+<programlisting>
+<![CDATA[master/virtual/kvm.sh rest <nn>]]>
+</programlisting>
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="kvm_using">
+<title>Using KaarPux</title>
+<para>
+&kx; can now be launched with
+<programlisting>
+<![CDATA[master/virtual/kvm.sh launch <nn>]]>
+</programlisting>
+</para><para>
+See also <xref linkend="copying_kaarpux"/>
+and <xref linkend="post_install"/>,
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

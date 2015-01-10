@@ -1,0 +1,812 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_0_0">
+<title>Changes in KaarPux version 4.0.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.0.0</systemitem> released on <systemitem>2014-01-12</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		Building packages with clang/llvm 3.4
+		</para></listitem>
+
+		<listitem><para>
+		LibreOffice updated to version 4.1.4.2
+		</para></listitem>
+
+		<listitem><para>
+		Linux Kernel updated to version 3.12.6
+		</para></listitem>
+
+		<listitem><para>
+		Bugs fixed, packages updated and minor improvements
+		</para></listitem>
+
+	</itemizedlist>
+
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_0_llvm">
+<title>Building packages with clang/llvm 3.4</title>
+
+<para>
+	We now include
+	<ulink url="http://llvm.org/releases/3.4/tools/clang/docs/ReleaseNotes.html">clang version 3.4</ulink>.
+	Most packages are now compiled with <systemitem>clang version 3.4</systemitem>.
+	However, bootstrap packages, and a few "troublesome" packages are compiled build with
+	<systemitem>gcc</systemitem>.
+</para>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: llvm: v 3.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f6ef2597c22d3d991c7be0bba1890c7ce56ff149/">f6ef2597</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: llvm: v 3.3; also add version wizard code for additional downloads
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8120f97847d352638e22054ecaa36a92c65c6ca5/">8120f978</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: MesaLib: crippled as gallium llvm does not work with LLVM 3.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ddb8133618e177fb47dba4f2d95fa81726394050/">ddb81336</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: MesaLib: put back all relevant options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ee30922344523ff4cc2e0f0c38ffb109243d861a/">ee309223</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: nemiver: patch for SafePtr; CLANG compilation broke
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c9cd164bcde62f76fe194eba5c0bd1a3658c75be/">c9cd164b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: use clang for all steps
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ae345148e9a153ba4c50fc5e1fbc0f2f92457e0f/">ae345148</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: llvm: put --enable-experimental-targets=R600 into the final build
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b09edadd996b40f3b10532fc150428ab74734525/">b09edadd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: icedtea-web: use c++98
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/37b80c5a1729889ba7d1fcb2fa13c605d067cd56/">37b80c5a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libtheora: do not use -fforce-addr with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d6afb60e9d7b4cdeae1c83dd24aa0757ea612fcf/">d6afb60e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libmad: use_gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/15691c2b401c7fac0fbfb6570519e80fa51bf340/">15691c2b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: icedtea7: small corrections for clang/llvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b971ea013b82ef0f0fe457d220c47f465103eb4c/">b971ea01</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: thunderbird: patch for clang/llvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9b4b2d4f59e6bd96f88a9cb5534b6d3ef5d70f29/">9b4b2d4f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: thunderbird: patch for clang/llvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/234e376f4be4873625eb8b2cafa6303813887671/">234e376f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libvisio: small correction for clang/llvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ee2f465e2982986997e50a9531fc87ee12ad17f2/">ee2f465e</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: KxBuild: Install clang with llvm (and do it early)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1395a040e5e04bbb228be1e082796b299868815b/">1395a040</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: Build with clang by default, if it is found
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/65daa96c1f1ac2c9344145f55385d4559d461ae9/">65daa96c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: luit xmodmap: apply patches for llvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4392635b9861fdb1a35b9c0f450f7a14430fd24b/">4392635b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gobject-introspection: patch when using clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6c862fd4a702246a293521e91494b24c5ce8168b/">6c862fd4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: firefox thunderbird: do not compile with clang; use gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2ed4b12c9a7e1a697b6033d3efefab437d5f77e4/">2ed4b12c</ulink>)
+	</para></listitem>
+	<listitem><para>
+		IMPROVE: *: do not compile with clang; use gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7598a18c94be391fded77ca2772433b4b738796d/">7598a18c</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: icedtea7: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3bc458b77dcc042837ce7622421bfa16deb1f384/">3bc458b7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: samba: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0667c999c3a212a0d9d104ab2899dd609fcd63f4/">0667c999</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: boost: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/68b291fe1a6f4c92769a3f125265fd3af4111e59/">68b291fe</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: firefox: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2bfa9cbe6954690175c4e1646d0fe54b155ecf01/">2bfa9cbe</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: thunderbird: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/01e141571f52b406744d92286b2064bc0411652a/">01e14157</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: llvm: add GPG key for Bill Wendling @ Apple
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2b2d7474c9530e0dc71a878ee74f9edcb07016de/">2b2d7474</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: KxBuild: by default build with clang++ -std=c++11
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3a140855951d9a03f72639482ff0505085b0d1b2/">3a140855</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: ragel: fix compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9faa8cefce8a5567de95a4dda3934ade0b6ca0c9/">9faa8cef</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: qpdf: fix compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/73eb906a25e9752dede7f8470ffbd14d6c72b1b0/">73eb906a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: faac: fix compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/939106699e0de7dedd37ce13d6401a820e530059/">93910669</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cyrus-sasl: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/df5ee18c917327c2220914dc8c88a2233bd01a26/">df5ee18c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gdlmm: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c6acf0aaf28459cc1f163cc9eed9204b97a2245f/">c6acf0aa</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gnupg: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/980a50da111aaef12286d4d70d00fc7115940f5a/">980a50da</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: hunspell: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4698c2e07e7cd064fec468d2bfd5597efbd62e25/">4698c2e0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: clucene: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/55ae975b26ce588614313f8fe92628c791af9cdd/">55ae975b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: icedtea-web: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fc34ae947b2f0082b65c051d71a5b7cbffff25ae/">fc34ae94</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cdparanoia: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fc3f4349545e69ae1618885165f45d860f3e98c5/">fc3f4349</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: liboil: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9f475e504e8b90480d418f322547242df6772967/">9f475e50</ulink>)
+	</para></listitem>
+	<listitem><para>
+		IMPROVE: libvorbis: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1a8e5f622b4ec0296d9470aafb613f24ae491708/">1a8e5f62</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cyrus-sasl: for now, use_gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/325ed4b9a2491446ee73351c01f718e1afd684f1/">325ed4b9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: thunderbird: clang changes similar to those for firefox
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/feef2cfdf6f5fa2a8c19a7f4afde659ad43d3110/">feef2cfd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: nemiver codelite wxWidgets: clang++ --std=c++98
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6c2670c0fad8b10cb5dfabf3b1d4d184c350b0d6/">6c2670c0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: qt: clang++ --std=c++98
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2a1d9c79e8e749e72b27b69c50ab10a1e321d32b/">2a1d9c79</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: ruby: compile with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d0790d436ba534311a86473ac46d20c53b656ecb/">d0790d43</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cups: use_gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2a5aef7e314892c59bdf1826fcad6e5c610b3df8/">2a5aef7e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: minor modifications to kernel config
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b7639a818e9eb02292dc4798f7f14d162bccfc20/">b7639a81</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: MesaLib: build with gcc; minor config options update
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/db3aab17d83b59951506b7e57c07cb98c7ede311/">db3aab17</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: xorg-server: build with clang
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c00c9ebe83667e8a8102ce2642ee2d8da230c431/">c00c9ebe</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: xf86-video-ati: build with gcc in separate package
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/986992ca4829bc9a95b51f72261cacdfa748824b/">986992ca</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: MesaLib: --enable-opencl
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7b691d5dc5de948096740a0c881c5c6392abce40/">7b691d5d</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_0_libreoffice">
+<title>LibreOffice 4.1.4.2</title>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: libreoffice: v 4.1.4.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62144fa11e917497eb8a8343a29c854aad55665c/">62144fa1</ulink>)
+	</para></listitem>
+	<listitem><para>
+		ADD: liblangtag libetonyek libodfgen liborcus: prereqs for libreoffice
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3dfb1fd36e73f6d5bde68e38a62f766f3204f5b6/">3dfb1fd3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: graphite2: v 1.2.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7f2d124caea68a813907019b811ade70c7aa7d55/">7f2d124c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libcdr: v 0.0.14
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a9eee614e6dd3b1f86650b11ce4fa6cb63e499ed/">a9eee614</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libexttextcat: v 3.4.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e02bdd021be8d901633c9cc143cb35aa38003523/">e02bdd02</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libwpd: v 0.9.9
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ff4ea79133bfc763869a63e11db1d762258ddd04/">ff4ea791</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libwpg: v 0.2.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c0a46a960228647a2ccb0b09065f9ad18cd375ed/">c0a46a96</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libwps: v 0.2.9
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e64fd347e489fea71810de45115599572168cc26/">e64fd347</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: mdds: v 0.10.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/84d6382ab49300a89a556de157ff1e4794b56e09/">84d6382a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: mdds: downgrade to 0.8.1; needed by libreoffice 4.1.4.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f57001cdd57dbd160bbd2e78c11649c257efe5b6/">f57001cd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: raptor2: v 2.0.12
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6f31485232b57801814fc474ce851f44abd18ed8/">6f314852</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: rasqal: v 0.9.31
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/553c5e8db003a2855e8494441c2699b499fa44ea/">553c5e8d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: redland: v 1.0.17
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/24e0fb441326cf42cc0bbfc6ba8343e08de24a9b/">24e0fb44</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: vigra: v 1.10.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5f5dcb66b01b694387d15879f5e40a5b735009cb/">5f5dcb66</ulink>)
+	</para></listitem>
+
+
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_0_linux">
+<title>Linux Kernel 3.12.6</title>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: linux: v 3.12.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e01ca544f3afb8e579c11b6a352b57c09b5c2656/">e01ca544</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: do not use CONFIG_NO_HZ_FULL; it does not play nicely with kvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b89feb669e887cf907dac69be042dbaf40fda989/">b89feb66</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_0_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+	<listitem><para>
+		FIX: thunderbird: remove deprecated patch
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/617c796417c04ec0ab7b1fa1d911e87d5a9a0d42/">617c7964</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		FIX: KxBuild: correct checking of sha1 asc signatures
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/874f36b49052b1d571c8aaaf010249e898292160/">874f36b4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: correct name for SHA_FILE in common_functions.shinc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0f9a5edde405b7f3317870c28ad386c78bde0b90/">0f9a5edd</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_0_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: qpdf: v 4.1.0; also compile with gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b7e94831d67571f72b5f91d530f207c2e54ea03b/">b7e94831</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: samba: v 4.0.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/631cd0f97fb5abbdc871ef7c02f93b9740518c11/">631cd0f9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flac: v 1.3.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3652f1ce33929f03f439ad0b39bfd0c8ec96b7aa/">3652f1ce</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		UPD: ruby: v 2.0.0-p353
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f707e663c4b6b28ecbb4c31f20cd95c02b1008d0/">f707e663</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xproto: v 7.0.25
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1142a322b5f18b3a4918d767ef38e59b99d73774/">1142a322</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xcb-proto: v 1.9
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0efafd6badd51e1d19a58506f78779479405ef15/">0efafd6b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xinit: v 1.3.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b7907a3965e21f772a55830d38d9a0d485b97a95/">b7907a39</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xf86-video-ati / xf86-video-r128: v 7.2.0 / 6.9.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1e3ed9f33c2025d1312ea88c8fc9b55a34a735f1/">1e3ed9f3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xf86-video-fbdev: v 0.4.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f1e289016f250a36db9abc1b9c8977c791620b07/">f1e28901</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: llvm: v 3.4beta: snapshot of upcoming v 3.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c1172a65bb8364ceba990438ac7a99cec1ecd45d/">c1172a65</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		UPD: binutils: v 2.24
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5015d7f7e20fe733b67439c37c47e7aea6bb1810/">5015d7f7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: bluez: v 5.13
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/510d87555046486c78965abe065e3fc0b368d2ef/">510d8755</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: coreutils: v 8.22
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/11ce5363f5d5efd66ceea3c1a4c2851bfb30bc1a/">11ce5363</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: exempi: v 2.2.1; also: use_gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/13ff9c0b3dc5377bc7615b10d29a93b0561bcac6/">13ff9c0b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gdb: v 7.6.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cb661d57b7e77f3565eac84e0cf10f55584e2d50/">cb661d57</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xcb-proto libxcb: v 1.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0c148c3952a0236a59c7acbe21a1b0c09c38f086/">0c148c39</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ltrace: v 0.7.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f218f997de69e075bd847149a3c6672d5c19aab2/">f218f997</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: poppler: v 0.24.5; also use_gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/39b6a5559203c886959ce788d84b5ac4505a5dea/">39b6a555</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: WebKit: v 2.3.3; also use_gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a08a797e7f923ee52fd87124bd1954d00b8b9aa4/">a08a797e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: cups-filters: 1.0.43
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b86a09298db07394de97f4897b37fa658cbbd30f/">b86a0929</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssl: v 1.0.1f
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/641c977fd8d301b5c17a884ed83c7b5cc3d57adc/">641c977f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssh: v 6.4p1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7b48c71c3b9ea150db3a2691635d50f80daffd24/">7b48c71c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nss: v 3.15.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e9a56711f46535dbb877189b8a29b41bfe4dcae1/">e9a56711</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnutls: v 3.1.18
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0c8f965744c05f3ddc8d85cef854b7e84835f99b/">0c8f9657</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3e78d05073cedd2377df1e53c989f4c3c0fd9e83/">3e78d050</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: p11-kit: v 0.20.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9251cf6ebe6f08d94cbc61a7f2c8290fe36cbece/">9251cf6e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nettle: v 2.7.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/87b1aaea2703817222ebf858bf16d04fb91f3120/">87b1aaea</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnutls: v 3.2.8.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cefde88be61f24581f5a53e55cd60115bd48863a/">cefde88b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: provider_for_google_calendar: v 0.25
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/60ed1d0a96635eb58fd10acc8042ea646d51615a/">60ed1d0a</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		FIX: KxBuild: move libtasn1 before nettle and p11-kit before gnutls
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/31c781ca8d3e284b48c0606a58feb1c2e92533c7/">31c781ca</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: move bluez after ical
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/58f9fbc682512b2794d85513d0302b9ace6d926b/">58f9fbc6</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_0_add">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: libclc, lm_sensors
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b0c932bf2808c6744953a9545fa6ee2f98e49769/">b0c932bf</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: lm_sensors: correct package name in master.yaml
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b1c76541f9618ef6e56ee8087b20f18c293c470c/">b1c76541</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_0_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		REMOVE: xorg-drivers: remove unused intel driver
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7400f4fb52b8270201b544e2ca2d009d7ee04f79/">7400f4fb</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: luit xmodmap: remember to build them
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c252319ccdacf2060cfc74473940976d1724565d/">c252319c</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: cracklib: make install reentrant
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7b9c1b7559f275416e8375379a04611ff72bc558/">7b9c1b75</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		MINOR: kx_version.plinc: split version substitution into own function
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f957f5bde603a0693915501c3eee752edfa10f43/">f957f5bd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: show number of processors and amount of memory
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f02ec0daa89ddd2f1b0177b50cac416776d6ecc9/">f02ec0da</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: KxBuild: 48G build dirs
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f0d2efafe017ea4a70d891ab042f2a56426ea79b/">f0d2efaf</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: KxBuild: only import gpg keys not already in keyring
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8598e50422dbbbf28a90616f0f4681fcb011bc1c/">8598e504</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		IMPROVE: KaarPux: add /opt/share/pkgconfig to PKG_CONFIG_PATH in etc/profile.d/opt.sh
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/55e50ce1329f38854663526496a9c378bed75825/">55e50ce1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: copyright 2014
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/15500ef5b5c6fe0f1c9cdd32ec7540a2ebd82ebf/">15500ef5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: copyright 2014
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4048f50d04034692e5d92371688d16c6aa660f64/">4048f50d</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+          "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd"
+[
+
+
+<!ENTITY kx		"<application>KaarPux</application>">
+<!ENTITY envwarn	"(<emphasis>Remember to change the environment variables to fit your setup</emphasis>)">
+<!ENTITY kx_envwarn	"<emphasis>remember to change the environment variables to fit your setup</emphasis>">
+<!ENTITY kx_as_root	"<emphasis>as <systemitem class='username'>root</systemitem></emphasis>">
+<!ENTITY kx_as_root_X11	"<emphasis>as <systemitem class='username'>root</systemitem> under <application>X11</application></emphasis>">
+<!ENTITY kx_as_kaarpux	"<emphasis>as <systemitem class='username'>kaarpux</systemitem></emphasis>">
+<!ENTITY kx_as_kaarpux_X11	"<emphasis>as <systemitem class='username'>kaarpux</systemitem> under <application>X11</application></emphasis>">
+<!ENTITY kx_as_regular_user	"<emphasis>as regular user</emphasis>">
+
+<!ENTITY kx_kaarpux               SYSTEM "kaarpux.xml">
+<!ENTITY kx_what_is_kaarpux     SYSTEM "what_is_kaarpux.xml">
+<!ENTITY kx_how_to_build_kaarpux SYSTEM "how_to_build_kaarpux.xml">
+<!ENTITY kx_acknowledgements    SYSTEM "acknowledgements.xml">
+<!ENTITY kx_license             SYSTEM "license.xml">
+
+<!ENTITY kx_kaarpux_changelog   SYSTEM "kaarpux_changelog.xml">
+<!ENTITY kx_changes_1_0_0       SYSTEM "changes_1_0_0.xml">
+<!ENTITY kx_changes_1_0_1       SYSTEM "changes_1_0_1.xml">
+<!ENTITY kx_changes_2_0_0       SYSTEM "changes_2_0_0.xml">
+<!ENTITY kx_changes_2_1_0       SYSTEM "changes_2_1_0.xml">
+<!ENTITY kx_changes_2_1_1       SYSTEM "changes_2_1_1.xml">
+<!ENTITY kx_changes_2_1_2       SYSTEM "changes_2_1_2.xml">
+<!ENTITY kx_changes_3_0_0       SYSTEM "changes_3_0_0.xml">
+<!ENTITY kx_changes_3_0_1       SYSTEM "changes_3_0_1.xml">
+<!ENTITY kx_changes_3_1_0       SYSTEM "changes_3_1_0.xml">
+<!ENTITY kx_changes_3_2_0       SYSTEM "changes_3_2_0.xml">
+<!ENTITY kx_changes_3_2_1       SYSTEM "changes_3_2_1.xml">
+<!ENTITY kx_changes_3_2_2       SYSTEM "changes_3_2_2.xml">
+<!ENTITY kx_changes_3_3_0       SYSTEM "changes_3_3_0.xml">
+<!ENTITY kx_changes_3_4_0       SYSTEM "changes_3_4_0.xml">
+<!ENTITY kx_changes_3_4_1       SYSTEM "changes_3_4_1.xml">
+<!ENTITY kx_changes_3_4_2       SYSTEM "changes_3_4_2.xml">
+<!ENTITY kx_changes_3_4_3       SYSTEM "changes_3_4_3.xml">
+<!ENTITY kx_changes_3_4_4       SYSTEM "changes_3_4_4.xml">
+<!ENTITY kx_changes_3_4_5       SYSTEM "changes_3_4_5.xml">
+<!ENTITY kx_changes_3_4_6       SYSTEM "changes_3_4_6.xml">
+<!ENTITY kx_changes_3_5_0       SYSTEM "changes_3_5_0.xml">
+<!ENTITY kx_changes_3_5_1       SYSTEM "changes_3_5_1.xml">
+<!ENTITY kx_changes_3_6_0       SYSTEM "changes_3_6_0.xml">
+<!ENTITY kx_changes_3_6_1       SYSTEM "changes_3_6_1.xml">
+<!ENTITY kx_changes_3_6_2       SYSTEM "changes_3_6_2.xml">
+<!ENTITY kx_changes_3_6_3       SYSTEM "changes_3_6_3.xml">
+<!ENTITY kx_changes_3_6_4       SYSTEM "changes_3_6_4.xml">
+<!ENTITY kx_changes_3_6_5       SYSTEM "changes_3_6_5.xml">
+<!ENTITY kx_changes_3_6_6       SYSTEM "changes_3_6_6.xml">
+<!ENTITY kx_changes_3_6_7       SYSTEM "changes_3_6_7.xml">
+<!ENTITY kx_changes_3_6_8       SYSTEM "changes_3_6_8.xml">
+<!ENTITY kx_changes_4_0_0       SYSTEM "changes_4_0_0.xml">
+<!ENTITY kx_changes_4_0_1       SYSTEM "changes_4_0_1.xml">
+<!ENTITY kx_changes_4_1_0       SYSTEM "changes_4_1_0.xml">
+<!ENTITY kx_changes_4_1_1       SYSTEM "changes_4_1_1.xml">
+<!ENTITY kx_changes_4_1_2       SYSTEM "changes_4_1_2.xml">
+<!ENTITY kx_changes_4_1_3       SYSTEM "changes_4_1_3.xml">
+<!ENTITY kx_changes_4_1_4       SYSTEM "changes_4_1_4.xml">
+<!ENTITY kx_changes_4_2_0       SYSTEM "changes_4_2_0.xml">
+<!ENTITY kx_changes_4_2_1       SYSTEM "changes_4_2_1.xml">
+<!ENTITY kx_changes_4_2_2       SYSTEM "changes_4_2_2.xml">
+<!ENTITY kx_changes_4_2_3       SYSTEM "changes_4_2_3.xml">
+<!ENTITY kx_changes_4_2_4       SYSTEM "changes_4_2_4.xml">
+<!ENTITY kx_changes_4_2_5       SYSTEM "changes_4_2_5.xml">
+<!ENTITY kx_changes_4_3_0       SYSTEM "changes_4_3_0.xml">
+<!ENTITY kx_changes_4_3_1       SYSTEM "changes_4_3_1.xml">
+<!ENTITY kx_changes_4_4_0       SYSTEM "changes_4_4_0.xml">
+<!ENTITY kx_changes_4_5_0       SYSTEM "changes_4_5_0.xml">
+<!ENTITY kx_changes_4_5_1       SYSTEM "changes_4_5_1.xml">
+<!ENTITY kx_changes_4_5_2       SYSTEM "changes_4_5_2.xml">
+<!ENTITY kx_changes_4_5_3       SYSTEM "changes_4_5_3.xml">
+<!ENTITY kx_changes_4_5_4       SYSTEM "changes_4_5_4.xml">
+<!ENTITY kx_changes_4_5_5       SYSTEM "changes_4_5_5.xml">
+<!ENTITY kx_changes_4_6_0       SYSTEM "changes_4_6_0.xml">
+<!ENTITY kx_changes_4_7_0       SYSTEM "changes_4_7_0.xml">
+<!ENTITY kx_changes_4_7_1       SYSTEM "changes_4_7_1.xml">
+<!ENTITY kx_changes_4_7_2       SYSTEM "changes_4_7_2.xml">
+<!ENTITY kx_changes_4_8_0       SYSTEM "changes_4_8_0.xml">
+
+<!ENTITY kx_building_kaarpux    SYSTEM "building_kaarpux.xml">
+<!ENTITY kx_building_overview   SYSTEM "building_overview.xml">
+<!ENTITY kx_kvm                 SYSTEM "kvm.xml">
+<!ENTITY kx_ec2                 SYSTEM "ec2.xml">
+<!ENTITY kx_openhosting         SYSTEM "openhosting.xml">
+
+<!ENTITY kx_building_kaarpux_step_by_step SYSTEM "building_kaarpux_step_by_step.xml">
+<!ENTITY kx_host_system         SYSTEM "host_system.xml">
+<!ENTITY kx_format_disks        SYSTEM "format_disks.xml">
+<!ENTITY kx_download            SYSTEM "download.xml">
+<!ENTITY kx_prepare             SYSTEM "prepare.xml">
+<!ENTITY kx_bootstrap           SYSTEM "bootstrap.xml"> 
+<!ENTITY kx_prepare_boot        SYSTEM "prepare_boot.xml"> 
+<!ENTITY kx_complete            SYSTEM "complete.xml"> 
+
+<!ENTITY kx_packages            SYSTEM "packages.xml"> 
+
+<!ENTITY kx_post_install        SYSTEM "post_install.xml"> 
+<!ENTITY kx_system_time         SYSTEM "system_time.xml"> 
+<!ENTITY kx_networking          SYSTEM "networking.xml"> 
+<!ENTITY kx_gdm_startup         SYSTEM "gdm_startup.xml"> 
+<!ENTITY kx_gnome_setup         SYSTEM "gnome_setup.xml"> 
+<!ENTITY kx_git_setup           SYSTEM "git_setup.xml"> 
+<!ENTITY kx_firefox             SYSTEM "firefox.xml"> 
+<!ENTITY kx_openvas             SYSTEM "openvas.xml"> 
+<!ENTITY kx_xen_virtualization  SYSTEM "xen_virtualization.xml"> 
+
+<!ENTITY kx_security            SYSTEM "security.xml">
+<!ENTITY kx_cve                 SYSTEM "cve.xml">
+
+<!ENTITY kx_help                SYSTEM "kaarpux_help.xml">
+<!ENTITY kx_bugs                SYSTEM "kaarpux_bugs.xml">
+
+<!ENTITY kx_verifying_kaarpux   SYSTEM "verifying_kaarpux.xml">
+
+<!ENTITY kx_copying_kaarpux     SYSTEM "copying_kaarpux.xml">
+
+<!ENTITY kx_build_system        SYSTEM "build_system.xml">
+<!ENTITY kx_build_system_overview   SYSTEM "build_system_overview.xml">
+<!ENTITY kx_master_directory    SYSTEM "master_directory.xml">
+<!ENTITY kx_bootstrap_directory SYSTEM "bootstrap_directory.xml">
+<!ENTITY kx_linux_directory     SYSTEM "linux_directory.xml">
+<!ENTITY kx_bootstrapping_phase SYSTEM "bootstrapping_phase.xml"> 
+<!ENTITY kx_devel_bootstrapping SYSTEM "devel_bootstrapping.xml"> 
+<!ENTITY kx_linux_phase         SYSTEM "linux_phase.xml"> 
+<!ENTITY kx_devel_linux         SYSTEM "devel_linux.xml"> 
+<!ENTITY kx_opt_phase           SYSTEM "opt_phase.xml"> 
+<!ENTITY kx_devel_opt           SYSTEM "devel_opt.xml"> 
+
+<!ENTITY kx_tools               SYSTEM "tools.xml"> 
+<!ENTITY kx_build_performance   SYSTEM "build_performance.xml">
+<!ENTITY kx_dependency_tracking SYSTEM "dependency_tracking.xml"> 
+<!ENTITY kx_identifying_cve     SYSTEM "identifying_cve.xml">
+
+<!ENTITY kx_pkg_appendices        SYSTEM "pkg_appendices.xml"> 
+
+]>
+
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<book lang="en" id="kaarpux">
+<?dbhtml filename="documentation.html"?>
+<title>Documentation</title>
+&kx_kaarpux;
+&kx_kaarpux_changelog;
+&kx_building_kaarpux;
+&kx_building_kaarpux_step_by_step;
+&kx_verifying_kaarpux;
+&kx_copying_kaarpux;
+&kx_post_install;
+&kx_security;
+&kx_help;
+&kx_bugs;
+&kx_build_system;
+&kx_tools;
+&kx_packages;
+&kx_pkg_appendices;
+</book>
+

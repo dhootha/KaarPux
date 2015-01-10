@@ -1,0 +1,237 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="dependency_tracking">
+<title>Package Dependency Tracking</title>
+
+<!-- ============================================================ -->
+
+<section id="dependency_tracking_enabling">
+<title>Enabling Package Dependency Tracking</title>
+
+<para>
+Package Dependency Tracking during build is optional, and can be enabled by setting
+<command>KX_SYSTEMTAP="yes"</command> in <filename>custom_definitions.shinc</filename>.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="dependency_tracking_how">
+<title>How Dependency Tracking Works</title>
+
+<para>
+In order to track package dependencies during build, the
+<application>systemtap</application> script
+<filename>master/chroot_scripts/kx_open.stp</filename> is used.
+</para>
+
+<para>
+The &kx; build scripts will run each step under <application>systemtap</application>
+with <filename>kx_open.stp</filename> enabled.
+<filename>kx_open.stp</filename> will output the path of every file used by the build script. 
+The output is piped through through
+<application>grep</application> and <application>awk</application>,
+in order to list the relevant files into <filename>kaarpux/flist/*.rw</filename>.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="dependency_tracking_host">
+<title>Using Package Dependency Tracking</title>
+
+<para>
+It might be possible to use Package Dependency Tracking on hosts
+other than &kx; (e.g. <application>Ubuntu</application>).
+However, it is recommended to use Package Dependency Tracking using
+a &kx; host (i.e. building a new &kx; target system on an existing
+&kx; host system), because the Package Dependency Tracking setup
+is readily available on &kx;.
+</para>
+
+<para>
+On &kx;, <systemitem>bootstrap_8</systemitem> installs <application>systemtap</application>,
+and runs the script <filename>master/chroot_scripts/install_kx_open_stp.sh</filename>
+to install <filename>kx_open.stp</filename>.
+Hence, on a &kx; host, using <command>KX_SYSTEMTAP="yes"</command>
+should work like a charm.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="dependency_tracking_lib_modules">
+<title>/lib/modules</title>
+
+<para>
+When installing a linux kernel, the kernel modules are installed into
+<filename>/lib/modules/KERNELVERSION</filename>.
+The files needed for normal operation are copied into this directory.
+However, to compile new kernel modules
+(such as <filename>master/chroot_scripts/kx_open.stp</filename>),
+the kernel build tree needs to be left in place (under
+<filename>kaarpux/bootstrap/build/bootstrap_8/linux-RELEASE</filename> or
+<filename>kaarpux/linux/build/linux/linux-RELEASE</filename>),
+as 
+<filename>/lib/modules/KERNELVERSION/build</filename>
+and
+<filename>/lib/modules/KERNELVERSION/source</filename>
+are symbolic links to the buld tree.
+<filename>master/chroot_scripts/kx_open.stp</filename> is compiled into
+<filename>/lib/modules/KERNELVERSION/systemtap/kx_open.ko</filename>.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="dependency_tracking_modules">
+<title>Bootstrap vs. Linux modules</title>
+
+<para>
+When building &kx; with <command>KX_SYSTEMTAP="yes"</command>,
+the running Linux kernel version and release must match
+the Linux kernel version and release used to build the modules in 
+<filename>/lib/modules/KERNELVERSION</filename>.
+This is ensured "automagically" when using a &kx; system as host.
+</para>
+
+<para>
+You can get the linux release with <command>uname -r</command>,
+returning something like <systemitem>3.2.9-kx-4eefd8aa</systemitem>,
+which also designates the subdirectory of <filename>/lib/modules/</filename>
+used for kernel mdules.
+</para>
+
+<para>
+You can get the linux version with <command>uname -v</command>,
+returning something like <systemitem>#3 SMP Wed Jun 20 22:00:00 CEST 2012</systemitem>,
+</para>
+
+<para>
+During bootstrap, we use the <filename>/lib/modules/KERNELVERSION</filename>
+on the host system (which should be consistent on a &kx; host).
+During linux/opt, whe use the <filename>/lib/modules/KERNELVERSION</filename>
+build during bootstrap (hence also consistent).
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="dependency_tracking_pre_processing">
+<title>Pre-processing the Package Dependency Tracking Information</title>
+
+<para>
+Run the command <command>kaarpux/tools/kx_flist.pl</command>.
+This command will:
+
+<orderedlist>
+	<listitem><para>
+		Process all the
+		<filename>kaarpux/flist/*.rw</filename> files
+		to create maps in the
+		<filename>kaarpux/dependencies</filename> directory.
+	</para></listitem>
+	<listitem><para>
+		Process libraries and executables with
+		<command>ldd</command>
+		to create maps in the
+		<filename>kaarpux/dependencies</filename> directory.
+	</para></listitem>
+</orderedlist>
+</para>
+
+<para>
+<command>kaarpux/tools/kx_flist.pl</command>
+includes some woodoo to handle files which are written by many packages,
+such as logfiles and databases.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="dependency_tracking_using">
+<title>Using the Package Dependency Tracking Information</title>
+
+<para>
+Now dependencies can be viewed with 
+<command>kaarpux/tools/kx_dependencies.pl</command>.
+For options see:
+<programlisting>
+kaarpux/tools/kx_dependencies.pl --man
+</programlisting>
+</para>
+
+<para>
+Since there are more than 600 packages with more than 25.000 dependencies,
+the output of <command>kaarpux/tools/kx_dependencies.pl</command> 
+may be incomprehensible.
+</para>
+
+<para>
+However, <command>kaarpux/tools/kx_dependencies.pl</command> 
+includes the option <systemitem>--merge-file</systemitem>.
+Using this option, you can specify file(s) with merge information.
+See:
+<programlisting>
+kaarpux/tools/kx_dependencies.pl --man
+</programlisting>
+For example, to show all packages under <systemitem>xorg-apps</systemitem>
+as just one item called <systemitem>xorg-apps</systemitem>,
+you may specify:
+<programlisting>
+xorg-apps
+  xclock
+  xwud
+  xfd
+  xfontsel
+  xeyes
+  twm
+</programlisting>
+</para>
+
+<para>
+To create a customized <systemitem>--merge-file</systemitem> file you may start out with:
+<programlisting>
+{ \
+sed -n -e'/- bootstrap_4:/,$p' master/master.yaml | \
+sed \
+ -e's/#.*//' \
+ -e's/  - //' \
+ -e's/pkg: //' \
+ -e's/sudo: //' \
+ -e's/parallel://' \
+ -e's/://' \
+ -e's/- .*//'\
+ -e'/^ \+sh /d' \
+ -e's/script \+//' \
+ -e's/perl_module \+/PERLMODULE_/' \
+ -e'/^\s*$/d' \
+; \
+for f in $(grep -l 'xorg:' master/packages/x/*.yaml); do \
+ basename -s.yaml "$f"
+ grep -E '^\s*[\.P1]\s*[0-9a-z]{32,64} +' $f | \
+  sed -e 's/^\s*[.P1]\s*[0-9a-z]\+ \+\([-a-zA-Z0-9.]\+\)-[0-9.]*\.tar.*$/  \1/' ; \
+done \
+}
+</programlisting>
+and edit the output as required.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

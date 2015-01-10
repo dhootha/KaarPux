@@ -1,0 +1,25 @@
+package:
+  name: telepathy-logger
+  version: 0.8.1
+  www: http://telepathy.freedesktop.org/wiki/Logger
+  short: |
+      Telepathy Logger is a session daemon that should be activated whenever telepathy is being used.
+      This component's goal is to centralize the logging of all communication within the Telepathy framework.
+
+download:
+  url: http://telepathy.freedesktop.org/releases/telepathy-logger
+  file_tar_bz2: ~
+  checksum: 359528f5fa1539b250fead8d68c7a0eaef11ed4284dfb3761fff2b6dd688da39
+  verify: asc
+
+version:
+  installed_pkgconfig: telepathy-logger-0.2
+
+linux:
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --disable-Werror --disable-schemas-compile
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~

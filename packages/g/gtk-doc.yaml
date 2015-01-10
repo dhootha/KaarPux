@@ -1,0 +1,26 @@
+package:
+  name: gtk-doc
+  version: 1.21
+  www: http://www.gtk.org/gtk-doc/
+
+download:
+  gnomexz: ~
+  checksum: 5d934d012ee08edd1585544792efa80da271652587ba5b843d2cea8e8b80ee3e
+
+version:
+  installed_pkgconfig: ~
+  upstream_gnome_uneven: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-static
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~
+
+# TODO: verify_cli

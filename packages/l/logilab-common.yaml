@@ -1,0 +1,20 @@
+package:
+  name: logilab-common
+  version: 0.61.0
+  www: http://www.logilab.org/project/logilab-common
+  short: a bunch of modules providing low level functionnalities shared among some python projects.
+
+download:
+  url: http://download.logilab.org/pub/common/
+  file_tar_gz: ~
+  checksum: 0d92e78deeaa16bf23cd94d8b3ea41522d0a110db16657fbe22a52b959d65725
+
+version: ~
+
+linux:
+  - build:
+    - sh: python setup.py build
+  - test:
+    - sh: python setup.py test
+  - install:
+    - sh: python setup.py install

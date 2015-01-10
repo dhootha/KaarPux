@@ -1,0 +1,294 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="format_disks">
+<title>Formatting disks</title>
+
+<!-- ============================================================ -->
+
+<warning>
+<para>
+Be <emphasis>very</emphasis> careful here.
+Check and double check that you are pointing to the right disks and partitions
+before each command.
+</para>
+</warning>
+
+<!-- ============================================================ -->
+
+<section id="format_disks_sizes">
+<title>Disk and partition sizes</title>
+<para>
+The final &kx; system takes up more than 14GB space:
+<table id="format_disks_table_sizes"><title></title><tgroup cols='2' align='center' colsep='1' rowsep='1'>
+	<colspec colname='dir'/>
+	<colspec colname='size'/>
+	<thead>
+		<row>
+		<entry>file system</entry>
+		<entry>size</entry>
+		</row>
+	</thead>
+	<tbody>
+		<row>
+		<entry><filename class="directory">/bin</filename></entry>
+		<entry>800MB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/boot</filename></entry>
+		<entry>30MB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/etc</filename></entry>
+		<entry>30MB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/home</filename></entry>
+		<entry>400MB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/include</filename></entry>
+		<entry>300MB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/lib</filename></entry>
+		<entry>6.1GB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/libexec</filename></entry>
+		<entry>300MB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/opt</filename></entry>
+		<entry>4.5GB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/share</filename></entry>
+		<entry>1.6GB</entry>
+		</row>
+		<row>
+		<entry><filename class="directory">/var</filename></entry>
+		<entry>10MB</entry>
+		</row>
+	</tbody>
+</tgroup></table>
+
+You will also have the downloaded tarballs:
+<table id="format_disks_sizes_downloads"><title></title><tgroup cols='2' align='center' colsep='1' rowsep='1'>
+	<colspec colname='dir'/>
+	<colspec colname='size'/>
+	<tbody>
+		<row>
+		<entry><filename class="directory">/home/kaarpux/kaarpux/downloads</filename></entry>
+		<entry>4 GB</entry>
+		</row>
+	</tbody>
+</tgroup></table>
+
+Unless you use <systemitem>tmpfs</systemitem> for the build directories,
+you will also have:
+<table id="format_disks_sizes_builddirs"><title></title><tgroup cols='2' align='center' colsep='1' rowsep='1'>
+	<colspec colname='dir'/>
+	<colspec colname='size'/>
+	<tbody>
+		<row>
+		<entry><filename class="directory">/home</filename></entry>
+		<entry>5-10 GB</entry>
+		</row>
+	</tbody>
+</tgroup></table>
+
+</para><para>
+
+You should add a good margin to this to allow for further 
+operation and development of the &kx; system.
+A 48GB disk partition is probably a good choice.
+
+</para><para>
+
+If you use <systemitem>tmpfs</systemitem> for the build directories,
+a 32 GB disk partition is probably a good choice.
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="format_disks_about">
+<title>About BIOS, UEFI, MBR and GPT</title>
+
+<para>
+When your computer boots up, it will controlled by one of:
+<itemizedlist>
+	<listitem><para>
+		a legacy <systemitem>BIOS</systemitem>
+		(see <ulink url="http://en.wikipedia.org/wiki/BIOS">Wikipedia: BIOS</ulink>)
+	</para></listitem>
+	<listitem><para>
+		a <systemitem>UEFI</systemitem> interface
+		(see <ulink url="http://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface">Wikipedia: UEFI</ulink>)
+	</para></listitem>
+</itemizedlist>
+</para>
+
+<para>
+Disks can be partitioned in two "styles":
+<itemizedlist>
+	<listitem><para>
+		legacy <systemitem>MBR</systemitem> partitioning
+		(see <ulink url="http://en.wikipedia.org/wiki/Master_boot_record">Wikipedia: MBR</ulink>)
+	</para></listitem>
+	<listitem><para>
+		<systemitem>GPT</systemitem> partitioning
+		(see <ulink url="http://en.wikipedia.org/wiki/GUID_Partition_Table">Wikipedia: GPT</ulink>)
+	</para></listitem>
+</itemizedlist>
+</para>
+
+<para>
+&kx; contains tools for manipulating both <systemitem>MBR</systemitem> and <systemitem>GPT</systemitem> partitioning,
+and can be booted using either the legacy <systemitem>BIOS</systemitem> or the <systemitem>UEFI</systemitem> interface.
+However, the instructions for building &kx; covers only the following two cases:
+<itemizedlist>
+	<listitem><para>
+		legacy <systemitem>BIOS</systemitem> with legacy <systemitem>MBR</systemitem> partitioning.
+	</para></listitem>
+	<listitem><para>
+		<systemitem>UEFI</systemitem> interface with <systemitem>GPT</systemitem> partitioning
+	</para></listitem>
+</itemizedlist>
+</para>
+
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="format_disks_mbr">
+<title>Default partitioning - legacy MBR style</title>
+<para>
+By default, a &kx; system is set up with one root partition and one swap partition.
+If you are installing on a separate disk, his might be accomplished with:
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+FDEV=/dev/sdb
+fdisk ${FDEV}
+n
+p
+1
+
++4G
+n
+p
+2
+
+
+t
+1
+82
+p
+w
+</programlisting>
+which will set up a 4G swap partition and the rest of the disk as root partition.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="format_disks_gpt">
+<title>Disk partitioning - GPT style</title>
+<para>
+If you are using the "new" <systemitem>GPT</systemitem> style disk partitioning,
+you can use <application>gdisk</application> to patition the disks:
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+FDEV=/dev/sdb
+gdisk ${FDEV}
+</programlisting>
+</para>
+
+<para>
+You will probably want to set aside a small <systemitem>FAT</systemitem> partition
+as the <systemitem>UEFI</systemitem> partition, but your host system has probably
+already done that. If not, create the partition and then create a <systemitem>FAT</systemitem> filesystem on it:
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+EDEV=/dev/sdb1
+
+mkfs.vfat -F32 ${EDEV}
+</programlisting>
+
+</para>
+
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="disk_formatting">
+<title>Disk formatting</title>
+<para>
+Now create a filesystem on the disks:
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+DEV=/dev/sdb2
+
+mke2fs -t ext4 -jv ${DEV}
+fsck ${DEV}
+</programlisting>
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="format_disks_swap">
+<title>Swap formatting</title>
+<para>
+Now format the swap partition:
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+SWAP=/dev/sdb1
+
+mkswap ${SWAP}
+</programlisting>
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<note>
+<title>Amazon EC2</title>
+<para>
+A complete <ulink url="http://aws.amazon.com/ebs/">EBS</ulink> volume
+for <ulink url="http://aws.amazon.com/ec2/">Amazon's EC2</ulink>
+may be used as root disk, formatted as described in <xref linkend="disk_formatting"/>.
+</para>
+</note>
+
+<!-- ============================================================ -->
+
+<note>
+<title>Kernel Virtual Machine</title>
+<para>
+A <application>qemu</application> disk for <application>kvm</application> may be created with e.g.:
+<programlisting>
+qemu-img create -f raw kaarpux.img 128G
+</programlisting>
+</para>
+</note>
+
+</section>
+

@@ -1,0 +1,22 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<chapter id="post_install">
+<title>Post installation</title>
+
+<!-- ============================================================ -->
+
+&kx_system_time;
+&kx_networking;
+&kx_gdm_startup;
+&kx_git_setup;
+&kx_xen_virtualization;
+&kx_firefox;
+&kx_openvas;
+
+</chapter>

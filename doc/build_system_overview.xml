@@ -1,0 +1,41 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="build_system_overview">
+<title>Overview of the KaarPux Build System</title>
+
+<!-- ============================================================ -->
+
+<para>
+The principle behind the &kx; build system is, that the build process itself,
+as well as the build instructions for each package is defined using
+<ulink url="http://yaml.org/">YAML</ulink>.
+</para>
+
+<para>
+The complete build process is defined in
+<filename>kaarpux/master/master.yaml</filename>.
+The build instructions for each package are defined in
+<filename>kaarpux/master/packages/[a-z]/*.yaml</filename>.
+</para>
+
+<para>
+When you invoke <command>kaarpux/master/make_scripts.sh</command>,
+those <ulink url="http://yaml.org/">YAML</ulink> files are processed by
+<ulink url="http://www.perl.org/">perl</ulink> scripts in 
+<filename class="directory">kaarpux/master/perl</filename>
+to create the directories
+<filename class="directory">kaarpux/bootstrap</filename>
+and
+<filename class="directory">kaarpux/linux</filename>,
+and populate those directories with files needed for the build -
+in particular a lot of <ulink url="http://www.gnu.org/software/bash/">shell scripts</ulink>.
+</para>
+
+</section>
+

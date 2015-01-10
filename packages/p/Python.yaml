@@ -1,0 +1,52 @@
+package:
+  name: Python
+  version: 3.4.2
+  www: http://www.python.org/
+  short: Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+  changelog: http://www.python.org/download/releases/${KX_PYTHON_VERSION}
+
+doc: |
+  <para>
+  Most packages are still using Python 2
+  </para><para>
+  See <ulink url="http://wiki.python.org/moin/Python2orPython3">Python 2 or Python 3</ulink>
+  </para>
+
+download:
+  url: http://www.python.org/ftp/python/${KX_PYTHON_VERSION}
+  file_tar_xz: ~
+  checksum: 1c6d9682d145c056537e477bbfa060ce727f9edd38df1827e0f970dcf04b2def
+  verify: asc
+
+version:
+  installed_sh_trailing: python3 --version
+  upstream: kxver_scrape_url(undef, "http://www.python.org/ftp/python/", qr|>([0-9]+[0-9.]*[0-9]+)/<|);
+
+linux:
+  - build:
+    - echo: Preconfigure
+    - configure_kx: --enable-shared --with-system-expat --with-system-ffi
+    - make_repeat: ~
+
+  - test:
+    # Test case failing, as it ties to write to system directory
+    - sh: rm ./Lib/test/test_distutils.py
+    # Test case accessing dubious IRL
+    - sh: rm ./Lib/test/test_urllib2net.py
+
+    - test: ~
+
+  - install:
+    - install: ~  
+
+
+# ==========================================================
+
+verify_cli: |
+
+  kx_cli_match_success "/bin/python3 --version" { Python " 3." }
+  kx_cli_send_match_success /bin/python3 { "print (\"Don't panic\")" exit() } { "Don't panic" }
+  kx_cli_send_match_success /bin/python3 { "print (1+2+3+4+5+6+7+8+9)" exit() } { 45 }
+
+# TODO: better testcases
+

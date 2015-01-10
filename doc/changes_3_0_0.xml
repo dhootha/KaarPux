@@ -1,0 +1,128 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_0_0">
+<title>Changes in KaarPux version 3.0.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; version <systemitem>3.0.0</systemitem> released on <systemitem>2012-09-05</systemitem>
+</para>
+
+<para>
+Merge <filename class="directory">/</filename> and <filename class="directory">/usr</filename> filesystems.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_0_0_merge">
+<title>MAJOR: KaarPux: Merge / and /usr</title>
+<para>
+	(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8d16d8d359ee6f59f4cd19bf157db040d3d11aac/">8d16d8d3</ulink>,
+	 Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/abf9064f9cd0605136fc26bcd1b02f91784c4b0f/">abf9064f</ulink>)
+</para><para>
+
+The main changes are:
+
+<itemizedlist>
+<listitem><para>
+Install everything in the <filename class="directory">/</filename> (root) file system
+</para></listitem><listitem><para>
+Make <filename class="directory">/usr</filename> a link to <filename class="directory">/</filename> (to satisfy historical dependencies)
+</para></listitem>
+</itemizedlist>
+
+</para><para>
+
+This means:
+<itemizedlist>
+<listitem><para>
+Put <filename class="directory">/</filename> and <filename class="directory">/usr</filename> on the same partition
+</para></listitem><listitem><para>
+If you want split partions, mount <filename class="directory">/</filename> read-only, and 
+<filename class="directory">/etc</filename>,  <filename class="directory">/tmp</filename>, <filename class="directory">/var</filename>
+read-write
+</para></listitem>
+</itemizedlist>
+
+</para><para>
+
+Why? because:
+
+</para><para>
+Linux has traditionally split files needed to boot a basic system
+into <filename class="directory">/</filename> and files needed to boot the complete system into <filename class="directory">/usr</filename>.
+</para><para>
+However, the reasons for this split dates back to 1970 disks: see
+<ulink url="http://lists.busybox.net/pipermail/busybox/2010-December/074114.html">Understanding the bin, sbin, usr/bin , usr/sbin split</ulink>
+</para><para>
+With todays disks - and initramfs - the distinction does not make much sense.
+</para><para>
+In fact, trying to stay compliant with the
+<ulink url="http://www.pathname.com/fhs/">Filesystem Hierarchy Standard</ulink>
+is a real pain when installing a Linux distro.
+</para><para>
+
+Also:
+
+</para><para>
+The reasons for the <filename class="directory">/bin</filename> vs <filename class="directory">/sbin</filename> split are similar,
+so we install all binaries into <filename class="directory">/bin</filename>
+and just symlink <filename class="directory">/sbin</filename> to <filename class="directory">/bin</filename> (to satisfy historical dependencies).
+
+</para><para>
+
+Background:
+
+<itemizedlist>
+<listitem>
+<ulink url="http://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge">Free Desktop: The Case for the /usr Merge</ulink>
+</listitem><listitem>
+<ulink url="https://fedoraproject.org/wiki/Features/UsrMove">Fedora: Features/UsrMove</ulink>
+</listitem><listitem>
+<ulink url="http://0pointer.de/blog/projects/the-usr-merge.html">Lennart Poettering: The Case for the /usr Merge</ulink>
+</listitem>
+</itemizedlist>
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_0_0_other">
+<title>Other changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: provider_for_google_calendar: v 0.16
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f056464a4ae3800a521fb95c61c281107475b635/">f056464a</ulink>)
+	</para></listitem>
+
+
+	<listitem><para>
+		Many updates to version checks.
+	</para></listitem>
+
+	<listitem><para>
+		Many documentation updates.
+	</para></listitem>
+
+	<listitem><para>
+		Other minor changes.
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

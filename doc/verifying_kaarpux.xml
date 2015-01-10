@@ -1,0 +1,141 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<chapter id="verifying_kaarpux">
+<title>Verifying KaarPux</title>
+
+<!-- ============================================================ -->
+
+<section id="verifying_toolchain">
+<title>Verifying the Toolchain</title>
+
+<para>
+To verify that the <systemitem>toolchain</systemitem> works:
+</para>
+
+<userinput><programlisting>
+KX=/home/kaarpux/kaarpux
+cd ${KX}
+verify/kx_verify_toolchain.sh
+</programlisting></userinput>
+
+<para>
+The output should end with
+</para>
+
+<computeroutput><programlisting>
+OK [ make check ] completed successfully
+</programlisting></computeroutput>
+
+<para>
+if everything worked out.
+</para>
+
+<para>
+<userinput>kx_verify_toolchain.sh</userinput> simply verifies:
+<itemizedlist>
+	<listitem><para>
+		That the <systemitem>autotools</systemitem> are not totally borked.
+	</para></listitem>
+	<listitem><para>
+		That we can build a simple <systemitem>C</systemitem> library and executable - and execute it.
+	</para></listitem>
+	<listitem><para>
+		That we can build a simple <systemitem>C++</systemitem> executable (linking to <systemitem>STL</systemitem>) - and execute it.
+	</para></listitem>
+	<listitem><para>
+		That the various <systemitem>binutils</systemitem> utilities are working on the files generated above.
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="verifying_cli">
+<title>Verifying the Comman-Line-Interface</title>
+
+<para>
+To verify that the <systemitem>CLI</systemitem> (command-line-interface)
+programs are working:
+</para>
+
+<userinput><programlisting>
+KX=/home/kaarpux/kaarpux
+cd ${KX}
+verify/kx_verify_cli.sh
+</programlisting></userinput>
+
+<para>
+The output should end with
+</para>
+
+<computeroutput><programlisting>
+OK: Test completed successfully
+</programlisting></computeroutput>
+
+<para>
+if everything worked out.
+</para>
+
+<para>
+<userinput>kx_verify_cli.sh</userinput> simply verifies,
+that the <systemitem>CLI</systemitem> programs installed in
+<filename class="directory">/bin</filename>
+are not totally borked.
+</para>
+
+<para>
+Please note, that only a few packages currently have
+<userinput>kx_verify_cli.sh</userinput> verifications defined.
+</para>
+
+</section>
+<!-- ============================================================ -->
+
+<section id="verifying_gui">
+<title>Verifying GUI programs</title>
+
+<para>
+To verify that the <systemitem>GUI</systemitem> (Graphical User Interface)
+programs are working:
+</para>
+
+<userinput><programlisting>
+KX=/home/kaarpux/kaarpux
+cd ${KX}
+verify/kx_verify_gui.sh
+</programlisting></userinput>
+
+<para>
+The output should end with
+</para>
+
+<computeroutput><programlisting>
+OK: Test completed successfully
+</programlisting></computeroutput>
+
+<para>
+if everything worked out.
+</para>
+
+<para>
+<userinput>kx_verify_gui.sh</userinput> simply verifies,
+that the installed <systemitem>GUI</systemitem> programs
+can be launched and are not totally borked.
+</para>
+
+<para>
+Please note, that only a few packages currently have
+<userinput>kx_verify_gui.sh</userinput> verifications defined.
+</para>
+
+</section>
+
+</chapter>

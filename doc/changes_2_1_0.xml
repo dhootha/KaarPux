@@ -1,0 +1,285 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_2_1_0">
+<title>Changes in KaarPux version 2.1.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>2.1.0</systemitem> released on <systemitem>2012-08-30</systemitem>
+</para>
+
+<para>
+	Security, Firefox 15, iptables, and more...
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_0_sec">
+<title>Security Updates</title>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: nss: v 3.13.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b35362168c4e67e23d88ebb4b822e5635c277697/">b3536216</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: certdata: v 1.82.2.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ca42546884967a86385e0ea5356313de22755e1b/">ca425468</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xulrunner firefox: v 15.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/463e1f4a32dce114364985bbb7eb67e854344c9e/">463e1f4a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 15.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/797c9723207d97204c7edd3de2681bf2b3fcb4c1/">797c9723</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.5.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b6950f4a3bd5b1e03a56f7fbd72b76d71a00644a/">b6950f4a</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/eff6dd4341756de49fa61a8e0047741691bc4b22/">eff6dd43</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/def97df1672fd24305fc8ed8440c02f369ab41f5/">def97df1</ulink>)
+	</para></listitem>
+</itemizedlist>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_0_iptables">
+<title>iptables improvements</title>
+
+	<section id="changes_2_1_0_ulogd">
+	<title>Add ulogd for logging iptables packets in userspace</title>
+
+	<itemizedlist>
+		<listitem><para>
+			ADD: ulogd *: logging iptables packets in userspace
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3004263146c1236e2ae994d1302626489f1624ad/">30042631</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			FIX: build: move libpcap before ulogd
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/500f0e352610570a504c159d41c2c0e384cc1e83/">500f0e35</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			FIX: iptables: mkdir '/etc/systemd/system/network.target.wants/'
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/aa0c5b0e3e3aceb34b558d57062bf5c1998f2d99/">aa0c5b0e</ulink>)
+		</para></listitem>
+	</itemizedlist>
+
+	<para>
+		Add <systemitem>ulogd</systemitem> and prerequisites:
+		<itemizedlist>
+			<listitem><para><systemitem>libnfnetlink</systemitem></para></listitem>
+			<listitem><para><systemitem>libmnl</systemitem></para></listitem>
+			<listitem><para><systemitem>libnetfilter_acct</systemitem></para></listitem>
+			<listitem><para><systemitem>libnetfilter_conntrack</systemitem></para></listitem>
+			<listitem><para><systemitem>libnetfilter_log</systemitem></para></listitem>
+		</itemizedlist>
+	</para><para>
+		Configure <systemitem>iptables</systemitem> to forward DROPped packets to <systemitem>ulogd</systemitem>.
+	</para><para>
+		Configure <systemitem>ulogd</systemitem> to start at boot and dump the dropped packets
+		into <filename>/var/log/iptables_drop.pcap</filename>
+		in <systemitem>pcap</systemitem> format.
+	</para><para>
+		Now we can analyze dropped packets using tcpdump, wireshark, or similar.
+	</para>
+	</section>
+
+	<!-- ============================================================ -->
+
+	<section id="changes_2_1_0_conntrack">
+	<title>Add iptables connection tracking</title>
+
+	<itemizedlist>
+		<listitem><para>
+			IMPROVE: iptables: improved iptables configuration
+		</para><para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/313a6249b7bb1b5bcff4c36ba73d753d405df752/">313a6249</ulink>
+		</para></listitem>
+
+		<listitem><para>
+			IMPROVE: linux: config for netfilter connection tracking
+		</para><para>
+			Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b6fddddf9a05d4f966c5841ed45136eb304ed006/">b6fddddf</ulink>
+		</para></listitem>
+
+		<listitem><para>
+			IMPROVE: iptables: default to remove all chains in all tables
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c7641e05b2c578ee4459ea433e31f0c2b43b0eb6/">c7641e05</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			MINOR: iptables: remove ftp RELATED, now that we have EXPECTED
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2bf528c055b6f8a25169563df7a6812d32fcbcb8/">2bf528c0</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			IMPROVE: iptables: handle NetBIOS NameService
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1870536b7469bbeccdc740babe923f0641616d8d/">1870536b</ulink>)
+		</para></listitem>
+	</itemizedlist>
+
+	<para>
+		<systemitem>iptables</systemitem> is deprecating automatic assignment of connection tracking helpers.
+		Instead, we now manually configure connection tracking by using the <systemitem>conntrack</systemitem> module.
+		See <ulink url="https://home.regit.org/netfilter-en/secure-use-of-helpers/">Secure use of Connection Tracking Helpers</ulink>
+		for more information.
+	</para><para>
+		Configure the kernel for use of <systemitem>conntrack</systemitem>.
+	</para><para>
+		Disable automatic assignment of connection tracking helpers and use
+		<command>-m conntrack</command> instead of <command>-m state</command>.
+	</para><para>
+		Manually assign helper for outgoing <systemitem>FTP</systemitem> and <systemitem>NetBIOS</systemitem> NameService.
+	</para><para>
+		Also correct <systemitem>DHCP</systemitem> rules to cover all interfaces,
+		silently drop <systemitem>FTP</systemitem> and <systemitem>NetBIOS</systemitem> (unless originated from us),
+		rate-limit incoming SSH connections,
+		rate-limit logging of dropped packets.
+	</para>
+	</section>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_0_other">
+<title>Other Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: wireshark: v 1.8.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/651ed78c86fcbc00e453ff1fa734ebd6c55ca5d3/">651ed78c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: NetworkManager: v 0.9.6.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ea302ec0f029896d50404ae65b08987e5219398d/">ea302ec0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: NetworkManager: --libexecdir=/usr/lib/NetworkManager
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/29f919359e134e3044d352309342972289fd98d0/">29f91935</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: bluez: install conf files and systemd service
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a3ddb36447a71453760847a9b5af10ca564aac10/">a3ddb364</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: certdata: documentation and version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/37172e5368f72d753dfbe14836058eac6a98889c/">37172e53</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: make /run tmpfs 30% of available memory
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/28ea1feda3f329d037ad06ee93d6db5c7e50799f/">28ea1fed</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: make_package_scripts: add possibility to disable automatic tests
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/58f7578157a047e71f2e56e12af79d954fbd52f0/">58f75781</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: make_package_scripts: do not disable automatic tests by default
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6bcf148f3587ef10510bd2a4bbe33bd15aab9b9b/">6bcf148f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: group: add kaarpux to 'adm' group
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/eaa8adcaea837d66a47c0a418fabbf41e99f3aad/">eaa8adca</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: systemd: do not try to start services we do not want
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/735fb591ed917e6532b4fbae695a4822dacfdb61/">735fb591</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		Several minor documentation updates.
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_0_upgrade">
+<title>Upgrade instructions</title>
+
+<para>
+The security fixes can be applied to a
+&kx; version <systemitem>2.0.0</systemitem> system
+by re-installing the packages in this recommended sequence:
+<itemizedlist>
+	<listitem><para><systemitem>linux</systemitem></para></listitem>
+	<listitem><para><systemitem>nss</systemitem></para></listitem>
+	<listitem><para><systemitem>certdata</systemitem></para></listitem>
+	<listitem><para><systemitem>xulrunner</systemitem></para></listitem>
+	<listitem><para><systemitem>firefox</systemitem></para></listitem>
+	<listitem><para><systemitem>thunderbird</systemitem></para></listitem>
+</itemizedlist>
+</para>
+
+<para>
+The remaining fixes can be applied to a
+&kx; version <systemitem>2.0.0</systemitem> system
+by (re-)installing the packages in this recommended sequence:
+<itemizedlist>
+	<listitem><para><systemitem>libnfnetlink</systemitem></para></listitem>
+	<listitem><para><systemitem>libmnl</systemitem></para></listitem>
+	<listitem><para><systemitem>libnetfilter_acct</systemitem></para></listitem>
+	<listitem><para><systemitem>libnetfilter_conntrack</systemitem></para></listitem>
+	<listitem><para><systemitem>libnetfilter_log</systemitem></para></listitem>
+	<listitem><para><systemitem>ulogd</systemitem></para></listitem>
+	<listitem><para><systemitem>iptables</systemitem></para></listitem>
+	<listitem><para><systemitem>systemd</systemitem></para></listitem>
+	<listitem><para><systemitem>bluez</systemitem></para></listitem>
+	<listitem><para><systemitem>NetworkManager</systemitem></para></listitem>
+	<listitem><para><systemitem>wireshark</systemitem></para></listitem>
+</itemizedlist>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+</section>

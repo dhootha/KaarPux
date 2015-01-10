@@ -1,0 +1,25 @@
+package:
+  name: b43-fwcutter
+  version: 018
+  www: http://git.bues.ch/gitweb?p=b43-tools.git;a=blob;f=fwcutter/README
+  short: tool to extract firmware from binary Broadcom 43xx driver files.
+
+doc: |
+    <para>
+        see <ulink url="http://wireless.kernel.org/en/users/Drivers/b43">b43</ulink>
+    </para>
+
+download:
+  url: http://bues.ch/b43/fwcutter
+  file_tar_bz2: ~
+  verify: asc
+  checksum: 57b069dcd1a369ceb457ca397aab470be9b3fc537f400d27244e060fd425638f
+
+version: ~
+
+linux:
+  - build:
+    - make: ~
+  # No test suite
+  - install:
+    - install: PREFIX=${KX_PREFIX}

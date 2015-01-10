@@ -1,0 +1,44 @@
+package:
+  name: gnome-control-center
+  version: 3.14.2
+  short: graphical user interface used to configure various aspects of GNOME.
+
+download:
+  gnomexz: ~
+  checksum: b15e188b3d45c86d71f4d8cb297829cf190be81f22ce76dc74c7b4232bd0652a
+
+version:
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx_posix: >
+        --disable-documentation
+        --disable-ibus
+        --with-cheese
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~
+
+
+verify_gui: |
+    spawn gnomecontrolcenter gnome-control-center
+
+    application
+    find panel Personal 7
+
+    application
+    find panel Hardware 7
+
+    application
+    find panel System 7
+
+    # TODO: verify_gui: How to verify that we have the items we want?
+
+    altf4
+    desktop
+    away application gnomesystemmonitor 1

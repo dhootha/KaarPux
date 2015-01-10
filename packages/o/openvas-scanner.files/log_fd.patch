@@ -1,0 +1,54 @@
+Patch by Henrik Kaare Poulsen
+for KaarPux
+http://kaarpux.kaarposoft.dk/
+
+When initializing the OpenVAS Scanner log-file,
+the file descriptor 3 is explicitly used.
+
+However, since GnuTLS 3.3.0, the GnuTLS library is initialized when loaded.
+This includes opening /dev/urandom, which is assigned file descriptor 3.
+
+Hence, when the OpenVAS Scanner log-file is initialized,
+the file descriptor for /dev/urandom is overwritten.
+
+It is not quite clear to me WHY anyone would want to use a fixed
+file descriptor number,
+and hence I do not know how to "correctly" solve this problem.
+
+However, this patch seems to work...
+
+diff -Naur openvas-scanner-4.0.2.ORIG/src/log.c openvas-scanner-4.0.2/src/log.c
+--- openvas-scanner-4.0.2.ORIG/src/log.c	2014-06-06 13:42:16.000000000 +0200
++++ openvas-scanner-4.0.2/src/log.c	2014-08-19 23:15:24.040670311 +0200
+@@ -50,7 +50,6 @@
+   if ((!filename) || (!strcmp (filename, "stderr")))
+     {
+       log = stderr;
+-      dup2 (2, 3);
+     }
+   else if (!strcmp (filename, "syslog"))
+     {
+@@ -68,21 +67,12 @@
+           log = stderr;
+         }
+ 
+-      if (fd != 3)
+-        {
+-          if (dup2 (fd, 3) < 0)
+-            {
+-              perror ("dup2 ");
+-            }
+-          close (fd);
+-        }
+-
+-      log = fdopen (3, "a");
++      log = fdopen (fd, "a");
+       if (log == NULL)
+         {
+           perror ("fdopen ");
+           log = stderr;
+-          dup2 (2, 3);
++          dup2 (2, fd);
+         }
+ 
+       setlinebuf (log);

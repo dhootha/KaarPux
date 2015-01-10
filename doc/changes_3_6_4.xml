@@ -1,0 +1,198 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_6_4">
+<title>Changes in KaarPux version 3.6.4</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.6.4</systemitem> released on <systemitem>2013-jun-20</systemitem>
+</para>
+
+<itemizedlist>
+
+	<listitem><para>
+		Java update
+	</para></listitem>
+	<listitem><para>
+		Systemtap improvements
+	</para></listitem>
+	<listitem><para>
+		OpenVAS
+	</para></listitem>
+
+</itemizedlist>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_4_java">
+<title>Java update</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: icedtea7: v 2.4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c852af463e4cfeb8b4a08edb168932ae3047f9ef/">c852af46</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_4_stap">
+<title>Systemtap improvements</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: systemtap: v 2.2.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/038fa8257e3cfec4a7dab64f796e695ec2aa19e7/">038fa825</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: staprun with -R to enable parallel build
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b177899a6a6227e74edec784bfc194a325c35ece/">b177899a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: pass LD_LIBRARY_PATH to staprun
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fccadb19c21fd4255fcd15fedabebec1a8bd81c3/">fccadb19</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: use default LD_LIBRARY_PATH if not set
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ed78e2fc692e5e3bc170e222fcd8edf7c6b194a4/">ed78e2fc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: kx_open to use kernel.function("do_filp_open").return instead of syscall.open.return and kernel.function("path_openat").return
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2bf0e39f17674305ec6efa7cb448d5aefc1b9015/">2bf0e39f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: install kx_open with --suppress-handler-errors
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/be342bf5667253421f562b7bc29bab8e0a2560aa/">be342bf5</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_4_openvas">
+<title>OpenVAS</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: nmap
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/daec461b6dc27257bd907420768933854717d334/">daec461b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: OpenVAS: OpenVAS and prerequisites
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2ad95dc1028011a5d955a60f4924e3d7a0551af9/">2ad95dc1</ulink>)
+	</para></listitem>
+	<listitem><para>
+		FIX: KxBuild: Correct build sequence (openvas prereqs)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dc24d98d7029416780c69c30ba5fea2f46b4c2b8/">dc24d98d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: rsync: move to linux phase
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/52299ee0ec7097a76c90e6302815d54dc91d82ee/">52299ee0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: move rsync and nmap earlier
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/35cacc03e8c374d45ad64c83338c4bf2116c82a9/">35cacc03</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: pinentry: move from opt to linux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/28d35fad24d3a98dc4be53a3c455306308f56110/">28d35fad</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_4_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: pygobject: comment out test cases
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/515d5c087fb9eeb34df83b3b6804f0291e72fd82/">515d5c08</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: WebKit: reintroduce make_repeat
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/225059457676fd190d74d6d060256e90039c41d7/">22505945</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: make_repeat to just make a single -j1 after failure
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/94ecbc18eb94764d4edc3e61f6bc3079718e5f7f/">94ecbc18</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: pkg-config: comment out check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/518715a28aadcf9eb6c1c7f3b6391189f4dfd1f4/">518715a2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: add more random entropy sources
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/95314f3b1b8ef247f75301f8b2f72a375c964851/">95314f3b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: libical: make_repeat
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fc344db57e4f24abe6143ea49842cb5ff35abab3/">fc344db5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gdm: make_repeat
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/65421de26edb000ee0c77477cc38f55432af8fe8/">65421de2</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

@@ -1,0 +1,26 @@
+package:
+  name: cliapp
+  version: 1.20140719
+  www: http://liw.fi/cliapp/
+  short: Python framework for Unix command line programs
+
+download:
+  url: http://code.liw.fi/debian/pool/main/p/python-cliapp/
+  file: python-cliapp_${KX_CLIAPP_VERSION}.orig.tar.gz
+  checksum: f7c988a3a6d022de7c59430d6f7a3dc358d443a099a12af8daef115b1016b44f
+
+version:
+  installed_na: ~
+  upstream: kxver_scrape_url(undef, $url, qr|python-cliapp_([0-9.]+)\.orig|);
+
+linux:
+
+  - build:
+    - sh: python setup.py build
+
+  # no test
+
+  - install:
+    - sh: python setup.py install
+
+# TODO: verify_cli

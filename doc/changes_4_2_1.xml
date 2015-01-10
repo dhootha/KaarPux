@@ -1,0 +1,362 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_2_1">
+<title>Changes in KaarPux version 4.2.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.2.1</systemitem> released on <systemitem>2014-mar-26</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		Several Security Updates (mozilla, openssh, libpng, freetype, logilab)
+		</para></listitem>
+
+		<listitem><para>
+		Better Dependency Tracking with systemtap
+		</para></listitem>
+
+		<listitem><para>
+		Install packages in parallel
+		</para></listitem>
+
+		<listitem><para>
+		Tool for analyzing build performance
+		</para></listitem>
+
+		<listitem><para>
+		Bugs fixed, minor improvements
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_sec_upd">
+<title>Several Security Updates</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: nss: v 3.16
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ca3aee52b83a8246accb24a8d746cebe10de8865/">ca3aee52</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 24.4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/67630c92c2051d174be0f6eb7deb8438d3ad8104/">67630c92</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/db0354dc4fc8392635b559fdbd4d29f75d80ed09/">db0354dc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: firefox: v 28.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0df1b5fff20dc990c6af0308c6b0e491809e53fc/">0df1b5ff</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssh: v 6.6p1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ac8460ac5d19e91c60d7bea0bddaf9b27822f4ae/">ac8460ac</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/3d16ff8c204d6b41763f28869fec8cdf74fc1a15/">3d16ff8c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libpng: v 1.6.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a9d10baf3a27d883f44f32fdf6a3581d02efc166/">a9d10baf</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: logilab-common: v 0.61.0 (CVE-2014-1838)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/934c7b361457524d8dc8bd5712b5a1f4cda5b2ee/">934c7b36</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: freetype: v 2.5.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/975f6d398ec93c3ecd6d885720d2bab58a3451e8/">975f6d39</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_stap">
+<title>Better Dependency Tracking with systemtap</title>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5dcbc2d0321a60373b30128c047d5df099040dfd/">5dcbc2d0</ulink>
+	</para>
+	<itemizedlist>
+	<listitem><para>
+		systemtap: v 2.5-0.349.g2dd920e34796
+	</para></listitem>
+	</itemizedlist>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/038fbc793742d3df8343fe389b031485d0621f73/">038fbc79</ulink>
+	</para>
+	<itemizedlist>
+	<listitem><para>
+		do NOT use find or perl/flist.pl to track installed files (speeding up regular builds)
+	</para></listitem>
+	<listitem><para>
+		use fsnotify to track file access
+	</para></listitem>
+	</itemizedlist>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c68e1300f0b76a0b70bcb7f2e096f963986ff9b4/">c68e1300</ulink>
+	</para>
+	<itemizedlist>
+	<listitem><para>
+		do not reference defunct flist.pl
+	</para></listitem>
+	</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_parallel">
+<title>Install packages in parallel</title>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3dd7bc5811285930b2b4fb4bbaf118133220c96b/">3dd7bc58</ulink>
+	</para>
+	<itemizedlist>
+	<listitem><para>
+		remove kx_lock_install
+	</para></listitem>
+	<listitem><para>
+		add glib-compile-schemas to update-desktop-database.sh
+	</para></listitem>
+	<listitem><para>
+		add --disable-schemas-compile to gnome packages
+	</para></listitem>
+	<listitem><para>
+		re-order building of fonts (due to mkfontdir, mkfontscale, and fc-cache)
+	</para></listitem>
+	<listitem><para>
+		use make -j NNN install
+	</para></listitem>
+	<listitem><para>
+		do not sleep in the beginning of parallel builds
+	</para></listitem>
+	</itemizedlist>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3c4bc98a27ab2ebb79b42092e73b7e53f6a8b1c6/">3c4bc98a</ulink>
+	</para>
+	<itemizedlist>
+	<listitem><para>
+		do NOT install with -j NNN; too many packages are breaking
+	</para></listitem>
+	</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_perf">
+<title>Tool for analyzing build performance</title>
+
+	<itemizedlist>
+
+	<listitem><para>
+		ADD: gnuplot
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/165b8fcee5be6245e63455c0728c5b0f93a181a9/">165b8fce</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: add kx_sar tool to analyse build performance
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d8b485edda2d067699ff20d0d50a76d47d275d19/">d8b485ed</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: build_performance: add paragraph on combining statistics
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6b70f23ee1eb8fb6b2ddc00a1403ed0b19584439/">6b70f23e</ulink>)
+	</para></listitem>
+
+	</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: lcms2 libsigc++: do not build twice
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dc57696a0f1c1b7cb1a1aa2cfc0beb042561255f/">dc57696a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: cdrkit d-feet lm_sensors xerces-c: do NOT install in /usr/local
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/39e155ade67bebd376671faecabf96a6d9eb27c4/">39e155ad</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+
+	<listitem><para>
+		UPD: nspr: v 4.10.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5c597d7023e23f1eaefd2771d297393ea210d0bc/">5c597d70</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 5.1.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f738624dc21b247a6bfd2d6faf7fb385b558515f/">f738624d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.19
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/36a1c869235aafeef3388dba88cb5ef745bfb73b/">36a1c869</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.13.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/061e31605b9870b59a0dfa10eb21cdda00a6c941/">061e3160</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: certdata: only mark upstream outdated if SHA256-sum of CONTENTS have changed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e657dcefc7f3428633388ce8a8fc584a2dcbda90/">e657dcef</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: systemd: better configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/241fc2a1414b8bed79e959375a7590f7bd819bbe/">241fc2a1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: pass download image when launching kvm
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/08746ebcfbced8725ecf6ca476147249ee692d46/">08746ebc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: typo in error message in kvm.sh
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cb337701250302d62c6a95d4746fda6ae6a3e78f/">cb337701</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: kx_ver_wiz: more robust sed command
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f8e0db900a9c4c78822a31703bf77678301080c9/">f8e0db90</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: do not update lsb_release number
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6e07a0c495d894ee04dd6ee5e89e8439b40d902a/">6e07a0c4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMRPOVE: xorg: do not install static libraries
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/83f3a32718c92eeab0502df857090287904c7152/">83f3a327</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMRPOVE: qpdf spice-gtk xerces-c: do not install static libraries
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a9c913f2c2ee4449dc47b9d5627314ef06f4f939/">a9c913f2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: spice-gtk: do not use --disable-static; it does not work?!
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ecc11133adebf05715624f6e00cc6e60ebce72a0/">ecc11133</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: freetype: correct installed version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0d844999cf316652e8963585ca3a96ba3e833526/">0d844999</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_1_doc">
+<title>Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		DOC: www: update Copyright year in license
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a8365bf188f10077f0fc53b929dffffe707cbf1c/">a8365bf1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3b90535c760caece2abd418e51f8aad548ec111e/">3b90535c</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

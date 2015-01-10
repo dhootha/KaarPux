@@ -1,0 +1,60 @@
+package:
+  name: WebKit2
+  version: 2.7.2
+  www: http://webkitgtk.org/
+  short: WebKitGTK+ is the port of the portable web rendering engine WebKit to the GTK+ platform.
+
+doc: |
+  <para>Note that we have two <application>WebKit</application> packages:
+    <xref linkend="pkg_WebKit1" /> and
+    <xref linkend="pkg_WebKit2" />.
+  </para>
+  <para>
+    <xref linkend="pkg_WebKit1" /> is an "old" package,
+    implementing only the <application>WebKit1 API</application>.
+  </para>
+  <para>
+    <xref linkend="pkg_WebKit2" /> is a "new" package,
+    implementing only the <application>WebKit2 API</application>.
+    The <application>WebKit2 API</application> is described here:
+    <ulink url="http://trac.webkit.org/wiki/WebKit2">http://trac.webkit.org/wiki/WebKit2</ulink>
+  </para>
+
+download:
+  url: http://webkitgtk.org/releases
+  file: webkitgtk-${KX_WEBKIT2_VERSION}.tar.xz
+  dir: webkitgtk-${KX_WEBKIT2_VERSION}
+  checksum: cd881ac4d49fe54f2a23c39d2b2e11970728da13
+  verify: sha1.asc
+
+version:
+  installed: >
+    kxver_header_file_full("/include/webkitgtk-3.0/webkit/webkitversion.h",
+    qr|WEBKIT_MAJOR_VERSION\s*\(([0-9]+)|,
+    qr|WEBKIT_MINOR_VERSION\s*\(([0-9]+)|,
+    qr|WEBKIT_MICRO_VERSION\s*\(([0-9]+)|);
+
+  upstream: kxver_scrape_url("webkitgtk", $url);
+
+linux:
+  - build:
+#    - use_gcc: ~
+    - sh: mkdir -pv build
+    - sh: cd build
+    - cmake_kx: >
+        -DCMAKE_BUILD_TYPE=Release
+        -DCMAKE_SKIP_RPATH=ON
+        -DPORT=GTK
+        -DLIB_INSTALL_DIR=/usr/lib
+        -Wno-dev
+        ..
+    - make: ~
+
+
+  # 'make check' does nothing
+
+  - install:
+#    - use_gcc: ~
+    - sh: cd build
+    - install: ~
+

@@ -1,0 +1,29 @@
+package:
+  name: cracklib
+  version: 2.9.1
+  www: http://sourceforge.net/projects/cracklib
+  short: library used to enforce strong passwords by comparing user selected passwords to words in chosen word lists.
+
+download:
+  sourceforge: ~
+  file_tar_gz: ~
+  checksum: 408905c2539a97dc8cbbb6d7cd2046cb5647a345b4bda399220d9471be16d156
+
+additional_downloads:
+  - http://downloads.sourceforge.net/cracklib/cracklib-words-20080507.gz cracklib-words-20080507.gz 7fa6ba0cd50e7f9ccaf4707c810b14f1
+
+version:
+   upstream: kxver_upstream_sourceforge("cracklib", "cracklib", "cracklib");
+
+linux:
+  - build:
+    - configure_kx: --disable-static
+    - make: ~
+  - test:
+    - test: ~
+  - install:
+    - install: ~
+    - sh: |
+        install -v -m644 -D ../../../../downloads/cracklib-words-20080507.gz /share/dict/cracklib-words.gz
+        gunzip -vf /share/dict/cracklib-words.gz
+        create-cracklib-dict /share/dict/*

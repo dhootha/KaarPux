@@ -1,0 +1,35 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="acknowledgements">
+<title>Acknowledgements</title>
+
+<para>
+
+&kx; is based on the work of thousands of developers contributing to 
+<ulink url="http://en.wikipedia.org/wiki/Free_and_open_source_software">Free and open source software</ulink>.
+I am greatly indebted to all of you!
+
+</para>
+<para>
+
+&kx; was inspired by
+<ulink url="http://www.linuxfromscratch.org/">Linux From Scratch</ulink>,
+and the bootstrap phase of &kx; is build directly on 
+<ulink url="http://www.linuxfromscratch.org/lfs/view/development/">Linux From Scratch</ulink>.
+
+So I owe a great debt to the 
+<ulink url="http://www.linuxfromscratch.org/credits.html">people developing Linux From Scratch</ulink>.
+
+See also the 
+<ulink url="http://www.linuxfromscratch.org/lfs/view/development/legalnotice.html">Legal notice</ulink>.
+
+</para>
+
+</section>
+

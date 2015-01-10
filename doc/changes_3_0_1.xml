@@ -1,0 +1,140 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_0_1">
+<title>Changes in KaarPux version 3.0.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.0.1</systemitem> released on <systemitem>2012-sep-10</systemitem>
+</para>
+
+<para>
+	Package updates and bugfixes.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_0_1_upd">
+<title>Package Updates</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: alsa-*: v 1.0.26
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1741e31395e4aa0e9c69fa4dbc473bb01f1e278a/">1741e313</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xulrunner firefox: v 15.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fe693a1ffb4f79d735f9f54ddc65d3a693bbe661/">fe693a1f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: icedtea-web: v 1.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0256f1ee5165e581dbde26b4fe103c7fa3c1b33d/">0256f1ee</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.5.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4df851bf0e865c4b2b8dd729268e793ec5fa1533/">4df851bf</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_0_1_bugs">
+<title>Bugfixes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: gdm: register gdm sessions with systemd/logind in pam
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5983168c052092dc8f8a003ede766b02283ecf10/">5983168c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: polkit: new download location
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/eb6d22defed5ca447199a7bf1be4b81ab6106948/">eb6d22de</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_0_1_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: boost: install both static and shared libraries
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/56ed3a97712771892554b9022d95ef6a7e55f452/">56ed3a97</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: xulrunner firefox thunderbird: set mozonfig version by script, not manually
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/330634d4de64aea51f0fc679139c1bbdb6d93d50/">330634d4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: [m-s]*: improved version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/86ada3d1ef325ed77f5d400bf59f1ad4b99016ad/">86ada3d1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: kx_changelog.pl: list changes in chronological order
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0c259e5931084b67ac5b24d3a5a3266d217827af/">0c259e59</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_0_1_upgrade">
+<title>Upgrade instructions</title>
+
+<para>
+The upgrades can be applied to a
+&kx; version <systemitem>3.0.0</systemitem> system
+by re-installing the packages in this recommended sequence:
+<itemizedlist>
+	<listitem><para><systemitem>alsa-lib</systemitem></para></listitem>
+	<listitem><para><systemitem>alsa-plugins</systemitem></para></listitem>
+	<listitem><para><systemitem>alsa-utils</systemitem></para></listitem>
+	<listitem><para><systemitem>gdm</systemitem></para></listitem>
+	<listitem><para><systemitem>xulrunner</systemitem></para></listitem>
+	<listitem><para><systemitem>firefox</systemitem></para></listitem>
+	<listitem><para><systemitem>icedtea-web</systemitem></para></listitem>
+	<listitem><para><systemitem>noscript</systemitem></para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

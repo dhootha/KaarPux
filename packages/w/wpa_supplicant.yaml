@@ -1,0 +1,46 @@
+package:
+  name: wpa_supplicant
+  version: 2.3
+  www: http://hostap.epitest.fi/wpa_supplicant/
+  short: support for WPA and WPA2
+
+download:
+  url: http://hostap.epitest.fi/releases
+  file_tar_gz: ~
+  checksum: eaaa5bf3055270e521b2dff64f2d203ec8040f71958b8588269a82c00c9d7b6a
+
+version: ~
+
+linux:
+
+  - build:
+    - sh: cd wpa_supplicant
+    - get_pkg_file: config
+    - sh: cp config .config
+    - make: BINDIR=${KX_PREFIX}/bin LIBDIR=${KX_PREFIX}/lib DESTDIR=${KX_PREFIX}
+
+  # No test suite
+
+  - install:
+    - sh: cd wpa_supplicant
+    - install: BINDIR=${KX_PREFIX}/bin LIBDIR=${KX_PREFIX}/lib DESTDIR=${KX_PREFIX}
+
+    - sh: |
+        install -d -m755 "${KX_PREFIX}/etc/wpa_supplicant"
+        install -m644 wpa_supplicant.conf "${KX_PREFIX}/etc/wpa_supplicant/wpa_supplicant.conf"
+
+        install -m644 doc/docbook/*.5 "${KX_PREFIX}/share/man/man5/"
+        install -m644 doc/docbook/*.8 "${KX_PREFIX}/share/man/man8/"
+        rm -f "${KX_PREFIX}/share/man/man8/wpa_priv.8"
+        rm -f "${KX_PREFIX}/share/man/man8/wpa_gui.8"
+
+        install -d -m755 "${KX_PREFIX}/share/dbus-1/system-services"
+        install -m644 "dbus/fi.epitest.hostap.WPASupplicant.service" "${KX_PREFIX}/share/dbus-1/system-services/"
+        install -m644 "dbus/fi.w1.wpa_supplicant1.service" "${KX_PREFIX}/share/dbus-1/system-services/"
+
+        install -d -m755 "${KX_PREFIX}/etc/dbus-1/system.d"
+        install -m644 dbus/dbus-wpa_supplicant.conf "${KX_PREFIX}/etc/dbus-1/system.d/wpa_supplicant.conf"
+
+        install -d -m755 "${KX_PREFIX}/usr/lib/systemd/system"
+        install -m644 systemd/*.service "${KX_PREFIX}/usr/lib/systemd/system/"
+

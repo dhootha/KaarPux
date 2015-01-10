@@ -1,0 +1,23 @@
+package:
+  name: gdl
+  version: 3.14.0
+  www: http://developer.gnome.org/gdl/
+  short: The GNOME Devtools Library package provides a docking system and several utilities useful to GNOME development tools and GNOME applications in general.
+
+download:
+  gnomexz: ~
+  checksum: 4b903c28a8894a82b997a1732a443c8b1d6a510304b3c3b511023339ff5d01db
+
+version:
+  installed_pkgconfig: gdl-3.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - use_gcc: ~
+    - configure_kx: ~
+    - make: ~
+
+  - install:
+    - install: ~

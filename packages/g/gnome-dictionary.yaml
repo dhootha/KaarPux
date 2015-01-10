@@ -1,0 +1,25 @@
+package:
+  name: gnome-dictionary
+  version: 3.14.2
+  www: http://developer.gnome.org/gdict/
+  short: The GNOME Dictionary Library is a simple yet powerful collection of classes that can be used to access various dictionary sources. 
+
+download:
+  gnomexz: ~
+  checksum: 2f2a0293c5de83f624cead84d7bb3f93d30a30554640926bb2db9c4944840f82
+
+version:
+  installed_na: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --disable-schemas-compile
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

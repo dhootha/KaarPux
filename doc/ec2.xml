@@ -1,0 +1,226 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="ec2">
+<title>Building KaarPux on EC2</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; can be build on 
+<ulink url="http://aws.amazon.com/ec2/">Amazon EC2</ulink>:
+<orderedlist numeration="arabic">
+	<listitem><para>
+	Bootstrap &kx; in an standard <ulink url="http://aws.amazon.com/ec2/#os">EC2 AMI</ulink>.
+	</para></listitem>
+	<listitem><para>
+	Build &kx; core in the same <ulink url="http://aws.amazon.com/ec2/#os">EC2 AMI</ulink>.
+	</para></listitem>
+	<listitem><para>
+	Create an <application>EC2 AMI</application> for &kx;.
+	</para></listitem>
+	<listitem><para>
+	Launch the &kx; <application>EC2 AMI</application>.
+	</para></listitem>
+	<listitem><para>
+	Build the rest of &kx; in the &kx; <application>EC2 AMI</application>.
+	</para></listitem>
+</orderedlist>
+</para>
+
+<note><para>
+Note: These instructions assume that the reader is already familiar with
+<ulink url="http://aws.amazon.com/ec2/">Amazon EC2</ulink>.
+</para></note>
+
+<!-- ============================================================ -->
+
+<section id="ec2_bootstrap">
+<title>Bootstrap KaarPux on EC2</title>
+<para>
+
+Launch an Amazon <ulink url="http://aws.amazon.com/ec2/#os">EC2 AMI</ulink>
+such as <ulink url="https://aws.amazon.com/marketplace/pp/B007IJNF8A">Ubuntu Server 11.10</ulink>.
+A suitable <systemitem>Instance Type</systemitem> for building &kx; is
+<systemitem>c1.medium</systemitem>
+
+</para>
+<para>
+
+Add packages as described in <xref linkend="host_system"/>
+
+</para>
+<para>
+
+Create a 64GB <ulink url="http://aws.amazon.com/ebs/">EBS volume</ulink>,
+to be used as root volume, formatted as described in <xref linkend="format_disks"/>,
+attach it,
+and mount it on <filename class="directory">/mnt/kxmnt</filename>.
+
+</para>
+<para>
+
+The file
+<filename>/home/kaarpux/kaarpux/master/aws_ec2_definitions.shinc</filename>
+contains definitions suitable to be copied to
+<filename>/home/kaarpux/kaarpux/custom_definitions.shinc</filename>
+
+</para>
+<para>
+
+Bootstrap &kx; as described in <xref linkend="prepare"/>,
+<xref linkend="bootstrap"/> and <xref linkend="prepare_boot"/>.
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="ec2_ami">
+<title>Create an EC2 AMI for KaarPux</title>
+<para>
+
+First of all: read
+<ulink url="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">Enabling Your Own Linux Kernels</ulink>.
+
+</para>
+<para>
+
+Identify the
+<ulink url="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#AmazonKernelImageIDs">Amazon Kernel Image ID</ulink>
+you need.
+For EU-West (Ireland) it is <systemitem>aki-75665e01</systemitem>.
+Substite your <systemitem>AKI</systemitem> in the instructions below.
+
+</para>
+<para>
+
+In <filename class="directory">/mnt/kxmnt/boot</filename>,
+identify the Linux kernel version you have build during bootstrap,
+e.g. something like <systemitem>3.2.9-kx-f0fb8de8</systemitem>.
+Substite your Linux kernel version in the instructions below.
+
+</para>
+<para>
+
+Create the file
+<filename>/mnt/kxmnt/boot/grub/menu.lst</filename>
+with contents similar to
+
+<programlisting>
+default 0
+timeout 1
+fallback 0
+
+title KaarPux
+	root (hd0)
+	kernel /boot/vmlinuz-3.2.9-kx-f0fb8de8 root=/dev/xvda1
+	initrd /boot/initramfs-3.2.9-kx-f0fb8de8.img
+</programlisting>
+
+</para>
+<para>
+
+Now we are ready to create an <systemitem>Amazon Machine Image</systemitem>
+using the <ulink url="https://console.aws.amazon.com/console/home">AWS Management Console</ulink>:
+
+<orderedlist numeration="arabic">
+	<listitem><para>
+	<command>umount</command> <filename class="directory">/mnt/kxmnt</filename>.
+	</para></listitem>
+	<listitem><para>
+	Detach the <systemitem>EBS volume</systemitem>
+	</para></listitem>
+	<listitem><para>
+	Terminate the host system <systemitem>EC2 instance</systemitem>
+	</para></listitem>
+	<listitem><para>
+	Create a <systemitem>snapshot</systemitem> from the <systemitem>EBS volume</systemitem> you have created
+	</para></listitem>
+	<listitem><para>
+	Create an <systemitem>AMI</systemitem> from the <systemitem>snapshot</systemitem>.
+	</para></listitem>
+</orderedlist>
+
+<important><para>
+When creating and launching the <systemitem>AMI</systemitem>, make sure to specify the correct <systemitem>AKI</systemitem>
+(as identified above).
+</para></important>
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="ec2_launch">
+<title>Launch the KaarPux EC2 AMI</title>
+<para>
+
+You can now launch the &kx; <systemitem>AMI</systemitem>
+from the <ulink url="https://console.aws.amazon.com/console/home">AWS Management Console</ulink>.
+Make sure to specify the correct <systemitem>AKI</systemitem>
+(as identified above).
+
+</para>
+<para>
+
+Note that the instance may be shown as running, even if the boot fails miserably.
+Right-click on the instance to <guimenuitem>Get System Log</guimenuitem>.
+
+</para>
+<para>
+
+You should now be able to log into the &kx; instance using <application>ssh</application>.
+Note that we use password authentication; not key-pairs.
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="ec2_build">
+<title>Build the rest of KaarPux</title>
+
+<para>
+Now build the rest of &kx; as described in <xref linkend="complete"/>
+</para>
+
+<important>
+<para>
+Remember, that when an <systemitem>Amazon Instance</systemitem> is terminated,
+the content of the disk (<ulink url="http://aws.amazon.com/ebs/">EBS volume</ulink>)
+is lost
+</para>
+<para>
+So when the build is complete - or at any step in between you would like to keep:
+<orderedlist numeration="arabic">
+	<listitem><para>
+	Stop the <systemitem>Amazon Instance</systemitem>
+	</para></listitem>
+	<listitem><para>
+	Detach the <systemitem>EBS volume</systemitem>
+	</para></listitem>
+	<listitem><para>
+	Create a <systemitem>snapshot</systemitem> from the <systemitem>EBS volume</systemitem> you have created
+	</para></listitem>
+	<listitem><para>
+	Terminate the <systemitem>Amazon Instance</systemitem>
+	</para></listitem>
+	<listitem><para>
+	Create a new <systemitem>AMI</systemitem> from the <systemitem>snapshot</systemitem>.
+	</para></listitem>
+</orderedlist>
+</para>
+</important>
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

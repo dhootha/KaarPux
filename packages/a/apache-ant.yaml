@@ -1,0 +1,37 @@
+package:
+  name: apache-ant
+  version: 1.9.3
+  www: http://projects.apache.org/projects/ant.html
+  short: Apache Ant is a Java-based build tool.
+
+doc: |
+  <para>
+    We are building <systemitem>apache-ant</systemitem> early based on the
+    binary distribution of <systemitem>Java 7</systemitem>: <xref linkend="pkg_OpenJDK-7-bin" />
+    so we can use it to bootstrap <systemitem>Java 7</systemitem>: <xref linkend="pkg_icedtea7" />.
+  </para>
+
+download:
+  url: http://archive.apache.org/dist/ant/source/
+  file: apache-ant-${KX_APACHE_ANT_VERSION}-src.tar.bz2
+  checksum: eb9306e8b8322bb09b78cc3d8e288398f9cb657d76ffc61ee3fb175e786e8365
+  verify: asc
+
+version:
+  installed_sh_version: ant -version
+  upstream: kxver_scrape_url(undef, "http://www.apache.org/dist/ant/source/", qr|apache-ant-([0-9]+[0-9.]*[0-9]+)-src|);
+
+opt:
+  - build:
+    - sh: |
+          JAVA_HOME="$(cd ../${KX_OPENJDK_7_BIN}; pwd -P)"; export JAVA_HOME
+          ln -sf $(cd ../${KX_JUNIT}; pwd -P)/${KX_JUNIT}.jar lib/optional/junit.jar
+          sh build.sh -Ddist.dir=dist dist
+
+  # No test suite
+
+  - install:
+    - sh: |
+          mkdir -v ${KX_PREFIX}
+          cp -rp dist/etc dist/bin dist/lib ${KX_PREFIX}
+

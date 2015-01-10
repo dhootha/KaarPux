@@ -1,0 +1,30 @@
+package:
+  name: gnupg
+  version: 2.0.26
+  www: www.gnupg.org/
+
+download:
+  url: ftp://ftp.gnupg.org/gcrypt/gnupg
+  file_tar_bz2: ~
+  checksum: 7758e30dc382ae7a7167ed41b7f936aa50af5ea2d6fccdef663b5b750b65b8e0
+  verify: sig
+
+version:
+  sensitive: 1
+  installed: kxver_sh_trailing "gpg2 --version"
+
+linux:
+  - build:
+    # http://bugs.funtoo.org/browse/FL-297
+    - patch: gnupg-2.0.19-stdint_-h.patch
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~
+    - sh: | 
+        ln -svf gpg2 /bin/gpg
+        ln -svf gpgv2 /bin/gpgv
+        ln -svf gpg2.1.gz /share/man/man1/gpg.1.gz
+

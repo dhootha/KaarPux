@@ -1,0 +1,119 @@
+package:
+  name: samba
+  version: 4.1.12
+  www: http://www.samba.org/
+  short: Samba is the standard Windows interoperability suite of programs for Linux and Unix.
+
+download:
+  url: http://samba.org/samba/ftp/stable/
+  file_tar_gz: ~
+  checksum: 033604674936bf5c77d7df299b0626052b84a41505a6a6afe902f6274fc29898
+
+version:
+  installed_sh_trailing: smbclient --version
+
+linux:
+  - build:
+    - sh: awk "/def configure\(conf\):/{print;print \"    conf.ADD_LDFLAGS('-ltirpc -lpthread')\";next}{print}" wscript > wscript.kaarpux; mv -f wscript.kaarpux  wscript
+
+    # Checking for HAVE_COMPILER_WILL_OPTIMIZE_OUT_FNS in source3/configure 
+    # gives 1 for LLVM
+    # However, it does not really seem like LLVM optimizes out
+    # the relevant function calls...
+    - sh: sed s/HAVE_COMPILER_WILL_OPTIMIZE_OUT_FNS/KAARPUX_SAYS_THIS_SHOULD_NOT_BE_DEFINED/ -i  lib/util/string_wrappers.h
+
+    - sh: |
+        ENABLE_SELFTEST=""
+        test -z "${KX_DISABLE_TEST}" && ENABLE_SELFTEST="--enable-selftest"
+
+    - configure_kx: >
+        --enable-fhs
+        --with-piddir=/var/run
+        --with-automount
+        --with-pam
+        --with-pammodulesdir=/lib/security
+        --with-automount
+        --enable-nss-wrapper
+        --enable-socket-wrapper
+        ${ENABLE_SELFTEST}
+
+    - make: ~
+
+# "make test" takes hours, and then hangs
+# "make quicktest" looks more promising
+# however, it fails with
+# Unable to find user/group in ['users', 'users', 'other', 'staff']
+# as we do not have those groups
+#
+# TODO: Consider which tests we can make
+#
+#  - test:
+#    - sh: make quicktest
+
+  - install:
+    - install: ~     
+    - sh: cp -v examples/smb.conf.default /etc/samba/smb.conf
+    - todo: http://www.linuxfromscratch.org/blfs/view/svn/server/samba3.html
+
+verify_cli: |
+  kx_cli_success /bin/smbclient --version
+
+  # TODO: Add more testcases
+
+  # /bin/cifsdd
+  # /bin/dbwrap_tool
+  # /bin/eventlogadm
+  # /bin/gentest
+  # /bin/ldbadd
+  # /bin/ldbdel
+  # /bin/ldbedit
+  # /bin/ldbmodify
+  # /bin/ldbrename
+  # /bin/ldbsearch
+  # /bin/locktest
+  # /bin/masktest
+  # /bin/ndrdump
+  # /bin/net
+  # /bin/nmbd
+  # /bin/nmblookup
+  # /bin/nmblookup4
+  # /bin/ntlm_auth
+  # /bin/oLschema2ldif
+  # /bin/pdbedit
+  # /bin/pidl
+  # /bin/profiles
+  # /bin/regdiff
+  # /bin/regpatch
+  # /bin/regshell
+  # /bin/regtree
+  # /bin/rpcclient
+  # /bin/samba
+  # /bin/samba_dnsupdate
+  # /bin/samba_kcc
+  # /bin/samba_spnupdate
+  # /bin/samba-tool
+  # /bin/samba_upgradedns
+  # /bin/samba_upgradeprovision
+  # /bin/sharesec
+  # /bin/smbcacls
+  # /bin/smbclient
+  # /bin/smbclient4
+  # /bin/smbcontrol
+  # /bin/smbcquotas
+  # /bin/smbd
+  # /bin/smbget
+  # /bin/smbpasswd
+  # /bin/smbspool
+  # /bin/smbstatus
+  # /bin/smbta-util
+  # /bin/smbtorture
+  # /bin/smbtree
+  # /bin/swat
+  # /bin/tdbbackup
+  # /bin/tdbdump
+  # /bin/tdbrestore
+  # /bin/tdbtool
+  # /bin/testparm
+  # /bin/wbinfo
+  # /bin/winbindd
+

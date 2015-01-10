@@ -1,0 +1,25 @@
+package:
+  name: libgweather
+  version: 3.14.1
+  www: http://developer.gnome.org/libgweather/
+  short: The libgweather package is a library used to access weather information from online services for numerous locations. 
+
+download:
+  gnomexz: ~
+  checksum: 4db10404ac91bc1f85ae977bdaa98413836429c3de6244dc68567c402afed800
+
+version:
+  installed_pkgconfig: gweather-3.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - use_gcc: ~
+    - configure_kx: --disable-gtk-doc --disable-static --disable-schemas-compile
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

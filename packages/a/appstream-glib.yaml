@@ -1,0 +1,20 @@
+package:
+  name: appstream-glib
+  version: 0.3.2
+
+download:
+  url: http://people.freedesktop.org/~hughsient/appstream-glib/releases/
+  file_tar_xz: ~
+  checksum: 17b76a6ab6cda457f3a5eb44423e1af0b571262cdac4d3d8c9975d661b501e8e
+
+version:
+  upstream_gnome_uneven: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --enable-man-pages
+    - make: ~
+
+  - install:
+    - install: ~

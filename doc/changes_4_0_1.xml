@@ -1,0 +1,301 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_0_1">
+<title>Changes in KaarPux version 4.0.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.0.1</systemitem> released on <systemitem>2014-jan-17</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		Java updated to version 7 u 51 / IcedTea 2.4.4
+		</para></listitem>
+
+		<listitem><para>
+		Flash Player updated to version 11.2.202.335
+		</para></listitem>
+
+		<listitem><para>
+		Mozilla Firefox plugin updates
+		</para></listitem>
+
+		<listitem><para>
+		Linux Kernel updated to version 3.12.8
+		</para></listitem>
+
+		<listitem><para>
+		Minor improvements
+		</para></listitem>
+
+	</itemizedlist>
+
+</para>
+
+<!--
+	0 major changes
+	3 bug fixes
+	0 packages added
+	7 packages updated
+	25 minor changes
+	2 documentation changes
+-->
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_1_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: icedtea7: v 2.4.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e596a868466d95d1a6b3a89361d2929cd92e38af/">e596a868</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: icedtea7: add gpg key for Omair Majid (signed by Andrew John Hughes)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/255a0e809d47054709993cbbe23061cb02feea28/">255a0e80</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.335
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/333c6b86eba67ca7e710302fd79afbfb4135c719/">333c6b86</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: adblockplus: v 2.4.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ab99bcbf8a665364dafea45c37469bef5af79ecf/">ab99bcbf</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 5.1.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/300daf5d548b71681b1eb19fc680e6ffc4c8d909/">300daf5d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.12
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5e1732a345cb964d132030a48b7a3beb3e80a0f5/">5e1732a3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.12.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/253e5b7da533adbec0d3f0c1e8e6b0b3c5dfa400/">253e5b7d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: pylint: v 1.0.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/090dd85eacb2e525210b47252e8454586cbb3f85/">090dd85e</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_0_1_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: nss-mdns: move to packages/n
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b600de67db832efb0ffb37d329372258e51af492/">b600de67</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxTools: kx_ver_wiz to handle ftp:// correctly
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/383bac4734936a79982bf14fbc69b321cf8c66e7/">383bac47</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KaarPux: Better sourceforge upstream version checking
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/65590e6e979b9ef90303f9ef56755b8778a6cdde/">65590e6e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: *: better upstream version scripts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/82ae3288cdff46482bddaf96d7b9088f46066955/">82ae3288</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		Merge branch 'upd'
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4b9d79d89a6d2dbc9a0f91e565bf5d7e50710409/">4b9d79d8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: gtk-engines gnome-themes: remove unused packages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d6d792af30a2f4fbf84a0afb07e30d5594b12cf3/">d6d792af</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: skype: do not mark as sensitive (as we do not have it in current 64 bit)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f1c8090de1232a281bb6a06764fee1ac2a660f65/">f1c8090d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: freeglut glibc WebKit: remove unused files
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2a0b84feeb79770be61aeaf1e0ff31f8ccfbd3ac/">2a0b84fe</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: *: upstream version scripts for pypi packages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2f880abeb043f0fe73e75148d956df2859ec3cf7/">2f880abe</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: taglib: better upstream version script
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/128d581f3297e835d7d752b8a6566c8e815abd34/">128d581f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: vigra: better upstream version script
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/161d33a111a8829124449f9e717f3852abb5f672/">161d33a1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: openssl: better upstream version script
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e9d47a80652f0c7165f4c8aac6accff4b6744ae1/">e9d47a80</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KaarPux: improved installed version handling in xorg_modules
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bff51e2b18658ded2d7b7315b9a19eee91a78357/">bff51e2b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KaarPux: add installed_config tag for checking installed version with xxx-config script
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/259f15d505e7fcdcd4419ec6d80cc773788a225c/">259f15d5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: *: better installed version scripts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5541ac46cbd032e877ab091a8f3097defb976ec6/">5541ac46</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: libvpx: better version scripts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4811a61166553ae04859914ab113807c625d5a18/">4811a611</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: libwebp: better version scripts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ca024a7377773d60f9fa904f80ee90bf06e3c6ee/">ca024a73</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KaarPux: add kxver_scrape_xml to kx_version
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0e992f843450c3eb56dd28b1c95e9292cbab64e3/">0e992f84</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: json-c: now hosted on github
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2c84ceaec44129170265cd434c5588326ec2b526/">2c84ceae</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: vala: upstream_gnome_uneven
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f7679d037f027f9aca07e1c3d7ec9c1533212391/">f7679d03</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: libgee: new www location; better version scripts
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/777c8d9738837d96c3868ad3d2ff846eb5503e52/">777c8d97</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: better version wizard tools
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ed062e3da5619deeddabc8948fe02fe059a514bb/">ed062e3d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: *: better version info for version wizard
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/91a8c79d443a56ddbfdb877a2cfd962f2f57d1c3/">91a8c79d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: generic kx_ver_wiz settings for gnome packages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1ab24b8fa83b9bc380c5e085d6cd418b670970b7/">1ab24b8f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: kx_ver_wiz settings for perl modules
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6da51ba2ab53fc23a724b19114618d4479f8b314/">6da51ba2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxTools: better handling of source and news for kx_ver_wiz
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/169330395e6394534ae371b32fce2183d62239c5/">16933039</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxTools: small improvements for kx_ver_wiz
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ed09f308c6069617f3e71e81d53306abda2438a6/">ed09f308</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: copyright 2014
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6917fd92b8dda61516c99d878450439c0b962c61/">6917fd92</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: add a few links for getting browser information
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d35b96a87982c5330dfc91e07382a929240b5ad2/">d35b96a8</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

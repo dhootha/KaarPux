@@ -1,0 +1,24 @@
+package:
+  name: Jinja2
+  version: 2.7.3
+  www: http://jinja.pocoo.org/
+  short: |
+      Jinja2 is a full featured template engine for Python.
+      It has full unicode support, an optional integrated sandboxed execution environment,
+      widely used and BSD licensed.
+
+download:
+  url: http://pypi.python.org/packages/source/J/Jinja2
+  file_tar_gz: ~
+  checksum: 2e24ac5d004db5714976a04ac0e80c6df6e47e98c354cb2c0d82f8879d4f8fdb
+
+version:
+  upstream: kxver_scrape_url("Jinja2", "http://pypi.python.org/packages/source/J/Jinja2/");
+
+linux:
+  - build:
+    - sh: python setup.py build
+  # No test suite
+  - install:
+    - sh: python setup.py install
+

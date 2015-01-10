@@ -1,0 +1,54 @@
+package:
+  name: sqlite
+  version: 3.8.7.2
+  # remember to change the 7-digit version number below
+  www: http://www.sqlite.org
+  short: Software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine.
+
+download:
+  url: http://www.sqlite.org/2014
+  file: sqlite-autoconf-3080702.tar.gz
+  dir: sqlite-autoconf-3080702
+  checksum: 8da1729e8b39d86bc23c8bdb439ad385afe4fcfcfe2b6796406a062a76e9d20e
+
+#
+# Note:
+# If sqlite3 version is updated,
+# nspr and nss might have to be recompiled!
+#
+
+version:
+  installed: "`sqlite3 --version | cut -d' ' -f1`"
+  upstream: "kxver_scrape_url(undef, 'http://www.sqlite.org', qr|Version ([0-9]+[0-9.]*[0-9]+)<|);"
+  wiz_url: |
+      my ($pkg_ver, $pkg, $ver) = @_;
+      my @vv = split('\.', $ver);
+      my $v = sprintf('%01d%02d%02d00', $vv[0], $vv[1], $vv[2]);
+      my $file = "sqlite-autoconf-$v.tar.gz";
+      my $url = "http://www.sqlite.org/2014";
+      return ($file, "$url/$file");
+  wiz_yaml: |
+      my ($pkg, $ver, $dir, $file, $url) = @_;
+      my @vv = split('\.', $ver);
+      my $v = sprintf('%01d%02d%02d00', $vv[0], $vv[1], $vv[2]);
+      print "  file: sqlite-autoconf-$v.tar.gz\n";
+      print "  dir: sqlite-autoconf-$v\n";
+
+bootstrap_8:
+    - configure_kx: >
+            CFLAGS="-g -O2 -DSQLITE_SECURE_DELETE=1 -DSQLITE_ENABLE_UNLOCK_NOTIFY=1"
+            --enable-threadsafe
+            --enable-readline
+            --enable-dynamic-extensions
+    - make: ~
+    - check: ~
+    - install: ~
+
+verify_cli: |
+
+  kx_cli_success /bin/sqlite3 --version
+
+  set filename "sqlite3test_[pid]_[clock microseconds].sh"
+  kx_cli_send_match_success "/bin/sqlite3 $filename" { "create table t(i integer);" "insert into t values(9*444);" "select * from t;" ".q" } { 3996 }
+  file delete "$filename"
+

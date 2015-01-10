@@ -1,0 +1,8 @@
+. "${KX_BASE}/default_definitions.shinc"
+
+KX_CUSTOM_DEFINITIONS="${KX_BASE}/../custom_definitions.shinc"
+
+test -f "${KX_CUSTOM_DEFINITIONS}" || kx_error_exit "Custom definition file [${KX_CUSTOM_DEFINITIONS}] not found" 
+. "${KX_CUSTOM_DEFINITIONS}"
+
+test -n "${KX_DEFINITIONS_CUSTOMIZED}" || kx_error_exit "Definition file [${KX_CUSTOM_DEFINITIONS}] not customized" 

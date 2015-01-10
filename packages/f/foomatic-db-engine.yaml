@@ -1,0 +1,22 @@
+package:
+  name: foomatic-db-engine
+  version: 4.0.11
+  www: http://www.linuxfoundation.org/collaborate/workgroups/openprinting
+
+download:
+  url: http://www.openprinting.org/download/foomatic/
+  file_tar_gz: ~
+  checksum: aa90df28f6dd94d3b590a789009c6a1792696c5cebb1e0dd6037d7dcaa09ffdf
+
+version: ~
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~     
+
+  # No test suite
+
+  - install:
+    - install: ~
+

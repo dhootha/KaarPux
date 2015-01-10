@@ -1,0 +1,17 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<chapter id="kaarpux">
+<title>KaarPux - Linux Build From Source</title>
+
+&kx_what_is_kaarpux;
+&kx_how_to_build_kaarpux;
+&kx_acknowledgements;
+&kx_license;
+
+</chapter>

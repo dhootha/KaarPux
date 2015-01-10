@@ -1,0 +1,27 @@
+package:
+  name: pyatspi
+  version: 2.14.0
+  www: https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
+
+doc: |
+  <para>
+    Note that we have 2 related packages:
+    <xref linkend="pkg_pyatspi" /> for Python2, and
+    <xref linkend="pkg_pyatspi3" /> for Python3.
+  </para>
+
+download:
+  gnomexz: ~
+  checksum: b615dd81abccb929b0e120f64573b1f8c2a8f6d0651185d32d4fb7e75613bb48
+
+version:
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  - install:
+    - install: ~

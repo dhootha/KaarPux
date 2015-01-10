@@ -1,0 +1,23 @@
+package:
+  name: xf86-input-wacom
+  version: 0.25.0
+
+download:
+  sourceforge: linuxwacom
+  file_tar_bz2: ~
+  checksum: 338c29ec775859829d334d4c51a64b5baf3344ed957ffa0ae31d28f96a677c1a
+
+version:
+  installed_na: ~
+  upstream: kxver_upstream_sourceforge("linuxwacom", "xf86-input-wacom", "xf86-input-wacom");
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

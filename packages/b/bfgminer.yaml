@@ -1,0 +1,67 @@
+package:
+  name: bfgminer
+  version: 4.8.0
+  www: https://bitcointalk.org/?topic=168174
+  short: Miner of crypto currencies.
+
+download:
+  url: http://luke.dashjr.org/programs/bitcoin/files/bfgminer/${KX_BFGMINER_VERSION}/
+  file_zip: ~
+  checksum: 13eeaa82ece06877f9ceeff0c8270471d41d81371e734be5a9b19c3c8b48e9ac
+
+version:
+  installed: kxver_sh_trailing "bfgminer --version"
+  upstream: kxver_scrape_url(undef, "http://luke.dashjr.org/programs/bitcoin/files/bfgminer/", qr|"([0-9]+[0-9.\-_]*[0-9]+)/"|);
+
+doc: |
+  # Note: same blurb for bfgminer and cpuminer
+  <section id="pkg_bfgminer_poc">
+    <para>
+      Miners for crypto currencies are included just for the proof-of-concept.
+      Mining with CPU / GPU is probably not profitable...
+    </para><para>
+      <xref linkend="pkg_bfgminer" /> seems to work with CPU+GPU mining
+      for <ulink url="https://bitcoin.org">bitcoin</ulink>,
+      but not with scrypt based currencies.
+    </para><para>
+      <xref linkend="pkg_cpuminer" /> seems to work with CPU mining for scrypt based currencies:
+      <ulink url="https://litecoin.org/">litecoin</ulink>,
+      <ulink url="http://dogecoin.com/">dogecoin</ulink>.
+    </para><para>
+      Trying GPU mining with <ulink url="http://ck.kolivas.org/apps/cgminer/README">cgminer</ulink>
+      (even version 3.5.1 or 3.7.2), does not seem to work, so this package is not included.
+    </para>
+  </section>
+
+opt:
+  - build:
+    - configure_kx: >
+        CFLAGS="-I/opt/include"
+        --enable-scrypt
+        --enable-cpumining
+        --enable-opencl
+        --disable-adl
+        --disable-bitforce
+        --disable-icarus
+        --disable-avalon
+        --disable-modminer
+        --disable-klondike
+        --disable-x6500
+        --disable-ztex
+        --disable-bifury
+        --disable-bitfury
+        --disable-bigpic
+        --disable-drillbit
+        --disable-twinfury
+        --disable-littlefury
+        --disable-nanofury
+        --disable-hashbuster
+        --disable-hashbusterusb
+        --disable-hashfast
+        --without-libudev
+        --with-udevrulesdir=/tmp
+        --with-system-libblkmaker
+    - make: ~
+
+  - install:
+    - install: ~

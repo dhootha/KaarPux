@@ -1,0 +1,23 @@
+package:
+  name: xerces-c
+  version: 3.1.1
+  www: http://xerces.apache.org/xerces-c/
+  short: validating XML parser 
+
+download:
+  url: http://ftp.download-by.net/apache/xerces/c/3/sources
+  file: xerces-c-${KX_XERCES_C_VERSION}.tar.gz
+  checksum: a42785f71e0b91d5fd273831c87410ce60a73ccfdd207de1b805d26d44968736
+
+version:
+  installed_pkgconfig: ~
+
+linux:
+  - build:
+    - use_gcc: ~
+    - configure_kx: --enable-shared --disable-static
+    - make: ~
+
+  - install:
+    - use_gcc: ~
+    - install: ~

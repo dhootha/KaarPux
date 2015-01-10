@@ -1,0 +1,28 @@
+package:
+  name: libical
+  version: 1.0
+  www: http://sourceforge.net/projects/freeassociation/
+  short: Reference implementation of the icalendar data type and serialization format.
+
+download:
+  sourceforge: freeassociation
+  file_tar_gz: ~
+  checksum: 7c39b3448e4927a2de2775d853f52b3aaeb42400970a3db0b01a78987e6ec0b7
+
+version:
+  installed_pkgconfig: ~
+  upstream: kxver_upstream_sourceforge("freeassociation", "libical", "libical");
+
+linux:
+  - build:
+    - sh: |
+        mkdir -pv build
+        cd build
+    - cmake_kx: -DCMAKE_BUILD_TYPE=Release ..
+    - make: -j1
+  - test:
+    - sh: cd build
+    - test: ~
+  - install:
+    - sh: cd build
+    - install: ~

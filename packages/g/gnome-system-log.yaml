@@ -1,0 +1,23 @@
+package:
+  name: gnome-system-log
+  version: 3.9.90
+
+download:
+  gnomexz: ~
+  checksum: 9eeb51982d347aa7b33703031e2c1d8084201374665425cd62199649b29a5411
+
+version:
+  installed_na: ~
+  upstream_gnome_uneven: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-static --disable-schemas-compile
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

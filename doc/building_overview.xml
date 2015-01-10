@@ -1,0 +1,211 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="building_overview">
+<title>KaarPux building overview</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; is build using an existing Linux distribution (called the <emphasis>Host System</emphasis>),
+and will be installed on a disk partition on the system, so you can boot into it.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="building_overview_step_by_step">
+<title>Step-by-step</title>
+
+<para>
+The steps involved in building &kx;
+(as described in <xref linkend="building_kaarpux_step_by_step"/>)
+are:
+<procedure>
+<step>
+	<application>Get ready</application>  <!-- not really an application, but it gives us a nice looking heading -->
+	<substeps>
+	<step>
+		<xref linkend="host_system"/>
+		<para>
+		Make sure the tools needed to build &kx; are installed on the <emphasis>Host System</emphasis>
+		</para>
+	</step><step>
+		<xref linkend="format_disks"/>
+		<para>
+		Format the disk partition(s) &kx; will be install onto.
+		</para>
+	</step><step>
+		<xref linkend="download"/>
+		<para>
+		Download the bleeding edge or stable version of &kx; as a tarball.
+		</para>
+	</step><step>
+		<xref linkend="prepare"/>
+		<itemizedlist>
+			<listitem><para>
+				mount disks
+			</para></listitem><listitem><para>
+				prepare a host directory for <systemitem>kaarpux</systemitem>
+			</para></listitem><listitem><para>
+				unpack tarballl
+			</para></listitem><listitem><para>
+				configure &kx;
+			</para></listitem><listitem><para>
+				create scripts
+			</para></listitem><listitem><para>
+				download packages
+			</para></listitem><listitem><para>
+				add a dedicated build user
+			</para></listitem>
+		</itemizedlist>
+	</step>
+	</substeps>
+</step><step>
+	<application>Bootstrap</application>
+	<substeps>
+	<step>
+		<xref linkend="bootstrap"/>
+		<para>
+		Build all packages needed for a bootable system.
+		</para>
+	</step><step>
+		<xref linkend="prepare_boot"/>
+		<para>
+		Install <application>grub</application>, set passwords, cleanup
+		</para>
+	</step>
+	</substeps>
+</step><step>
+	<application>Build</application>
+	<substeps>
+	<step>
+		<xref linkend="complete"/>
+		<para>
+		Boot into the new (minimal) system.
+		Build the rest of the &kx; packages there.
+		</para>
+	</step>
+	</substeps>
+</step><step>
+	<application>Use it</application>
+
+	<substeps>
+	<step>
+		<para>
+		Reboot, and &kx; is at your service
+		</para>
+	</step><step>
+		<xref linkend="post_install"/>
+		<para>
+		Add a final touch to &kx;
+		</para>
+	</step>
+	</substeps>
+
+</step>
+</procedure>
+
+All the above steps are described in detail in <xref linkend="building_kaarpux_step_by_step"/>.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="building_overview_easier">
+<title>Easier ways to build KaarPux</title>
+
+<para>
+	In order to automate the building of &kx; further, two scripts are provided in
+	<filename class="directory">kaarpux/master/expert</filename>:
+
+	<itemizedlist>
+		<listitem><filename>kaarpux/master/expert/dangerous_build_bootstrap.sh</filename></listitem>
+		<listitem><filename>kaarpux/master/expert/dangerous_build_rest.sh</filename></listitem>
+	</itemizedlist>
+
+	The scrips can be used as described in e.g:
+
+	<itemizedlist>
+		<listitem><xref linkend="kvm"/></listitem>
+		<listitem><xref linkend="ec2"/></listitem>
+		<listitem><xref linkend="openhosting"/></listitem>
+	</itemizedlist>
+
+</para>
+</section>
+
+
+<section id="building_overview_duration">
+<title>KaarPux Build Duration</title>
+
+<para>
+KaarPux can be build in less than 5 hours on this reference installation:
+<itemizedlist>
+	<listitem><para>
+		Intel Core i7-3970X Extreme, 6-Core, 3.5GHz CPU
+	</para></listitem>
+	<listitem><para>
+		ASUS P9X79 WS motherboard
+	</para></listitem>
+	<listitem><para>
+		64 GB 1333MHz CL-9-9-9-24 memory
+	</para></listitem>
+</itemizedlist>
+
+Host and target where run under <systemitem>kvm</systemitem> with testing disabled,
+using  <systemitem>tmpfs</systemitem> for build directories.
+
+</para><para>
+Durations for each phase:
+<table id="building_overview_table_duration"><title></title><tgroup cols='2' align='center' colsep='1' rowsep='1'>
+	<colspec colname='phase'/>
+	<colspec colname='duration'/>
+	<thead>
+		<row>
+		<entry>phase</entry>
+		<entry>duration</entry>
+		</row>
+	</thead>
+	<tbody>
+		<row>
+		<entry>bootstrap</entry>
+		<entry>40 minutes</entry>
+		</row>
+		<row>
+		<entry>linux base</entry>
+		<entry>40 minutes</entry>
+		</row>
+		<row>
+		<entry>xorg</entry>
+		<entry>10 minutes</entry>
+		</row>
+		<row>
+		<entry>gnome</entry>
+		<entry>1 hour</entry>
+		</row>
+		<row>
+		<entry>desktop</entry>
+		<entry>1 hour</entry>
+		</row>
+		<row>
+		<entry>libreoffice</entry>
+		<entry>45 minutes</entry>
+		</row>
+		<row>
+		<entry>programming</entry>
+		<entry>&frac12; hour</entry>
+		</row>
+	</tbody>
+</tgroup></table>
+
+
+</para>
+</section>
+</section>
+

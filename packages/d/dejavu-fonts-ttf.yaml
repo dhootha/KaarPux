@@ -1,0 +1,38 @@
+package:
+  name: dejavu-fonts-ttf
+  version: 2.34
+  www: http://dejavu-fonts.org/wiki/Main_Page
+  short: |
+      The DejaVu fonts are a font family based on the Bitstream Vera Fonts.
+      Its purpose is to provide a wider range of characters while maintaining the original look and feel.
+
+download:
+  sourceforge: dejavu
+  file_tar_bz2: ~
+  checksum: d0a72c3ae99f5b8d7470daf091ec43f78dc942795aed5c996ab1aa678702eb5d
+
+version:
+  # TODO: This version check is UGLY
+  installed: |
+    my $txt = `strings /usr/share/fonts/TTF/DejaVuSans.ttf 2>&1 | grep '^Version '`;
+    $txt =~ m|Version ([0-9\.]+)|;
+    return $1;
+  upstream: kxver_upstream_sourceforge("dejavu", "dejavu", "dejavu-fonts-ttf");
+
+linux:
+
+  - build:
+    - echo: "No build"
+
+  # No test suite
+
+  - install:
+    - sh: |
+        mkdir -pv /usr/share/fonts/TTF
+        install -m644 ttf/*.ttf /usr/share/fonts/TTF/
+        install -m644 fontconfig/*.conf /usr/share/fontconfig/conf.avail/
+    - sh: |
+        fc-cache -fs
+        mkfontscale /usr/share/fonts/TTF
+        mkfontdir /usr/share/fonts/TTF
+

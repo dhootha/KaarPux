@@ -1,0 +1,56 @@
+diff -Naur icedtea-2.4.6.ORIG/configure icedtea-2.4.6/configure
+--- icedtea-2.4.6.ORIG/configure	2014-03-28 13:09:20.560209375 +0100
++++ icedtea-2.4.6/configure	2014-03-31 17:30:46.887723396 +0200
+@@ -9366,6 +9366,25 @@
+   fi
+ 
+ 
++  JAVAC_DEFAULT=${SYSTEM_JDK_DIR}/bin/javac
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking if a javac binary was specified" >&5
++$as_echo_n "checking if a javac binary was specified... " >&6; }
++
++# Check whether --with-javac was given.
++if test "${with_javac+set}" = set; then :
++  withval=$with_javac;
++    if test "x${withval}" = "xyes"; then
++      JAVAC=no
++    else
++      JAVAC="${withval}"
++    fi
++
++else
++
++    JAVAC=no
++
++fi
++
+ 
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for an ecj JAR file" >&5
+ $as_echo_n "checking for an ecj JAR file... " >&6; }
+@@ -9405,26 +9424,6 @@
+   fi
+ 
+ 
+-
+-  JAVAC_DEFAULT=${SYSTEM_JDK_DIR}/bin/javac
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking if a javac binary was specified" >&5
+-$as_echo_n "checking if a javac binary was specified... " >&6; }
+-
+-# Check whether --with-javac was given.
+-if test "${with_javac+set}" = set; then :
+-  withval=$with_javac;
+-    if test "x${withval}" = "xyes"; then
+-      JAVAC=no
+-    else
+-      JAVAC="${withval}"
+-    fi
+-
+-else
+-
+-    JAVAC=no
+-
+-fi
+-
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${JAVAC}" >&5
+ $as_echo "${JAVAC}" >&6; }
+   if test "x${JAVAC}" = "xno"; then

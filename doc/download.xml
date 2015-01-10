@@ -1,0 +1,45 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="download">
+<title>Download KaarPux</title>
+
+<!-- ============================================================ -->
+
+<section id="download_bleeding_edge">
+<title>Bleeding edge</title>
+<para>
+The source code for &kx; may be browsed at <ulink url="http://sourceforge.net/p/kaarpux/code/ref/master~/">sourceforge.net/p/kaarpux/code/ref/master~/</ulink>.
+This <application>git</application> repository represents the <emphasis>bleeding edge</emphasis> of the &kx; development.
+</para>
+<para>
+The <application>git</application> repository may be cloned with <command>git clone git://git.code.sf.net/p/kaarpux/code kaarpux</command>
+</para>
+<note>
+	<para>
+	When changes are made to &kx; they are usually first tested on top of an already installed &kx; system,
+	and then commited to the <application>git</application> repository.
+	Such changes may break a complete build from scratch.
+	However, it will help the &kx; development if you try out the <emphasis>bleeding edge</emphasis> 
+	and report any problems.
+	</para>
+</note>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="download_stable_version">
+<title>Stable version</title>
+<para>
+The latest stable version of &kx; may be downloaded as a
+<ulink url="http://sourceforge.net/projects/kaarpux/files/latest/download?source=files">tarball</ulink>.
+Earlier versions of &kx; may be found at <ulink url="http://sourceforge.net/projects/kaarpux/files/">sourceforge.net/projects/kaarpux/files/</ulink>.
+</para>
+</section>
+</section>
+

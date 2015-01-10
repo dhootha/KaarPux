@@ -1,0 +1,45 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="how_to_build_kaarpux">
+<title>How to build KaarPux</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; contains scripts to build the complete &kx; distribution automatically.
+</para>
+
+<para>
+&kx; is build using an existing Linux distribution,
+and will be installed on a disk partition on the system, so you can boot into it.
+</para>
+
+<para>
+An overview of the complete build process is given in
+<xref linkend="building_overview_step_by_step"/>
+with details provided in
+<xref linkend="building_kaarpux_step_by_step"/>
+</para>
+
+<para>
+Easier ways to build &kx; e.g. using <application>virtual machines</application>
+are shown in <xref linkend="building_overview_easier"/>
+</para>
+
+<para>
+In any case, you first use your existing Linux distribution to
+build a minimal bootable &kx; system.
+Then you boot into this system to build the rest of &kx;.
+</para>
+
+<para>
+See also <xref linkend="building_kaarpux"/>.
+</para>
+
+</section>

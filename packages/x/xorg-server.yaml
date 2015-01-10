@@ -1,0 +1,40 @@
+package:
+  name: xorg-server
+  version: 1.16.1
+
+
+download:
+  url: http://xorg.freedesktop.org/releases/individual/xserver/
+  file_tar_bz2: ~
+  checksum: f4677c6ec9fb7b59648321737087aeb9963b60bcea50ee3773fe46be1a37e060
+
+version:
+ installed_pkgconfig: ~
+
+linux:
+  - build:
+    - patch: 1001_improve_randr.patch
+    - sh: export CFLAGS='-no-integrated-as'
+    - configure_kx: >
+        --with-xkb-output=/var/lib/xkb
+        --disable-install-setuid
+        --disable-docs
+        --disable-devel-docs
+        --without-dtrace
+        --with-vendor-name=KaarPux
+        --with-vendor-name-short=KaarPux
+        --with-vendor-web=http://kaarpux.kaarposoft.dk/
+
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~     
+    - install_pkg_file: 644 dummy.conf /etc/X11
+
+# Many configure options
+# See also
+#  - http://www.linuxfromscratch.org/blfs/view/svn/x/x7server.html
+#  - http://pkgs.fedoraproject.org/gitweb/?p=xorg-x11-server.git;a=blob_plain;f=xorg-x11-server.spec;hb=HEAD

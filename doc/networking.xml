@@ -1,0 +1,68 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="networking">
+<title>Networking Set-up</title>
+
+<para>
+You may change the system hostname in
+<filename>/etc/hostname</filename>
+and
+<filename>/etc/hosts</filename>.
+This change should take effect after the next reboot.
+</para>
+
+<para>
+If you have build &kx; according to the instructions,
+your network interface will be handled directly
+by <application>systemd-networkd</application>, which is started
+automatically by <application>systemd</application>.
+</para>
+
+<para>
+See
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html">systemd-networkd.service</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.freedesktop.org/software/systemd/man/systemd.network.html">systemd.network</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="https://coreos.com/blog/intro-to-systemd-networkd">intro-to-systemd-networkd</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+	<section id="networking_networkmanager">
+	<title>Alternative: Network Manager</title>
+
+	<para>
+	As an alternative to <application>systemd-networkd</application>
+	you can use <application>NetworkManager</application>
+	(see  <xref linkend="pkg_NetworkManager" />)
+	with the <application>NetworkManager Applet</application>
+	(see  <xref linkend="pkg_network-manager-applet" />).
+	</para>
+
+	<para>
+	To disable <application>systemd-networkd</application>
+	and enable <application>NetworkManager</application> instead:
+
+	<programlisting>
+	&kx_as_root;
+	systemctl stop systemd-networkd
+	systemctl disable systemd-networkd
+	systemctl enable NetworkManager
+	systemctl start NetworkManager
+	</programlisting>
+
+	</para>
+
+	</section>
+
+</section>
+

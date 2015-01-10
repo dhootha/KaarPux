@@ -1,0 +1,27 @@
+package:
+  name: libtiff
+  version: 4.0.3
+  www: http://www.remotesensing.org/libtiff/
+  short: Support for the Tag Image File Format (TIFF), a widely used format for storing image data.
+
+download:
+  url: http://download.osgeo.org/libtiff/
+  file: tiff-${KX_LIBTIFF_VERSION}.tar.gz
+  dir: tiff-${KX_LIBTIFF_VERSION}
+  checksum: ea1aebe282319537fb2d4d7805f478dd4e0e05c33d0928baba76a7c963684872
+
+
+version:
+  installed_pkgconfig: libtiff-4
+  upstream: kxver_scrape_url("tiff", $url);
+
+linux:
+  - build:
+    - configure_kx: --disable-static
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~
+
+# TODO: verify_cli: testcases

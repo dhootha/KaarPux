@@ -1,0 +1,54 @@
+diff --git a/configure.ac b/configure.ac
+index 98c81fb..407d88c 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -188,8 +188,8 @@ fi
+ AC_ARG_ENABLE(vfp,
+   AC_HELP_STRING([--enable-vfp],[compile with Vector Floating-point unit support]),
+   enable_vfp=$enableval,enable_vfp=yes)
+-if test "x$enable-vfp" = xyes -a x$HAVE_GCC_ASM = xyes -a x$HAVE_ARM = xyes; then
+-  AS_COMPILER_FLAG(["-Wa,-mfpu=vfp"],
++if test "x$enable_vfp" = xyes -a x$HAVE_GCC_ASM = xyes -a x$HAVE_ARM = xyes; then
++  AS_COMPILER_FLAG(["-mfpu=vfp"],
+     [VFP_CFLAGS="$VFP_CFLAGS -mfpu=vfp"],
+     true)
+   #AS_COMPILER_FLAG(["-Wa,-mfloat-abi=softfp"],
+diff --git a/liboil/arm/Makefile.am b/liboil/arm/Makefile.am
+index ead08ed..cd8d9fa 100644
+--- a/liboil/arm/Makefile.am
++++ b/liboil/arm/Makefile.am
+@@ -6,4 +6,5 @@ libarm_la_SOURCES = \
+ 	math_vfp_asm.S
+ 
+ libarm_la_CFLAGS = $(LIBOIL_CFLAGS) $(VFP_CFLAGS)
++libarm_la_CCASFLAGS = $(LIBOIL_CFLAGS) $(VFP_CFLAGS)
+ 
+diff --git a/liboil/liboilcpu-x86.c b/liboil/liboilcpu-x86.c
+index e7a1978..ef4d3f2 100644
+--- a/liboil/liboilcpu-x86.c
++++ b/liboil/liboilcpu-x86.c
+@@ -162,13 +162,10 @@ get_cpuid (uint32_t op, uint32_t *a, uint32_t *b, uint32_t *c, uint32_t *d)
+ static void
+ get_cpuid (uint32_t op, uint32_t *a, uint32_t *b, uint32_t *c, uint32_t *d)
+ {
++  *a = op;
+   __asm__ (
+-      "  pushq %%rbx\n"
+       "  cpuid\n"
+-      "  mov %%ebx, %%esi\n"
+-      "  popq %%rbx\n"
+-      : "=a" (*a), "=S" (*b), "=c" (*c), "=d" (*d)
+-      : "0" (op));
++      : "+a" (*a), "=b" (*b), "=c" (*c), "=d" (*d));
+ }
+ #endif
+ 
+@@ -185,7 +182,7 @@ oil_cpu_detect_cpuid (void)
+ {
+   uint32_t eax, ebx, ecx, edx;
+   uint32_t level;
+-  char vendor[13] = { 0 };
++  char vendor[13+4] = { 0 };
+   int ret;
+ 
+   oil_fault_check_enable ();

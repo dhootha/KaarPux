@@ -1,0 +1,23 @@
+package:
+  name: gtk-vnc
+  version: 0.5.3
+
+download:
+  gnomexz: ~
+  checksum: d490a6c8f40e550d43aef0043ce3bec498ec220d5eb3dc5cdcff8fd561149caf
+
+version:
+  installed_pkgconfig: gtk-vnc-2.0
+  upstream_gnome: ~
+
+
+linux:
+
+  - build:
+    - configure_kx: --with-gtk=3.0
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

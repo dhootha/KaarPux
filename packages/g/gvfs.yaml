@@ -1,0 +1,25 @@
+package:
+  name: gvfs
+  version: 1.22.2
+
+download:
+  gnomexz: ~
+  checksum: 8d08c4927b6c20d990498c23280017e7033b31a386f09b4c3ce5bedd20316250
+
+version:
+  installed_na: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --disable-schemas-compile
+    - make: ~
+
+  - install:
+    - install: ~
+
+verify_cli: |
+  kx_cli_match_success "gvfs-mount -l" { Drive }
+  kx_cli_match_success "gvfs-info ." { name type attributes }
+  kx_cli_success gvfs-ls .

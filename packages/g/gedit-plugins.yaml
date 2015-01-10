@@ -1,0 +1,27 @@
+package:
+  name: gedit-plugins
+  version: 3.12.1
+  www: https://live.gnome.org/Gedit/Plugins
+
+download:
+  gnomexz: ~
+  checksum: 431adb6c8327d755329061f59d9f06e94819e398b7910751bbe46bc96679c67f
+
+version:
+  installed: kxver_file_pattern("/lib/gedit/plugins/bracketcompletion.plugin");
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - python3: ~
+    - configure_kx: --disable-gtk-doc --disable-static --disable-dependency-tracking --enable-python --disable-schemas-compile
+    - make: ~
+
+  - test:
+    - python3: ~
+    - check: ~
+
+  - install:
+    - python3: ~
+    - install: ~

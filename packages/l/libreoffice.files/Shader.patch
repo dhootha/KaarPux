@@ -1,0 +1,13 @@
+diff -Naur libreoffice-4.3.1.2.ORIG/workdir/UnpackedTarball/libgltf/src/Shaders.cpp libreoffice-4.3.1.2/workdir/UnpackedTarball/libgltf/src/Shaders.cpp
+--- libreoffice-4.3.1.2.ORIG/workdir/UnpackedTarball/libgltf/src/Shaders.cpp	2014-09-04 23:36:01.953333334 +0200
++++ libreoffice-4.3.1.2/workdir/UnpackedTarball/libgltf/src/Shaders.cpp	2014-09-05 08:02:42.749992439 +0200
+@@ -175,7 +175,7 @@
+         };
+ 
+         const GLint aSizes[] = {
+-            strlen("#version 130\n"),
++            static_cast<GLint>(strlen("#version 130\n")),
+             iGLSize,
+         };
+ 
+

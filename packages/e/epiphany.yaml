@@ -1,0 +1,22 @@
+package:
+  name: epiphany
+  version: 3.14.2
+  www: http://projects.gnome.org/epiphany/
+  short: Epiphany is the web browser for the GNOME desktop.
+
+download:
+  gnomexz: ~
+  checksum: cc69403b3b7addf30dd6eb703265a77102b8ab3c6194678ad0d2433f251492d0
+
+version:
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - use_gcc: ~
+    - configure_kx: --disable-static --disable-schemas-compile
+    - make: ~
+
+  - install:
+    - install: ~

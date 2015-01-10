@@ -1,0 +1,24 @@
+package:
+  name: libblkmaker
+  version: 0.5.0
+  www: https://gitorious.org/bitcoin/libblkmaker/source/README
+  short:  C implementation of bitcoin getblocktemplate (BIP 22)
+
+download:
+  full_url: https://gitorious.org/bitcoin/libblkmaker/archive/v${KX_LIBBLKMAKER_VERSION}.tar.gz
+  file: ${KX_LIBBLKMAKER}.tar.gz
+  dir: bitcoin-libblkmaker
+  checksum: 41cadb6ab89cde3864f2df9bfbebfc1764c9d9e86fa5af841c5312c217c6fcfa
+
+version:
+  installed_pkgconfig: libblkmaker_jansson-0.1
+
+opt:
+
+  - build:
+    - sh: ./autogen.sh
+    - configure_kx: ~
+    - make: ~
+
+  - install:
+    - install: ~

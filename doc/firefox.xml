@@ -1,0 +1,184 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="firefox">
+<title>Firefox</title>
+
+<!-- ============================================================ -->
+
+<section id="firefox_addons">
+<title>Enable add-ons</title>
+
+<para>
+In <application>Firefox</application> under <guimenuitem>Tools</guimenuitem> select <guilabel>Add-ons</guilabel>
+and enable the plugins. 
+Note that this must be done individually for each user.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="firefox_browser_info">
+<title>Check out browser info</title>
+
+<para>
+See what <application>Firefox</application> thinks about itself:
+Type <systemitem>about:</systemitem> in the <guilabel>address bar</guilabel>,
+and try
+<itemizedlist>
+	<listitem><para>
+		<systemitem>about:support</systemitem> for some system information
+	</para></listitem><listitem><para>
+		<systemitem>about:plugins</systemitem> to see what plugins we have
+	</para></listitem><listitem><para>
+		<systemitem>about:robots</systemitem> (-:
+	</para></listitem><listitem><para>
+		<systemitem>about:about</systemitem> to list them all
+	</para></listitem>
+</itemizedlist>
+</para>
+
+<para>
+And see what the rest of the world think about your <application>Firefox</application>:
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://useragentstring.com/">useragentstring.com</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://panopticlick.eff.org/">panopticlick.eff.org</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://browserspy.dk/browser.php/">browserspy.dk</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.browserleaks.com/">browserleaks.com</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="firefox_validate">
+<title>Validate browser</title>
+
+<para>
+Some browser validation tools:
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://www.webstandards.org/files/acid2/test.html">webstandards.org/files/acid2</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://acid3.acidtests.org/">acid3.acidtests.org</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://html5test.com/">html5test.com</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="firefox_validate_ssl">
+<title>Validate browser SSL</title>
+
+<para>
+How secure is SSL in the browser:
+<itemizedlist>
+	<listitem><para>
+		<ulink url="https://www.howsmyssl.com/">How's my SSL</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="firefox_validate_plugins">
+<title>Validate browser plugins</title>
+
+<para>
+Some browser plugins validation tools:
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://www.mozilla.org/en-US/plugincheck/">Mozilla: Check Your Plugins</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="https://browsercheck.qualys.com/">Qualys: BrowserCheck</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="firefox_validate_java">
+<title>Validate Java plugin</title>
+
+<para>
+Some Java validation tools:
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://www.java.com/en/download/testjava.jsp">java.com testjava.jsp</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://javatester.org/version.html">Java Tester</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.pinlady.net/PluginDetect/Java/">pinlady.net</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="firefox_validate_flashplayer">
+<title>Validate Flash player plugin</title>
+
+<para>
+Some Adobe Flash sites:
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://flashbuilder.eu/flash-player-version.html">flashbuilder.eu</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.smartwebby.com/Flash/cool_effects.asp">smartwebby.com</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.pinlady.net/PluginDetect/Flash/">pinlady.net</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="firefox_sound_and_video">
+<title>Sound and video</title>
+
+<para>
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://courses.washington.edu/englhtml/engl382/testsoundsupport.html">washington.edu</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.audiocheck.net/soundtestsaudiotesttones_index.php">audiocheck.net</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.dr.dk/radio/player/?P3">dr.dk/radio</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.dr.dk/nu/live/?t">dr.dk/nu/live</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://www.youtube.com/">youtube.com</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

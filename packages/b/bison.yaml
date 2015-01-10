@@ -1,0 +1,38 @@
+package:
+  name: bison
+  version: 3.0.2
+  www: http://www.gnu.org/software/bison/
+  short: |
+      Bison is a general-purpose parser generator
+      that converts an annotated context-free grammar into a deterministic LR
+      or generalized LR (GLR) parser employing LALR(1) parser tables.
+
+download:
+  gnux: ~
+  checksum: a2c3e8528bdb50567d6fa26deeb493dc5ccd7e277b865251608a9e43ac928f3c
+
+version:
+  installed: kxver_sh_pattern("bison --version|head -1", qr|([0-9.\-]+)$|);
+  wiz_savannah: ~
+    
+bootstrap_5:
+  - configure_kx: ~
+  - make: ~
+  - check: ~
+  - install: ~
+
+bootstrap_7:
+  - configure_kx: ~
+  - make: ~
+  - check: ~
+  - install: ~
+
+verify_cli: |
+  kx_cli_match_success "bison --version" { "GNU Bison" }
+  kx_cli_match_success "bison --help" { "GNU Bison" }
+  kx_cli_match_success "bison --print-datadir" { "/share/bison" }
+  kx_cli_match_success "bison --print-localedir" { "/share/locale" }
+
+# TODO:
+# real testcase
+

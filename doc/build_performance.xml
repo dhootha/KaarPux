@@ -1,0 +1,98 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="build_performance">
+<title>Analyzing Build Performance</title>
+
+<!-- ============================================================ -->
+
+<section id="build_performance_collcting">
+<title>Collecting System Statistics</title>
+
+<para>
+During build, &kx; is running <application>sysstat</application>
+(see <ulink url="http://sebastien.godard.pagesperso-orange.fr/">SYSSTAT</ulink>
+and <xref linkend="pkg_sysstat" />) in the background.
+This creates the files
+<itemizedlist>
+	<listitem>
+		<filename>boostrap/log/bootstrap.sar</filename>
+	</listitem>
+	<listitem>
+		<filename>linux/log/*.sar</filename>
+	</listitem>
+</itemizedlist>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="build_performance_analyzing">
+<title>Analyzing System Statistics</title>
+
+<para>
+The files created by <application>sysstat</application>
+can be analyzed with
+<command>kaarpux/tools/kx_sar.pl</command>.
+</para>
+
+<para>
+<command>kaarpux/tools/kx_sar.pl</command> can be called with the following parameters:
+
+<variablelist>
+
+<varlistentry><term><parameter>-s</parameter></term>
+	<listitem>
+	<para>
+	Show summary information.
+	</para>
+	</listitem>
+</varlistentry>
+<varlistentry><term><parameter>-p</parameter></term>
+	<listitem>
+	<para>
+	Show percentiles for important figures.
+	</para>
+	</listitem>
+</varlistentry>
+<varlistentry><term><parameter>-d</parameter></term>
+	<listitem>
+	<para>
+	Show information on disk usage.
+	</para>
+	</listitem>
+	</varlistentry>
+<varlistentry><term><parameter>-g</parameter></term>
+	<listitem>
+	<para>
+	Create graphs with system statistics.
+	</para>
+	</listitem>
+</varlistentry>
+</variablelist>
+
+</para><para>
+The statistics summary for all phases can be combined:
+<programlisting>
+T=$(mktemp -d)
+(cd bootstrap/log; ../../master/tools/kx_sar.sh -s bootstrap.sar > $T/bootstrap)
+SLIST="linux_base linux_xorg linux_gnome_pre linux_gnome linux_gnome_post \
+opt_desktop opt_libreoffice opt_programming opt_coins opt_closed_source"
+(cd linux/log; for S in $SLIST; do ../../master/tools/kx_sar.sh -s $S.sar | cut -f3 > $T/$S; done)
+(cd $T; paste bootstrap $SLIST)
+</programlisting>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

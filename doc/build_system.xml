@@ -1,0 +1,25 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<chapter id="build_system">
+<title>The KaarPux Build System</title>
+
+<!-- ============================================================ -->
+
+&kx_build_system_overview;
+&kx_master_directory;
+&kx_bootstrap_directory;
+&kx_linux_directory;
+&kx_bootstrapping_phase;
+&kx_devel_bootstrapping;
+&kx_linux_phase;
+&kx_devel_linux;
+&kx_opt_phase;
+&kx_devel_opt;
+
+</chapter>

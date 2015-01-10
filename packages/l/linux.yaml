@@ -1,0 +1,269 @@
+package:
+  name: linux
+  version: 3.17.4
+  www: http://www.kernel.org/
+  short: The Linux kernel (and initramfs)
+
+download:
+  kernelxz: linux/kernel/v3.0/
+  checksum: 4a55419c946a45c62a96b0313eff574c38650a3a270b2acd8168ec888a4fd02b
+
+version:
+  installed: kxver_sh_pattern("uname -r", qr|([0-9.]+)-kx|);
+  source: https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/log/?id=refs/tags/v${KX_LINUX_VERSION}
+  news: https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-${KX_LINUX_VERSION}
+
+# ============================================================
+
+doc: |
+  <section id="pkg_linux_kernel_config">
+    <title>Kernel configuration</title>
+    <para>
+      Our linux kernel configuration file
+      (<ulink url="http://sourceforge.net/p/kaarpux/code/ci/HEAD/tree/master/packages/l/linux.files/config">.config</ulink>)
+      is - in general - configured as follows:
+      <itemizedlist>
+        <listitem><para>
+          options needed for a default <application>KaarPux</application> system are build-in
+        </para></listitem><listitem><para>
+          options for most common hardware needed early (video, keyboard, net, disks) are build as modules
+        </para></listitem><listitem><para>
+          some other useful modules (such as netfilter connection tracking helpers) are build as modules
+        </para></listitem><listitem><para>
+          as much as possible, everything else has been disabled
+        </para></listitem>
+      </itemizedlist>
+    </para>
+  </section>
+  <section id="pkg_linux_kernel_release_number">
+    <title>Kernel release number</title>
+    <para>
+      When building a kernel, we do:
+      <programlisting>
+        LOCALVERSION=$(sha1sum .config | cut -b1-8)
+        echo "-kx-${LOCALVERSION}" > localversion
+      </programlisting>
+      so we will end up with a kernel release (<code>uname -r</code>) such as
+      <code>3.5.0-kx-106155c9</code>.
+    </para><para>
+      This makes it possible to have different kernel versions in the system,
+      and let <application>grub</application> choose between them.
+    </para>
+  </section>
+  <section id="pkg_linux_initramfs">
+    <title>initramfs</title>
+    <para>
+      <application>KaarPux</application> provides a small (less than 1MB compressed) <systemitem>initramfs</systemitem>.
+    </para><para>
+      For an introduction to <systemitem>initramfs</systemitem> see
+      <ulink url="http://www.linuxfordevices.com/c/a/Linux-For-Devices-Articles/Introducing-initramfs-a-new-model-for-initial-RAM-disks/">
+      Introducing initramfs, a new model for initial RAM disks</ulink>
+    </para><para>
+      The <systemitem>initramfs</systemitem> includes <xref linkend="pkg_busybox" />
+      which makes it possible to boot with e.g. <code>root=UUID=...</code>.
+    </para><para>
+      Check out the
+      <ulink url="http://sourceforge.net/p/kaarpux/code/ci/HEAD/tree/master/packages/l/linux.files/init">init</ulink> file
+      for further options.
+    </para>
+  </section>
+  <section id="pkg_linux_two_step_building">
+    <title>Two step building</title>
+    <para>
+      The kernel is build and installed in two steps (each):
+      <itemizedlist>
+        <listitem><para>
+          <code>linux/scripts/linux/linux_BUILD.sh</code>
+        </para></listitem><listitem><para>
+          <code>linux/scripts/linux/linux_INSTALL.sh</code>
+        </para></listitem><listitem><para>
+          <code>linux/scripts/linux/linux_BUILD2.sh</code>
+        </para></listitem><listitem><para>
+          <code>linux/scripts/linux/linux_INSTALL2.sh</code>
+        </para></listitem>
+      </itemizedlist>
+      The second step is responsible for building/installing the <systemitem>initramfs</systemitem>.
+    </para>
+  </section>
+
+
+# ============================================================
+bootstrap_1:
+  - echo: Making linux headers
+  - sh: |
+      make mrproper
+      make headers_check
+      make INSTALL_HDR_PATH=dest headers_install
+  - echo: Installing linux headers
+  - sh: cp -rv dest/include/* "${KX_TOOLS}/include"
+
+# ============================================================
+bootstrap_4:
+  - echo: Making linux headers
+  - sh: |
+      make headers_check
+      make INSTALL_HDR_PATH=dest headers_install
+  - echo: Installing linux headers
+  - sh: cp -rv dest/include/* /usr/include
+
+# ============================================================
+bootstrap_8:
+  # https://sourceware.org/glibc/wiki/Release/2.20#Packaging_Changes
+  - patch: glibc220.patch
+  - echo: Patching for dash
+  - sh: sed /^trap/d -i scripts/link-vmlinux.sh
+  - echo: Configuring linux kernel
+  - get_pkg_file: config.$(uname -m)
+  - sh: cp config.$(uname -m) .config
+  - sh: |
+      LOCALVERSION=$(sha1sum .config | cut -b1-8)
+      echo "-kx-${LOCALVERSION}" > localversion
+
+  - echo: Making and installing tools
+  - sh: |
+      make DESTDIR=/ -C tools cpupower
+      make DESTDIR=/ -C tools turbostat
+      make DESTDIR=/ -C tools perf
+      # make DESTDIR=/ -C tools/power/acpi
+      make DESTDIR=/ -C tools cpupower_install
+      make DESTDIR=/ -C tools turbostat_install
+      make DESTDIR=/ -C tools perf_install
+      # make DESTDIR=/ -C tools/power/acpi install
+
+  - make: ~
+
+  # No testsuite
+
+  - echo: Making and installing linux kernel modules
+  - sh: make modules_install
+  - echo: Installing
+  - sh: |
+        mkdir -pv /boot
+        LINUXVERSION=$(make kernelrelease)
+        cp -v arch/x86/boot/bzImage /boot/vmlinuz-${LINUXVERSION}
+        cp -v System.map /boot/System.map-${LINUXVERSION}
+        cp -v .config /boot/config-${LINUXVERSION}
+        depmod ${LINUXVERSION}
+
+  - echo: Keeping Linux build directory
+  - sh: |
+      rm -rf /lib/modules/${LINUXVERSION}/build
+      cp -rp . /lib/modules/${LINUXVERSION}/build
+      ln -svf build /lib/modules/${LINUXVERSION}/source
+
+  - echo: Preparing initramfs
+  - sh: |
+      rm -rf initramfs
+      mkdir -pv initramfs
+      cd initramfs
+  - get_pkg_file: init
+  - sh: |
+      chmod +x init
+      mkdir -pv bin lib lib/modules/${LINUXVERSION} dev dev/pts etc mnt proc root sbin sys
+      cp -p /bin/busybox bin
+      cp -rp /lib/firmware lib/firmware
+      cp -p /lib/modules/${LINUXVERSION}/modules.* lib/modules/${LINUXVERSION}
+      mkdir -pv lib/modules/${LINUXVERSION}/kernel/drivers/gpu/
+      cp -rp /lib/modules/${LINUXVERSION}/kernel/drivers/gpu/* lib/modules/${LINUXVERSION}/kernel/drivers/gpu/
+      find . -print0 | cpio --null -ov --format=newc | gzip -9 > ../initramfs.img
+      cd ..
+
+  - echo: Installing initramfs
+  - sh: |
+      LINUXVERSION=$(make kernelrelease)
+      echo "LINUX KERNEL VERSION: [${LINUXVERSION}]"
+      cp -v initramfs.img /boot/initramfs-${LINUXVERSION}.img
+
+
+
+# ============================================================
+linux:
+  - build:
+    # https://sourceware.org/glibc/wiki/Release/2.20#Packaging_Changes
+    - patch: glibc220.patch
+    - echo: Patching for dash
+    - sh: sed /^trap/d -i scripts/link-vmlinux.sh
+    - echo: Configuring linux kernel
+    - get_pkg_file: config.$(uname -m)
+    - sh: cp config.$(uname -m) .config
+
+#    If KaarPux fails to boot at all,
+#    or if some hardware is not recognized by the kernel,
+#    you can try to build a allmodconfig kernel:
+#    - sh: |
+#        cp config.$(uname -m) kkk
+#        grep "y$" kkk > jjj
+#        export KCONFIG_ALLCONFIG=jjj
+#        make allmodconfig
+#        grep -v CONFIG_DEBUG .config | grep -v CONFIG_CMDLINE_OVERRIDE | grep -v TEST > iii
+#        echo "CONFIG_CRYPTO_MANAGER_DISABLE_TESTS=y" >> iii
+#        echo "CONFIG_VGACON_SOFT_SCROLLBACK_SIZE=1024" >> iii
+#        export KCONFIG_ALLCONFIG=iii
+#       make allnoconfig
+
+    - sh: |
+        LOCALVERSION=$(sha1sum .config | cut -b1-8)
+        echo "-kx-${LOCALVERSION}" > localversion
+    - echo: Making tools
+    - sh: |
+        make DESTDIR=/ -C tools cpupower
+        make DESTDIR=/ -C tools turbostat
+        make DESTDIR=/ -C tools perf
+        # ACPI tools has beed (temporarily) disabled
+        # ACPI tools builds in 3.14.5, but not 3.15
+        # due to type name changes in
+        # include/acpi/actypes.h
+        # TODO: enable ACPI tools
+        # make DESTDIR=/ -C tools/power/acpi
+
+    - make: ~
+
+  # No testsuite
+
+  - install_keep:
+    - echo: Installing tools
+    - sh: |
+        make DESTDIR=/ -C tools cpupower_install
+        make DESTDIR=/ -C tools turbostat_install
+        make DESTDIR=/ -C tools perf_install
+        # make DESTDIR=/ -C tools/power/acpi install
+    - make: modules_install
+    - echo: Installing
+    - sh: |
+        LINUXVERSION=$(make kernelrelease)
+        echo "LINUX KERNEL VERSION: [${LINUXVERSION}]"
+        cp -v arch/x86/boot/bzImage /boot/vmlinuz-${LINUXVERSION}
+        cp -v System.map /boot/System.map-${LINUXVERSION}
+        cp -v .config /boot/config-${LINUXVERSION}
+        depmod ${LINUXVERSION}
+    - echo: Keeping Linux build directory
+    - sh: |
+        rm -rf /lib/modules/${LINUXVERSION}/build
+        cp -rp . /lib/modules/${LINUXVERSION}/build
+        ln -svf build /lib/modules/${LINUXVERSION}/source
+
+  - build2:
+    - echo: Preparing initramfs
+    - sh: |
+        LINUXVERSION=$(make kernelrelease)
+        rm -rf initramfs
+        mkdir -pv initramfs
+        cd initramfs
+    - get_pkg_file: init
+    - sh: |
+        chmod +x init
+        mkdir -pv bin lib lib/modules/${LINUXVERSION} dev dev/pts etc mnt proc root sbin sys
+        cp -p /bin/busybox bin
+        cp -rp /lib/firmware lib/firmware
+        cp -p /lib/modules/${LINUXVERSION}/modules.* lib/modules/${LINUXVERSION}
+        mkdir -pv lib/modules/${LINUXVERSION}/kernel/drivers/gpu/
+        cp -rp /lib/modules/${LINUXVERSION}/kernel/drivers/gpu/* lib/modules/${LINUXVERSION}/kernel/drivers/gpu/
+        find . -print0 | cpio --null -ov --format=newc | gzip -9 > ../initramfs.img
+
+  - install2:
+    - echo: Installing initramfs
+    - sh: |
+        LINUXVERSION=$(make kernelrelease)
+        echo "LINUX KERNEL VERSION: [${LINUXVERSION}]"
+        cp -v initramfs.img /boot/initramfs-${LINUXVERSION}.img
+

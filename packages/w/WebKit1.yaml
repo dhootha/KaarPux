@@ -1,0 +1,65 @@
+package:
+  name: WebKit1
+  version: 2.4.7
+  www: http://webkitgtk.org/
+  short: WebKitGTK+ is the port of the portable web rendering engine WebKit to the GTK+ platform.
+
+doc: |
+  <para>Note that we have two <application>WebKit</application> packages:
+    <xref linkend="pkg_WebKit1" /> and
+    <xref linkend="pkg_WebKit2" />.
+  </para>
+  <para>
+    <xref linkend="pkg_WebKit1" /> is an "old" package,
+    implementing only the <application>WebKit1 API</application>.
+  </para>
+  <para>
+    <xref linkend="pkg_WebKit2" /> is a "new" package,
+    implementing only the <application>WebKit2 API</application>.
+  </para>
+
+download:
+  url: http://webkitgtk.org/releases
+  file: webkitgtk-${KX_WEBKIT1_VERSION}.tar.xz
+  dir: webkitgtk-${KX_WEBKIT1_VERSION}
+  checksum: 10d4cd1c1f7454adc576c6b97fa3d262b6665764
+  verify: sha1.asc
+
+version:
+  installed: >
+    kxver_header_file_full("/include/webkitgtk-3.0/webkit/webkitversion.h",
+    qr|WEBKIT_MAJOR_VERSION\s*\(([0-9]+)|,
+    qr|WEBKIT_MINOR_VERSION\s*\(([0-9]+)|,
+    qr|WEBKIT_MICRO_VERSION\s*\(([0-9]+)|);
+
+  upstream: kxver_scrape_url("webkitgtk", $url);
+
+linux:
+  - build:
+#    - use_gcc: ~
+    - configure_kx_bash: >
+        --disable-svg-fonts
+        --disable-gtk-doc
+        --disable-static
+        --enable-introspection
+        --enable-debug-symbols=no
+        --enable-dependency-tracking
+        --disable-webkit2
+    # Building WebKit in parallel (make -jNN) seems seriously borked.
+    # So try to build in parallel a couple of times
+    - sh: |
+        for N in 1 2; do
+        kx_step_echo "make WebKit (parallel) N=$N"
+        make ${KX_MAKE_J} || true
+        done
+    - make_repeat: ~
+
+  # 'make check' does nothing
+
+  - install:
+#    - use_gcc: ~
+    - install: ~
+
+verify_cli: |
+  kx_cli_match_success "/bin/jsc-3 -e print(12+34+56+2*789)" { 1680 }
+

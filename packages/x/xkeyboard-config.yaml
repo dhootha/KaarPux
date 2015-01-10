@@ -1,0 +1,25 @@
+package:
+  name: xkeyboard-config
+  version: 2.12
+
+
+download:
+  url: http://xorg.freedesktop.org/releases/individual/data/xkeyboard-config
+  file_tar_bz2: ~
+  checksum: 65b62b95b77b609cb6c0439e0148c48c3ab7dcb5c90eb8d34cf1cb8f360cca44
+
+version: ~
+
+linux:
+
+  - build:
+    - configure_kx: >
+        --with-xkb-rules-symlink=xorg
+        --enable-compat-rules=yes
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~     
+

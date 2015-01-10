@@ -1,0 +1,70 @@
+package:
+  name: krb5
+  version: 1.12.2
+  www: http://web.mit.edu/kerberos/
+  short: |
+      Kerberos is a network authentication protocol.
+      It is designed to provide strong authentication for client/server applications
+      by using secret-key cryptography.
+
+doc: |
+     <para>
+     We are only building and installing the libraries,
+     which are needed by other packages.
+     </para>
+
+download:
+  url: http://web.mit.edu/kerberos/dist/krb5/${KX_KRB5_VERSION_MM}
+  file: ${KX_KRB5}-signed.tar
+  checksum: 09bd180107b5c2b3b7378c57c023fb02a103d4cac39d6f2dd600275d7a4f3744
+
+version:
+  installed_sh_trailing: krb5-config --version
+  upstream: kxver_scrape_url("krb5", "http://web.mit.edu/kerberos/dist/");
+
+linux:
+
+  - build:
+    - sh: tar xzf ../${KX_KRB5}.tar.gz
+    - sh: cd ${KX_KRB5}/src
+    - sh: sed -e "s@interp->result@Tcl_GetStringResult(interp)@g" -i kadmin/testing/util/tcl_kadm5.c
+    - configure_kx: >
+        CFLAGS=" -fPIC -fno-strict-aliasing -fstack-protector-all"
+        CPPFLAGS=" -I/usr/include/et -I/usr/include/ss"
+               --enable-shared
+               --with-system-et
+               --with-system-ss
+               --disable-rpath
+               --enable-dns-for-realm
+               --without-ldap
+               --with-prng-alg=os
+    - sh: |
+        for D in util include lib; do
+        cd $D
+        kx_echo "make in $D"
+        make ${KX_MAKE_J}
+        cd ..
+        done
+
+  # We can not test just the libraries, as we are not building the tools
+  # - test:
+  #   - sh: cd ${KX_KRB5}/src
+  #   - check: ~
+
+  - install:
+    - sh: cd ${KX_KRB5}/src
+    - sh: |
+        for D in krb5 gssapi gssrpc kadm5; do
+        install -v -m755 -d /include/$D
+        done
+        for D in util include lib build-tools; do
+        cd $D
+        kx_echo "install in $D"
+        make install DESTDIR=/
+        cd ..
+        done
+
+verify_cli: |
+
+  kx_cli_match_success "krb5-config --all" { Kerberos Massachusetts Prefix }
+  kx_cli_match_success "krb5-config --libs" { krb5 }

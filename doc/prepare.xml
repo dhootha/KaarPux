@@ -1,0 +1,254 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="prepare">
+<title>Preparing to build KaarPux</title>
+
+<!-- ============================================================ -->
+
+<para>
+The preparation steps should be carried out as any regular user,
+or as <systemitem class='username'>root</systemitem> where noted.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="Mount target">
+<title>Mounting the target disk</title>
+<para>
+Mount the target disk on the host system:
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+
+DEV=/dev/sdb2
+MNT=/mnt/kxmnt
+
+mkdir -pv ${MNT}
+mount ${DEV} ${MNT}
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="mount_efi">
+<title>Mounting the EFI partition</title>
+<para>
+If you have an <systemitem>UEFI</systemitem> system,
+you need to mount the <systemitem>EFI</systemitem> partition on the host system:
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+EDEV=/dev/sdb1
+MNT=/mnt/kxmnt
+
+mkdir -pv ${MNT}/boot/efi
+mount ${EEV} ${MNT}/boot/efi
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="perpare_home">
+<title>Preparing a home directory</title>
+<para>
+Create a directory to build in.
+On the target system, this will become the home directory for <systemitem>kaarpux</systemitem>.
+</para>
+<para>
+Set <envar>USR</envar> and <envar>GRP</envar> to the
+<systemitem>user name</systemitem> and <systemitem>group name</systemitem>
+(or <systemitem>uid</systemitem> and <systemitem>gid</systemitem>)
+of your regular user.
+</para>
+<para>
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+MNT=/mnt/kxmnt
+USR=1000
+GRP=1000
+
+mkdir -pv ${MNT}/home/kaarpux/kaarpux
+chown -R ${USR}:${GRP} ${MNT}/home/kaarpux/
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="unpack">
+<title>Unpacking KaarPux</title>
+<para>
+First make sure the target disk is mounted under <envar>${MNT}</envar>,
+and that the &kx; tarball has been downloaded to <filename>${KAARPUX_TAR}</filename>.
+Then unpack the tarball:
+<programlisting>
+&kx_as_regular_user;
+&kx_envwarn;
+MNT=/mnt/kxmnt
+KAARPUX_TAR=/somewhere/kaarpux.tar.gz
+
+cd ${MNT}/home/kaarpux/kaarpux
+mkdir -pv master
+rm -rf master/*
+tar xzf ${KAARPUX_TAR}
+</programlisting>
+Now you should have the &kx; sources in <filename class="directory">${MNT}/home/kaarpux/kaarpux/master/</filename>.
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_configuring">
+<title>Configuring KaarPux</title>
+<para>
+<programlisting>
+&kx_as_regular_user;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+cp master/default_definitions.shinc custom_definitions.shinc
+</programlisting>
+Edit <filename>${MNT}/home/kaarpux/kaarpux/custom_definitions.shinc</filename>
+following the instructions included in the file.
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_scripts">
+<title>Creating KaarPux scripts</title>
+<para>
+To create the scripts necessary for building, execute:
+<programlisting>
+&kx_as_regular_user;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+master/make_scripts.sh
+</programlisting>
+
+This will create a suitable directory structure under
+<filename class="directory">${MNT}/home/kaarpux/kaarpux/bootstrap</filename>
+and
+<filename class="directory">${MNT}/home/kaarpux/kaarpux/linux</filename>,
+and populate those directories with files needed for the build.
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_downloading">
+<title>Downloading Bootstrap Packages</title>
+<para>
+Since we will be building &kx; inside an <application>chroot</application>
+without internet connectivity, first download all the source packages
+needed for the bootstrap:
+</para>
+<para>
+<programlisting>
+&kx_as_regular_user;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+bootstrap/download_bootstrap_packages.sh
+</programlisting>
+</para>
+<para>
+Alternatively, you may download <emphasis>all</emphasis> required packages:
+</para>
+<para>
+<programlisting>
+&kx_as_regular_user;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+linux/download_all_packages.sh
+</programlisting>
+</para>
+
+<para>
+or try the alternative, experimental, parallel:
+</para>
+<para>
+<programlisting>
+&kx_as_regular_user;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+linux/download_packages_2.sh
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_verifying_host">
+<title>Verifying the Host System Tools</title>
+<para>
+Verify that the host tools are OK:
+</para>
+<para>
+<programlisting>
+&kx_as_regular_user;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+bootstrap/host_scripts/verify_host.sh
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_kxbuild_user">
+<title>Adding the kxbuild user</title>
+<para>
+To make sure we have a well-defined environment for the build scripts,
+add a separate user called <systemitem class='username'>kxbuild</systemitem> for building &kx;
+</para>
+<para>
+The <systemitem>uid</systemitem> and <systemitem>gid</systemitem> for
+<systemitem class='username'>kxbuild</systemitem> can be set in
+<filename>${MNT}/home/kaarpux/kaarpux/custom_definitions.shinc</filename>,
+if you are not happy with the defaults in
+<filename>${MNT}/home/kaarpux/kaarpux/master/default_definitions.shinc</filename>.
+</para>
+<para>
+<programlisting>
+&kx_as_root;
+MNT=/mnt/kxmnt
+
+cd ${MNT}/home/kaarpux/kaarpux
+master/make_kxbuild_user.sh
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_kxbuild_owner">
+<title>Making kxbuild the owner</title>
+<para>
+Now make <systemitem>kxbuild</systemitem> the owner of the files:
+</para>
+<para>
+<programlisting>
+&kx_as_root;
+MNT=/mnt/kxmnt
+
+chown -R kxbuild:kxbuild "${MNT}/home/kaarpux/kaarpux"
+</programlisting>
+</para>
+</section>
+
+</section>
+

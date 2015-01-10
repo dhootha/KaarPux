@@ -1,0 +1,23 @@
+package:
+  name: GeoIP
+  version: 1.5.1
+
+download:
+  url: http://www.maxmind.com/download/geoip/api/c
+  file: GeoIP-1.5.1.tar.gz
+  checksum: ec35ee73fcc54c493f4252565d1c81d022b398dd16de3af1522c8cab016f8731
+
+version:
+  upstream: kxver_scrape_url(undef, "https://github.com/maxmind/geoip-api-c/releases", qr|v([0-9]+[0-9.\-_]*[0-9]+)\.tar|);
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --enable-man-pages 
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

@@ -1,0 +1,226 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_6_8">
+<title>Changes in KaarPux version 3.6.8</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.6.8</systemitem> released on <systemitem>2013-12-15</systemitem>
+</para><para>
+	Mozilla and other packages udated
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_8_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: libdrm: v 2.4.50
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6a38aa5b1e352e973c6dfd0718275be1a7f6e3e8/">6a38aa5b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: MesaLib: v 10.0.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a55fc13d366c918c6fb4cfe04e4d3c4876eaf19f/">a55fc13d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: llvm: v 3.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e096c1315d1564029485c5822d8f452e4f6da338/">e096c131</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dhcpcd: v 6.1.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0a859f1da113927b4a943da691a30f9735cadb53/">0a859f1d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: certdata: v 1.96
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3305ded3a0b068a082f14b5ed90ab9c3158fc671/">3305ded3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nspr: v 4.10.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6e2e5f0ca499ff677ac2d1c45d8bb5cb1bbbd6f8/">6e2e5f0c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nss: v 3.15.3.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/60c1818bc7eb3bbca3a2f3e9a8687ae6c67aa5e0/">60c1818b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: nss: correct RTM location
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d9f982625ca0da56d873012c5016c60c5df5cc2e/">d9f98262</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: firefox: v 26.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/06b8264096882e4caa919cc3fea469c31a70e0c8/">06b82640</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.332
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e39d2c58aecadabe5a892128f3528ca83a231acd/">e39d2c58</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 5.0.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/22041b030637cf9ebbb7618d801844ca92a5b853/">22041b03</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: adblockplus: 2.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3b8f1878b056e02c6850fa05c653c36750aa007a/">3b8f1878</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9a7fc286b57d4ed65529f412cfc99c2a6cd6119e/">9a7fc286</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 24.2.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8dcbf02be651df32ae30572d1eba1fd03b1a7e58/">8dcbf02b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libpng: v 1.6.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/218d6a5ed6954401ee3910be5fbd9c0bf0f2eb8b/">218d6a5e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: pigz: v 2.3.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a2b4dc3b55638ff540b51c9e1122e12f50c0967f/">a2b4dc3b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.12.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e81df480436ad43c6126633d49835dc40163d852/">e81df480</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: systemd: v 208
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/74b40f1613333a8424b9f207c84d10503bfdd456/">74b40f16</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: qemu: v 1.7.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cdce62afc3d9e3658777b553849d6a2f91170ab7/">cdce62af</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: systemtap: v 2.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c22a2b55394e33d52bcf51409f527f41e5e525bf/">c22a2b55</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux-firmware: v 20131001
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3a80d0218462c71cf4189de41c233b5968927a11/">3a80d021</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xorg-server: v 1.14.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dea967d675da878c48de816a6bb948b171cce10c/">dea967d6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gdm: v 3.8.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/829a691d8e3f448bb490b82fca7ec5667777e4aa/">829a691d</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_8_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: qt: build tools
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e2a4cb88a4cb6ff963e9c762675597dbcf4bc1a6/">e2a4cb88</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: llvm: --enable-experimental-targets=R600
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/969102a84031ed1343c9469f6470037a32288f31/">969102a8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: MesaLib: More gallium drivers
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ddf24540077718e97a5ca8222f113daa990640cd/">ddf24540</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: gpg_keys: add new Firefox key
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ecc2280287b7de31d0aee2d4c218025e11573a5c/">ecc22802</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: ghc-binary: better download location
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fc2a48c0de76e62c3d84fc80b6225d839d7a2eaf/">fc2a48c0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: kx_open_stp: Temporarily disabled, as SystemTap 2.4 does not work with linux kernel 3.12
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/eae07199be6ad681b12b53ca2553d1cf14738cda/">eae07199</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: xf86-video-vmware: temporarily disabled, as it does not work with new XA in latest Mesa
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4285a18c05f0bea536588ed3f72daf490acfaa70/">4285a18c</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

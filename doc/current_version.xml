@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE current_version [
+  <!ENTITY current_version SYSTEM "current_version.txt">
+]>
+<current_version>
+&current_version;
+</current_version>
+

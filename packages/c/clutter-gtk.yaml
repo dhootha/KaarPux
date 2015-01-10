@@ -1,0 +1,24 @@
+package:
+  name: clutter-gtk
+  version: 1.6.0
+  www: https://clutter-project.org/libraries/clutter-gtk
+  short: Clutter-GTK is an integration library to use Clutter scenes within GTK+ applications.
+
+download:
+  gnomexz: ~
+  checksum: 883550b574a036363239442edceb61cf3f6bedc8adc97d3404278556dc82234d
+
+version:
+  installed_pkgconfig: clutter-gtk-1.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

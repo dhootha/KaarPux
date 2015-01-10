@@ -1,0 +1,29 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="devel_linux">
+<title>Developing / Debugging Linux base, xorg and gnome</title>
+
+<!-- ============================================================ -->
+
+<para>
+All of the phases 
+<itemizedlist>
+	<listitem><para>linux_base</para></listitem>
+	<listitem><para>linux_xorg</para></listitem>
+	<listitem><para>linux_gnome</para></listitem>
+</itemizedlist>
+are build on the target system, so they can be re-build
+and re-installed here.
+</para>
+
+
+<!-- ============================================================ -->
+
+</section>
+

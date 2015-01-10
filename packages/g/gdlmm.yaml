@@ -1,0 +1,30 @@
+package:
+  name: gdlmm
+  version: 3.7.3
+  short: The Gdlmm package contains C++ bindings for the Gdl library
+
+download:
+  gnomexz: ~
+  checksum: e280ed9233877b63ad0a0c8fb04d2c35dc6a29b3312151ee21a15b5932fef79b
+
+version:
+  installed_pkgconfig: gdlmm-3.0
+  upstream_gnome_uneven: ~
+
+linux:
+
+  - build:
+
+    # clang++ -std=c++11 barfs:
+    # //include/libgdl-3.0/gdl/gdl-dock-object.h:384:42: error: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
+    # "%s:%d (%s) %s [%p %d%s:%d]: "format,
+    # TODO: report upstream
+    - sh: CXX=clang++; export CXX
+
+    - configure_kx: --disable-documentation
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

@@ -1,0 +1,27 @@
+package:
+  name: cups-filters
+  version: 1.0.58
+  www: http://www.openprinting.org/
+  short: OpenPrinting CUPS Filters package.
+
+download:
+  url:  http://www.openprinting.org/download/cups-filters/
+  file_tar_xz: ~
+  checksum: 6e704e0eac6968076d0596e0c9512f8c88bc9e0dbc934c8846f6375c93b80b2e
+
+version:
+  installed_pkgconfig: libcupsfilters
+
+linux:
+  - build:
+    - configure_kx: --with-rcdir=$(mktemp -d) --disable-static
+    - sh: sed -i 's/LN_S = ln -s/LN_S = ln -svf/' Makefile
+    - make_repeat: ~
+
+  - install:
+    - install: ~
+
+# Add this to make local printers browsable on network
+#    - sh: |
+#        install -D -m644 utils/cups-browsed.service /etc/systemd/system/cups-browsed.service
+#        ln -svf '/etc/systemd/system/cups-browsed.service' '/etc/systemd/system/multi-user.target.wants/cups-browsed.service'

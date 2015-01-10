@@ -1,0 +1,31 @@
+package:
+  name: gnome-settings-daemon
+  version: 3.14.2
+
+download:
+  gnomexz: ~
+  checksum: 066bc8ed751c5f6b5a9590911a0fb2b51b0c3436ae1caccfa42e0791c34fedee
+
+version:
+  installed_pkgconfig: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - sh: autoreconf -i -f
+    - configure_kx_bash: >
+        --disable-static
+        --disable-ibus
+        --disable-packagekit
+        --enable-man
+        --disable-schemas-compile
+    #https://bugzilla.gnome.org/show_bug.cgi?id=656231
+    - sh: sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

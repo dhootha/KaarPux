@@ -1,0 +1,24 @@
+package:
+  name: yelp-xsl
+  version: 3.14.0
+  www: http://projects.gnome.org/yelp/
+  short: The core XSLT stylesheets used by libyelp and yelp.
+
+download:
+  gnomexz: ~
+  checksum: 8f5b6793cd600f8308e4ac93da68009169fa6d590eb71ed4a8e98bafe541a87e
+
+version:
+  installed_pkgconfig: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

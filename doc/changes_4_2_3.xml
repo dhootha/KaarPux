@@ -1,0 +1,202 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_2_3">
+<title>Changes in KaarPux version 4.2.3</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.2.3</systemitem> released on <systemitem>2014-apr-09</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		openssl version 1.0.1g: Fixes CVE-2014-0160 (heartbleed)
+		</para></listitem>
+
+		<listitem><para>
+		Other packages updated
+		</para></listitem>
+
+		<listitem><para>
+		Build improvements
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_3_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: openssl: v 1.0.1g; CVE-2014-0160 heartbleed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1bd6cbfd357f248c24bd213c4d7a9540c07eb1bc/">1bd6cbfd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.350
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2057622444089a1ea8211b08ef69b75f17a7997b/">20576224</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnutls: v 3.2.13
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/67e04ac25049eafc0f37875b18b4acfa73facebe/">67e04ac2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: icedtea-web: v 1.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c1609a43b5c06a16c44026765e48a4152447e5fb/">c1609a43</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: yaml: v 0.1.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/94339b5b174b28e122ed229fb0a71e8da9f2813f/">94339b5b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: WebKit: v 2.4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2f4c80a95eb81baf425da92041e29b3921aaf3f7/">2f4c80a9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.13.9
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0303e6fa38a7a97a7c01ce2998d3d9d464f228c9/">0303e6fa</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_3_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: KxBuild: remove stray &lt;tab&gt; from master.yaml
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cf89597bec535f4c129aa8b8692a30b60628f0ab/">cf89597b</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_3_build">
+<title>Build improvements</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: KxTools: kx_flist to skip over dependencies introduced by ldconfig
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/50c97626f423f28cad57693eb95b9764fd6bc6b0/">50c97626</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: kx_flist to process package build times
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/192a40ddf8eea8ff062c162525fe85bf439afe14/">192a40dd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: kx_dpendencies --parallel improved to not consider ldd dependencies
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5db8537c34f21481d1ac1c16993d1b35c369f971/">5db8537c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: cleaner bootstrap phase
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ffd9eb528d3a89d49170f6a97bf234735b6cd5f2/">ffd9eb52</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: Better parallelism in linux_base
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b0d1a4164506bda2225eea393012828cc569e1c9/">b0d1a416</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: iana-etc is now in linux phase
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/baaaa00e875c87b4b289895a1e39817a2eb6fcf0/">baaaa00e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: Better parallelism in opt_desktop
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bce9c59fbab42a06ddef357af5112e961f83b9b6/">bce9c59f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: Better parallelism in opt_coins
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8000024ce1f5d671b1391bebfaf251d395f685e8/">8000024c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: only run kx_opt after all parallel packages or a standalone package
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4aa32bec97ee57536d4bc1e005814f9f0cbceb30/">4aa32bec</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: updated build durations
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bd875b86aff5959f31b413f6d8b7faae046b4fb9/">bd875b86</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_3_doc">
+<title>Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		DOC: www: correct title on index page
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0fa960a973edd7d07bf99ef8cc9898e7240b4458/">0fa960a9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/854da365d5082a516a49d651f847c81126b110af/">854da365</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

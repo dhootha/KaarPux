@@ -1,0 +1,279 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_4_0">
+<title>Changes in KaarPux version 4.4.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.4.0</systemitem> released on <systemitem>2014-jun-09</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+			Security Updates
+		</para></listitem>
+
+		<listitem><para>
+			GNOME 3.12
+		</para></listitem>
+
+		<listitem><para>
+			Other Packages updated
+		</para></listitem>
+
+		<listitem><para>
+			Bugs fixed; minor changes; documentation updates
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+<!-- ============================================================ -->
+
+
+<section id="changes_4_4_0_security">
+<title>Security Updates</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: gnutls: v 3.2.15; fixes CVE-2014-3466
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5c2e22a28ae7151510b2f26ffe03fa374a497ea0/">5c2e22a2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssl: v 1.0.1h
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/331b01f5af7affebda41b9c76424941b3dcc5cfd/">331b01f5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.14.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8d88070d4831bf3614cbc93552dd3f4c7031f4f2/">8d88070d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: samba: v 4.1.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/26efe6a03a4344af7e6f58dcbcae65340300257a/">26efe6a0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: samba: remove old patch
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/339a07ce24d84672fc45f4e51ad5dc081114692f/">339a07ce</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_4_0_gnome">
+<title>GNOME 3.12</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KxTools: kx_gnome: more thorough processing of gnome packages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5fa3c3c319f4e86dfc802bc96be257c3717c2fa6/">5fa3c3c3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: *: GNOME 3.12.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/80f62bcca1d00efc3a6e7af39b6c653133a37297/">80f62bcc</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_4_0_upd">
+<title>Other Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: systemd: v 213
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7a1c6329be47f48bbf15ef15dc193ee29e6ad384/">7a1c6329</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: perl: v 5.20.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7970ddf269e0d8651ddfd8401d50cd44b4df7a01/">7970ddf2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: perlmodules: IO-Compress Net-SSLeay IO-Socket-SSL
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0a9f731ea765a069655ee60b637d8bf0f7737010/">0a9f731e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: Python2: v 2.7.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b21d269d9c93bb7082cb262b22e5d77a39dfed43/">b21d269d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: adblockplus: v 2.6.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4c5a128a5128eb77c1b9783894fa2f08233b5855/">4c5a128a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.28
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/419a7f56fff3cde85e56cba1c0b4a9121412b1a3/">419a7f56</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libtasn1: v 3.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/14ee4bbf979f50e00d3731f677216e9e1ef8b83e/">14ee4bbf</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_4_0_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: systemd: start DHCP on et* as well as en*
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/43efa669f3a856c03376b3c7c64412f9078d2d79/">43efa669</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: linux: copy build directory to /lib/modules before it is deleted
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c74ca62b3b6dbc3354fcc4250e6602457fe2a7ff/">c74ca62b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: pysqlite: remove documentation installed in root dir
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0578be07552503233274d1299e587fc6a67970d5/">0578be07</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: openssl: do not install manual pages in /etc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/16389d2906e67526a4b3c50517a50ea9062523a4/">16389d29</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: kx_ver_perlmodules: correct upstream scrape URL
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/da913279a19baeb45767d74fae62687764f24409/">da913279</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: perl: add -Dlibs=-lm to avoid picking up host libraries
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3fe4c85efb282c5a4f5223a9286693db7f9b7fa1/">3fe4c85e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: telepathy-mission-control: --disable-upower
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d551850f5fe8bf013b08f614b2f4f3f9226ae7b6/">d551850f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libical: make -j1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f135634e77ee5c2790814c08a3357ca2c9f44e0a/">f135634e</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_4_0_minor">
+<title>Minor Changes and Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: systemtap: use upstream patch for infinite loop in task_dentry_path
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6bcd6aec6a23898c8b6f194cc3d80d3ee5cc9284/">6bcd6aec</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: delete build directories after each package has been installed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1f851135f958410767aedbc84107a7f21c7cd287/">1f851135</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: download_packages_2: show which packages will be downloaded
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/230e105d81a8b29f489bc03f4204cacdfbb3f9d8/">230e105d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: flex: better upstream check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1550b92829ae99c3766278dec16df0a71e777a6d/">1550b928</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: libquvi-scripts: verify signature after download
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/11b202d9681c692204484e778934ded248f8a17f/">11b202d9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: xmlbeans: put comment on www
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d7f27e0af02ac871a732113732ddda1b6e88271c/">d7f27e0a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: 303 redirects for old gnome packages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/183de6ae26b12db2e6b9ba39eac6503735047da1/">183de6ae</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4cf9e50075d0b30a9be5b9b0dadc2ac2baf5ea5a/">4cf9e500</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

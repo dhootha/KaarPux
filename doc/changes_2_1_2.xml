@@ -1,0 +1,100 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_2_1_2">
+<title>Changes in KaarPux version 2.1.2</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; version <systemitem>2.1.2</systemitem> released on <systemitem>2012-09-04</systemitem>
+</para>
+
+<para>
+Upstream security-updates for <systemitem>icedtea</systemitem> / <systemitem>Java</systemitem>.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_2_java">
+<title>SECURITY: icedtea: v 2.3.2</title>
+<para>
+	(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/024b112225fafbd9a65300c8d945fd0256bd0a43/">024b1122</ulink>)
+</para><para>
+	Java security releases:
+	<ulink url="http://blog.fuseyism.com/index.php/2012/08/31/security-icedtea6-1-10-9-1-11-4-icedtea-2-3-2-released/">[SECURITY] IcedTea 2.3.2 Released!</ulink>
+</para><para>
+	Fixes:
+	<itemizedlist>
+	<listitem>
+		<ulink url="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2012-1682">CVE-2012-1682: XMLDecoder security issue via ClassFinder</ulink>
+	</listitem><listitem>
+		<ulink url="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2012-0547">CVE-2012-0547: Simplify toolkit internals references</ulink>
+	</listitem><listitem>
+		<ulink url="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2012-3136">CVE-2012-3136: Improve long term persistence of java.beans objects</ulink>
+	</listitem>
+	</itemizedlist>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_2_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: noscript: v 2.5.3: bug fixes and improvements
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3394522fb0afd1edbd736c1bdbf6b2939b3fd658/">3394522f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dhcpcd: v 5.6.2: minor improvements
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ca8723d89a567d9faf3f53e4b796443e16e09316/">ca8723d8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: bluez: create /etc/systemd/system/bluetooth.target.wants dir
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/80956b6811a9e6f402e931201ba784b83535b96e/">80956b68</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_1_2_upgrade">
+<title>Upgrade instructions</title>
+
+<para>
+
+The security fixes can be applied to a
+&kx; version <systemitem>2.1.0</systemitem> or <systemitem>2.1.1</systemitem> system:
+
+<programlisting>
+rm -rf /opt/kaarpux/icedtea*
+linux/scripts/opt/icedtea_BUILD.sh
+linux/scripts/opt/icedtea_INSTALL.sh
+linux/scripts/opt/icedtea-web_BUILD.sh
+linux/scripts/opt/icedtea-web_INSTALL.sh
+master/tools/kx_opt.pl
+</programlisting>
+
+</para>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

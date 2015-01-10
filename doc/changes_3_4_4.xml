@@ -1,0 +1,261 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_4_4">
+<title>Changes in KaarPux version 3.4.4</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.4.4</systemitem> released on <systemitem>2013-feb-13</systemitem>
+</para>
+
+<itemizedlist>
+	<listitem><para>
+		Java security update
+	</para></listitem>
+	<listitem><para>
+		Flashplayer security update
+	</para></listitem>
+	<listitem><para>
+		Mozilla updates
+	</para></listitem>
+	<listitem><para>
+		Bugs fixed, packages updated, and other minor changes
+	</para></listitem>
+</itemizedlist>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_4_java">
+<title>Java security update</title>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: icedtea: v 2.3.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/55294ce9de47bb254376481e6dd521be0481b945/">55294ce9</ulink>)
+	</para><para>
+		See <ulink url="http://blog.fuseyism.com/index.php/2013/02/13/security-icedtea-2-3-6-released/">GNU/Andrew’s Blog: IcedTea 2.3.6 Released!</ulink>
+	</para></listitem>
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_4_flash">
+<title>Flashplayer security update</title>
+
+<itemizedlist>
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.270
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0e7320efe2643b0bfcebab9ff3c7b6ed8f646f57/">0e7320ef</ulink>;
+<ulink url="http://sourceforge.net/p/kaarpux/code/ci/c77141d1f82e197dc01ec3995f8b64cb30a74cb7/">c77141d1</ulink>)
+	</para></listitem>
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_4_moz">
+<title>Mozilla updates</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: firefox xulrunner: v 18.0.2
+	</para><para>
+		(Commit  <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4151bfd39e7d3eb91446e4958fca4286625f6651/">4151bfd3</ulink>; <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b14d3054fb66724e7584bed9b9a5c7af75018040/">b14d3054</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nss: v 3.14.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/46aa236abf76db7c2a11056a763ce5089360cfbc/">46aa236a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: adblockplus: v 2.2.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a05002f98fde154babb91236a2ad8695369010f8/">a05002f9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.4.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f92d5f8d597be6ed9a1f50e2561f816b7188aaa6/">f92d5f8d</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_4_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: cups-filters: patch to work with poppler 0.22.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/262c5c2ae4411300bb94ef196cc141875e2448b3/">262c5c2a</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_4_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: samba: v 4.0.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bd40e9f7d4076394a8f995be2bec96052b0313c9/">bd40e9f7</ulink>; <ulink url="http://sourceforge.net/p/kaarpux/code/ci/759f1e0a070ff3e4ea951b8ebb073c596949bcc6/">759f1e0a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: poppler: v 0.22.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/74adfcd5d78fc14163ee1dc4df07e1c59c232085/">74adfcd5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: lcms2: v 2.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9d32d22a1e380f24eb688a3c8d7a091f146f116b/">9d32d22a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssl: v 1.0.1d
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1fecbc194d35460deed859a08525efeb47b0ba9d/">1fecbc19</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssh: v 6.1p1; and improved configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a53e8e62204d7916a4be278a98abdc74e1554d9b/">a53e8e62</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gvfs: v 1.14.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f7235913aa726808d74f9a38148c8678626bfa86/">f7235913</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_4_add">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: dosfstools: utilities for making and checking MS-DOS FAT filesystems
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/da169e130930afc04d2604b5588ba8c792f218f7/">da169e13</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: poppler-data: encoding files for use with poppler
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f6dcd2525ed35618425b0df399d7a0221d8f3982/">f6dcd252</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_4_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+	<listitem><para>
+		FIX: KxTools: kx_ver_wiz: add --force option
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/06694dd249f78f0dd0e39815fa92cb472f91bc7e/">06694dd2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: bison binutils: move bison before binutils
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b4f075721bc309cd769f6280b9de5c727cc08521/">b4f07572</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: binutils gcc: Enable Link-Time-Optimization and ld.gold linker
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b34bdcc82d41e3a2d4dfb95f4e127e395c16faef/">b34bdcc8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		REMOVE: tcp_wrappers: not needed anymore
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f715acff85c5d6b5ced755409f5ad41ad5135c01/">f715acff</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: CONFIG_SENSORS_CORETEMP=m
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4b88e35c8da49c9b4c8342181aca393490afcad2/">4b88e35c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: pam: only use systemd session on real logins
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6f6e9d007a9ee7c3ffcebe19a004a3df19a88556/">6f6e9d00</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: ntpd: Do not start ntpd under virtualization
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e0cb3f359310296849a9fbe8226ca36018333cb1/">e0cb3f35</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: Do not set password for kxbuild user
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/575270416c9f0b47aa6570fbf3b13a4d99dec745/">57527041</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: dangerous_build_bootstrap: better password setting instructions
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c70e57215392fba13d0df2c0b40c0f3690bb3142/">c70e5721</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: setting hostname after copying KaarPux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e6b8c8a93cdc9ebcfde0d07dcc8869d2c87d8793/">e6b8c8a9</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

@@ -1,0 +1,25 @@
+package:
+  name: libsigc++
+  version: 2.4.0
+  www: http://developer.gnome.org/libsigc++/
+  short: Provides a typesafe (at compile time) callback system for standard C++.
+
+download:
+  gnomexz: ~
+  checksum: 7593d5fa9187bbad7c6868dce375ce3079a805f3f1e74236143bceb15a37cd30
+
+version:
+  installed_pkgconfig: sigc++-2.0
+  upstream_gnome_uneven: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-documentation
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

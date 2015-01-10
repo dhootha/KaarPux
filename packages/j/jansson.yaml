@@ -1,0 +1,22 @@
+package:
+  name: jansson
+  version: 2.6
+  www: http://www.digip.org/jansson/
+  short:  C library for encoding, decoding and manipulating JSON data.
+
+download:
+  url: http://www.digip.org/jansson/releases
+  file_tar_bz2: ~
+  checksum: d2cc63ee7f6dcda6c9a8f0b558f94b8f25f048706b7cbd6a79d3e877b738cd4d
+
+version:
+  installed_na: ~
+
+opt:
+
+  - build:
+    - configure_kx: --disable-static
+    - make: ~
+
+  - install:
+    - install: ~

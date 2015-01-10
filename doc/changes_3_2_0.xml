@@ -1,0 +1,359 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_2_0">
+<title>Changes in KaarPux version 3.2.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.2.0</systemitem> released on <systemitem>2012-oct-17</systemitem>
+</para>
+
+<para>
+	Security updates, printing, updates, and additions.
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_0_sec">
+<title>Security Updates</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: nspr: v 4.9.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0b14f297947bad1d367bfe5ac695a222eb160211/">0b14f297</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xulrunner firefox thunderbird: v 16.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bfd7cd818ca72e6252cbf0a02fc975b7e2d76ba2/">bfd7cd81</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.5.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/22d54015357c34583009364532f6405cd09200eb/">22d54015</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.243
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d88572ca95bda34583b1cd8496da965972492433/">d88572ca</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_0_cups">
+<title>Improved Printing</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: cups: v 1.6.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/12b9fbc1e42c18b44dec323005924b75d03f2281/">12b9fbc1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: cups: remove 'hold' and related documentation
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3bfbb9dd8c797c13b85f8b95f9e9cec1d137f506/">3bfbb9dd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: cups: add systemd patch, and improved configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6665c36c96399d14836ac9453dadeaa830376ace/">6665c36c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cups: do not delete files in /usr/share
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7cc758fa8653f46019e825cae5558dec5d6c1944/">7cc758fa</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cups: ArchLinux patches
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a95681610d61aec3766cf540807467cb03b5a5e5/">a9568161</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cups: move cups before gtk+ so gtk+ builds cups printing backend
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fd3db1558d0607ef4a117e6ce8ec0fd3b66ae887/">fd3db155</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: ijs qpdf cups-filters cups-filters hplip
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/751dd90677fc24b0de80c53dc39bdfa5e6427d36/">751dd906</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: hplip: do not barf if /etc/xdg/autostart/hplip-systray.desktop is not found on install
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/51c718e3b541165fab9978909a38706ee7bbbb26/">51c718e3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: hplip: do not start hplip-systray; we did not install the GUI
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7214caee436699a8ca94a187f636ad5a0280c8b5/">7214caee</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: net-snmp
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9ce39d5a8e03455e33a3ef4b341bd2b55ec74bb5/">9ce39d5a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: nss-mdns: avahi plugin for GNU Name Service Switch
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c8c75c3d30af0dbd175d7352bcc5025fcb80f3be/">c8c75c3d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: nss-mdns: remove defunct installed version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8df64e2b3aa890e0ce4fc81866a7338caf98ef64/">8df64e2b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: iptables: track snmp connections
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/02152c431af974e0fcfad72a53467e1bae512ba1/">02152c43</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: iptables: allow mDNS multicast and conntrack --ctstate RELATED
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/df915bfc93935ad761e11e2fb5468564e4308a14/">df915bfc</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+<!-- ============================================================ -->
+
+<section id="changes_3_2_0_haskell">
+<title>Haskell</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KxBuild: ability to handle haskell_modules
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/65777707eb9c7d3e51dbddcd4c067366d6ac0351/">65777707</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: ghc-binary ghc haskell-platform: Haskell
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3e2048427142e07fe68b122ad02e27002de4d694/">3e204842</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: haskell_modules
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e74380c7ef6fd99a77dd660e1ec8bc5d601ecadb/">e74380c7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: bustle: Bustle is a better dbus-monitor (written in Haskell)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a27fcbc850e1022cb5f8788a7af8be717c9b9956/">a27fcbc8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: bustle: install bustle-pcap
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2e20ef5580e5586769c5ed89e8d823c0c6592818/">2e20ef55</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_0_bugs">
+<title>Bugs Fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: bash: install /etc/skel/.bash_profile
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a2f2a68c674c23e61169942ae823eef50c9a9cb9/">a2f2a68c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: shared-mime-info: make -j1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7f2cff4f21faf71ae5e9020dba4282316a2eaecd/">7f2cff4f</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_0_add">
+<title>Packages Added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: graphviz: graph visualization software
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/de09aaadf14208d5a783ec63618f505a00b1c2ac/">de09aaad</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/4b14d64cb45c3cb7425d5a4a37ead80d855fa81c/">4b14d64c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: d-feet
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/14e0130b93b1a8ad198c6e87d9159d322bc610ef/">14e0130b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: help2man
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bfb7781f7e41aefd9c084859e133384c283fed2a/">bfb7781f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: yajl: Yet Another JSON Library (prereq for xen)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1eddc4df46306969a0b65dad6652ce456b365507/">1eddc4df</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_0_upd">
+<title>Packages Updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: systemd: v 192
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fa0adef1cb9870016c1142506dab5b9c2ab13ace/">fa0adef1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: certdata: v 1.85 - no real certificate changes, just version # and license
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/299f5ae82c57d1c3b9a388694917c62322da0ca5/">299f5ae8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xen: v 4.2.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/16ee5da7cfc1628cc2da54c6af6dbcb4b8fb9d35/">16ee5da7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: network-manager-applet: v 0.9.6.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/104af47e16ae19f05723abd4af08adfa7e56b485/">104af47e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostscript: v 9.06
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/63c73905c9acfd190c1a07d55917df8e6588ed99/">63c73905</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.6.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ed194e13d8a10ec0a4a6b2747036184ed76d9fb3/">ed194e13</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: systemtap: v 2.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fe54376aab80e43096dc57ce284dffb841622168/">fe54376a</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_0_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: systemd: Do not start getty on VT1 (where we get log messages), but on VT2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bbfda9aef621bcf01c0501a897f0a3b21aaf33dd/">bbfda9ae</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: yajl: remove defunct version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cb4e932be834960072cdad56b648b7f6b4fed0c3/">cb4e932b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: fontforge: explicitly specify --with-freetype-src
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1113a040694fd49b39b675f80d33cd5660e2cac9/">1113a040</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: kx_changelog: better grouping of entries
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/886859ab4f8d0f39d22ad8f556c7f59c7aa41665/">886859ab</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: iptables: /etc/iptables_disable.sh script to disable firewall
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/398ed798110ce53033c5e3e123de2a710a77a0bc/">398ed798</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: iptables: /etc/iptables_show.sh script to show firewall status
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a7975d7ebe6c69b73f15346baf3621b7be7b8cbe/">a7975d7e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		Many documentation improvements.
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

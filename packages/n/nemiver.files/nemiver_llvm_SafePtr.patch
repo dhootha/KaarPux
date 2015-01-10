@@ -1,0 +1,19 @@
+diff -Naur nemiver-0.9.4.ORIG/src/persp/dbgperspective/nmv-find-text-dialog.h nemiver-0.9.4/src/persp/dbgperspective/nmv-find-text-dialog.h
+--- nemiver-0.9.4.ORIG/src/persp/dbgperspective/nmv-find-text-dialog.h	2012-07-29 21:07:09.000000000 +0200
++++ nemiver-0.9.4/src/persp/dbgperspective/nmv-find-text-dialog.h	2013-06-24 12:32:20.841612865 +0200
+@@ -29,11 +29,12 @@
+ 
+ NEMIVER_BEGIN_NAMESPACE (nemiver)
+ 
++using nemiver::common::ObjectRef;
++using nemiver::common::ObjectUnref;
++using nemiver::common::SafePtr;
++
+ class SourceEditor;
+ class FindTextDialog;
+-class ObjectRef;
+-class ObjectUnref;
+-template <class A, class B, class C> class SafePtr;
+ 
+ typedef SafePtr<FindTextDialog, ObjectRef, ObjectUnref>  FindTextDialogSafePtr;
+ 

@@ -1,0 +1,88 @@
+package:
+  name: qt
+  version: 5.3.2
+  www: http://qt-project.org/
+  short: Cross-platform application and UI framework.
+
+download:
+  url: http://download.qt-project.org/official_releases/qt/${KX_QT_VERSION_MM}/${KX_QT_VERSION}/single
+  file: qt-everywhere-opensource-src-${KX_QT_VERSION}.tar.gz
+  dir: qt-everywhere-opensource-src-${KX_QT_VERSION}
+  checksum: c8d3fd2ead30705c6673c5e4af6c6f3973346b4fb2bd6079c7be0943a5b0282d
+
+version:
+  installed_pkgconfig: QtCore
+  upstream: kxver_scrape_url("qt-everywhere-opensource-src", "http://qt-project.org/downloads");
+
+linux:
+  - build:
+    - patch: jasper_jpeg.patch
+    - echo: configure
+    - sh: unset CC CXX
+    - sh: >
+        ./configure
+        -prefix /usr
+        -opensource
+        -confirm-license 
+        -platform linux-clang
+        -release
+        -journald
+        -make libs
+        -make tools
+        -system-zlib
+        -system-sqlite
+        -system-libpng
+        -system-libjpeg
+        -system-pcre
+        -system-freetype
+        -system-harfbuzz
+        -system-xcb
+        -system-xkbcommon
+        -pulseaudio
+        -no-alsa
+        -no-qml-debug
+        -no-nis
+        -dbus-linked
+        -openssl-linked
+        -optimized-qmake
+        -nomake examples
+        -verbose
+    - echo: make
+    - sh: >
+        make ${KX_MAKE_J}
+        module-qtbase
+    - echo: make uitools
+    - sh: QQQ=$(pwd -P)/qtbase/bin/qmake
+    - sh: |
+        (
+        cd qttools/src/designer/src/uitools
+        ${QQQ} *.pro -o Makefile
+        make -f Makefile
+        )
+    - echo: make linguist
+    - sh: |
+        (
+        cd qttools/src/linguist
+        ${QQQ} *.pro -o Makefile
+        make -f Makefile
+        )
+  # No test suite
+  - install:
+    - echo: install
+    - sh: unset CC CXX
+    - sh: >
+        make ${KX_MAKE_J}
+        module-qtbase-install_subtargets
+    - echo: install uitools
+    - sh: |
+        (
+        cd qttools/src/designer/src/uitools
+        make -f Makefile install
+        )
+    - echo: install linguist
+    - sh: |
+        (
+        cd qttools/src/linguist
+        make -f Makefile install
+        )
+

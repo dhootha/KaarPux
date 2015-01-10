@@ -1,0 +1,212 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_5_1">
+<title>Changes in KaarPux version 3.5.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.5.1</systemitem> released on <systemitem>2013-apr-04</systemitem>
+</para>
+
+<itemizedlist>
+
+	<listitem><para>
+		Upstream Security Fixes
+	</para></listitem>
+	<listitem><para>
+		Merge core phase into bootstrap_8
+	</para></listitem>
+	<listitem><para>
+		Make systemtap work with dash
+	</para></listitem>
+	<listitem><para>
+		Several minor updates and bugs fixed
+	</para></listitem>
+
+</itemizedlist>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_5_1_sec">
+<title>Upstream Security Fixes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: gnutls: v 3.1.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/45f0862fdca37f3aadfd86dffe5b54de03c1242d/">45f0862f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xulrunner firefox: v 20.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3c1f106cfbdccb25ca23e1b6fed827b9d1393e05/">3c1f106c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 17.0.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ecdf120a0746164461b4b6f9144539869dd5acb3/">ecdf120a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.5.9
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1985f2d2e7573992e15de2f64a240ba1312a844f/">1985f2d2</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_5_1_merge">
+<title>Merge core phase into bootstrap_8</title>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/10d6d9058acb1e45658c906f8ca6294c50e00192/">10d6d905</ulink>
+	</para>
+	<para>
+		In earlier versions, we would build the
+		<systemitem>boostrap_8</systemitem> phase
+		giving us a system with static IP,
+		then reboot, and then build the
+		<systemitem>core</systemitem> phase,
+		giving us <systemitem>dhcpcd</systemitem>
+		and <systemitem>OpenSSH</systemitem>,
+		i.e. dynamic IP and remote login with 
+		<systemitem>ssh</systemitem>.
+	</para>
+	<para>
+		With version <systemitem>3.5.1</systemitem>, the
+		<systemitem>core</systemitem> phase has been merged into the
+		<systemitem>boostrap_8</systemitem> phase,
+		so we get dynamic IP and remote login with 
+		<systemitem>ssh</systemitem> "out of the box".
+	</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_5_1_stap">
+<title>Make systemtap work with dash</title>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1bf177e35279b27b0a0efdc4e08b3ec95bf3a6a1/">1bf177e3</ulink>
+	</para>
+
+	<itemizedlist>
+		<listitem><para>
+			make systemtap work with dash, which does not have <systemitem>$PIPESTATUS</systemitem>
+		</para></listitem><listitem><para>
+			improved messages during build
+		</para></listitem><listitem><para>
+			all build messages logged to <filename>build.log</filename>
+		</para></listitem><listitem><para>
+			detect non-virtualization in <filename>master/expert/dangerous*</filename>
+		</para></listitem>
+	</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_5_1_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: KxBuild: Remove stray kx_time_diff
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5b1aae87810dcef84b527f9f7d3451bb6ce3cd8c/">5b1aae87</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: correct stderr redirection under staprun
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c0faa76b43a91bd7bf1a508cfaab265ba374333d/">c0faa76b</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_5_1_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KxBuild: Improved dependency tracking
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c6df52a9d10694f64f973fcc6e715cc5c7b8c4fe/">c6df52a9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: build more bootstrap and core packages in parallel
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6de8a96cb544c90d36e0589f1fa6cbbc0181896f/">6de8a96c</ulink>,
+		<ulink url="http://sourceforge.net/p/kaarpux/code/ci/58148731b63ed129ac3a5629256bb644e87bc57e/">58148731</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: kx_dependencies: remove self-reference loops
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a548b3d73213d3057b5e67fd107d690617bfbb1e/">a548b3d7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: iptables: do not filter on bridge interface br0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/04f2d6105487e7fc6e602282b19644ddc36f9c79/">04f2d610</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: build more base packages in parallel
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/63c488079950dbcad212c3d8f21e4aa2c55135e9/">63c48807</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: minimal improvememnt in xorg building in parallel
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/85cb95a0b3e666309931e1d42e0acb52166d82aa/">85cb95a0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: thunderbird: make_repeat is not needed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/36d0372030fd256e4202344d2b32834fe7c21aa7/">36d03720</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: log all elapsed times in seconds
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6ea6c8d1867049ad17687c7e1e971c98af68d5c1/">6ea6c8d1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		Minor documentation updates
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

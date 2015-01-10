@@ -1,0 +1,65 @@
+package:
+  name: perl
+  version: 5.20.1
+  www: http://www.perl.org/
+  short: Perl 5 is a highly capable, feature-rich programming language with over 24 years of development.
+
+download:
+  url: http://cpan.org/src
+  checksum: ede5ded37e7fb6139b04728cfca826f17076f9888dbfd100a56834dbeb04657c
+
+version:
+  installed: kxver_sh_pattern("perl -v", qr|\(v([0-9]+[0-9.]*[0-9]+)\)|);
+  upstream: kxver_scrape_url("perl", "http://www.perl.org/get.html");
+  news: http://search.cpan.org/dist/perl-${KX_PERL_VERSION}/pod/perldelta.pod
+  changelog: pod/perldelta.pod
+
+# ==========================================================
+
+bootstrap_3:
+  - echo: configure
+  - sh: sh Configure -des -Dprefix="${KX_TOOLS}" -Dlibs=-lm
+  - make: ~
+  - echo: install
+  - sh: | 
+      cp -v perl cpan/podlators/pod2man "${KX_TOOLS}/bin"
+      mkdir -pv "${KX_TOOLS}/lib/perl5/${KX_PERL_VERSION}"
+      cp -Rv lib/* "${KX_TOOLS}/lib/perl5/${KX_PERL_VERSION}"
+
+# ==========================================================
+
+bootstrap_7:
+  - echo: pre-configure
+  - echo: Configure external zlib
+  - doc: >
+      This version of Perl now builds the Compress::Raw::Zlib module.
+      By default Perl will use an internal copy of the Zlib source for the build.
+      Issue the following command so that Perl will use the Zlib library installed on the system: 
+  - sh: >
+      sed -i -e "s|BUILD_ZLIB\s*= True|BUILD_ZLIB = False|"
+         -e "s|INCLUDE\s*= ./zlib-src|INCLUDE    = /include|"
+         -e "s|LIB\s*= ./zlib-src|LIB        = /lib|"
+        cpan/Compress-Raw-Zlib/config.in
+  - echo: configure
+  - sh: >
+      sh Configure
+          -de
+          -Dprefix='/'
+          -Dvendorprefix='/'
+          -Dman1dir=/share/man/man1
+          -Dman3dir=/share/man/man3
+          -Dpager="/bin/less -isR"
+          -Duseshrplib
+          -Dusethreads
+
+  - make: ~
+  - test: ~
+  - install: ~
+
+# ==========================================================
+
+verify_cli: |
+  kx_cli_match_success "/bin/perl -v"  { "Larry Wall" }
+  kx_cli_match_success "/bin/perl -V"  { "@INC" }
+  kx_cli_send_match_success /bin/perl { {my $world='world';} {my $answer=40+2;} {print "Hello $world, the answer is $answer\n";} } { "Hello world, the answer is 42" }
+

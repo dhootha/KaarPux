@@ -1,0 +1,27 @@
+package:
+  name: pango
+  version: 1.36.8
+  www: http://developer.gnome.org/pango/
+  short: |
+      Pango is the core text and font handling library used in GNOME applications.
+      It has extensive support for the different writing systems used throughout the world.
+
+download:
+  gnomexz: ~
+  checksum: 18dbb51b8ae12bae0ab7a958e7cf3317c9acfc8a1e1103ec2f147164a0fc2d07
+
+version:
+  installed_pkgconfig: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --disable-doc-cross-references
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

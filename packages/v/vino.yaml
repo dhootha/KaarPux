@@ -1,0 +1,25 @@
+package:
+  name: vino
+  version: 3.14.1
+  www: https://live.gnome.org/Vino
+  short: GNOME desktop sharing server
+
+download:
+  gnomexz: ~
+  checksum: 712bbb220cc16a9822a0617ae9ceb0fe8b326d5b3428210af7afe77effbbca8a
+
+version:
+  installed_na: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - use_gcc: ~
+    - configure_kx: --disable-static --disable-schemas-compile
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

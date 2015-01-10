@@ -1,0 +1,29 @@
+package:
+  name: gst-plugins-ugly
+  version: 1.4.2
+  
+download:
+  url: http://gstreamer.freedesktop.org/src/gst-plugins-ugly/
+  file_tar_xz: ~
+  checksum: 9c84a153f539e3ed419d7039296b80bfe073994b06d319a4ebe3f75979dd95f5
+
+version:
+  installed_na: ~
+
+linux:
+
+  - build:
+    - configure_kx: >
+        --disable-gtk-doc
+        --disable-static
+        --disable-fatal-warnings
+        --with-package-name="gst-plugins-ugly"
+        --with-package-origin="http://kaarpux.kaarposoft.dk/packages/g/gst-plugins-ugly.html"
+    - make: ~
+
+  - test:
+    - check: ~
+ 
+  - install:
+    - install: ~
+

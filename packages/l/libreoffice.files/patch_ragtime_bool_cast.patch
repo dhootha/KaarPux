@@ -1,0 +1,12 @@
+diff -Naur libreoffice-4.3.0.3.ORIG/external/libmwaw/UnpackedTarball_libmwaw.mk libreoffice-4.3.0.3/external/libmwaw/UnpackedTarball_libmwaw.mk
+--- libreoffice-4.3.0.3.ORIG/external/libmwaw/UnpackedTarball_libmwaw.mk	2014-07-16 23:51:50.000000000 +0200
++++ libreoffice-4.3.0.3/external/libmwaw/UnpackedTarball_libmwaw.mk	2014-07-23 22:48:00.808221901 +0200
+@@ -16,6 +16,7 @@
+ $(eval $(call gb_UnpackedTarball_add_patches,libmwaw,\
+ 	external/libmwaw/0001-librevenge-stream-is-optional-don-t-depend-on-it.patch \
+ 	external/libmwaw/0002-librevenge-stream-is-optional-don-t-depend-on-it.patch \
++	external/libmwaw/ragtime_bool_cast.patch \
+ ))
+ 
+ # vim: set noet sw=4 ts=4:
+

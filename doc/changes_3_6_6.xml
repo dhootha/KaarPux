@@ -1,0 +1,535 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_6_6">
+<title>Changes in KaarPux version 3.6.6</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.6.6</systemitem> released on <systemitem>2013-jul-08</systemitem>
+</para>
+
+<itemizedlist>
+
+	<listitem><para>
+		Linux kernel 3.10
+	</para></listitem>
+	<listitem><para>
+		Java 7 u 40 / IcedTea 2.4.1
+	</para></listitem>
+	<listitem><para>
+		Improved printing subsystem
+	</para></listitem>
+	<listitem><para>
+		XOrg updates
+	</para></listitem>
+	<listitem><para>
+		Other packages updated and bugs fixed
+	</para></listitem>
+
+</itemizedlist>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_6_linux">
+<title>Linux kernel 3.10</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: linux: v 3.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/50d0f2768f02f555325363e79f9bdb9418c2bae0/">50d0f276</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: linux: better config file (corrects 50d0f276)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6c22825c74cc03177e120b29067f5102f2a0335f/">6c22825c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: kmod: v 14
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/95cc8c4de69d54a662e5cb9a32cb304f7f1d200e/">95cc8c4d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux-firmware: v 20130607
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/98836afdc5b3d6f9ca722697b96b1b92eeaf0602/">98836afd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: linux: redirect initramfs output to kernel log
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/513029786431f789c09c0ed041ed24eb1d235f09/">51302978</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_6_java">
+<title>Java 7 u 40 / IcedTea 2.4.1</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: icedtea7: v 2.4.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/194c08c76e5da9507c3bff0bd3fd83bdc0a86bb7/">194c08c7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: icedtea-web: upstream patches
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/36a61078b4e5bd323fbb91f39a97555164fb0f5f/">36a61078</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_6_cups">
+<title>Improved printing subsystem</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: cups: add many patches from Fedora
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bce8a4dbc8daa5137c2c913d7daaf4b81ba602e0/">bce8a4db</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: hplip: patch from ArchLinux; improved configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/af723dd4b9b8958746a132cf2443625b11c7e12e/">af723dd4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: cups-filters: move earlier in build sequence
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f7de1f282ff7b8cb4b67745dd7dd9409b61ea9db/">f7de1f28</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pycurl
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3c7713f591817543efcb29fd80a3244b331c557f/">3c7713f5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pycups
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/87a9a584318de0afd13f00294718ec5c869b74ca/">87a9a584</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: foomatic-db-engine foomatic-filters
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e1775574253ec7ae7ae91d23eb513e791fb9d0ec/">e1775574</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: system-config-printer
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4ee411eff197828ff97b9d323c8ecdcca8d87f2f/">4ee411ef</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: logilab-common logilab-astng
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7aeac10f898f960edd602da7f84d216b5ce564e9/">7aeac10f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pysqlite
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5d171d7c0ca913d485ca44635a8204619f78b6c5/">5d171d7c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: foomatic-db
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/448850528f13d820c20dc58e810ba477a92269d9/">44885052</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: foomatic-db: remember to build foomatic-db; corrects 44885052
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/38f6caaca645824c7492f21d640edd7ae99cc55e/">38f6caac</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: cups-filters foomatic-filters: correct build sequence
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8ccba052941c39f980c639197701778e42d27027/">8ccba052</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: cups-filters: v 1.0.35
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cbe7eb09ed3f69ccc9863807ff5e93117765d039/">cbe7eb09</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: cups-pk-helper: v 0.2.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c22538875adc6207ef0f0120074bc9f4c5b7a274/">c2253887</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: cups: compile with -O2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b90a3b764d1aed30a921bcb43be9aeffa6aaae4f/">b90a3b76</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_6_gcc">
+<title>gcc 4.7.3</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: gcc: v 4.7.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a619b3a437c68036cd41e4c377e852c464145b5b/">a619b3a4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: mpc: v 1.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/aba4dcb1c84f5da3a59fcd3d1fdf11636865b7c2/">aba4dcb1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: mpfr: v 3.1.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1d682d28787dbe24dd8685530892a8b3d29a6eb7/">1d682d28</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gmp: v 5.1.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2bb5caa0b985db024f3acafc112c54a25199b48a/">2bb5caa0</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_6_xorg">
+<title>XOrg updates</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: xorg: many xorg packages updated
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dd31eb3dc19b7e983004966fbc16e27e07a01482/">dd31eb3d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libxcb: v 1.9.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/71c1d5ef53baeed19f5817888eee1aec009d0cbd/">71c1d5ef</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xterm: v 293
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e3813165a1ee1e83ae6bf64a25ed333865a9be31/">e3813165</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: xorg-server: --enable-xcsecurity --enable-xephyr
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8c28dda35d0677d599d3e57de411d65f62f48cb8/">8c28dda3</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_6_other">
+<title>Other packages updated and bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: gdb: v 7.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d6c06c73cb465f0702befb43e573ab21d3991f13/">d6c06c73</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ruby: v 1.9.3-p448
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/144360fba480f00b47572bf58492d394abaa89c2/">144360fb</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libdc1394: v 2.2.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/03c15b0aebf6227e2b2283a0edb5fd6c496bb6ca/">03c15b0a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: cheese: v 3.8.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cf684b6aa38355112b1ad0328ac752d39b92be1a/">cf684b6a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gimp: v 2.8.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1115f47dd9b42c70e32e44d3afd06ae2edaddec9/">1115f47d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghc-binary: v 7.6.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2ece45407894ed2c00a47ff16de1283f485b32f5/">2ece4540</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghc: v 7.6.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bd59839213851621a93dd79bac929a90865afe3f/">bd598392</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: haskell-platform: v 2013.2.0.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8666f74682255b87ab36813ee7ee748f6bf7d741/">8666f746</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: haskell_modules: *
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cab40b69fede30b1c408df2ba9f10d85d0979db4/">cab40b69</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flac: v 1.3.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b08be1652e43aab9af5348f3dac0147f41c68fb1/">b08be165</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: qpdf: v 4.1.0; also compile with gcc
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/931ad3350d1c9c3a25b2603642d997e3f6e22de2/">931ad335</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: qt: v 4.8.1; also improved configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5538c6e281f3766825daaf916005d9b15dc5c794/">5538c6e2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: lcms2: v 2.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/953e8d5573aca005ebddf1faa3ff23ed78755253/">953e8d55</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostscript: v 9.07
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8bb6d8e629961e912a8f2d38217fdab868c53c86/">8bb6d8e6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: cyrus-sasl: v 2.1.26
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ff6c4b08961fab54950ade0041cc813c2a73c428/">ff6c4b08</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: pylint: v 0.28.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8bce4ab9dc00207bd53aad05fa4e63586bfab820/">8bce4ab9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: pulseaudio: v 4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/227c1720c69d2d518d39f94cbdce358f288e4495/">227c1720</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: busybox: v 1.21.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7e4359f78136a462d8bb7bc9cc441025036feed7/">7e4359f7</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gzip: v 1.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/41210de85016a61ff6be7aa1a5cb908e189f64b7/">41210de8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: xz: v 5.0.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3bd471d4bb94bb8d499fdce1209c62b79eb6d6bb/">3bd471d4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: util-linux: v 2.22.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f9279c81aea1b368e1239784f6309ec9efe7d976/">f9279c81</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: tzdata: v 2013c
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/29139069e9668c72d1ebfea1f1b33e504a087446/">29139069</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nss: v 3.15.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/13db5c973e60e245d838800851998c1bcdf226ca/">13db5c97</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: qemu: v 1.5.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6cec3a5d60fe404e34251579c4d758fba2093297/">6cec3a5d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libjpeg-turbo: v 1.3.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/563d6f5290fc352d15f2544f69f33e2aeb9b3a1c/">563d6f52</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 2.9.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/98e4ada9ea11e7a584104f0d213ac4ffcc39f078/">98e4ada9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.6.7
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9852014ddcece943562fb486809dff3838bf61ca/">9852014d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gdk-pixbuf: v 2.28.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f3c0c9a8cace4696d0e9ac1f689b4c64ef6786f5/">f3c0c9a8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: NetworkManager: v 0.9.8.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f3437c143d48ab26c0d68f24b5c1f8a1b3d67f8d/">f3437c14</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: fuse: v 2.9.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/006f8a905f161aea68a6c532ee8bfeca9edd69e9/">006f8a90</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssh: 6.2p2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f24277240ac2d0e30e540083fa809900d86daa2c/">f2427724</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: dhcpcd: create dhcpcd-hooks directory
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3cb47454993b4f65e5cc8377c1180e0716974d7c/">3cb47454</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: fix build sequence of python packages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/38baf07e3ffd47d526e1221483b63fc014997073/">38baf07e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libical: use 'test' instead of 'check'
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/54550df0768e2e5f921080caeaae8b0a3510e757/">54550df0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: libmicrohttpd: Remove failing testcase
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7c8b380006af46bbbec13569ff3a24033dc2de70/">7c8b3800</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: ghc-binary: use suitable precompiled package from ArchLinux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1733df26b50d976a7269469c76401310ed0e9c5a/">1733df26</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: ghc: use new ghc-binary and improved build options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1aefb935f523da4455c286b0001f1aae5f62cfc1/">1aefb935</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: haskell-platform: configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/74295885062e6a78d0ba68d1aa4fe13b93df85a5/">74295885</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: haskell-platform: configure options
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/74295885062e6a78d0ba68d1aa4fe13b93df85a5/">74295885</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		Many minor improvements
+	</para></listitem>
+
+	<listitem><para>
+		Many new testcases
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

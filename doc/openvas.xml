@@ -1,0 +1,279 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="openvas">
+<title>OpenVAS</title>
+
+<!-- ============================================================ -->
+
+<section id="openvas_about">
+<title>About OpenVAS</title>
+
+<para>
+<application>OpenVAS</application> is a framework of several services and tools
+offering a comprehensive and powerful vulnerability scanning and vulnerability management solution.
+</para><para>
+See <ulink url="http://www.openvas.org/">openvas.org</ulink>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="openvas_user">
+<title>The OpenVAS user</title>
+
+<para>
+<application>OpenVAS</application> is run under a dedicated user,
+so as user <systemitem class='username'>root</systemitem>:
+<programlisting>
+passwd openvas
+</programlisting>
+</para><para>
+The following commands should be run as user
+<systemitem class='username'>openvas</systemitem>.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="openvas_keys_and_certificates">
+<title>Generate OpenVAS keys certificates</title>
+
+<para>
+A <application>gnupg</application> key is used
+to verify the integrety of downloaded data.
+So, create our own <application>gnupg</application>
+key, and sign the <application>OpenVAS</application>
+<application>gnupg</application> key with it:
+
+<programlisting>
+gpg --homedir=/var/lib/openvas/gnupg --gen-key --batch &lt; /var/lib/openvas/gnupg/gnupg_genkey_batch.txt
+gpg --homedir=/var/lib/openvas/gnupg --import /var/lib/openvas/gnupg/OpenVAS_TI.asc
+gpg --homedir=/var/lib/openvas/gnupg --yes --lsign-key 48DB4530
+</programlisting>
+
+</para><para>
+
+Create the certificates needed for communication:
+<programlisting>
+openvas-mkcert -q
+openvas-mkcert-client -n -i
+</programlisting>
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="openvas_download_data">
+<title>Download OpenVAS data</title>
+
+<para>
+Download OpenVAS data (may take half an hour or more):
+<programlisting>
+openvas-nvt-sync
+openvas-scapdata-sync
+openvas-certdata-sync
+</programlisting>
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="openvas_rebuild">
+<title>Rebuild OpenVAS databases</title>
+<para>
+The first time <application>openvassd</application>
+is started, it will rebuild its cache:
+<programlisting>
+openvassd
+</programlisting>
+This may take 10 minutes or more.
+You can watch the progress with:
+<programlisting>
+ps u -C openvassd
+</programlisting>
+When cache rebuilding is complete, you should see:
+<programlisting>
+openvassd: Waiting for incoming connections
+</programlisting>
+</para><para>
+Then rebuild the <application>openvasmd</application> database:
+<programlisting>
+openvasmd --rebuild
+</programlisting>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="openvas_admin">
+<title>OpenVAS admin user</title>
+<para>
+Add an administrative user:
+<programlisting>
+openvasmd --create-user admin
+</programlisting>
+Remember the password ...
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="openvas_starting">
+<title>Start OpenVAS</title>
+<para>
+<application>openvassd</application>
+should already have been started above.
+</para><para>
+Start manager and
+<application>greenbone-security-assistant</application>
+<programlisting>
+openvasmd
+gsad --port=9392
+</programlisting>
+</para><para>
+You should now have an <application>OpenVAS</application> interface on
+<ulink url="https://localhost:9392">localhost:9392</ulink>
+</para>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="openvas_check">
+<title>Check that everything is OK</title>
+
+<para>
+As <systemitem class='username'>openvas</systemitem>:
+<programlisting>
+wget https://svn.wald.intevation.org/svn/openvas/trunk/tools/openvas-check-setup --no-check-certificate
+chmod +x openvas-check-setup
+./openvas-check-setup
+</programlisting>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="openvas_pretending_distro">
+<title>Pretending to be another Linux distribution</title>
+
+<para>
+Many <application>OpenVAS</application> checks are distribution specific,
+and &kx; is not recognized by <application>OpenVAS</application>.
+Hence you may want to set up &kx; to pretend to be another
+Linux distribution.
+</para><para>
+Then, if you run an <application>OpenVAS</application> scan,
+more vulnerabilities may be picked up.
+</para><para>
+Note however, that some package names differ between &kx;
+and other Linux distributions, so some vulnerabilities
+may be missed.
+</para><para>
+As <systemitem class='username'>root</systemitem>,
+create the file
+<filename>/bin/rpm</filename>
+containing:
+<programlisting>
+#!/bin/sh
+/home/kaarpux/kaarpux/master/tools/kx_version.pl --rpm --threads=10 2>/dev/null
+</programlisting>
+and the file
+<filename>/bin/dpkg</filename>
+containing:
+<programlisting>
+#!/bin/sh
+/home/kaarpux/kaarpux/master/tools/kx_version.pl --dpkg --threads=10 2>/dev/null | \
+/home/kaarpux/kaarpux/master/tools/kx_pkg_dpkg.sh
+</programlisting>
+and make them executable:
+<programlisting>
+chmod +x /bin/rpm /bin/dpkg
+</programlisting>
+</para>
+
+	<section id="openvas_pretending_fedora">
+	<title>Pretending to be Fedora</title>
+	<para>
+	As <systemitem class='username'>root</systemitem>,
+	create the file
+	<filename>/etc/redhat-release</filename>
+	containing:
+<programlisting>
+KaarPux pretending to be Fedora release 20 (Heisenbug)
+</programlisting>
+	</para><para>
+	You may want to try other <application>Fedora</application> versions:
+<programlisting>
+grep Fedora /var/lib/openvas/plugins/gather-package-list.nasl
+</programlisting>
+	</para>
+	</section>
+
+	<section id="openvas_pretending_debian">
+	<title>Pretending to be Debian</title>
+	<para>
+	As <systemitem class='username'>root</systemitem>,
+	create the file
+	<filename>/etc/debian_version</filename>
+	containing:
+<programlisting>
+KaarPux pretending to be Debian 7.0
+</programlisting>
+	</para><para>
+	You may want to try other <application>Debian</application> versions:
+<programlisting>
+grep \"Debian /var/lib/openvas/plugins/gather-package-list.nasl
+</programlisting>
+	</para>
+	</section>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="openvas_nwscan">
+<title>OpenVAS network scanning</title>
+
+<para>
+A part of <application>OpenVAS</application> is scanning
+hosts for network vulnerabilities.
+If you want to run those scans, you need to start
+<application>OpenVAS</application>
+as <systemitem class='username'>root</systemitem>:
+<programlisting>
+sudo openvassd
+</programlisting>
+<warning>
+If you do not run <application>OpenVAS</application>
+as <systemitem class='username'>root</systemitem>,
+you need to set
+<guimenuitem>Alive Test</guimenuitem> to
+<guimenuitem>Consider Alive</guimenuitem>
+when creating a
+<guimenu>New Target</guimenu>
+</warning>
+One indicator of the above problem is a log item stating
+<code>Remote host is dead</code>.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

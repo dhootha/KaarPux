@@ -1,0 +1,89 @@
+package:
+  name: thunderbird
+  version: 31.3.0
+  changelog: http://www.mozilla.org/en-US/thunderbird/${KX_THUNDERBIRD_VERSION}/releasenotes/
+  www: http://www.mozilla.org/en-US/thunderbird/
+  short: Mozilla Thunderbird is a free email application that's easy to set up and customize.
+
+doc: |
+  <para>
+    Upstream links:
+    <itemizedlist>
+      <listitem><para>
+        <ulink url="http://www.mozilla.org/security/announce/">Mozilla Foundation Security Advisories</ulink>
+      </para></listitem><listitem><para>
+        <ulink url="http://www.mozilla.org/security/known-vulnerabilities/thunderbird.html">Security Advisories for Thunderbird</ulink>
+      </para></listitem>
+    </itemizedlist>
+  </para>
+
+download:
+  url: ftp://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${KX_THUNDERBIRD_VERSION}/source/
+  file: thunderbird-${KX_THUNDERBIRD_VERSION}.source.tar.bz2
+  checksum: b742782965ce9c65b69c1dc470497ea456f11caeb8fda3ea593ee31ad496f556
+  verify: asc
+
+version:
+  sensitive: 1
+  installed_sh_trailing: 'thunderbird -version | grep Thunderbird'
+  upstream: kxver_scrape_ftp("ftp.mozilla.org", "/pub/mozilla.org/thunderbird/releases/", qr|^([0-9]+\.+[0-9\.]*[0-9]+)$|);
+	
+opt:
+
+  - build:
+
+    - echo: Moving source files
+    - sh: mv ../comm-esr${KX_THUNDERBIRD_VERSION_M}/* .
+
+    - echo: Patching
+
+    # typeof is a gcc extension
+    - sh: find . -name "*.h" -exec sed 's/\([^_]\)typeof(/\1__typeof__(/' -i {} \;
+
+    - patch: tremor.patch
+
+    - echo: Configuring
+    - get_pkg_file: mozconfig
+    - sh: echo "ac_add_options --prefix=${KX_PREFIX}" >> mozconfig
+    - sh: echo "mk_add_options MOZ_MAKE_FLAGS=\"${KX_MAKE_J}\"" >> mozconfig
+    - make: -f client.mk build
+
+  # TODO: add testcases, when we have fixed firefox testcases
+
+  - install:
+    - sh: make -f client.mk install
+    - get_pkg_file: thunderbird.desktop
+    - sh: > 
+        desktop-file-install
+        --vendor mozilla 
+        --dir "/opt/kaarpux/thunderbird-${KX_THUNDERBIRD_VERSION}/share/applications"
+        --add-category WebBrowser
+        --add-category Network
+        thunderbird.desktop
+    - sh: |
+        mkdir -pv /opt/kaarpux/thunderbird-${KX_THUNDERBIRD_VERSION}/share/pixmaps/
+        ln -svf ${KX_PREFIX}/lib/thunderbird-${KX_THUNDERBIRD_VERSION}/chrome/icons/default/default256.png /opt/kaarpux/thunderbird-${KX_THUNDERBIRD_VERSION}/share/pixmaps/thunderbird.png
+    - sh: |
+        cp -rp ./obj*/mozilla/dist/bin/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} "${KX_PREFIX}/lib/${KX_THUNDERBIRD}/extensions/"
+
+verify_gui: |
+
+    spawn Thunderbird thunderbird
+
+    # wait for mail download
+    sleep 10
+
+    await toolbar MailToolbar 7
+    await pushbutton GetMessages 2
+
+    application
+    await pagetablist _ 4          
+
+    application
+    find menubar _ 4
+    find menu File 1
+    do click
+    await menuitem Quit 1
+    do click
+    desktop
+    away application Thunderbird 1

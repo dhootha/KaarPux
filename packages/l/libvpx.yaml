@@ -1,0 +1,45 @@
+package:
+  name: libvpx
+  version: 1.3.0
+  www: http://www.webmproject.org/code/
+  short: VP8 Codec SDK
+
+download:
+  url: http://webm.googlecode.com/files/
+  file: libvpx-v${KX_LIBVPX_VERSION}.tar.bz2
+  dir: libvpx-v${KX_LIBVPX_VERSION}
+  checksum: d3dcc8d84af51c6c382b214397c62402e37a799e8ebcda6f4217aef0010451a9
+
+version:
+  installed_pkgconfig: vpx
+  upstream: kxver_scrape_url(undef, "http://code.google.com/p/webm/downloads/list", qr|libvpx-v([0-9.]+)\.|);
+
+linux:
+
+  - build:
+    - use_gcc: ~
+    - configure: >
+        # We really want --prefix=/ but the configure script barfs
+        --prefix=/usr
+        --as=yasm
+        --enable-vp8
+        --enable-vp9
+        --enable-runtime-cpu-detect
+        --enable-shared
+        --enable-postproc
+        --enable-vp9-postproc
+        --enable-pic
+        --enable-multithread
+        --enable-shared
+        --disable-static
+        --disable-install-docs
+        --disable-install-srcs
+    - make: ~
+
+  # No test suite
+
+  - install:
+    - use_gcc: ~
+    - install: ~
+
+# TODO: verify_cli: testcases

@@ -1,0 +1,27 @@
+package:
+  name: json-glib
+  version: 1.0.2
+  www: https://live.gnome.org/JsonGlib
+  short: |
+      JSON-GLib is a library providing serialization and deserialization support
+      for the JavaScript Object Notation (JSON) format described by RFC 4627.
+
+download:
+  gnomexz: ~
+  checksum: 887bd192da8f5edc53b490ec51bf3ffebd958a671f5963e4f3af32c22e35660a
+
+version:
+  installed_pkgconfig: json-glib-1.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

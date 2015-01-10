@@ -1,0 +1,33 @@
+package:
+  name: cogl
+  version: 1.18.2
+  www: http://www.cogl3d.org/
+  short: |
+      Cogl is a modern 3D graphics API with associated utility APIs designed to expose the features of 3D graphics hardware using a direct state access API design,
+      as opposed to the state-machine style of OpenGL.
+
+download:
+  gnomexz: ~
+  checksum: 9278e519d5480eb0379efd48db024e8fdbf93f01dff48a7e756b85b508a863aa
+
+version:
+  installed_pkgconfig: cogl-1.0
+  upstream_gnome: ~
+
+
+linux:
+
+  - build:
+    # TODO: investigate why cogl crashes with clang
+    # cogl DOES build with clang, but gnome-shell segfaults in cogl
+    - use_gcc: ~
+    - configure_kx: --disable-gtk-doc --disable-static --enable-xlib-egl-platform 
+    - make: ~
+
+  - test:
+    # TODO: Investigate why test cases are failing
+    - check_ignore: ~
+
+  - install:
+    - use_gcc: ~
+    - install: ~

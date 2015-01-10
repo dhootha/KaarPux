@@ -1,0 +1,25 @@
+package:
+  name: libpipeline
+  version: 1.4.0
+  www: http://libpipeline.nongnu.org/
+  short: C library for manipulating pipelines of subprocesses in a flexible and convenient way.
+
+download:
+  file_tar_gz: ~
+  url: http://download.savannah.gnu.org/releases/libpipeline
+  checksum: 79c759e7fbf17b560a72edce3ff9bb308d7720306c2650e4fae541daabb89bb6
+  verify: sig
+
+version:
+  installed_pkgconfig: ~
+  wiz_savannah: ~
+  news: NEWS
+  changelog: ChangeLog
+
+bootstrap_8:
+  - sh: sed -i -e '/gets is a/d' gnulib/lib/stdio.in.h
+  - configure_kx: ~
+  - make: ~
+  - check: ~
+  - install: ~ 
+

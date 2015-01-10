@@ -1,0 +1,29 @@
+package:
+  name: nasm
+  version: 2.11.05
+  www: http://www.nasm.us/
+  short: "Netwide Assembler: an assembler targetting the Intel x86 series of processors, with portable source."
+
+version:
+  installed_sh_version: nasm -v
+  upstream: kxver_scrape_url(undef, 'http://www.nasm.us/pub/nasm/releasebuilds/', qr|>([0-9]+[0-9.]*[0-9]+)/<|);
+
+download:
+  url: http://www.nasm.us/pub/nasm/releasebuilds/${KX_NASM_VERSION}
+  file_tar_xz: ~
+  checksum: 2f4769c2fc88dbd8df4383ce30bc86919b5d488854ab906ebcee5d5a38828a6b
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - test: ~
+  - install:
+    - install: ~
+
+verify_cli: |
+  kx_cli_match_success "nasm -v" { NASM }
+  kx_cli_match_success "ndisasm -v" { NDISASM }
+
+# TODO: verify_cli: add real testcases

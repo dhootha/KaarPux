@@ -1,0 +1,31 @@
+package:
+  name: litecoin
+  version: 0.8.7.4
+  www: https://github.com/litecoin-project/litecoin
+  short: LiteCoin wallet.
+
+download:
+  full_url: https://github.com/litecoin-project/litecoin/archive/v${KX_LITECOIN_VERSION}.tar.gz
+  file: ${KX_LITECOIN}.tar.gz
+  checksum: 032d1eb2ffb06ce467f514e08a66f42bcd507df2d8f1cf2c0541f2906288931a
+
+version:
+  installed_na: ~
+  upstream: kxver_scrape_url(undef, "https://github.com/litecoin-project/litecoin/releases", qr|v([0-9]+[0-9.\-_]*[0-9]+)\.tar|);
+
+opt:
+
+  - build:
+    - sh: |
+        export QMAKE_CXX=clang++
+        export QMAKE_CC=clang
+        qmake USE_UPNP=-
+    - make_repeat: ~
+
+  - install:
+    - sh: mkdir -pv ${KX_PREFIX}/share/applications/
+    - install_pkg_file: 644 litecoin.desktop ${KX_PREFIX}/share/applications/
+    - sh: | 
+        install -Dm755 litecoin-qt "${KX_PREFIX}/bin/litecoin-qt"
+        install -Dm644 share/pixmaps/bitcoin256.png "${KX_PREFIX}/share/pixmaps/litecoin256.png"
+

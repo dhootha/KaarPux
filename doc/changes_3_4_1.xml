@@ -1,0 +1,179 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_4_1">
+<title>Changes in KaarPux version 3.4.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.4.1</systemitem> released on <systemitem>2013-jan-04</systemitem>
+</para>
+
+<para>
+<itemizedlist>
+	<listitem><para>
+		Security update (TurkTrust cert)
+	</para></listitem>
+	<listitem><para>
+		Bugs fixed (minor issues)
+	</para></listitem>
+	<listitem><para>
+		Improved dependency tracking
+	</para></listitem>
+	<listitem><para>
+		Packages updated (pulseaudio, libcanberra)
+	</para></listitem>
+</itemizedlist>
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_1_sec">
+<title>Security Update</title>
+
+	<section id="changes_3_4_1_turktrust">
+	<title>UPD: certdata: v 1.87 - Revoking Trust in Two TurkTrust Certificates</title>
+	<para>
+		<itemizedlist>
+			<listitem><para>
+				Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7d59bea24aa869fbbbade1c2a8bc4dd2c584955b/">7d59bea2</ulink>
+			</para></listitem>
+			<listitem><para>
+				See <ulink url="https://blog.mozilla.org/security/2013/01/03/revoking-trust-in-two-turktrust-certficates/">Mozilla Security Blog</ulink>
+			</para></listitem>
+		</itemizedlist>
+	</para>
+	</section>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_1_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: KxBuild: remove /tools directory completely; not just the contents
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/29f2b15267c07a40c6704878a4d361e479bf8e31/">29f2b152</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: in SYSTEMTAP look at ALL files in /opt
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8efd2057f7075c5b92d1b9ab2c6ca898be78da56/">8efd2057</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: flash_player_11: Do not install KDE4 stuff
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1a5af04f0f674d3e03451b2f65de52ea672ddc48/">1a5af04f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: graphviz: build in linux phase (not opt)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f6c69293777ca62a1cc8a050a57aabbfa5b01ddf/">f6c69293</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_1_dep">
+<title>Improved dependency tracking</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: kx_dependencies.pl: Tool to extract dependencies
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f4ccf7fcb62cdbe8f9e115ef8bd527eabd921f14/">f4ccf7fc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: kx_flist.pl: Better dependency tracking
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ea41793f3501734748405b99e6ecd94293bf66ee/">ea41793f</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_1_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: pulseaudio: v 3.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3de6c6857291c2aa986971508e71f07a42d3907a/">3de6c685</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libcanberra: v 0.30
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fb4fbdd26926e0ae13aba921a780e8ef6bfb3b45/">fb4fbdd2</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_4_1_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KaarPux: source /etc/profile.d files from /etc/bashrc from ~/.bashrc if interactive non-login shell
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5b67408752426f32b4e1e2aed1effec6c54fe0d6/">5b674087</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KaarPux: merge bash history
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ea2cff4c1cbb902d1d4dde0e39ca70114abc3e55/">ea2cff4c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxBuild: Do not build skype, xen, and related until we have 32/64 multilib
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e1674c8f7b66c9a992639cc7f6fed9f822324a89/">e1674c8f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: kx_opt: link to the end of symlink chain
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0f8c0cee151e59cde3886ff77498a9fc259a4d29/">0f8c0cee</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

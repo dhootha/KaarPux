@@ -1,0 +1,25 @@
+package:
+  name: linux-firmware
+  version: 20141013
+  www: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob;f=README
+  short: |
+      Firmware images which have been
+      extracted from older drivers, as well various new firmware images which
+      we were never permitted to include in a GPL'd work, but which we _have_
+      been permitted to redistribute under separate cover.
+      We only install the _radeon_ drivers!
+
+download:
+  url: http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/linux-firmware-${KX_LINUX_FIRMWARE_VERSION}.tar.gz/d8198305f6c15fa23b8eea6e1537a2e4/
+  file_tar_gz: ~
+  dir: linux-firmware-0e5f6377
+  checksum: d8198305f6c15fa23b8eea6e1537a2e4
+
+version:
+  upstream: kxver_scrape_url("linux-firmware", "http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/");
+
+bootstrap_8:
+  - sh: |
+      mkdir -pv /lib/firmware/radeon
+      cp -rp radeon/* /lib/firmware/radeon
+

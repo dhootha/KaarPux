@@ -1,0 +1,29 @@
+package:
+  name: cairo
+  version: 1.14.0
+  www: http://cairographics.org/
+  short: Cairo is a 2D graphics library with support for multiple output devices.
+
+download:
+  url: http://cairographics.org/releases/
+  file_tar_xz: ~
+  checksum: 2cf5f81432e77ea4359af9dcd0f4faf37d015934501391c311bfd2d19a0134b7
+
+version:
+  installed_pkgconfig: ~
+
+linux:
+  - build:
+    - use_gcc: ~
+    - sh: export CFLAGS="-ffat-lto-objects"
+    - configure_kx: --enable-tee --enable-gl --enable-xcb --enable-xlib-xcb --disable-static
+    - make: ~
+
+#  There are many failures and crashes in the test suite.
+#  TODO: Check if there are any real problems, or just a borked suite.
+#  BLFS says: This package does not have a working testsuite. 
+  - test:
+    - check_ignore: ~
+
+  - install:
+    - install: ~

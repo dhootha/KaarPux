@@ -1,0 +1,23 @@
+package:
+  name: hyphen
+  version: 2.8.6
+  www: http://hunspell.sourceforge.net/
+  short: Hyphenation for hunspell.
+
+download:
+  sourceforge: hunspell
+  file_tar_gz: ~
+  checksum: 155cc1be5f406a4f3e55cd5154dd30353652f4da6cff0f600be4f1f67c127208
+
+version:
+  installed_na: ~
+  upstream: kxver_upstream_sourceforge("hunspell", "Hyphen", "hyphen");
+
+opt:
+  - build:
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~

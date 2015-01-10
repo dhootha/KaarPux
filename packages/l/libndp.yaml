@@ -1,0 +1,27 @@
+package:
+  name: libndp
+  version: 1.4
+  www: http://libndp.org/
+  short: wrapper for IPv6 Neighbor Discovery Protocol 
+
+download:
+  url: http://libndp.org/files
+  file_tar_gz: ~
+  checksum: 3a0be247ec024bd72fe5b40ea9491519c4023c7faf078311196fab817b2fd55f
+
+version:
+  installed_pkgconfig: ~
+  upstream: kxver_scrape_url(undef, "https://github.com/jpirko/libndp/releases", qr|archive/v([0-9]+[0-9.\-_]*[0-9]+)\.tar|);
+
+linux:
+
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~
+

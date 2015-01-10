@@ -1,0 +1,250 @@
+#
+# KaarPux: http://kaarpux.kaarposoft.dk
+#
+
+# ============================================================
+# Host definitions
+# ============================================================
+
+#
+# path where the KaarPux disk will be mounted
+# * do not change unless you know what you are doing *
+#
+KX_MNT="/mnt/kxmnt"
+
+#
+# common path for host and target chroot
+# * do not change unless you know what you are doing *
+#
+KX_TOOLS="/tools"
+
+#
+# user-id and group-id for the "kxbuild" user
+#
+KX_BUILD_UID=888
+KX_BUILD_GID=888
+
+
+# ============================================================
+# Build definitions
+# ============================================================
+
+#
+# default number of parallel task for make
+#
+KX_CORES=$(nproc)
+KX_JOBS=$((${KX_CORES}+1))
+KX_MAKE_J="-j ${KX_JOBS}"
+
+#
+# Build packages in parallel
+# Disabled by default
+# Set to "yes" to enable parallel package build
+KX_PARALLEL=""
+
+#
+# Tweak glibc's malloc
+# See man mallopt
+# If KX_MALLOC_MALLOPT_KB is set, the follwing variables will be exported in each build script:
+# MALLOC_MMAP_THRESHOLD_=$(( ${KX_MALLOC_MALLOPT_KB} * 1024 ))
+# MALLOC_TRIM_THRESHOLD_=$(( ${KX_MALLOC_MALLOPT_KB} * 1024 ))
+# MALLOC_TOP_PAD_=$(( ${KX_MALLOC_MALLOPT_KB} * 1024 ))
+# So, you could set e.g. KX_MALLOC_MALLOPT_KB=16384
+# * do not change unless you know what you are doing *
+#
+KX_MALLOC_MALLOPT_KB=""
+
+# ============================================================
+# Target definitions - KERNEL
+# ============================================================
+
+#
+# kernel version used when building glibc
+# set to the oldest of host and build kernel version
+#
+KX_GKERNEL="3.0.0"
+
+#
+# name of target for bootstrapping
+#
+KX_TARGET=$(uname -m)-kaarpux-linux-gnu
+
+
+# ============================================================
+# Target definitions - DISKS
+# ============================================================
+
+#
+# paths and type of filesystems put into fstab
+#
+KX_FSTAB_DEV_ROOT="/dev/vda1"
+KX_FSTAB_FSTYPE_ROOT="ext4"
+
+#
+# If you have a swap partition, specify the complete path to the device file, e.g. something like
+# KX_FSTAB_DEV_SWAP="/dev/vda2"
+#
+KX_FSTAB_DEV_SWAP="#none"
+
+
+# ============================================================
+# Target definitions - NETWORK
+# ============================================================
+
+#
+# name of network device
+# see http://cgit.freedesktop.org/systemd/systemd/tree/src/udev/udev-builtin-net_id.c#n20
+# ens3 should be correct for KVM
+#
+KX_NW_DEV="ens3"
+
+#
+# host and domain name
+#
+KX_DOMAINNAME="example.lan"
+KX_HOSTNAME="KaarPuxHost"
+KX_FQDN="${KX_HOSTNAME}.${KX_DOMAINNAME}"
+
+
+# ============================================================
+# Target definitions - HARDWARE
+# ============================================================
+
+#
+# is the hardware clock set to UTC or LOCAL
+#
+KX_UTC_OR_LOCAL="UTC"
+
+
+# ============================================================
+# Target definitions - LOCALIZATION
+# ============================================================
+
+#
+# Some of the comments below includes a command to get a list of options,
+# or to get the current setting on your host.
+# This command may or may not exist on your host system.
+# The output may or may not match what will be available in the final KaarPux system.
+#
+
+#
+# Local time zone definition
+# timedatectl list-timezones
+#
+KX_LOCALE="Europe/Copenhagen"
+
+#
+# Localization
+#
+# A few default locales (english, french, german, ...) will be installed.
+# In addition, the locale defined here will be installed.
+#
+# KX_LOCALEDEF="localedef -i <input-file> -f <charmap> <name>"
+#
+# To see your current locale:
+# locale
+#
+# <input-file>:
+# ls /usr/share/i18n/locales
+#
+# <charmap>
+# ls /usr/share/i18n/charmaps/
+# But you probably want to stay with UFT-8
+#
+# <name>
+# <input_file>.<charpam>
+#
+KX_LOCALEDEF="localedef -i da_DK -f UTF-8 da_DK.UTF-8"
+
+#
+# Language
+#
+# Use the <input_file>.<charpam> from KX_LOCALEDEF
+# or a standard language such as en_US.UTF
+#
+KX_LANG="en_US.UTF-8"
+
+#
+# Keymap for Linux console
+# find /usr/share/keymaps/i386/ -name "*.gz" | grep -v /include/ | cut -f7 -d/ | sort
+#
+# Current keymap:
+# localectl status
+#
+KX_CONSOLE_KEYMAP="dk-latin1"
+
+#
+# Keymap for X11
+#
+# cat /usr/share/X11/xkb/rules/base.lst
+# localectl list-x11-keymap-layouts
+#
+# Current X11 keymap:
+# setxkbmap -query
+#
+KX_XKB_LAYOUT="dk"
+
+#
+# "A4" or "letter"
+#
+KX_GROFF_PAGE="A4"
+
+
+# ============================================================
+# Target definitions - KAARPUX USER
+# ============================================================
+
+#
+# user-id and group-id for the "kaarpux" user
+#
+KX_KX_UID=1000
+KX_KX_GID=1000 
+
+
+# ============================================================
+# Trace with systemtap
+# ============================================================
+
+#
+# set to Y to enable tracing with systemtap
+# * do not change unless you know what you are doing *
+#
+KX_SYSTEMTAP=""
+
+
+
+# ============================================================
+# Testing
+# ============================================================
+
+#
+# Most packages can be tested with "make check" or similar.
+# However, there are currently (KaarPux v 4.2.4)
+# a number of unresolved problems with testing.
+# So do not change unless you know what you are doing
+#
+KX_DISABLE_TEST="Y"
+
+
+# ============================================================
+# Keeping build directories
+# ============================================================
+
+#
+# When a package is installed, the directory used to build
+# it is deleted by default.
+# But you can keep the build directories with
+# KX_KEEP_BUILD_DIRECTORIES="yes"
+#
+KX_KEEP_BUILD_DIRECTORIES=""
+
+
+# ============================================================
+# Mark customizations
+# ============================================================
+
+#
+# Set to "yes" when definitions have been customized
+#
+KX_DEFINITIONS_CUSTOMIZED=""
+

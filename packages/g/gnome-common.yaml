@@ -1,0 +1,23 @@
+package:
+  name: gnome-common
+  version: 3.14.0
+  short: Sample files that should be in pretty much every GNOME application.
+
+download:
+  gnomexz: ~
+  checksum: 4c00242f781bb441289f49dd80ed1d895d84de0c94bfc2c6818a104c9e39262c
+
+version:
+  installed_na: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

@@ -1,0 +1,22 @@
+package:
+  name: cairomm
+  version: 1.11.2
+  www: http://cairographics.org/
+  short: C++ bindings for cairo
+
+download:
+  url: http://cairographics.org/releases/
+  file_tar_gz: ~
+  checksum: ccf677098c1e08e189add0bd146f78498109f202575491a82f1815b6bc28008d
+
+version:
+  installed_pkgconfig: cairomm-1.0
+
+linux:
+  - build:
+    - configure_kx: --disable-documentation
+    - make: ~
+  - test:
+    - check: LIBS=-lcairo
+  - install:
+    - install: ~

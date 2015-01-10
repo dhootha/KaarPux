@@ -1,0 +1,25 @@
+package:
+  name: wavpack
+  version: 4.70.0
+  www: http://www.wavpack.com/
+  short: |
+      WavPack is a completely open audio compression format providing lossless, high-quality lossy,
+      and a unique hybrid compression mode
+
+download:
+  url: http://www.wavpack.com/
+  file_tar_bz2: ~
+  checksum: 2cade379b0aba99fbc4e442ccc6dac6c609f6212e46516a083e24c8c364430a4
+
+version:
+  installed_pkgconfig: ~
+  upstream: kxver_scrape_url("wavpack", "http://www.wavpack.com/downloads.html");
+
+linux:
+  - build:
+    - configure_kx: --disable-static
+    - make: ~
+  # 'make check' does nothing
+  - install:
+    - install: ~  
+

@@ -1,0 +1,28 @@
+package:
+  name: pixman
+  version: 0.32.6
+  www: http://cairographics.org/
+  short: The pixel-manipulation library for X and cairo
+
+download:
+  url: http://cairographics.org/releases
+  file_tar_gz: ~
+  checksum: 3dfed13b8060eadabf0a4945c7045b7793cc7e3e910e748a8bb0f0dc3e794904
+
+version:
+  installed_pkgconfig: pixman-1
+
+linux:
+
+  - build:
+    - configure_kx: --disable-static
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~
+
+
+

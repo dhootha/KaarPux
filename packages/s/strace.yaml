@@ -1,0 +1,48 @@
+package:
+  name: strace
+  version: 4.9
+  www: gedit
+  short: System call tracer, i.e. a debugging tool which prints out a trace of all the system calls made by a another process/program.
+
+download:
+  sourceforge: ~
+  file_tar_xz: ~
+  checksum: 095bfea5c540b91d297ccac73b21b92fd54a24599fd70395db87ff9eb7fd6f65
+  verify: asc
+
+version:
+  installed_sh_trailing: strace -V
+  upstream: kxver_upstream_sourceforge("strace", "strace", "strace");
+
+bootstrap_8:
+  - configure_kx: ~
+  - make: ~
+  - check: ~
+  - install: ~
+  - echo: install SUID version
+  - sh: | 
+      cp /bin/strace /bin/sstrace
+      chown root:strace /bin/sstrace
+      chmod u=rws,g=rx,o=r /bin/sstrace
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~
+    - echo: install SUID version
+    - sh: | 
+        cp /bin/strace /bin/sstrace
+        chown root:strace /bin/sstrace
+        chmod u=rws,g=rx,o=r /bin/sstrace
+
+verify_cli: |
+  kx_cli_match_success "/bin/strace /bin/ls" { execve open close exit }
+  # Currently not testing auxillary programs:
+  # /bin/sstrace
+  # /bin/strace-graph
+  # /bin/strace-log-merge
+

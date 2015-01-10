@@ -1,0 +1,37 @@
+package:
+  name: libusb
+  version: 1.0.19
+  www: http://libusb.info/
+  short: C library that provides generic access to USB devices
+
+download:
+  sourceforge: libusb/libusb-${KX_LIBUSB_VERSION_MM}/libusb-${KX_LIBUSB_VERSION}
+  file_tar_bz2: ~
+  checksum: c5d14ced155233ceeb5107c7eb3b94b16649ae05
+
+version:
+  installed_pkgconfig: libusb-1.0
+  upstream: kxver_upstream_sourceforge("libusb", "libusb-${KX_LIBUSB_VERSION_MM}", "libusb", qr|libusb-([0-9]+[0-9.]*[0-9]+)\.tar|);
+
+bootstrap_8:
+    - configure_kx: >
+        --disable-static
+        --disable-dependency-tracking
+        --enable-tests-build
+    - make: ~
+
+    - sh: if test -z "${KX_DISABLE_TEST}"; then
+    - echo: test
+    - sh: |
+        cd tests
+        make
+        ./stress
+        cd ..
+    - sh: fi
+
+    - install: ~
+
+# TODO: 
+# Add any users that need to access raw USB devices to the usb group.
+# usermod -a -G usb <username>
+

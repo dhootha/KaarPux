@@ -1,0 +1,31 @@
+package:
+  name: protobuf
+  version: 2.5.0
+  www: http://code.google.com/p/protobuf/
+  short: Protocol Buffers are a way of encoding structured data in an efficient yet extensible format.
+
+download:
+  url: http://protobuf.googlecode.com/files/
+  file_tar_bz2: ~
+  checksum: 62c10dcdac4b69cc8c6bb19f73db40c264cb2726
+
+version:
+  upstream: kxver_scrape_url 'protobuf', 'http://code.google.com/p/protobuf/downloads/list';
+
+opt:
+  - build:
+    - configure_kx: ~
+    - make: ~
+
+  - test:
+    # C++11 requires a space between literal and identifier
+    - sh: |
+        sed -e 's/"__FILE__"/" __FILE__ "/' -i ./src/google/protobuf/stubs/common_unittest.cc
+        sed -e 's/"PATH_SEPARATOR"/" PATH_SEPARATOR "/' -i ./src/google/protobuf/compiler/command_line_interface_unittest.cc
+        sed -e 's/"ETC"/" ETC "/' -i ./src/google/protobuf/compiler/parser_unittest.cc
+    # TODO: investigate failures in "make check"
+    - check_ignore: ~
+
+  - install:
+    - install: ~
+

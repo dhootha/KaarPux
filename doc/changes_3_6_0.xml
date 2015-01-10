@@ -1,0 +1,114 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2013: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_6_0">
+<title>Changes in KaarPux version 3.6.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.6.0</systemitem> released on <systemitem>2013-apr-16</systemitem>
+</para>
+
+<itemizedlist>
+
+	<listitem><para>
+		Upgrade to GNOME 3.8
+	</para></listitem>
+	<listitem><para>
+		LibreOffice 4.0
+	</para></listitem>
+	<listitem><para>
+		Upstream security fixes
+	</para></listitem>
+	<listitem><para>
+		Other packages updated
+	</para></listitem>
+	<listitem><para>
+		Other minor changes
+	</para></listitem>
+
+</itemizedlist>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_0_gnome">
+<title>Upgrade to GNOME 3.8</title>
+
+<para>
+	GNOME has been updated to version 3.8.1.
+	Many prerequisite packages have been updated as well.
+</para>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_0_libreoffice">
+<title>LibreOffice 4.0</title>
+<para>
+	LibreOffice has been updated to version 4.0.2.2.
+	Many prerequisite packages have been updated as well.
+</para>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_0_sec">
+<title>Upstream security fixes</title>
+<itemizedlist>
+	<listitem><para>
+		UPD: xulrunner firefox: v 20.0.1
+	</para></listitem>
+
+	<listitem><para>
+		UPD: openssh: v 6.2p1
+	</para></listitem>
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_0_upd">
+<title>Other packages updated</title>
+<itemizedlist>
+
+	<listitem><para>
+		UPD: binutils: v 2.23.2
+	</para></listitem>
+	<listitem><para>
+		UPD: systemd: v 201
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_6_0_other">
+<title>Other changes</title>
+<itemizedlist>
+
+	<listitem><para>
+		Many minor changes. See the <ulink url="http://sourceforge.net/p/kaarpux/code/ci/master/tree/">git repository</ulink>
+	</para></listitem>
+</itemizedlist>
+
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

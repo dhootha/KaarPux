@@ -1,0 +1,22 @@
+package:
+  name: gsettings-desktop-schemas
+  version: 3.14.1
+
+download:
+  gnomexz: ~
+  checksum: 217eba09f0fb263dcb8ce6efa21c9afaf0504ac1d937732d1af1c6724c05f065
+
+version:
+  installed_pkgconfig: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --enable-introspection=yes --disable-schemas-compile
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

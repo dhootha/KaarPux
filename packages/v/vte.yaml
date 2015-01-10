@@ -1,0 +1,31 @@
+package:
+  name: vte
+  version: 0.38.2
+  www: http://developer.gnome.org/vte/
+  short: Terminal emulator widget used by GNOME terminal.
+
+doc: |
+  <para>
+    This is the latest version.
+    We also have <xref linkend="pkg_vte290" />.
+  </para>
+
+download:
+  gnomexz: ~
+  checksum: b2daba79229c84de3fbc41fcbb160c8d7ca50523fc01dedefada27e75ecc7de5
+
+version:
+  installed_pkgconfig: vte-2.91
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static --enable-man-pages --with-gtk=3.0 --enable-introspection=yes
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

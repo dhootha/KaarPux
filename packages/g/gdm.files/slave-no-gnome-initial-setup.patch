@@ -1,0 +1,26 @@
+#
+# This patch is part of KaarPux:
+# http://kaarpux.kaarposoft.dk/
+#
+# gdm_slave_connect_to_x11_display tries to authenticate non-existing user
+#
+# gdm_slave_setup_xhost_auth sets up authentification for local users.
+# This includes the user gnome-initial-setup which we do not have.
+# A good fix would be to include a configure option to avoid this.
+# For now, we just have this poor-man's workaround: 
+# only do the first two of the three auth user setups
+#
+
+diff -Naur gdm-3.12.2.ORIG/daemon/gdm-slave.c gdm-3.12.2/daemon/gdm-slave.c
+--- gdm-3.12.2.ORIG/daemon/gdm-slave.c	2014-03-19 16:15:29.000000000 +0100
++++ gdm-3.12.2/daemon/gdm-slave.c	2014-09-11 12:15:08.523258318 +0200
+@@ -291,7 +291,7 @@
+ 
+                 gdm_error_trap_push ();
+ 
+-                for (i = 0; i < G_N_ELEMENTS (host_entries); i++) {
++                for (i = 0; i < 2; i++) {
+                         XAddHost (slave->priv->server_display, &host_entries[i]);
+                 }
+ 
+

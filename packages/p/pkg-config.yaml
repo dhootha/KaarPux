@@ -1,0 +1,24 @@
+package:
+  name: pkg-config
+  version: 0.28
+  www: http://pkg-config.freedesktop.org/ 
+  short: Tool for passing the include path and/or library paths to build tools during the configure and make file execution.
+
+download:
+  file_tar_gz: ~
+  url: http://pkgconfig.freedesktop.org/releases
+  checksum: 6b6eb31c6ec4421174578652c7e141fdaae2dabad1021f420d8713206ac1f845
+
+version: ~
+
+bootstrap_7:
+    - configure_kx: --with-internal-glib
+    - make: ~
+    - check: ~
+    - install: ~     
+
+verify_cli: |
+  kx_cli_success /bin/pkg-config --version
+  kx_cli_match_success "/bin/pkg-config --cflags zlib" { include }
+  kx_cli_match_success "/bin/pkg-config --libs zlib" { lib }
+

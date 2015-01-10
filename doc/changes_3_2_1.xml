@@ -1,0 +1,147 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_2_1">
+<title>Changes in KaarPux version 3.2.1</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.2.1</systemitem> released on <systemitem>2012-oct-21</systemitem>
+</para>
+
+<para>
+	Security updates (Java), bug fixes, and package updates.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_1_java">
+<title>Security update - Java</title>
+
+<itemizedlist>
+	<listitem><para>
+		SECURITY: icedtea: v 2.3.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e77f77c34585275ac2226c85794e58138830c842/">e77f77c3</ulink>)
+	</para></listitem>
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_1_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: ntp: do not barf if /etc/systemd/ntp-units.d already exists
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1fd104793283d3791e0ab38e51b6ae9a781bf3cb/">1fd10479</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gst-plugins-good fix build with recent kernels, the v4l2_buffer input field was removed
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/638aaa166ddb276c6f9e055a511b8b10cb1e5f8a/">638aaa16</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_1_removed">
+<title>Packages removed</title>
+
+<itemizedlist>
+	<listitem><para>
+		DEL: libelf: Not needed anymore (and we have elfutils)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/10d09d4a8ae51234f50243f55588478d5068e2d8/">10d09d4a</ulink>)
+	</para></listitem>
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_1_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: net-tools: v 1.60.20120804git
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cbc9651cac936115c2a09b4164ac2cd4a7a327cc/">cbc9651c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: elfutils: v 0.155
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fd128117a632d670f063009a540b0c2bc4a4e382/">fd128117</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: samba: v 3.6.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0cc054667b459dd7093fe589e9b7dcc2b57fde07/">0cc05466</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: fuse: v 2.9.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c3c5532f22a0ed91169269a39e4401bcc998429a/">c3c5532f</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: certdata: v 1.86
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7d99d293838547c32feed9bd716383919a3f1845/">7d99d293</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_3_2_1_doc">
+<title>Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		DOC: cups_startup: put printer.target into multi-user.target.wants
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8c6011960f48d54019e4c68e9bec0d30efc64742/">8c601196</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: xen_virtualization: improved instructions for dhcpcd+bridge
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ed34c06733e036457c48685dfaa9b210e846353d/">ed34c067</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: xen_virtualization: better bridge.service file - start bridge before dhcpcd
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/753e4a88b93129d8acf68defbca31cf085a52c58/">753e4a88</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

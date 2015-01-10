@@ -1,0 +1,262 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_1_4">
+<title>Changes in KaarPux version 4.1.4</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.1.4</systemitem> released on <systemitem>2014-mar-06</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		gnutls version 3.2.12.1 - security update
+		</para></listitem>
+
+		<listitem><para>
+		packages added: xerces, pwsafe
+		</para></listitem>
+
+		<listitem><para>
+		bugs fixed, packages and documentation updated
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_4_major">
+<title>Major Changes</title>
+
+	<section id="changes_4_1_4_gnutls">
+	<title>UPD: gnutls: v 3.2.12.1 - security update</title>
+	<para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fa5424812b57407167f042c41d0c810207e7f5a8/">fa542481</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/8197cfe877eee50af9c75c749a948101af46ed03/">8197cfe8</ulink>)
+	</para>
+	<para>
+	See <ulink url="http://www.gnutls.org/security.html#GNUTLS-SA-2014-2">GNUTLS-SA-2014-2</ulink>
+	</para>
+	</section>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_4_bugs">
+<title>Bugs fixed</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		FIX: pwsafe: add GPG key used for signing
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/261f13d246ed07d9a828e5f1d4e122d3a23b842d/">261f13d2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: xerces-c: no signature file available
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/615319b1ba321cc122809a9c69982f1372fba48f/">615319b1</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: cyrus-sasl: fix configure options and CFLAGS
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4ee0acdda62e2e208dc62bafe04da3762a8651ba/">4ee0acdd</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_4_add">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: xerces: prereq for pwsafe
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/18ecc37654335e8d567ca9ff8beab2e0d9611afa/">18ecc376</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pwsafe: v 0.93BETA
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d46e9edbaf45c92edf0a4c2a37a6062049768fa2/">d46e9edb</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_4_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: curl: v 7.35.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bdc6ce6252d3aa77d036c9e5c4149310644ba484/">bdc6ce62</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: certdata: v 824017eda3df
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a241be2d6799f90fde59cd8714e0e0cc8c9bdb64/">a241be2d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: adblockplus: v 2.5.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d5c3413d358b9d82b3ad50209b7154ca3d30e420/">d5c3413d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: dhcpcd: v 6.3.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/333cadba963dcc676e97f553abdc57a183dec39f/">333cadba</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.6.8.16
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/b3c37948d4521697fad7c734d0d0b308a22de0ea/">b3c37948</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: linux: v 3.13.5
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6bc5ce37ab077f51417613231a6b6a0a34231037/">6bc5ce37</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: Python: 3.3.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a5bc0636244686d866e6b21c07155dbb88df5a2c/">a5bc0636</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_4_minor">
+<title>Minor Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		IMPROVE: KaarPux: Track Relevant Common Vulnerabilities and Exposures
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7f3f121c0e776e5ca428cde32dc4fe8f546b5bdd/">7f3f121c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: glibc: do not use PARALLELMFLAGS
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/affdef6b2b91bc90e751dd4c20d00fe242b14379/">affdef6b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: certdata: upstream check returning ? on mismatch
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1eae99233031e75dcc55f9fd9004641cb13a938f/">1eae9923</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: remove left-overs from static IP, which we do not use anymore
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/46f6f2d83fc1db904938d29aca4ac21f2e925c37/">46f6f2d8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxBuild: scripts for installing host packages
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9409b93549064f8aee30f68e1ba8de8543e0fe71/">9409b935</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: KxTools: do not use google as CVE keyword
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/aef1eaa8b9b5ba89f7a1981628a60f465358b2e7/">aef1eaa8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		MINOR: KxTools: typo in help
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ec794bd33e95ebb989c577618d484d8b3e637588/">ec794bd3</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_4_doc">
+<title>Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		DOC: certdata: update info on how to find and update certdata.txt
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7ccf882bf825b5087704b74fd54038062c02d408/">7ccf882b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4cf671020ac5ba808e6bac72e3b889720ec2ed01/">4cf67102</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: css revised to give slightly more readable homepage
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/106aed6d3657fa933845b8d38f5bc23a636fa0b3/">106aed6d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: www: improved description on how to build KaarPux
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/533dbc90f93bf0c51fc154e3264f5e503e560089/">533dbc90</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/243d3803d8a63b4d80ae762502b5505921dcb15d/">243d3803</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/efd87496742c188ed6f0a1a8c6be346e5eaa3a56/">efd87496</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

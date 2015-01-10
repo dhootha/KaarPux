@@ -1,0 +1,24 @@
+package:
+  name: empathy
+  version: 3.12.7
+  www: https://live.gnome.org/Empathy/
+  short: Empathy is a messaging program which supports text, voice, and video chat and file transfers over many different protocols.
+
+download:
+  gnomexz: ~
+  checksum: abcc6e325474d158ba21dfc864183617cf832c3570ccefe9e32f275b94452794
+
+version:
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-static --disable-Werror --disable-schemas-compile
+    - make_repeat: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

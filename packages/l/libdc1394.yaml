@@ -1,0 +1,26 @@
+package:
+  name: libdc1394
+  version: 2.2.2
+  www: http://damien.douxchamps.net/ieee1394/libdc1394/
+  short: |
+      libdc1394 is a library that provides a complete high level application programming interface (API)
+      for developers who wish to control IEEE 1394 based cameras that conform to the
+      1394-based Digital Camera Specifications (also known as the IIDC or DCAM Specifications).
+
+download:
+  sourceforge: ~
+  file_tar_gz: ~
+  checksum: ff8744a92ab67a276cfaf23fa504047c20a1ff63262aef69b4f5dbaa56a45059
+
+version:
+  installed_pkgconfig: libdc1394-2
+  upstream: kxver_upstream_sourceforge("libdc1394", "libdc1394-2", "libdc1394");
+
+linux:
+  - build:
+    - use_gcc: ~
+    - configure_kx: --disable-static
+    - make: ~
+  # 'make check' does nothing
+  - install:
+    - install: ~

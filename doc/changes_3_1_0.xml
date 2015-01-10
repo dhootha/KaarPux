@@ -1,0 +1,184 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_3_1_0">
+<title>Changes in KaarPux version 3.1.0</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>3.1.0</systemitem> released on <systemitem>2012-sep-26</systemitem>
+</para>
+
+<para>
+	Bugs fixed, packages updated, packages added, and more.
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_1_0_bugs">
+<title>Bugs Fixed</title>
+<itemizedlist>
+
+	<listitem><para>
+		FIX: /etc/profile: install with execute permission
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3475278205a4face9fdff5096ff5e71438720aed/">34752782</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: kx_ver_wiz.pl: use List::Util and Time::Hires (just as kx_version.pl)
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/af9ab0fd1c2bcd1d472b7524e6fbff1047b63561/">af9ab0fd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: KxBuild: move py2cairo before pygobject
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7b052bfddb6d6de7e93702075cb72eb21e6f2d5b/">7b052bfd</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: gdm: aboslute path for ExecStart in .service file
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7de77a3b3412303c31d7e3796c1be6aa27a3c0c5/">7de77a3b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		FIX: bash: do not set PS1 prompt for non-interactive shells
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/d7b18ec5704c19f1b8ec2c31a5848a0faba41859/">d7b18ec5</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_1_0_upd">
+<title>Packages Updated</title>
+<itemizedlist>
+
+	<listitem><para>
+		UPD: valgrind: v 3.8.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5c7c585cef5304808da2da0d505f324fbd71cdb6/">5c7c585c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: graphite2 libexttextcat libvisio libwps mdds mythes raptor2 rasqal SampleICC
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2a05ac521ecf106fd979fee9a76313f06c1c0f5a/">2a05ac52</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: libreoffice: v 3.6.2.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0efba2bf2de0b8ea0232a55cdc8b7042bb0b788b/">0efba2bf</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: thunderbird: v 15.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2f410f2d62e87150bc0d37d677895e0722be121d/">2f410f2d</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: ghostery: v 2.8.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/618a9dc29445db754796ddf1965f48b1edf4adb8/">618a9dc2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: noscript: v 2.5.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0c6e41a552a068747f3378b117dc94d7c539061a/">0c6e41a5</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_1_0_add">
+<title>Packages Added</title>
+<itemizedlist>
+
+	<listitem><para>
+		ADD: ntp: Network Time Protocol
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0c8b206658f08fa420bb89bca6dfd34e8ba04086/">0c8b2066</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/190273d3794eaa305c9bf3382fb581feb8cc7d1b/">190273d3</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/889fe26a16cd92433f9455da02b9b41b2168079b/">889fe26a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pm-utils
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e87cf32cf799fbdfc558e032b9957d63e7607290/">e87cf32c</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: bash-completion: use Debian bash-completion; do not roll our own
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6a071486dbe8794c86a101984797bd276d2f4ab3/">6a071486</ulink>,
+		<ulink url="http://sourceforge.net/p/kaarpux/code/ci/1956bb31d4de712200a35141b722e3b8d6fc6618/">1956bb31</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: pygobject33 pycairo: GObject for Python3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ed553285a2060d6261445896652b66dd81440696/">ed553285</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: hunspell-en_US cppunit libcmis clucene libcdr lpsolve: prerequisites for LibreOffice
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/66e349be0257ca1c81575c5638c261c059033013/">66e349be</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		ADD: hunspell-en_US.yaml
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/9e98655fbc3030d327d9436238c98b2a2998e032/">9e98655f</ulink>)
+	</para></listitem>
+
+
+</itemizedlist>
+</section>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_3_1_0_other">
+<title>Other Changes</title>
+<itemizedlist>
+
+	<listitem><para>
+		Improved version checks
+	</para></listitem>
+
+	<listitem><para>
+		Documentation updates
+	</para></listitem>
+
+	<listitem><para>
+		Many other minor improvements
+	</para></listitem>
+
+</itemizedlist>
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

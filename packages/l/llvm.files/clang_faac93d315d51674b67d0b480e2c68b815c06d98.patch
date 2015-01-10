@@ -1,0 +1,49 @@
+# KaarPux: modified path to tools/clang/
+commit faac93d315d51674b67d0b480e2c68b815c06d98
+Author: Justin Bogner <mail@justinbogner.com>
+Date:   Wed Aug 27 05:12:35 2014 +0000
+
+    Driver: Restore -fkeep-inline-functions as an ignored flag
+    
+    Several options were moved to the clang_ignored_gcc_optimization group
+    in r213365, but -fkeep-inline-functions was accidentally dropped. This
+    restores the flag.
+    
+    Patch by Steven Wu. Thanks!
+    
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@216522 91177308-0d34-0410-b5e6-96231b3b80d8
+
+diff --git a/include/clang/Driver/Options.td b/include/clang/Driver/Options.td
+index b07f928..7be8969 100644
+--- a/tools/clang/include/clang/Driver/Options.td
++++ b/tools/clang/include/clang/Driver/Options.td
+@@ -1623,7 +1623,7 @@ multiclass BooleanFFlag<string name> {
+   def _fno : Flag<["-"], "fno-"#name>;
+ }
+ 
+-defm : BooleanFFlag<"no-keep-inline-functions">, Group<clang_ignored_gcc_optimization_f_Group>;
++defm : BooleanFFlag<"keep-inline-functions">, Group<clang_ignored_gcc_optimization_f_Group>;
+ 
+ def fprofile_dir : Joined<["-"], "fprofile-dir=">, Group<clang_ignored_gcc_optimization_f_Group>;
+ 
+diff --git a/test/Driver/clang_f_opts.c b/test/Driver/clang_f_opts.c
+index bed97cb..3ca9f28 100644
+--- a/tools/clang/test/Driver/clang_f_opts.c
++++ b/tools/clang/test/Driver/clang_f_opts.c
+@@ -238,6 +238,7 @@
+ // RUN: -fno-expensive-optimizations                                          \
+ // RUN: -fno-defer-pop                                                        \
+ // RUN: -finline-functions                                                    \
++// RUN: -fkeep-inline-functions                                               \
+ // RUN: -fno-keep-inline-functions                                            \
+ // RUN: -freorder-blocks                                                      \
+ // RUN: -fprofile-dir=/rand/dir                                               \
+@@ -307,6 +308,7 @@
+ // CHECK-WARNING-DAG: optimization flag '-fno-expensive-optimizations' is not supported
+ // CHECK-WARNING-DAG: optimization flag '-fno-defer-pop' is not supported
+ // CHECK-WARNING-DAG: optimization flag '-finline-functions' is not supported
++// CHECK-WARNING-DAG: optimization flag '-fkeep-inline-functions' is not supported
+ // CHECK-WARNING-DAG: optimization flag '-fno-keep-inline-functions' is not supported
+ // CHECK-WARNING-DAG: optimization flag '-freorder-blocks' is not supported
+ // CHECK-WARNING-DAG: optimization flag '-fprofile-dir=/rand/dir' is not supported
+

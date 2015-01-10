@@ -1,0 +1,181 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="master_directory">
+<title>The kaarpux/master directory</title>
+
+<!-- ============================================================ -->
+
+<para>
+The <filename class="directory">kaarpux/master</filename> directory contains all the files
+needed to build &kx; (except the source tar-balls for each package).
+It is the directory you get when you follow <xref linkend="download"/>
+and <xref linkend="unpack"/>.
+</para>
+
+<para>
+<variablelist>
+<title>Files</title>
+
+<varlistentry>
+	<term><filename>kaarpux/master/default_definitions.shinc</filename></term>
+	<listitem><para>
+		Shell include script containing definitions for building &kx;.
+		Do <emphasis>not</emphasis> edit this file.
+		Override the settings by editing
+		<filename>kaarpux/custom_definitions.shinc</filename> instead.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename>kaarpux/master/make_dist.sh</filename></term>
+	<listitem><para>
+		Archive the <filename class="directory">kaarpux/master</filename> files
+		into
+		<filename>kaarpux/dist/kaarpux.tar.gz</filename>.
+		The archive file can be copied to (e.g. using <command>ssh</command>) the target system and unpacked there.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename>kaarpux/master/make_doc.sh</filename></term>
+	<listitem><para>
+		Make documentation. Processes <filename class="directory">kaarpux/master/doc</filename>
+		and produces <filename class="directory">kaarpux/doc</filename>
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename>kaarpux/master/make_kxbuild_user.sh</filename></term>
+	<listitem><para>
+		Create a new unix user called <othername>kxbuild</othername>.
+		The user is configured so it can correctly bootstrap &kx;.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename>kaarpux/master/make_scripts.sh</filename></term>
+	<listitem><para>
+		Create and populate
+		<filename class="directory">kaarpux/bootstrap</filename>
+		and
+		<filename class="directory">kaarpux/linux</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename>kaarpux/master/master.yaml</filename></term>
+	<listitem><para>
+		Defines the whole build sequence.
+		Processed by <filename>kaarpux/master/perl/make_build_scripts.pl</filename>,
+		which may be consulted to see what each <ulink url="http://yaml.org/">YAML</ulink>
+		node does.
+	</para></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+
+<para>
+<variablelist>
+<title>Directories</title>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/chroot_scripts</filename></term>
+	<listitem><para>
+		Scripts which are used in the <application>chroot</application> during bootstrap.
+		Copied to <filename class="directory">kaarpux/bootstrap/chroot_scripts</filename>
+		by <filename>kaarpux/master/make_scripts.sh</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/doc</filename></term>
+	<listitem><para>
+		Source files for &kx; <application>DocBook</application> documentation.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/files</filename></term>
+	<listitem><para>
+		Files which are copied to the target system by 
+		<filename>kaarpux/bootstrap/chroot_scripts/install_files.sh</filename>.
+		Some of the files will be preprocessed by <application>sed</application>
+		to replace occurances of the form <varname>@KX_*@</varname> with
+		the definitions from <filename>kaarpux/master/default_definitions.shinc</filename>
+		and <filename>kaarpux/custom_definitions.shinc</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/host_files</filename></term>
+	<listitem><para>
+		Files which are useful when referenced from the host system.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/host_scripts</filename></term>
+	<listitem><para>
+		Scripts which are used on the host system during bootstrap.
+		Copied to <filename class="directory">kaarpux/bootstrap/host_scripts</filename>
+		by <filename>kaarpux/master/make_scripts.sh</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/linux_scripts</filename></term>
+	<listitem><para>
+		Scripts which are used when building on the &kx; target system.
+		Copied to <filename class="directory">kaarpux/linux/linux_scripts</filename>
+		by <filename>kaarpux/master/make_scripts.sh</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/packages</filename></term>
+	<listitem><para>
+		Has one subdirectory per letter in the alphabet.
+		Each subdirectory contains the packages starting with that letter.
+		<filename>kaarpux/master/packages/[a-z]/*.yaml</filename>
+		contains the definitions needed to build the package;
+		<filename class="directory">kaarpux/master/packages/[a-z]/*.files</filename>
+		contains any needed auxilliary files, such as patches or init scripts.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/perl</filename></term>
+	<listitem><para>
+		<ulink url="http://www.perl.org/">perl</ulink> scripts used by
+		<filename>kaarpux/master/make_scripts.sh</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/shinc</filename></term>
+	<listitem><para>
+		Files included by shell scripts.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/master/tools</filename></term>
+	<listitem><para>
+		Stand-alone tools.
+	</para></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+
+</section>
+

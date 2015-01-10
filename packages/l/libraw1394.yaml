@@ -1,0 +1,20 @@
+package:
+  name: libraw1394
+  version: 2.1.0
+  www: https://ieee1394.wiki.kernel.org/index.php/Main_Page
+  short: The Linux kernel's IEEE 1394 subsystem provides access to the raw 1394 bus through the raw1394 module.
+
+download:
+  kernelxz: linux/libs/ieee1394/
+  checksum: 0b3126d8158d156de9da2ff4d861c47857acc4318a7ac260258015a22071964f
+
+version:
+  installed_pkgconfig: ~
+
+linux:
+  - build:
+    - configure_kx: --disable-static
+    - make: ~
+  # 'make check' does nothing
+  - install:
+    - install: ~

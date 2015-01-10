@@ -1,0 +1,25 @@
+package:
+  name: gnome-bluetooth
+  version: 3.14.0
+  www: http://developer.gnome.org/gnome-bluetooth/
+  short: The GNOME Bluetooth package contains tools for managing and manipulating Bluetooth devices using the GNOME desktop.
+
+download:
+  gnomexz: ~
+  checksum: e2ef5e0036748eeb4756e8cb57e9909f10b771d290086dd1f377451d3fe18b09
+
+version:
+  installed_pkgconfig: gnome-bluetooth-1.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

@@ -1,0 +1,117 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_2_2">
+<title>Changes in KaarPux version 4.2.2</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.2.2</systemitem> released on <systemitem>2014-apr-01</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		systemd version 212
+		</para></listitem>
+
+		<listitem><para>
+		icedtea7 version 2.4.6
+		</para></listitem>
+
+		<listitem><para>
+		net-snmp version 5.7.2.1
+		</para></listitem>
+
+		<listitem><para>
+		Improved homepage
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_2_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: net-snmp: v 5.7.2.1 CVE-2014-2284
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ab5408e541db6740552fe9c23129ebdaf38a581f/">ab5408e5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: icedtea7: v 2.4.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/390a3cd2668beb4a504efd13e5bbc74572b3e20c/">390a3cd2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: systemd: v 212
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/869f2df7d45f1fb8f951b0fd425dc3cd9bc94245/">869f2df7</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_2_add">
+<title>Packages added</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		ADD: lesscss: CSS pre-processor
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/37df037460d8ac68c5e90990942a60f6a1415a05/">37df0374</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_2_2_doc">
+<title>Documentation Changes</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		DOC: www: Improved homepage
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/450f10f36ca6dfa407e5885cfe5dcf6974c9b6e1/">450f10f3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: openhosting: correct pricing link
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/59689fb2079b7729fb733a2967facb2477d19ba3/">59689fb2</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/80771fd82942eeaeb882a1114e0d61793122f4da/">80771fd8</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

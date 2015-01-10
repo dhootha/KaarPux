@@ -1,0 +1,36 @@
+package:
+  name: gst-plugins-base
+  version: 1.4.2
+  
+download:
+  url: http://gstreamer.freedesktop.org/src/gst-plugins-base/
+  file_tar_xz: ~
+  checksum: c0a8c44607d8a5669d2f0c118a72026f883a58ce1f3c720924b77f275b7b8835
+
+version:
+  installed_pkgconfig: gstreamer-plugins-base-1.0
+
+linux:
+
+  - build:
+    # If compiling with clang/llvm, this test fails:
+    # FAIL: orc/audioconvert
+    - use_gcc: ~
+    - configure_kx: >
+        --disable-gtk-doc
+        --disable-static
+        --disable-fatal-warnings
+        --with-package-name="gst-plugins-base"
+        --with-package-origin="http://kaarpux.kaarposoft.dk/packages/g/gst-plugins-base.html"
+        --enable-orc
+    - make_repeat: ~
+
+  - test:
+    - use_gcc: ~
+    - check: ~
+ 
+  - install:
+    - use_gcc: ~
+    - install: ~
+
+# TODO: verify_cli

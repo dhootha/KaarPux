@@ -1,0 +1,25 @@
+package:
+  name: network-manager-applet
+  version: 0.9.10.0
+  www: http://projects.gnome.org/NetworkManager/
+  short: Graphical desktop applet which allows the user to manipulate network connections.
+
+download:
+  gnomexz: ~
+  checksum: f5c26c692f538dc0145dc7d46d3d390754fad73d0ff06861c074c61f3dc54eca
+
+version:
+  installed_pkgconfig: libnm-gtk
+  upstream_gnome_uneven: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-static --enable-more-warnings=no --disable-schemas-compile --disable-migration
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

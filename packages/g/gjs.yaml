@@ -1,0 +1,25 @@
+package:
+  name: gjs
+  version: 1.42.0
+  www: https://live.gnome.org/Gjs/
+  short: |
+      Gjs is a Javascript binding for GNOME.
+      It's mainly based on Spidermonkey javascript engine and the GObject introspection framework. 
+
+download:
+  gnomexz: ~
+  checksum: 0c9afb7d5be6ead5b68059596f08eb7c3902b1676ee9c8846aa8df09647dba13
+
+version:
+  installed_pkgconfig: gjs-1.0
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - patch: false_null.patch
+    - configure_kx_bash: --disable-static --enable-compile-warnings=minimum --enable-installed-tests
+    - make: ~
+
+  - install:
+    - install: ~

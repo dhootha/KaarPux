@@ -1,0 +1,211 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="prepare_boot">
+<title>Preparing to Boot KaarPux</title>
+
+<!-- ============================================================ -->
+
+<para>
+After bootstrapping &kx; as described in <xref linkend="bootstrap"/>,
+now prepare &kx; for booting.
+</para>
+
+<!-- ============================================================ -->
+
+<section id="prepare_boot_grub">
+<title>GRUB setup</title>
+
+<para>
+If you want the target system boot to be controlled by &kx; you must set up
+<ulink url="http://www.gnu.org/software/grub/">GRUB</ulink>.
+
+</para>
+<para>
+
+Enter the <application>chroot</application>:
+<programlisting>
+&kx_as_root;
+MNT=/mnt/kxmnt
+cd ${MNT}/home/kaarpux/kaarpux
+bootstrap/host_scripts/enter_chroot.sh
+</programlisting>
+
+</para>
+<para>
+
+Now install GRUB on the target disk.
+
+<warning>
+<para>
+Be <emphasis>very</emphasis> careful here.
+If you specify the wrong partition, you may brick the host system.
+</para>
+</warning>
+
+If you are using legacy <systemitem>MBR</systemitem> partitioning:
+<programlisting>
+&kx_envwarn;
+DEV=/dev/sdb
+CFG=/boot/grub/grub.cfg
+
+grub-install ${DEV}
+</programlisting>
+
+If you are using <systemitem>GPT</systemitem> partitioning:
+<programlisting>
+CFG=/boot/efi/EFI/kaarpux/grub/grub.cfg
+
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=kaarpux --boot-directory=/boot/efi/EFI/kaarpux/ --recheck
+</programlisting>
+</para>
+<para>
+
+Finally, create the <application>GRUB</application> configuration,
+and verify that it is OK.
+You may also edit the configuration file, but it will be overwritten
+next time <command>grub-mkconfig</command> is run.
+<programlisting>
+grub-mkconfig -o ${CFG}
+cp ${CFG} ${CFG}.ORIG
+vi ${CFG}
+</programlisting>
+
+</para>
+<para>
+
+If you have an <systemitem>UEFI</systemitem> system, you need to register the new bootloader:
+
+<programlisting>
+&kx_envwarn;
+FDEV=/dev/sdb
+FPART=1
+
+efibootmgr --create --gpt --disk ${FDEV} --part ${FPART} --write-signature --label "KaarPux" --loader "\\EFI\\kaarpux\\grubx86.efi"
+</programlisting>
+
+</para>
+<para>
+
+Exit the <application>chroot</application>:
+<programlisting>
+exit
+</programlisting>
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_boot_final">
+<title>Final preparations</title>
+<para>
+
+Enter the <application>chroot</application>:
+<programlisting>
+&kx_as_root;
+MNT=/mnt/kxmnt
+cd ${MNT}/home/kaarpux/kaarpux
+bootstrap/host_scripts/enter_chroot.sh
+</programlisting>
+
+</para>
+<para>
+
+Setup passwords:
+<programlisting>
+passwd root
+passwd kaarpux
+</programlisting>
+
+</para>
+<para>
+
+Change ownership:
+<programlisting>
+chown -R kaarpux:kaarpux /home/kaarpux
+</programlisting>
+
+</para>
+<para>
+
+Clean out <filename class="directory">/tmp</filename>
+<programlisting>
+rm -rf /tmp/*
+</programlisting>
+
+</para>
+<para>
+
+Optionally, if you are short on diskspace:
+<programlisting>
+rm -rf /home/kaarpux/kaarpux/bootstrap/build
+</programlisting>
+or even
+<programlisting>
+rm -rf /home/kaarpux/kaarpux/bootstrap
+</programlisting>
+
+</para>
+<para>
+
+Exit the <application>chroot</application>:
+<programlisting>
+exit
+</programlisting>
+
+Unmount virtual file systems:
+<programlisting>
+&kx_as_root;
+bootstrap/host_scripts/umount_virtual_kernel_fs.sh
+cd /
+umount ${MNT}
+</programlisting>
+
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_boot_snapshot">
+<title>Create a snapshot</title>
+<para>
+If you want a "snapshot" of the system, create a <systemitem>tarball</systemitem>
+as described in <xref linkend="copying_kaarpux_create_tarball" />.
+</para>
+<para>
+Make sure <filename class="directory">${MNT}</filename> is mounted,
+but that the virtual file systems are not mounted. Use settings similar to the following:
+<programlisting>
+MNT=/mnt/kxmnt
+TARBALL=/somewhere/kaarpux-boot.tar.gz
+</programlisting>
+</para>
+</section>
+
+<!-- ============================================================ -->
+
+<section id="prepare_boot_boot">
+<title>Boot into the new system</title>
+<para>
+That's it! You should now be able to boot into the new system!
+</para>
+
+<para>
+When you reboot, you should have a system which obtains it's IP-address
+by <application>DHCP</application>, is protected by by <application>iptables</application>,
+and which allows remote login with <application>ssh</application>,
+as well as console login.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

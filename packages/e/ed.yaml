@@ -1,0 +1,25 @@
+package:
+  name: ed
+  version: 1.9
+  www: http://www.gnu.org/software/ed/
+  short: A line-oriented text editor
+
+download:
+  gnuz: ~
+  checksum: d5b372cfadf073001823772272fceac2cfa87552c5cd5a8efc1c8aae61f45a88
+
+version:
+  news: NEWS
+  changelog: ChangeLog
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~     
+
+verify_cli: |
+  kx_cli_success ed --version

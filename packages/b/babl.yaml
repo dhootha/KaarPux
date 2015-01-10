@@ -1,0 +1,25 @@
+package:
+  name: babl
+  version: 0.1.10
+  www: http://gegl.org/babl/
+  short: babl is a dynamic, any to any, pixel format translation library. 
+
+download:
+  url: http://ftp.gimp.org/pub/babl/0.1
+  checksum: 943fc36ceac7dd25bc928256bc7b535a42989c6b971578146869eee5fe5955f4
+
+version:
+  installed_pkgconfig: ~
+  # Note that the NEWS file has 0.1.8 twice, but not 0.1.10, which is correct...
+  upstream: kxver_scrape_url(undef, "https://git.gnome.org/browse/babl/tree/NEWS", qr|babl-([0-9][0-9.]+[0-9])|);
+
+opt:
+  - build:
+    - use_gcc: ~
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~
+

@@ -1,0 +1,22 @@
+package:
+  name: pycurl
+  version: 7.19.5
+  www: http://pycurl.sourceforge.net/
+  short: Python interface to libcurl.
+
+download:
+  url: http://pycurl.sourceforge.net/download/
+  file_tar_gz: ~
+  checksum: 69a0aa7c9dddbfe4cebf4d1f674c490faccf739fc930d85d8990ce2fd0551a43
+
+version: ~
+
+linux:
+  - build:
+    - sh: python3 setup.py --with-ssl build
+
+  # No test suite
+
+  - install:
+    - sh: python3 setup.py install
+

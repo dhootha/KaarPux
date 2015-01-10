@@ -1,0 +1,28 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="git_setup">
+<title>Git Set-up</title>
+
+<para>
+Before using <application>git</application>:
+<programlisting>
+git config --global user.name "[name]"
+git config --global user.email "[address]"
+</programlisting>
+</para>
+
+<para>
+You may also like:
+<programlisting>
+git config --global color.ui true
+</programlisting>
+</para>
+
+</section>
+

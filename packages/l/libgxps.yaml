@@ -1,0 +1,28 @@
+package:
+  name: libgxps
+  version: 0.2.2
+  www: https://live.gnome.org/libgxps
+  short: GObject based library for handling and rendering XPS documents.
+
+download:
+  gnomexz: ~
+  checksum: 39d104739bf0db43905c315de1d8002460f1a098576f4418f69294013a5820be
+
+version:
+  installed_pkgconfig: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: >
+        --disable-gtk-doc
+        --enable-man
+        --disable-static
+    - sh: sed -i 's/Gxps_CFLAGS/GXPS_CFLAGS/' libgxps/Makefile
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

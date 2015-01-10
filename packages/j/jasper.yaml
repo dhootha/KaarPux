@@ -1,0 +1,36 @@
+package:
+  name: jasper
+  version: 1.900.1
+  www: http://www.ece.uvic.ca/~frodo/jasper/
+  short: |
+      The JasPer Project is an open-source initiative to provide
+      a free software-based reference implementation
+      of the codec specified in the JPEG-2000 Part-1 standard (i.e., ISO/IEC 15444-1).
+
+download:
+  url: http://www.ece.uvic.ca/~frodo/jasper/software
+  file_zip: ~
+  checksum: a342b2b4495b3e1394e161eb5d85d754
+
+version:
+  upstream: "kxver_scrape_url('jasper', 'http://www.ece.uvic.ca/~frodo/jasper/');"
+
+linux:
+
+  - build:
+    # From BLFS
+    - patch: jasper-1.900.1-security_fixes-1.patch
+    # From ArchLinux
+    - patch: jpc_dec.c.patch
+    - patch: patch-libjasper-stepsizes-overflow.diff
+
+    - configure_kx: --sysconfdir=/etc --localstatedir=/var --disable-static
+    - make: CFLAGS="-fPIC"
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~
+
+verify_cli: |
+  kx_cli_match_success "jasper --version" { libjasper }

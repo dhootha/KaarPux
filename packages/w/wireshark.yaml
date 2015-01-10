@@ -1,0 +1,29 @@
+package:
+  name: wireshark
+  version: 1.12.2
+  www: http://www.wireshark.org/
+  short: |
+      Wireshark is the world's foremost network protocol analyzer.
+      It lets you capture and interactively browse the traffic running on a computer network.
+      It is the de facto (and often de jure) standard across many industries and educational institutions. 
+
+download:
+  url: http://www.wireshark.org/download/src/all-versions/
+  file_tar_bz2: ~
+  checksum: 30ae16b408a592642ce3a84dd9877d24df7a6dae8da4847486965190039df292
+
+version:
+  installed: kxver_sh_pattern("wireshark --version", qr|wireshark ([0-9]+[0-9.]*[0-9]+) \(|);
+  upstream: kxver_scrape_url(undef, "http://www.wireshark.org/", qr|>Stable. Wireshark ([0-9]+[0-9.]*[0-9]+)<|);
+
+opt:
+  - build:
+    - use_gcc: ~
+    - sh: ./autogen.sh
+    - configure_kx: --with-gtk3=yes --with-lua
+    - make: ~
+  # No test suite
+  - install:
+    - use_gcc: ~
+    - install: ~  
+

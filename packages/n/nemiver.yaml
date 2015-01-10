@@ -1,0 +1,26 @@
+package:
+  name: nemiver
+  version: 0.9.5
+  www: http://projects.gnome.org/nemiver/
+  short: Nemiver is an on-going effort to write a standalone graphical debugger that integrates well in the GNOME desktop environment.
+
+download:
+  gnomexz: ~
+  checksum: 33590e3964092cabb629a6ba8415786b054702063a944eca5fe4156048baf8d9
+
+version:
+  upstream_gnome_uneven: ~
+
+opt:
+
+  - build:
+
+    # TODO: send patch upstream
+    - patch: nemiver_llvm_SafePtr.patch
+    - sh: CXX="clang++ --std=c++98"; export CXX
+
+    - configure_kx: ~
+    - make: ~
+
+  - install:
+    - install: ~

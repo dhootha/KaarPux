@@ -1,0 +1,48 @@
+package:
+  name: rhino
+  version: 1_7R4
+  www: https://www.mozilla.org/rhino/
+  short: |
+      Rhino is an open-source implementation of JavaScript written entirely in Java.
+      It is typically embedded into Java applications to provide scripting to end users.
+      It is embedded in J2SE 6 as the default Java scripting engine.
+
+doc: |
+  <para>
+    We are building <systemitem>rhino</systemitem> early based on the
+    binary distribution of <systemitem>Java 7</systemitem>: <xref linkend="pkg_OpenJDK-7-bin" />;
+    then <xref linkend="pkg_icedtea7" /> embeds <systemitem>rhino</systemitem> into
+    the final <systemitem>Java 7</systemitem>.
+  </para>
+
+download:
+  url: https://github.com/downloads/mozilla/rhino
+  file: rhino${KX_RHINO_VERSION}.zip
+  dir: rhino${KX_RHINO_VERSION}
+  checksum: 9eb08f85bbe7c8e0b9eaffb1cf4984b31fb679f3c8a682acc3bb8ac20626c61e
+
+version:
+  installed: | 
+    my $dirlist = `ls /opt/share/java`;
+    return kxver_scrape_this(undef, $dirlist, qr|js-([0-9]+[0-9A-Z_.\-]*[0-9]+).jar|);
+  upstream: kxver_scrape_url(undef, "https://developer.mozilla.org/en-US/docs/Rhino/Downloads_archive", qr|rhino([0-9]+_[0-9A-Z_.\-]*[0-9]+)\.zip|);
+
+opt:
+
+  - build:
+    - sh: |
+        JAVA_HOME="$(cd ../${KX_OPENJDK_7_BIN}; pwd -P)"; export JAVA_HOME
+        XB="$(cd ../${KX_XMLBEANS}; pwd -P)"
+        ant \
+            -Dxbean.jar=${XB}/lib/xbean.jar \
+            -Djsr173.jar=${XB}/lib/jsr173_1.0_api.jar \
+          jar
+
+  # No test suite
+
+  - install:
+    - sh: |
+        mkdir -pv ${KX_PREFIX}/share/java
+        install -Dm644 js.jar ${KX_PREFIX}/share/java/js-${KX_RHINO_VERSION}.jar
+        ln -s js-${KX_RHINO_VERSION}.jar ${KX_PREFIX}/share/java/js.jar
+

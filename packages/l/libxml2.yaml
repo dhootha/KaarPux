@@ -1,0 +1,27 @@
+package:
+  name: libxml2
+  version: 2.9.1
+  www: http://xmlsoft.org/
+  short: XML C parser and toolkit developed for the Gnome project (but usable outside of the Gnome platform).
+
+download:
+  url: ftp://xmlsoft.org/libxml2
+  file_tar_gz: ~
+  checksum: fd3c64cb66f2c4ea27e934d275904d92cec494a8e8405613780cbc8a71680fdb
+
+version:
+  installed_pkgconfig: libxml-2.0
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~     
+
+verify_cli: |
+  kx_cli_success xml2-config "--version"
+
+# TODO: verify_cli: real testcases

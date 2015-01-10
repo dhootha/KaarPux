@@ -1,0 +1,23 @@
+package:
+  name: atk
+  version: 2.14.0
+
+download:
+  gnomexz: ~
+  checksum: 2875cc0b32bfb173c066c22a337f79793e0c99d2cc5e81c4dac0d5a523b8fbad
+
+version:
+  installed_pkgconfig: ~
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

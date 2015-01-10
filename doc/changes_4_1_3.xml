@@ -1,0 +1,47 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_1_3">
+<title>Changes in KaarPux version 4.1.3</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.1.3</systemitem> released on <systemitem>2014-02-23</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+		Flash player version 11.2.202.341
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_1_3_upd">
+<title>Packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.341
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/26268613c23ac9a9c6e417b4a05a78f1c954458a/">26268613</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

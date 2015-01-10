@@ -1,0 +1,73 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="bootstrap_directory">
+<title>The kaarpux/bootstrap directory</title>
+
+<!-- ============================================================ -->
+
+<para>
+The <filename class="directory">kaarpux/bootstrap</filename> directory 
+is created by <filename>kaarpux/master/make_scripts.sh</filename>
+and will contain the files needed to bootstrap &kx; on the host system.
+</para>
+
+<para>
+<variablelist>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/bootstrap/build</filename></term>
+	<listitem><para>
+		Contains a subdirectory for each bootstrap step:
+		<filename class="directory">kaarpux/master/build/bootstrap_[1-8]</filename>.
+		Each package gets unpacked and build in a sub-sub-directory.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/bootstrap/chroot_scripts</filename></term>
+	<listitem><para>
+		Scripts which are used in the <application>chroot</application> during bootstrap.
+		Copied from <filename class="directory">kaarpux/master/chroot_scripts</filename>
+		by <filename>kaarpux/master/make_scripts.sh</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/bootstrap/host_scripts</filename></term>
+	<listitem><para>
+		Scripts which are used on the host system during bootstrap.
+		Copied from <filename class="directory">kaarpux/master/host_scripts</filename>
+		by <filename>kaarpux/master/make_scripts.sh</filename>.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/bootstrap/log</filename></term>
+	<listitem><para>
+		Contains a subdirectory for each bootstrap step:
+		<filename class="directory">kaarpux/master/log/bootstrap_[1-8]</filename>.
+		During bootstrap, each step is logged in a file in this subdirectory.
+		During bootstrap, the special subdirectory <filename class="directory">kaarpux/master/log/files</filename>
+		will be populated with a list of files for each step.
+	</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term><filename class="directory">kaarpux/bootstrap/shinc</filename></term>
+	<listitem><para>
+		Files included by shell scripts.
+	</para></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+
+</section>
+

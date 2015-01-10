@@ -1,0 +1,10 @@
+package:
+  name: xorg-lib1
+  version: 7.7
+
+xorg:
+
+  - lib_modules: |
+      P fdd477320aeb5cdd67272838722d6b7d544887dfe7de46e1e7cc0c27c2bea4f2  libXau-1.0.8.tar.bz2
+      . 9ace6d4230f9dce4ed090692f82f613253ada8f887b23b3d8ff3dd4e3a7c118e  libXdmcp-1.1.1.tar.bz2
+

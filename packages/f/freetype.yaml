@@ -1,0 +1,34 @@
+package:
+  name: freetype
+  version: 2.5.3
+  www: http://www.freetype.org
+  short: A Free, High-Quality, and Portable Font Engine
+
+download:
+  sourceforge: ~
+  file_tar_bz2: ~
+  checksum: c0848b29d52ef3ca27ad92e08351f023c5e24ce8cea7d8fe69fc96358e65f75e
+  verify: sig
+
+version:
+  installed: >
+    kxver_header_file_full("/include/freetype2/freetype.h",
+    qr|FREETYPE_MAJOR\D*([0-9]+)|,
+    qr|FREETYPE_MINOR\D*([0-9]+)|,
+    qr|FREETYPE_PATCH\D*([0-9]+)|);
+  upstream: kxver_upstream_sourceforge("freetype", "freetype2", "freetype");
+
+linux:
+
+  - build:
+    - echo: Preconfigure
+    - sh: sed -i -e "/AUX.*.gxvalid/s@^# @@" -e "/AUX.*.otvalid/s@^# @@" modules.cfg  
+    - sh: sed -i -r -e 's:.*(#.*SUBPIXEL.*) .*:\1:' include/config/ftoption.h
+    - configure_kx: --disable-static
+    - make: ~
+
+  - install:
+    - install: ~
+
+verify_cli: |
+  kx_cli_match_success "freetype-config --libs" { lfreetype }

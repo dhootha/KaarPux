@@ -1,0 +1,26 @@
+package:
+  name: efibootmgr
+  version: 0.6.0
+  www: http://linux.dell.com/efibootmgr/efibootmgr.txt
+  short: |
+      Extensible Firmware Interface (EFI) Boot Manager.  This application
+      can create and destroy boot entries, change the boot order, change
+      the next running boot option, and more.
+
+download:
+  url: http://linux.dell.com/efibootmgr/efibootmgr-${KX_EFIBOOTMGR_VERSION}
+  file_tar_gz: ~
+  checksum: 1c9b0852df7932c410865e296a38fe66e39a26e10c9c1a7ff34fca87f3e25f53
+
+version: ~
+
+bootstrap_8:
+
+  - make: ~
+  # No testsuite
+  - sh: |
+      install -D -m755 src/efibootmgr/efibootmgr /bin/efibootmgr
+      install -D -m644 src/man/man8/efibootmgr.8 /share/man/man8/efibootmgr.8
+
+verify_cli: |
+  kx_cli_success efibootmgr --version

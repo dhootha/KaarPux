@@ -1,0 +1,34 @@
+package:
+  name: evolution
+  version: 3.12.8
+  www: http://projects.gnome.org/evolution/
+  short: Evolution provides integrated mail, addressbook and calendaring functionality to users of the GNOME desktop.
+
+download:
+  gnomexz: ~
+  checksum: 6a6996ed350e2bc09ecb63befdbc9cfbd9d1097e0ff77033e9bafd1f7b5a6414
+
+version:
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - configure_kx_bash: >
+        --disable-gtk-doc
+        --disable-static
+        --enable-plugins=no
+        --disable-pst-import
+        --disable-bogofilter
+        --disable-spamassassin
+        --disable-text-highlight
+        --disable-gtkspell
+        --disable-schemas-compile
+
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

@@ -1,0 +1,19 @@
+package:
+  name: Sphinx
+  version: 1.2.3
+  www: http://sphinx.pocoo.org/
+  short: Python2 documentation generator
+
+download:
+  url: http://pypi.python.org/packages/source/S/Sphinx
+  file_tar_gz: ~
+  checksum: a98c93124035b4cd7183604aec656cb3
+
+version: ~
+
+linux:
+  - build:
+    - sh: python setup.py build
+  - install:
+    - sh: python setup.py install
+

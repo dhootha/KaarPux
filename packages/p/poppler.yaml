@@ -1,0 +1,32 @@
+package:
+  name: poppler
+  version: 0.26.5
+  www: http://poppler.freedesktop.org/
+  short: Poppler is a PDF rendering library based on the xpdf-3.0 code base.
+
+download:
+  url: http://poppler.freedesktop.org/
+  file_tar_xz: ~
+  checksum: de7de5fa337431e5d1f372e8577b3707322f1dbc1dc28a70f2927476f134d1ee
+
+version:
+  installed_pkgconfig: ~
+
+linux:
+  - build:
+    - use_gcc: ~
+    - configure_kx_bash: >
+        --enable-zlib
+        --enable-libcurl
+        --enable-xpdf-headers
+        --disable-gtk-doc-html
+        --disable-static
+    - make: ~
+  # 'make check' does nothing
+  - install:
+    - install: ~
+
+verify_cli: |
+  kx_cli_match_success "/bin/pdftocairo -v" { pdftocairo Poppler }
+  kx_cli_sh poppler poppler_test.sh
+

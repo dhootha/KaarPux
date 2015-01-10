@@ -1,0 +1,253 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_2_0_0">
+<title>Changes in KaarPux version 2.0.0</title>
+
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>2.0.0</systemitem> released on <systemitem>2012-08-21</systemitem>
+</para>
+
+<para>
+	Controlling system boot with <systemitem>systemd</systemitem> instead of <systemitem>sysvinit</systemitem>.
+</para>
+
+
+<!-- ============================================================ -->
+
+<section id="changes_2_0_0_systemd">
+<title>Use systemd instead of sysvinit</title>
+
+	<para>
+		Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62f65b25a04652aff3d28994ebf1efae1428b9c2/">62f65b25</ulink>,
+			<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f089d6fbea4403a43d0431660518b14051ec008e/">f089d6fb</ulink>.
+	</para>
+
+	<section id="changes_2_0_0_intro">
+		<title>Introducing systemd</title>
+		<para>
+			<systemitem>systemd</systemitem> is a system and service manager for Linux, compatible with SysV and LSB init scripts.
+			<systemitem>systemd</systemitem> provides aggressive parallelization capabilities,
+			uses socket and D-Bus activation for starting services, offers on-demand starting of daemons,
+			keeps track of processes using Linux control groups, supports snapshotting and restoring of the system state,
+			maintains mount and automount points and implements an elaborate transactional dependency-based service control logic.
+		</para><para>
+			See <ulink url="http://freedesktop.org/wiki/Software/systemd/">systemd</ulink> for more information and links.
+		</para><para>
+			Replacing <systemitem>sysvinit</systemitem> with <systemitem>systemd</systemitem> has some advantages:
+			<itemizedlist>
+			<listitem><para>
+			we get rid of a lot of unmaintained <filename class="directory">init.d</filename> scripts
+			</para></listitem><listitem><para>
+			we get much faster booting
+			</para></listitem><listitem><para>
+			we have a cleaner definition on what to do on boot
+			</para></listitem>
+			</itemizedlist>
+		</para><para>
+			However, the disadvantages:
+			<itemizedlist>
+			<listitem><para>
+			we need to pull a lot of ("unwanted") packages into the core system
+			</para></listitem><listitem><para>
+			we loose the <filename class="directory">/</filename> vs.
+			<filename class="directory">/usr</filename> separation,
+			so we cannot boot without <filename class="directory">/usr</filename> mounted
+			</para></listitem><listitem><para>
+			we cannot boot without e.g. <systemitem>dbus</systemitem>
+			</para></listitem>
+			</itemizedlist>
+		</para><para>
+			To the author of &kx; the advantages seems to outweight the disadvantages!
+			So, &kx; is switching to <systemitem>systemd</systemitem>.
+		</para><para>
+			Packages have been added, removed, and modified (see below) and:
+			<itemizedlist>
+			<listitem><para>
+			remove all <filename class="directory">/etc/rc.d scripts</filename>
+			</para></listitem><listitem><para>
+			remove all <filename class="directory">/etc/sysconfig files</filename>
+			</para></listitem><listitem><para>
+			add configuration files for <systemitem>systemd</systemitem>
+			</para></listitem><listitem><para>
+			move a lot of prerequisite packages from <systemitem>linux_base</systemitem> to <systemitem>bootstrap</systemitem>
+			</para></listitem>
+			</itemizedlist>
+		</para>
+	</section>
+
+
+<!-- ============================================================ -->
+
+	<section id="changes_2_0_0_add">
+		<title>Added packages</title>
+		<para>
+			The following package has been added:
+
+			<itemizedlist>
+			<listitem><para>
+				<systemitem>systemd</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62f65b25a04652aff3d28994ebf1efae1428b9c2/">62f65b25</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f089d6fbea4403a43d0431660518b14051ec008e/">f089d6fb</ulink>)
+			</para></listitem>
+			</itemizedlist>
+
+		</para>
+
+	</section>
+
+
+<!-- ============================================================ -->
+	<section id="changes_2_0_0_removed">
+		<title>Removed packages</title>
+		<para>
+			The following packages have been removed:
+
+			<itemizedlist>
+			<listitem><para>
+				<systemitem>sysvinit</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62f65b25a04652aff3d28994ebf1efae1428b9c2/">62f65b25</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f089d6fbea4403a43d0431660518b14051ec008e/">f089d6fb</ulink>)
+			</para></listitem><listitem><para>
+				<systemitem>sysklogd</systemitem>; now handled by the journal in <systemitem>systemd</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62f65b25a04652aff3d28994ebf1efae1428b9c2/">62f65b25</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f089d6fbea4403a43d0431660518b14051ec008e/">f089d6fb</ulink>)
+			</para></listitem><listitem><para>
+				<systemitem>udev</systemitem>; now part of <systemitem>systemd</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62f65b25a04652aff3d28994ebf1efae1428b9c2/">62f65b25</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f089d6fbea4403a43d0431660518b14051ec008e/">f089d6fb</ulink>)
+			</para></listitem><listitem><para>
+				<systemitem>ConsoleKit</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f8b9c4cb64777bde5fe5ed0414e6b390e1e0cef7/">f8b9c4cb</ulink>)
+			</para></listitem>
+			</itemizedlist>
+
+		</para>
+	</section>
+
+
+<!-- ============================================================ -->
+
+	<section id="changes_2_0_0_modified">
+		<title>Modified packages</title>
+		<para>
+			The following packages have been modified to support <systemitem>systemd</systemitem>:
+
+			<itemizedlist>
+			<listitem><para>
+				<systemitem>gnome-settings-daemon</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/de832eead9b592ee7145ba3c966185e79301b0e9/">de832eea</ulink>)
+			</para></listitem><listitem><para>
+				<systemitem>cups</systemitem>; updated to version 1.5.4
+				(Commit	<ulink url="http://sourceforge.net/p/kaarpux/code/ci/bb2604dbef4cfc3f922134c47875f3806349d307/">bb2604db</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f92de3882ea842c85f46d8a5e062dc8d8b9d9e4b/">f92de388</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/a32e3e2c98a689e6a1fb8a2bc4b2b7884e27c7a0/">a32e3e2c</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/efe657a500f8278464c50a6bba416dac62b10ce7/">efe657a5</ulink>)
+			</para></listitem><listitem><para>
+				<systemitem>pulseaudio</systemitem>; updated to v 2.1
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/48926ba845f6bd2b03d6efb06c208ed042812119/">48926ba8</ulink>)
+			</para></listitem><listitem><para>
+				<systemitem>NetworkManager</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/221e5198c0e8d965dae09b9e1e216222d884161b/">221e5198</ulink>,
+					<ulink url="http://sourceforge.net/p/kaarpux/code/ci/b36e1c21e4177255071ce34619e00835f1f56e3d/">b36e1c21</ulink>)
+			</para></listitem><listitem><para>
+
+				<systemitem>iptables</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8f0c6e2fd1f3137d747317b0c81bfd86c9fa5507/">8f0c6e2f</ulink>,
+						<ulink url="http://sourceforge.net/p/kaarpux/code/ci/7bf611759695b9234a8b13b310c4184c8124fd2b/">7bf61175</ulink>)
+
+			</para></listitem><listitem><para>
+
+					<systemitem>openssh</systemitem>
+					(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4075c12155aa15f3d882714bec552f85ad0086a0/">4075c121</ulink>)
+
+			</para></listitem><listitem><para>
+
+				<systemitem>dhcpcd</systemitem>
+					(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2547aaa89f9143dfc88c00301e08a362daec77cc/">2547aaa8</ulink>)
+
+			</para></listitem><listitem><para>
+				<systemitem>usbutils</systemitem>; updated to version 006
+					(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/62f65b25a04652aff3d28994ebf1efae1428b9c2/">62f65b25</ulink>,
+						<ulink url="http://sourceforge.net/p/kaarpux/code/ci/f089d6fbea4403a43d0431660518b14051ec008e/">f089d6fb</ulink>)
+
+			</para></listitem><listitem><para>
+				<systemitem>gdm</systemitem>
+				(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/bf9ff663d540687c0727e8d8368d2ebe99a62539/">bf9ff663</ulink>)
+			</para></listitem>
+			</itemizedlist>
+
+		</para>
+	</section>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_2_0_0_other">
+<title>Other Changes</title>
+
+	<itemizedlist>
+
+		<listitem><para>
+			ADD: kx_changelog: Nifty little tool to generate yaml changelog from git
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4d1f6d2b63dbd3a2100201566abe6a2413a43c1f/">4d1f6d2b</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			IMPROVE: cyrus-sasl: make: -j 1
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2a0388951ef537b647b6271b1a3699b1ffdde668/">2a038895</ulink>)
+		</para></listitem>
+
+
+		<listitem><para>
+			IMPROVE: linux-pam: add /usr/lib/security symlink
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/dd0e038586f15ef7e7fe197c8e6d21915cbcddab/">dd0e0385</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			IMPROVE: dbus: add dbus-launch symlink
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4f0ba38f4b33f653ddb6591c3c0e07ec3610ba43/">4f0ba38f</ulink>)
+		</para></listitem>
+
+
+		<listitem><para>
+			FIX: wget: configuration files in /etc
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/066c288cb6fd57be329b705e2b4519df604c8d1c/">066c288c</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			FIX: systemtap: configuration files in /etc
+		</para><para>
+			(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c4f803b2b475fac64c59b00a4e19cf85a045da3e/">c4f803b2</ulink>)
+		</para></listitem>
+
+		<listitem><para>
+			<filename>motd</filename> removed; who cares anyway
+		</para></listitem>
+
+		<listitem><para>
+			Many documentation updates
+		</para></listitem>
+
+	</itemizedlist>
+
+</section>
+
+
+<!-- ============================================================ -->
+
+</section>

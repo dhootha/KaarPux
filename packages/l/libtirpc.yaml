@@ -1,0 +1,20 @@
+package:
+  name: libtirpc
+  version: 0.2.5
+  www: http://nfsv4.bullopensource.org/doc/tirpc_rpcbind.php
+  short: Libtirpc is a port of Suns Transport-Independent RPC library to Linux. 
+
+download:
+  sourceforge: ~
+  checksum: 62f9de7c2c8686c568757730e1fef66502a0e00d6cacf33546d0267984e002db
+
+version:
+  installed_pkgconfig: ~
+  upstream: kxver_upstream_sourceforge("libtirpc", "libtirpc", "libtirpc");
+
+bootstrap_8:
+  - configure_kx: --disable-static --disable-gssapi CFLAGS="-fPIC"
+  - make: ~
+  # No testsuite
+  - install: ~
+

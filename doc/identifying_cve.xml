@@ -1,0 +1,26 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="identifying_cve">
+<title>Identifying Relevant CVE's</title>
+
+<!-- ============================================================ -->
+
+<para>
+The &kx; documentation contains a list of <xref linkend="cve" />.
+The documentation is generated from the file 
+<filename>kaarpux/master/cve_list.txt</filename>.
+</para><para>
+The tool <command>kaarpux/tools/kx_cve.sh</command> can be used to 
+identify new vulnerabilities.
+</para>
+
+<!-- ============================================================ -->
+
+</section>
+

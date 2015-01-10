@@ -1,0 +1,25 @@
+package:
+  name: colord-gtk
+  version: 0.1.25
+  www: http://www.freedesktop.org/software/colord/
+  short: GTK+ bindings for Colord
+
+download:
+  url: http://www.freedesktop.org/software/colord/releases
+  file_tar_xz: ~
+  checksum: bd0f91c4348acba41018222915cd62917882dd35883bcc81848d089e13a70b0a
+  verify: asc
+
+version:
+  installed_pkgconfig: ~
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static
+    - make: ~
+
+  # Tests do not work outside GNOME desktop
+
+  - install:
+    - install: ~

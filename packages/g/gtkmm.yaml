@@ -1,0 +1,24 @@
+package:
+  name: gtkmm
+  version: 3.14.0
+
+download:
+  gnomexz: ~
+  checksum: d9f528a62c6ec226fa08287c45c7465b2dce5aae5068e9ac48d30a64a378e48b
+
+version:
+  installed_pkgconfig: gtkmm-3.0
+  upstream_gnome: ~
+
+
+linux:
+
+  - build:
+    - configure_kx: --disable-documentation --disable-static
+    - make: ~
+
+  - test:
+    - check: ~
+
+  - install:
+    - install: ~

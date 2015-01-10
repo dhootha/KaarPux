@@ -1,0 +1,26 @@
+package:
+  name: accountsservice
+  version: 0.6.39
+  www: http://www.freedesktop.org/wiki/Software/AccountsService
+  short: |
+      AccountsService is a D-Bus service for accessing the list of user accounts
+      and information attached to those accounts.
+
+download:
+  url: http://www.freedesktop.org/software/accountsservice
+  file_tar_xz: ~
+  checksum: f938a3d517ddd44c7605b49f11028198071906e0fde96f22c7e16d1eb275335d
+
+version:
+  installed: kxver_sh_trailing "/libexec/accounts-daemon --version";
+
+linux:
+
+  - build:
+    - configure_kx: --disable-gtk-doc --disable-static
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

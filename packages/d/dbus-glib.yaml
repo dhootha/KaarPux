@@ -1,0 +1,27 @@
+package:
+  name: dbus-glib
+  version: 0.102
+  www: http://www.freedesktop.org/wiki/Software/dbus
+  short: glib bindings for dbus
+
+download:
+  url: http://dbus.freedesktop.org/releases/dbus-glib
+  file_tar_gz: ~
+  checksum: 6964ed585bb8149a14ab744b5ded5e77cf71ec5446e6dcc5fcf5eebcc52df29c
+  verify: asc
+
+version:
+  installed_pkgconfig: dbus-glib-1
+
+linux:
+  - build:
+    - configure_kx: --libexecdir=/lib/dbus --disable-static
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~     
+# TODO: API documentation
+
+verify_cli: |
+  kx_cli_match_success "dbus-binding-tool --version" { D-BUS Binding Tool }

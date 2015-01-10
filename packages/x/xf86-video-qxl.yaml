@@ -1,0 +1,24 @@
+package:
+  name: xf86-video-qxl
+  version: 0.1.2
+
+download:
+  url: http://xorg.freedesktop.org/releases/individual/driver
+  file_tar_bz2: ~
+  checksum: 43a7d1e7b60ae32941b6a4359e26de01941012d717d7a7747affd379debc5227
+
+version: ~
+
+linux:
+  - build:
+    # Patch from Fedora
+    # http://pkgs.fedoraproject.org/cgit/xorg-x11-drv-qxl.git/tree/0005-spiceqxl_display-only-use-qxl-interface-after-it-is-.patch  
+    - patch: use-after-added.patch
+    - configure_kx: --enable-xspice=yes
+    - make: ~
+
+  # No testcases included
+
+  - install:
+    - install: ~     
+    - sh: cp examples/spiceqxl.xorg.conf.example /etc/X11/spiceqxl.xorg.conf

@@ -1,0 +1,79 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="what_is_kaarpux">
+<title>What is KaarPux?</title>
+
+<!-- ============================================================ -->
+
+<para>
+&kx; is a Linux distribution, where everything is build (automatically) from source.
+See e.g. <xref linkend="building_overview"/>
+</para>
+
+<para>
+&kx; is aimed at developers who want to build and explore a Linux distribution,
+where they have complete control over the build process.
+</para>
+
+<para>
+&kx; features:
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://kernel.org/">Linux 3 kernel</ulink>
+	</para></listitem>
+	<listitem><para>
+		<ulink url="http://www.gnu.org/">GNU build system and tools; gcc compiler</ulink>
+	</para></listitem>
+	<listitem><para>
+		<ulink url="http://x.org/">X.Org X11 server</ulink>
+	</para></listitem>
+	<listitem><para>
+		<ulink url="http://www.gnome.org/gnome-3/">GNOME 3 desktop environment</ulink>
+	</para></listitem>
+	<listitem><para>
+		Mozilla
+		<ulink url="https://www.mozilla.org/firefox">Firefox Web Browser</ulink>
+		and
+		<ulink url="https://www.mozilla.org/thunderbird/">Thunderbird Mail</ulink>
+	</para></listitem>
+	<listitem><para>
+		<ulink url="http://icedtea.classpath.org/">IcedTea Java</ulink>
+		based on
+		<ulink url="http://openjdk.java.net/">OpenJDK</ulink>
+	</para></listitem>
+	<listitem><para>
+		<ulink url="http://www.libreoffice.org/">Libre Office personal productivity suite</ulink>
+	</para></listitem>
+	<listitem><para>
+		And <ulink url="packages/index.html">600 other software packages</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+<para>
+The bootstrap part of &kx; is based on <ulink url="http://www.linuxfromscratch.org/">Linux From Scratch</ulink>,
+but fully automated.
+</para>
+
+<para>
+Known limitations:
+<itemizedlist>
+	<listitem><para>
+		&kx; is not (yet) a multilib system, so 
+		<application>xen</application> and <application>skype</application>
+		will not build on a <systemitem>x86_64</systemitem> (64-bit) platform.
+	</para></listitem>
+	<listitem><para>
+		No specific support for laptops.
+	</para></listitem>
+</itemizedlist>
+</para>
+
+
+</section>

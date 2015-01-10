@@ -1,0 +1,27 @@
+package:
+  name: rdesktop
+  version: 1.8.2
+  www: http://www.rdesktop.org/
+  short: client for Windows Remote Desktop Services
+
+download:
+  sourceforge: ~
+  file_tar_gz: ~
+  checksum: fbbf23d49d34c215c5a59b2d91c008b61ead4c9fbe1ccb7223973aed24061a78
+
+version:
+  installed: kxver_sh_pattern("rdesktop 2>&1 | tail -n +2", qr|Version ([0-9.]+)\.|);
+  upstream: kxver_upstream_sourceforge("rdesktop", "rdesktop", "rdesktop");
+
+linux:
+
+  - build:
+    - configure_kx: >
+        --disable-credssp
+        --disable-smartcard
+    - make: ~
+
+  # No test suite
+
+  - install:
+    - install: ~

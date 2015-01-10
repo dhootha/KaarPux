@@ -1,0 +1,383 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="xen_virtualization">
+<title>XEN Virtualization</title>
+
+<!-- ============================================================ -->
+
+<para>
+If you want to set up your &kx; system to support 
+XEN Virtualization, follow the steps below.
+</para>
+
+<para>
+Those steps will set up your &kx; system as a 
+XEN (dom0) host, which can be used to run
+XEN (domU) guests (such as &kx; itself).
+</para>
+
+<para>
+XEN can be used in many, many ways; 
+those steps show you just one way of using it.
+</para>
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_documentation">
+<title>XEN documentation</title>
+
+<para>
+<itemizedlist>
+	<listitem><para>
+		<ulink url="http://xen.org/">XEN homepage</ulink>
+	</para></listitem><listitem><para>
+		<ulink url="http://wiki.xen.org/wiki/Main_Page">wiki</ulink>
+	</para></listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_overview">
+<title>Overview</title>
+
+<para>
+Normally, GRUB will boot your &kx; kernel, which will in turn
+initialize the &kx; system.
+With XEN, GRUB will boot a special hypervisor,
+which will in turn boot your &kx; kernel, which will in turn
+initialize the &kx; system.
+</para>
+
+<para>
+The &kx; system (dom0) booted on top of the XEN hypervisor,
+works as a "normal" &kx; system.
+However, you can now launch guest (domU) guests 
+in "parallel" with the (dom0) host.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_network_bridge">
+<title>Setting up a network bridge</title>
+
+<para>
+In order for several (virtual) systems to share a physical network connection,
+you need to set up a <emphasis>network bridge</emphasis>.
+The setup can be accomplished using the tools in <xref linkend="pkg_bridge-utils" />.
+</para>
+
+<para>
+Unfortunatly <xref linkend="pkg_NetworkManager" /> does not support bridging, so:
+</para>
+
+<para>
+Create a file called <filename>/etc/systemd/system/bridge.service</filename> containing
+<programlisting>
+[Unit]
+Description=Network Bridge
+Before=dhcpcd@br0.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/sbin/brctl addbr br0
+ExecStart=/sbin/brctl addif br0 eth0
+ExecStart=/sbin/ifconfig eth0 up
+ExecStart=/sbin/ifconfig br0 up
+
+ExecStop=/sbin/ifconfig br0 down
+ExecStop=/sbin/brctl delbr br0
+
+[Install]
+WantedBy=network.target
+</programlisting>
+
+Then execute
+<programlisting>
+systemctl stop NetworkManager.service
+systemctl disable NetworkManager.service
+
+systemctl stop dhcpcd@eth0.service 
+rm /etc/systemd/system/multi-user.target.wants/dhcpcd\@eth0.service 
+
+systemctl start bridge.service
+systemctl enable bridge.service
+
+ln -svf ../dhcpcd\@.service /etc/systemd/system/multi-user.target.wants/dhcpcd\@br0.service 
+systemctl start dhcpcd\@br0.service
+
+</programlisting>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_host">
+<title>Boot the host under XEN</title>
+
+<para>
+Create an entry similar to
+<programlisting>
+menuentry "XEN 4.1.2 w/ KaarPux GNU/Linux (1.0.0) 3.4.4-kx-0fb469d9" --class gnu-linux --class gnu --class os {
+        insmod part_msdos
+        insmod ext2
+        set root='(hd0,msdos7)'
+        search --no-floppy --fs-uuid --set=root 0e371fde-d5e9-4122-9a12-104bf738bb8f
+        echo 'Loading Xen 4.1.2 ... with Kaarpux ...'
+        multiboot /boot/xen-4.1.2.gz dom0_mem=1024M
+        module /boot/vmlinuz-3.4.4-kx-0fb469d9 root=UUID=0e371fde-d5e9-4122-9a12-104bf738bb8f
+        module /boot/initramfs-3.4.4-kx-0fb469d9.img
+}
+</programlisting>
+in <filename>/boot/grub/grub.cfg</filename>
+</para>
+<para>
+You can find suitable vaules with
+<programlisting>
+uname -a
+ls -lrt /boot
+blkid
+</programlisting>
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_guest">
+<title>Create a guest disk in a file</title>
+
+<para>
+You will need a directory where guest disk images
+are to be kept, with more than 64G available space.
+Create a root and a swap image there:
+
+<programlisting>
+&kx_as_root;
+IMGDIR=/big
+DEVIMG=${IMGDIR}/kx1.raw
+SWAPIMG=${IMGDIR}/sw1.raw
+dd if=/dev/zero of=${DEVIMG} bs=1 count=0 seek=64G
+dd if=/dev/zero of=${SWAPIMG} bs=1 count=0 seek=4G
+losetup /dev/loop0 ${DEVIMG}
+mke2fs -t ext4 -jv /dev/loop0
+fsck /dev/loop0
+losetup /dev/loop1 ${SWAPIMG}
+mkswap /dev/loop1
+losetup -D
+</programlisting>
+
+Mount the guest disk on the host:
+
+<programlisting>
+MNT=/mnt
+mount -o loop ${DEVIMG} ${MNT}
+</programlisting>
+
+You can now copy your guest system disk onto the image.
+If you have created a tarball as instructed in
+<xref linkend="copying_kaarpux_create_tarball"/>
+you may use a command like
+
+<programlisting>
+TAR=/somewhere/kaarpux.tar.gz
+cd ${MNT}
+tar xzf ${TAR}
+</programlisting>
+
+</para>
+<para>
+
+Note that using a file-backed disk image may lead to bad IO performance.
+In particular the write performance will suffer a lot,
+if the host file system is journalled.
+
+</para>
+<para>
+
+Alternatively, you can use a complete partition as described below.
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_partition">
+<title>Create a guest disk on a partition</title>
+
+<para>
+
+<programlisting>
+&kx_as_root;
+&kx_envwarn;
+DEV=/dev/sdb1
+SWAP=/dev/sdb6
+mke2fs -t ext4 -jv ${DEV}
+fsck ${DEV}
+mkswap ${SWAP}
+</programlisting>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_tweaking">
+<title>Tweaking the Guest Disk</title>
+
+<para>
+In order to make the guest &kx; system work as a XEN (domU) guest,
+make the following changes.
+</para>
+
+<para>
+
+<filename>/etc/fstab</filename>:
+<programlisting>
+/dev/xvda1     /            ext4  defaults        1     1
+/dev/xvdb1     swap         swap  pri=1           0     0
+</programlisting>
+
+</para>
+<para>
+
+Unmount:
+
+<programlisting>
+umount ${MNT}
+</programlisting>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_kernel">
+<title>Copying domU kernel to dom0</title>
+
+<para>
+It seems that <application>pvgrub</application>
+does not support <systemitem>ext4</systemitem>.
+This means, that we have to boot the guest kernel
+off the host (dom0) disk.
+</para>
+
+<para>
+So, copy the kernel files from the guest disk <filename>/boot</filename>
+to the host disk <filename>/boot/xen</filename>.
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_starting">
+<title>Starting XEN on the dom0 host system</title>
+
+<para>
+
+Start XEN on the dom0 host system:
+
+<programlisting>
+&kx_as_root;
+modprobe xen-netback
+modprobe xen-blkback
+modprobe xen-pciback
+modprobe xen-evtchn
+modprobe xen-gntdev
+modprobe xen-gntalloc
+/etc/rc.d/init.d/xencommons start
+</programlisting>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="xen_virtualization_launching">
+<title>Launching the domU guest system</title>
+
+<para>
+
+For guest disks in a file, create a domU guest configuration file <filename>kx1.cfg</filename> similar to:
+
+<programlisting>
+name="kx1"
+memory=1024
+vcpus=2
+builder="generic"
+disk=[ 'file:/big/kx1.raw,xvda1,w', 'file:/big/sw1.raw,xvdb1,w' ]
+vif = [ 'bridge=br0,mac=00:16:3E:57:76:01' ]
+kernel="/boot/xen/vmlinuz-3.4.4-kx-d811959c"
+ramdisk="/boot/xen/initramfs-3.4.4-kx-d811959c.img"
+root="/dev/xvda1"
+boot="c"
+</programlisting>
+
+Launching with
+
+<programlisting>
+xl -v create kx1.cfg -c
+</programlisting>
+
+should leave you at the console of the domU guest.
+
+</para>
+<para>
+
+For guest disk in a partition, the configuration file <filename>kx1.cfg</filename> may look something like:
+
+<programlisting>
+name="kx1"
+memory=1024
+vcpus=2
+builder="generic"
+disk=[ 'phy:/dev/sdb1,xvda1,w', 'phy:/dev/sdb6,xvdb1,w' ]
+vif = [ 'bridge=br0,mac=00:16:3E:57:76:01' ]
+kernel="/boot/xen/vmlinuz-3.4.4-kx-d811959c"
+ramdisk="/boot/xen/initramfs-3.4.4-kx-d811959c.img"
+root="/dev/xvda1"
+boot="c"
+</programlisting>
+
+To enable <application>vnc</application> access, the configuration file <filename>kx1.cfg</filename> may look something like:
+
+<programlisting>
+name="kx1"
+memory=900
+vcpus=2
+builder="generic"
+disk=[ 'phy:/dev/sdb1,xvda1,w', 'phy:/dev/sdb6,xvdb1,w' ]
+vif = [ 'bridge=br0,mac=00:16:3E:57:76:01' ]
+vfb=[ 'vnc=1' ]
+kernel="/boot/xen/vmlinuz-3.4.4-kx-d811959c"
+ramdisk="/boot/xen/initramfs-3.4.4-kx-d811959c.img"
+root="/dev/xvda1"
+boot="c"
+</programlisting>
+
+</para>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>
+

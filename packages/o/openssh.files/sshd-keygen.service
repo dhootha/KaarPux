@@ -1,0 +1,8 @@
+[Unit]
+Description=OpenSSH Server Key Generation
+ConditionPathExists=|!/etc/ssh/ssh_host_rsa_key
+
+[Service]
+Environment="SSH_USE_STRONG_RNG=14"
+ExecStart=/bin/ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa -b 4096
+Type=oneshot

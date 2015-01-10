@@ -1,0 +1,22 @@
+package:
+  name: gnome-session
+  version: 3.14.0
+
+download:
+  gnomexz: ~
+  checksum: b1e6e805478b863eda58e61ecd0e13961f63dd76e2d49692affc5a1d00f2c184
+
+version:
+  upstream_gnome: ~
+
+linux:
+
+  - build:
+    - use_gcc: ~
+    - configure_kx: --disable-static -disable-docbook-docs --disable-schemas-compile
+    - make: ~
+
+  # 'make check' does nothing
+
+  - install:
+    - install: ~

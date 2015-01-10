@@ -1,0 +1,47 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2012: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="opt_phase">
+<title>The OPT phase</title>
+
+<!-- ============================================================ -->
+
+<para>
+During the Linux phase, packages are build by <systemitem class='username'>kaarpux</systemitem>,
+but installed by <systemitem class='username'>root</systemitem> into the 
+<filename class="directory">/</filename>
+and
+<filename class="directory">/usr</filename>
+file systems
+</para>
+
+<para>
+During the opt phase, packages are build and installed by
+<systemitem class='username'>kaarpux</systemitem>, as the
+<filename class="directory">/opt</filename>
+filesystem is owned by <systemitem class='username'>kaarpux</systemitem>.
+In this way, you can "play" with the opt packages, without touching the basic system.
+</para>
+
+<para>
+Each opt package is installed in a subdirectory under
+<filename class="directory">/opt/kaarpux</filename>.
+At the end of each opt package installation, the files under
+<filename class="directory">/opt/kaarpux</filename>
+are soft-linked into
+<filename class="directory">/opt/bin</filename>,
+<filename class="directory">/opt/include</filename>,
+<filename class="directory">/opt/lib</filename>,
+etc.
+</para>
+
+
+<!-- ============================================================ -->
+
+</section>
+

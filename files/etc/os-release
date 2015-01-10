@@ -1,0 +1,9 @@
+NAME="KaarPux: GNU/Linux"
+VERSION="4.8.0 (Knud)"
+ID=kaarpux
+VERSION_ID=4.8.0
+PRETTY_NAME="KaarPux 4.8.0 (Knud)"
+ANSI_COLOR="1;32"
+HOME_URL="http://kaarpux.kaarposoft.dk"
+SUPPORT_URL="http://sourceforge.net/p/kaarpux/discussion/"
+BUG_REPORT_URL="http://sourceforge.net/p/kaarpux/tickets/"

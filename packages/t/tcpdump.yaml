@@ -1,0 +1,23 @@
+package:
+  name: tcpdump
+  version: 4.6.2
+  www: http://www.tcpdump.org/
+  short: Command-line packet analyzer.
+
+download:
+  url: http://www.tcpdump.org/release
+  file_tar_gz: ~
+  checksum: 524ee4d8e83a6c663f6879004216a9a5bcb1c68b11920d653eb87b79d008e0b8
+  verify: sig
+
+version:
+  installed_sh_trailing:  tcpdump -h
+
+linux:
+  - build:
+    - configure_kx: ~
+    - make: ~
+  - test:
+    - check: ~
+  - install:
+    - install: ~
