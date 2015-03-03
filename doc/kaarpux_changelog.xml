@@ -1,7 +1,7 @@
 <!--
 	KaarPux: http://kaarpux.kaarposoft.dk
 
-	Copyright (C) 2012-2014: Henrik Kaare Poulsen
+	Copyright (C) 2012-2015: Henrik Kaare Poulsen
 
 	License: http://kaarpux.kaarposoft.dk/license.html
 -->
@@ -9,6 +9,9 @@
 <chapter id="kaarpux_changelog">
 <title>KaarPux Changelog</title>
 
+&kx_changes_4_8_3;
+&kx_changes_4_8_2;
+&kx_changes_4_8_1;
 &kx_changes_4_8_0;
 &kx_changes_4_7_2;
 &kx_changes_4_7_1;

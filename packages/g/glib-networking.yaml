@@ -1,11 +1,11 @@
 package:
   name: glib-networking
-  version: 2.42.0
+  version: 2.42.1
   short: Network-related giomodules for glib.
 
 download:
   gnomexz: ~
-  checksum: 304dd9e4c0ced69094300e0b9e66cd2eaae7161b9fc3186536d11458677d820d
+  checksum: c06bf76da3353695fcc791b7b02e5d60c01c379e554f7841dc6cbca32f65f3a0
 
 version:
   installed: return "???";

@@ -1,6 +1,6 @@
 package:
   name: WebKit2
-  version: 2.7.2
+  version: 2.7.4
   www: http://webkitgtk.org/
   short: WebKitGTK+ is the port of the portable web rendering engine WebKit to the GTK+ platform.
 
@@ -24,12 +24,12 @@ download:
   url: http://webkitgtk.org/releases
   file: webkitgtk-${KX_WEBKIT2_VERSION}.tar.xz
   dir: webkitgtk-${KX_WEBKIT2_VERSION}
-  checksum: cd881ac4d49fe54f2a23c39d2b2e11970728da13
+  checksum: 5cb166c0ee984ed9dac6fa900e9eb763046c051c5b75d9db65533bd271e3ead5
   verify: sha1.asc
 
 version:
   installed: >
-    kxver_header_file_full("/include/webkitgtk-3.0/webkit/webkitversion.h",
+    kxver_header_file_full("/include/webkitgtk-4.0/webkit2/WebKitVersion.h",
     qr|WEBKIT_MAJOR_VERSION\s*\(([0-9]+)|,
     qr|WEBKIT_MINOR_VERSION\s*\(([0-9]+)|,
     qr|WEBKIT_MICRO_VERSION\s*\(([0-9]+)|);

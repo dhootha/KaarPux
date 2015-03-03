@@ -1,11 +1,11 @@
 package:
   name: xf86-input-wacom
-  version: 0.25.0
+  version: 0.27.0
 
 download:
   sourceforge: linuxwacom
   file_tar_bz2: ~
-  checksum: 338c29ec775859829d334d4c51a64b5baf3344ed957ffa0ae31d28f96a677c1a
+  checksum: d1280361595f28c273d237cb234c28ca77617f875207ee0424a385a41407ec42
 
 version:
   installed_na: ~

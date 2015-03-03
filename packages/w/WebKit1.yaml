@@ -1,6 +1,6 @@
 package:
   name: WebKit1
-  version: 2.4.7
+  version: 2.4.8
   www: http://webkitgtk.org/
   short: WebKitGTK+ is the port of the portable web rendering engine WebKit to the GTK+ platform.
 
@@ -22,7 +22,7 @@ download:
   url: http://webkitgtk.org/releases
   file: webkitgtk-${KX_WEBKIT1_VERSION}.tar.xz
   dir: webkitgtk-${KX_WEBKIT1_VERSION}
-  checksum: 10d4cd1c1f7454adc576c6b97fa3d262b6665764
+  checksum: 68f11559cb178679ca92acc9e3a3d7febede7acb7b98afd7fb761875bbc6bd23
   verify: sha1.asc
 
 version:
@@ -32,7 +32,7 @@ version:
     qr|WEBKIT_MINOR_VERSION\s*\(([0-9]+)|,
     qr|WEBKIT_MICRO_VERSION\s*\(([0-9]+)|);
 
-  upstream: kxver_scrape_url("webkitgtk", $url);
+  upstream: kxver_scrape_url(undef, $url, qr|webkitgtk-(2\.4\.[0-9]+)\.tar|);
 
 linux:
   - build:

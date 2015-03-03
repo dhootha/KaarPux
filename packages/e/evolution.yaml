@@ -1,12 +1,12 @@
 package:
   name: evolution
-  version: 3.12.8
+  version: 3.12.10
   www: http://projects.gnome.org/evolution/
   short: Evolution provides integrated mail, addressbook and calendaring functionality to users of the GNOME desktop.
 
 download:
   gnomexz: ~
-  checksum: 6a6996ed350e2bc09ecb63befdbc9cfbd9d1097e0ff77033e9bafd1f7b5a6414
+  checksum: 12d2cd7af1f8a21fd9f701e6908e7b539cdec9ec68b0ebd92e746d7580937f75
 
 version:
   upstream_gnome: ~

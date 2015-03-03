@@ -16,6 +16,8 @@ version:
 linux:
 
   - build:
+    # CVE-2014-9449
+    - patch: changeset_r3264_r3263.diff
     - sh: |
         CPPFLAGS="-D_FILE_OFFSET_BITS=64"
         export CPPFLAGS

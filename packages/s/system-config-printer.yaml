@@ -1,13 +1,13 @@
 package:
   name: system-config-printer
-  version: 1.5.1
+  version: 1.5.4
   www: http://cyberelk.net/tim/software/system-config-printer/
   short: configure a CUPS server (often the local machine) using the CUPS API.
 
 download:
   url: http://cyberelk.net/tim/data/system-config-printer/${KX_SYSTEM_CONFIG_PRINTER_VERSION_MM}
   file_tar_xz: ~
-  checksum: 6132bc979e279bc5c508058ce1c770504db2d0c172eb8233c410e2444dbf4cc9
+  checksum: fedb98cd4bcebb5ca423c1b431fad81c128d7f3f089017ccf385c0433c074603
   verify: sig
 
 version:
@@ -15,20 +15,6 @@ version:
 
 linux:
   - build:
-
-    # UPSTREAM PATCHES
-    # Take the gdk lock before entering gtk_main() (bug #1052203 comment 24)
-    - patch: ba697659bb8023a0267544499ced7527d39038a8..d2fc84028f0df021226a1dd7a84d7227daff16a6.patch
-    # Use GLib.idle_add, not GObject.idle_add.
-    - patch: 34f9dc9e4fa348d7a25b2444cf2d1fe2a8968536..bfa4cd6da4f9b333441f8a75687c3b7076d4d28c.patch
-    # More Python3 fixes.
-    - patch: bfa4cd6da4f9b333441f8a75687c3b7076d4d28c..1580be98eff03d61477e5138b1ec0caf9ba64403.patch
-    # More use of subprocess.DEVNULL.
-    - patch: 1580be98eff03d61477e5138b1ec0caf9ba64403..d7de665ca6ec69b2c268d7eb7e7b351b39fc64e8.patch
-    # Python 3 has removed message attribute from built-in exceptions.
-    - patch: 4eb53cc3d4635552a3db339c760e3a27dd36560e..9dfbe4f9488239a23e77ba83e6cf10f1b1416d78.patch
-    # amend previous commit
-    - patch: 9dfbe4f9488239a23e77ba83e6cf10f1b1416d78..3c774fb401cd8cafe76f4611648bdd7e44817be0.patch
 
     # FIX WHITESPACE ERROR
     # import cupshelpers

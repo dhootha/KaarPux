@@ -24,16 +24,16 @@ version:
 
 linux:
   - build:
+    # Test case failing, as it ties to write to system directory
+    - sh: rm ./Lib/test/test_distutils.py
+    # Test case fixed upstream
+    # https://hg.python.org/cpython/rev/c16e047965a2
+    - patch: c16e047965a2.diff
     - echo: Preconfigure
     - configure_kx: --enable-shared --with-system-expat --with-system-ffi
     - make_repeat: ~
 
   - test:
-    # Test case failing, as it ties to write to system directory
-    - sh: rm ./Lib/test/test_distutils.py
-    # Test case accessing dubious IRL
-    - sh: rm ./Lib/test/test_urllib2net.py
-
     - test: ~
 
   - install:

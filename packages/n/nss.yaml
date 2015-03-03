@@ -1,6 +1,6 @@
 package:
   name: nss
-  version: 3.17.3
+  version: 3.17.4
   www: https://developer.mozilla.org/en-US/docs/NSS
   changelog: https://developer.mozilla.org/en-US/docs/NSS/NSS_${KX_NSS_VERSION}_release_notes
   short: |
@@ -10,7 +10,7 @@ package:
 download:
   url: ftp://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${KX_NSS_VERSION_USCORE}_RTM/src
   file_tar_gz: ~
-  checksum: f4d5e9035a2f84f25f35c283de3b0ff60d72e918748de25eaf017ed201fa21d5
+  checksum: 1d98ad1881a4237ec98cbe472fc851480f0b0e954dfe224d047811fb96ff9d79
 
 doc: |
     <para>

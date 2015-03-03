@@ -1,13 +1,13 @@
 package:
   name: pigz
-  version: 2.3.1
+  version: 2.3.3
   www: http://zlib.net/pigz/
   doc: A parallel implementation of gzip for modern multi-processor, multi-core machines
 
 download:
   url: http://zlib.net/pigz
   file_tar_gz: ~
-  checksum: e803f8bc0770c7a5e96dccb1d2dd2aab
+  checksum: 4e8b67b432ce7907575a549f3e1cac4709781ba0f6b48afea9f59369846b509c
 
 version:
   upstream: |

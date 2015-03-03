@@ -1,12 +1,12 @@
 package:
   name: totem
-  version: 3.14.0
+  version: 3.14.2
   www: http://projects.gnome.org/totem/
   short: Totem is the official movie player of the GNOME desktop environment based on GStreamer.
 
 download:
   gnomexz: ~
-  checksum: a57f78126af431b71e44aa0548e672bf884aef51ec23847f82b07a6849ac635e
+  checksum: 967dcf3070365a82873e5bc678299d5fb058f87f151d1e22d60313fab2ac09cc
 
 version:
   upstream_gnome: ~

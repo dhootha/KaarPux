@@ -1,6 +1,6 @@
 package:
   name: systemtap
-  version: 2.6-0.417.ga799c319d22f
+  version: 2.7-0.156.g7cd3311e3288
   www: http://sourceware.org/systemtap/
   short:  Infrastructure to simplify the gathering of information about the running Linux system.
 
@@ -9,10 +9,10 @@ download:
   # https://sourceware.org/systemtap/ftp/releases/
   # Point releases by fedora:
   # http://pkgs.fedoraproject.org/repo/pkgs/systemtap/
-  url: http://pkgs.fedoraproject.org/repo/pkgs/systemtap/systemtap-${KX_SYSTEMTAP_VERSION}.tar.gz/2a6985f9d27da7d14c8bc9f8d9fa085a
+  url: http://pkgs.fedoraproject.org/repo/pkgs/systemtap/systemtap-${KX_SYSTEMTAP_VERSION}.tar.gz/f84a3b2f4985672429733c060eb2b7c6
   file_tar_gz: ~
-  dir: systemtap-2.6
-  checksum: 2a6985f9d27da7d14c8bc9f8d9fa085a
+  dir: systemtap-2.7
+  checksum: f84a3b2f4985672429733c060eb2b7c6
 
 version:
   installed: kxver_sh_version "stap --version"

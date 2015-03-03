@@ -1,12 +1,12 @@
 package:
   name: MesaLib
-  version: 10.2.8
+  version: 10.3.5
   www: http://www.mesa3d.org/
   short: Mesa is an open-source implementation of the OpenGL specification - a system for rendering interactive 3D graphics.
 
 download:
   url: ftp://ftp.freedesktop.org/pub/mesa/${KX_MESALIB_VERSION}
-  checksum: 1ef9ad3f241788d454f2ff8c9d65b6849dfc31c8fe91f70fd2930b81c8af1398
+  checksum: eb75d2790f1606d59d50a6acaa637b6c75f2155b3e0eca3d5099165c0d9556ae
   dir: Mesa-${KX_MESALIB_VERSION}
 
 version:

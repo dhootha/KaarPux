@@ -30,6 +30,7 @@ install -dv -m 0750 /root
 install -dv -m 1777 /tmp /var/tmp
 
 install -dv -m 0755 /var/cache
+install -dv -m 0755 /var/lib/man
 install -dv -m 0755 /var/lib/misc
 install -dv -m 0755 /var/lib/locate
 install -dv -m 0755 /var/local
@@ -66,6 +67,7 @@ mk_subdirs () {
 	install -dv -m 0755 $F/share/misc
 	install -dv -m 0755 $F/share/terminfo
 	install -dv -m 0755 $F/share/zoneinfo
+	chown -R man:man $F/share/man
 	ln -svnf $F/bin $F/sbin
 	ln -svnf $F/share/man $F/man
 	ln -svnf $F/share/doc $F/doc

@@ -1,12 +1,12 @@
 package:
   name: linux
-  version: 3.17.4
+  version: 3.18.6
   www: http://www.kernel.org/
   short: The Linux kernel (and initramfs)
 
 download:
   kernelxz: linux/kernel/v3.0/
-  checksum: 4a55419c946a45c62a96b0313eff574c38650a3a270b2acd8168ec888a4fd02b
+  checksum: c4c1a4841173aa572d79b7530db92ce493dbefe8049e6f461a46dd897df253f5
 
 version:
   installed: kxver_sh_pattern("uname -r", qr|([0-9.]+)-kx|);
@@ -108,8 +108,7 @@ bootstrap_4:
 
 # ============================================================
 bootstrap_8:
-  # https://sourceware.org/glibc/wiki/Release/2.20#Packaging_Changes
-  - patch: glibc220.patch
+  # https://bugs.archlinux.org/task/43143
   - echo: Patching for dash
   - sh: sed /^trap/d -i scripts/link-vmlinux.sh
   - echo: Configuring linux kernel
@@ -179,8 +178,7 @@ bootstrap_8:
 # ============================================================
 linux:
   - build:
-    # https://sourceware.org/glibc/wiki/Release/2.20#Packaging_Changes
-    - patch: glibc220.patch
+    # https://bugs.archlinux.org/task/43143
     - echo: Patching for dash
     - sh: sed /^trap/d -i scripts/link-vmlinux.sh
     - echo: Configuring linux kernel

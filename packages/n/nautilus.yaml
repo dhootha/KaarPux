@@ -1,12 +1,12 @@
 package:
   name: nautilus
-  version: 3.14.1
+  version: 3.14.2
   www: https://live.gnome.org/Nautilus
   short: File manager for the GNOME desktop.
 
 download:
   gnomexz: ~
-  checksum: f7b15bb8a4aa244ad231f235c97f66ac184d96c4ff809798a6256e37addd2bac
+  checksum: b2c9e13ba896a15101abf5d5fe30e291243e6030e0c84e8eb5df1e7bd90c10a5
 
 version:
   upstream_gnome: ~

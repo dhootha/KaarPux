@@ -1,6 +1,6 @@
 package:
   name: libjpeg-turbo
-  version: 1.3.1
+  version: 1.4.0
   www: http://www.libjpeg-turbo.org
   short: |
       libjpeg-turbo is a derivative of libjpeg that uses SIMD instructions
@@ -10,7 +10,7 @@ package:
 download:
   sourceforge: ~
   file_tar_gz: ~
-  checksum: c132907417ddc40ed552fe53d6b91d5fecbb14a356a60ddc7ea50d6be9666fb9
+  checksum: d93ad8546b510244f863b39b4c0da0fa4c0d53a77b61a8a3880f258c232bbbee
 
 version:
   installed: kxver_sh_pattern("cjpeg -v /dev/null 2>&1 | head -1", qr|version\s(\S*)\s|);

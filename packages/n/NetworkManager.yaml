@@ -1,6 +1,6 @@
 package:
   name: NetworkManager
-  version: 0.9.10.0
+  version: 1.0.0
   www: http://projects.gnome.org/NetworkManager/
   short: |
       NetworkManager is a set of co-operative tools that make networking simple and straightforward.
@@ -9,7 +9,7 @@ package:
 
 download:
   gnomexz: ~
-  checksum: 66a88346bb04d4f402540281181340313b2ec433e75aa9d9ea13f31697f9487e
+  checksum: 3a66afec670c975edd9832e620b725a5f16ed267a1b9e1b2d51ef27250d85947
 
 version:
   upstream_gnome_uneven: ~

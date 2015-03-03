@@ -1,6 +1,6 @@
 package:
   name: binutils
-  version: 2.24
+  version: 2.25
   www: http://www.gnu.org/software/binutils/
   short: |
       The GNU Binutils are a collection of binary tools:
@@ -15,7 +15,7 @@ lfs:
 
 download:
   gnu: ~
-  checksum: e5e8c5be9664e7f7f96e0d09919110ab5ad597794f5b1809871177a0f0f14137
+  checksum: 22defc65cfa3ef2a3395faaea75d6331c6e62ea5dfacfed3e2ec17b08c882923
   verify: sig
 
 version: 

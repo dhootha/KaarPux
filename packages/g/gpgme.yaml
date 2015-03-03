@@ -1,12 +1,12 @@
 package:
   name: gpgme
-  version: 1.5.1
+  version: 1.5.3
   www: http://www.gnupg.org/related_software/gpgme/
 
 download:
   url: ftp://ftp.gnupg.org/gcrypt/gpgme
   file_tar_bz2: ~
-  checksum: 6c2f3af8ceeb303277d44ec0216d9a1271701f65b91d5942264cf7cefb4a11e3
+  checksum: 0db040c5b07e69cfe9a0b4566c8e90151ebacfe122c97c452f11386654aefcc9
   verify: sig
 
 version:

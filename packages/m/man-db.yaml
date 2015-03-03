@@ -18,7 +18,6 @@ version:
 bootstrap_8:
   - sh: sed -i -e '/gets is a/d' gnulib/lib/stdio.in.h
   - configure_kx: >
-      --disable-setuid
       --with-browser=/bin/lynx
       --with-vgrind=/bin/vgrind
       --with-grap=/bin/grap

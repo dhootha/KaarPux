@@ -1,6 +1,6 @@
 package:
   name: openssl
-  version: 1.0.1j
+  version: 1.0.1l
   www: http://www.openssl.org
   short: |
       The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured, and Open Source toolkit
@@ -10,7 +10,7 @@ package:
 download:
   url: http://www.openssl.org/source
   file_tar_gz: ~
-  checksum: 1b60ca8789ba6f03e8ef20da2293b8dc131c39d83814e775069f02d26354edf3
+  checksum: b2cf4d48fe5d49f240c61c9e624193a6f232b5ed0baf010681e725963c40d1d4
   verify: asc
 
 version:

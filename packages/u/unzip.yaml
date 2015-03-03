@@ -19,6 +19,11 @@ version:
 linux:
   - build:
 
+    # http://www.ocert.org/advisories/ocert-2014-011.html
+    - patch: CVE-2014-8139.diff
+    - patch: CVE-2014-8140.diff
+    - patch: CVE-2014-8141.diff
+
     - echo: building
     - sh: |
         case `uname -m` in

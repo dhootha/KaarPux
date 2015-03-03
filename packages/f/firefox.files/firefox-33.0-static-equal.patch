@@ -1,0 +1,134 @@
+diff -ruw mozilla-release-orig/layout/style/StyleAnimationValue.cpp mozilla-release/layout/style/StyleAnimationValue.cpp
+--- mozilla-release-orig/layout/style/StyleAnimationValue.cpp	2014-10-11 11:06:38.000000000 +0200
++++ mozilla-release/layout/style/StyleAnimationValue.cpp	2014-10-19 14:09:47.523000366 +0200
+@@ -3844,11 +3844,13 @@
+     case eUnit_Filter:
+     case eUnit_Shadow:
+     case eUnit_BackgroundPosition:
+-      return *mValue.mCSSValueList == *aOther.mValue.mCSSValueList;
++      return nsCSSValueList::Equal(mValue.mCSSValueList,
++                                   aOther.mValue.mCSSValueList);
+     case eUnit_Transform:
+       return *mValue.mCSSValueSharedList == *aOther.mValue.mCSSValueSharedList;
+     case eUnit_CSSValuePairList:
+-      return *mValue.mCSSValuePairList == *aOther.mValue.mCSSValuePairList;
++      return nsCSSValuePairList::Equal(mValue.mCSSValuePairList,
++                                       aOther.mValue.mCSSValuePairList);
+     case eUnit_UnparsedString:
+       return (NS_strcmp(GetStringBufferValue(),
+                         aOther.GetStringBufferValue()) == 0);
+diff -ruw mozilla-release-orig/layout/style/nsCSSValue.cpp mozilla-release/layout/style/nsCSSValue.cpp
+--- mozilla-release-orig/layout/style/nsCSSValue.cpp	2014-10-11 11:06:38.000000000 +0200
++++ mozilla-release/layout/style/nsCSSValue.cpp	2014-10-19 14:15:43.333000612 +0200
+@@ -264,13 +264,14 @@
+       return *mValue.mRect == *aOther.mValue.mRect;
+     }
+     else if (eCSSUnit_List == mUnit) {
+-      return *mValue.mList == *aOther.mValue.mList;
++      return nsCSSValueList::Equal(mValue.mList, aOther.mValue.mList);
+     }
+     else if (eCSSUnit_SharedList == mUnit) {
+       return *mValue.mSharedList == *aOther.mValue.mSharedList;
+     }
+     else if (eCSSUnit_PairList == mUnit) {
+-      return *mValue.mPairList == *aOther.mValue.mPairList;
++      return nsCSSValuePairList::Equal(mValue.mPairList,
++                                       aOther.mValue.mPairList);
+     }
+     else if (eCSSUnit_GridTemplateAreas == mUnit) {
+       return *mValue.mGridTemplateAreas == *aOther.mValue.mGridTemplateAreas;
+@@ -1762,13 +1763,14 @@
+   }
+ }
+ 
+-bool
+-nsCSSValueList::operator==(const nsCSSValueList& aOther) const
++/* static */ bool
++nsCSSValueList::Equal(const nsCSSValueList* aList1,
++                      const nsCSSValueList* aList2)
+ {
+-  if (this == &aOther)
++  if (aList1 == aList2)
+     return true;
+ 
+-  const nsCSSValueList *p1 = this, *p2 = &aOther;
++  const nsCSSValueList *p1 = aList1, *p2 = aList2;
+   for ( ; p1 && p2; p1 = p1->mNext, p2 = p2->mNext) {
+     if (p1->mValue != p2->mValue)
+       return false;
+@@ -1821,8 +1823,7 @@
+ bool
+ nsCSSValueSharedList::operator==(const nsCSSValueSharedList& aOther) const
+ {
+-  return !mHead == !aOther.mHead &&
+-         (!mHead || *mHead == *aOther.mHead);
++  return nsCSSValueList::Equal(mHead, aOther.mHead);
+ }
+ 
+ size_t
+@@ -2032,13 +2033,14 @@
+   }
+ }
+ 
+-bool
+-nsCSSValuePairList::operator==(const nsCSSValuePairList& aOther) const
++/* static */ bool
++nsCSSValuePairList::Equal(const nsCSSValuePairList* aList1,
++                          const nsCSSValuePairList* aList2)
+ {
+-  if (this == &aOther)
++  if (aList1 == aList2)
+     return true;
+ 
+-  const nsCSSValuePairList *p1 = this, *p2 = &aOther;
++  const nsCSSValuePairList *p1 = aList1, *p2 = aList2;
+   for ( ; p1 && p2; p1 = p1->mNext, p2 = p2->mNext) {
+     if (p1->mXValue != p2->mXValue ||
+         p1->mYValue != p2->mYValue)
+diff -ruw mozilla-release-orig/layout/style/nsCSSValue.h mozilla-release/layout/style/nsCSSValue.h
+--- mozilla-release-orig/layout/style/nsCSSValue.h	2014-10-11 11:06:38.000000000 +0200
++++ mozilla-release/layout/style/nsCSSValue.h	2014-10-19 14:18:10.716000714 +0200
+@@ -825,9 +825,8 @@
+   void AppendToString(nsCSSProperty aProperty, nsAString& aResult,
+                       nsCSSValue::Serialization aValueSerialization) const;
+ 
+-  bool operator==(nsCSSValueList const& aOther) const;
+-  bool operator!=(const nsCSSValueList& aOther) const
+-  { return !(*this == aOther); }
++  static bool Equal(const nsCSSValueList* aList1,
++                    const nsCSSValueList* aList2);
+ 
+   size_t SizeOfIncludingThis(mozilla::MallocSizeOf aMallocSizeOf) const;
+ 
+@@ -840,6 +839,9 @@
+   {
+     MOZ_COUNT_CTOR(nsCSSValueList);
+   }
++
++  bool operator==(nsCSSValueList const& aOther) const MOZ_DELETE;
++  bool operator!=(const nsCSSValueList& aOther) const MOZ_DELETE;
+ };
+ 
+ // nsCSSValueList_heap differs from nsCSSValueList only in being
+@@ -1218,9 +1220,8 @@
+   void AppendToString(nsCSSProperty aProperty, nsAString& aResult,
+                       nsCSSValue::Serialization aValueSerialization) const;
+ 
+-  bool operator==(const nsCSSValuePairList& aOther) const;
+-  bool operator!=(const nsCSSValuePairList& aOther) const
+-  { return !(*this == aOther); }
++  static bool Equal(const nsCSSValuePairList* aList1,
++                    const nsCSSValuePairList* aList2);
+ 
+   size_t SizeOfIncludingThis(mozilla::MallocSizeOf aMallocSizeOf) const;
+ 
+@@ -1234,6 +1235,9 @@
+   {
+     MOZ_COUNT_CTOR(nsCSSValuePairList);
+   }
++
++  bool operator==(const nsCSSValuePairList& aOther) const MOZ_DELETE;
++  bool operator!=(const nsCSSValuePairList& aOther) const MOZ_DELETE;
+ };
+ 
+ // nsCSSValuePairList_heap differs from nsCSSValuePairList only in being

@@ -1,6 +1,6 @@
 package:
   name: wireshark
-  version: 1.12.2
+  version: 1.12.3
   www: http://www.wireshark.org/
   short: |
       Wireshark is the world's foremost network protocol analyzer.
@@ -10,7 +10,7 @@ package:
 download:
   url: http://www.wireshark.org/download/src/all-versions/
   file_tar_bz2: ~
-  checksum: 30ae16b408a592642ce3a84dd9877d24df7a6dae8da4847486965190039df292
+  checksum: 69950b9dcb1a630982b5f680554d73d27ee0dc856fc6aeef88c8d04eb5ac33ea
 
 version:
   installed: kxver_sh_pattern("wireshark --version", qr|wireshark ([0-9]+[0-9.]*[0-9]+) \(|);

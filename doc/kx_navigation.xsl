@@ -79,7 +79,7 @@
         </li>
         <li class="copyright">
           <ul>
-            <li>Copyright &#169; 2012-2014: Henrik Kaare Poulsen</li>
+            <li>Copyright &#169; 2012-2015: Henrik Kaare Poulsen</li>
             <li>Git version: <xsl:value-of select="document('current_version.xml')"/></li>
           </ul>
         </li>

@@ -1,6 +1,6 @@
 package:
   name: libsndfile
-  version: 1.0.25
+  version: dbe14f00030af5d3577f4cabbf9861db59e9c378
   www: http://www.mega-nerd.com/libsndfile/
   short: |
       C library for reading and writing files containing sampled sound
@@ -8,18 +8,19 @@ package:
       through one standard library interface.
 
 download:
-  url: http://www.mega-nerd.com/libsndfile/files/
-  file_tar_gz: ~ 
-  checksum: 59016dbd326abe7e2366ded5c344c853829bebfd1702ef26a07ef662d6aa4882
-  verify: asc
+  full_url: https://github.com/erikd/libsndfile/archive/${KX_LIBSNDFILE_VERSION}.zip
+  file: libsndfile-${KX_LIBSNDFILE_VERSION}.zip
+  dir: libsndfile-${KX_LIBSNDFILE_VERSION}
+  checksum: 8803bd1fa43cb10f7c126214227e2ed73e340300a2b6ebc87fe3f449d97cb5ae
 
 version:
   installed_pkgconfig: sndfile
 
 linux:
   - build:
+    - sh: ./autogen.sh
     - configure_kx: --disable-static
-    - make_repeat: ~
+    - make: ~
   - test:
     - check: ~
   - install:

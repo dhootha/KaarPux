@@ -1,0 +1,297 @@
+<!--
+	KaarPux: http://kaarpux.kaarposoft.dk
+
+	Copyright (C) 2015: Henrik Kaare Poulsen
+
+	License: http://kaarpux.kaarposoft.dk/license.html
+-->
+
+<section id="changes_4_8_3">
+<title>Changes in KaarPux version 4.8.3</title>
+
+<!-- ============================================================ -->
+
+<para>
+	&kx; version <systemitem>4.8.3</systemitem> released on <systemitem>2015-feb-11</systemitem>
+</para>
+
+<para>
+	<itemizedlist>
+
+		<listitem><para>
+			Mozilla and related applications updated
+		</para></listitem>
+
+		<listitem><para>
+			GNOME applications updated
+		</para></listitem>
+
+		<listitem><para>
+			Linux kernel updated
+		</para></listitem>
+
+		<listitem><para>
+			Other packages updated
+		</para></listitem>
+
+		<listitem><para>
+			Minor Changes and Documentation Updates
+		</para></listitem>
+
+	</itemizedlist>
+</para>
+
+
+
+<!-- ============================================================ -->
+
+<section id="changes_4_8_3_upd_web">
+<title>Mozilla and related applications updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: nss: v 3.17.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/19c65c077b2c27591690c03e8797ec4df98503f2/">19c65c07</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: firefox: v 35.0.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/0256abbcb869b15188f5c981bc34b078e1b46e2b/">0256abbc</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: flash_player_11: v 11.2.202.442
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/42081ec6fbe5b438e4386a869258366123387bbd/">42081ec6</ulink>,
+		<ulink url="http://sourceforge.net/p/kaarpux/code/ci/2fc8d3c3e4a5b0c7dcf283290a6a678a135099d4/">2fc8d3c3</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: provider_for_google_calendar: v 1.0.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e4f4156615fd0ff65216bf2ca913e1f732660b03/">e4f41566</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_8_3_upd_gnome">
+<title>GNOME applications updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: WebKit2: v 2.7.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/3ae618c8e15b1c439d9ec04430bbb4d9896648e2/">3ae618c8</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: WebKit1: v 2.4.8
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/f1ba2dd0dee65c04bbc9e47f2ec9074523ce5ddd/">f1ba2dd0</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: vala: v 0.26.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/8fd01aadd870c894c8cfb37b9d0eab478d6378ad/">8fd01aad</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: system-config-printer: v 1.5.4
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/c1816a717374dce508105b19f3f0a1f48c480190/">c1816a71</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: vinagre: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/283b1dd5ed4f7d594c23aeff7ac31e5cde7e551d/">283b1dd5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: totem: v 3.14.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/5459941a687d6288632d77b1c739ea1307177fa3/">5459941a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: nautilus: v 3.14.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/a8dbffa4a24a1fa186dd0098483d764e47a1dc90/">a8dbffa4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: mutter: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4c81efa98cf39301ebee9d3530f1c60ae5d303ef/">4c81efa9</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: hicolor-icon-theme: v 0.14
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/900208c5fdb739e91f3657e0745986c083f21edd/">900208c5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gvfs: v 1.22.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/e28d7231d268383af81dc8ab889bd3a4339ba238/">e28d7231</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gtksourceview: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6089b47254f8b08bb43641a56248c9db67f4fdfb/">6089b472</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnome-tweak-tool: v 3.14.2
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/ce1a791576b1e24a8e5fbb3f7c801ac91e1244d2/">ce1a7915</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnome-themes-standard: v 3.14.2.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/1f68b30ecec9ddec4654e0b7c617f975c177d55f/">1f68b30e</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnome-shell: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/68ebbcb56231418f2d1c9eea510350fa6d6ea6a4/">68ebbcb5</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnome-shell-extensions: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/309f0a4264415eac88fda1e5b09fb339453c8b6d/">309f0a42</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gnome-online-accounts: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/de0414d4ff485ffad9501ef8d778de6b0b4bba08/">de0414d4</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: glib-networking: v 2.42.1
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/fc5e7a4401310dfedd0575f56faed043961cd2c0/">fc5e7a44</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: gedit: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/61496040156a83cbd1b2e0700b03dc33234c7f91/">61496040</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: evolution: v 3.12.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/64dbd243329e855548917e73c3fe0956a9dcf751/">64dbd243</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: evolution-data-server: v 3.12.10
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/271ef18a4bf4a5d5bbc01804156a644b2b14cdff/">271ef18a</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: eog: v 3.14.3
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6afda87f170fd352ad3bd4aa84a379dc9bb04525/">6afda87f</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_8_3_upd_linux">
+<title>Linux kernel updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: linux: v 3.18.6
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/39f4098ae5bc99ce88a12874e2afd447ca55fc68/">39f4098a</ulink>,
+		<ulink url="http://sourceforge.net/p/kaarpux/code/ci/599e051b4bdcedf49729261d9769c517169da5a3/">599e051b</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_8_3_upd">
+<title>Other packages updated</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		UPD: libjpeg-turbo: v 1.4.0
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/2e01889b6a61e93619eccb116c6a76f79e559eb3/">2e01889b</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		UPD: bash: v 4.3.33
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/cded503a4fb706a8560dc0c2c0f0b41e79858002/">cded503a</ulink>)
+	</para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+<section id="changes_4_8_3_minor">
+<title>Minor Changes and Documentation Updates</title>
+
+<itemizedlist>
+
+	<listitem><para>
+		MINOR: libpng: better upstream version check
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/7be0f3d6e495d295841932ef57fd5c525fb32004/">7be0f3d6</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		IMPROVE: dangerous_install_remote: remove --checksum for rsync
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/77b30891e007e3047f119c489fad54f0d1c1f1f6/">77b30891</ulink>)
+	</para></listitem>
+
+	<listitem><para>
+		DOC: KaarPux: updated CVE info
+	</para><para>
+		(Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/4c955383d01fca31c70af5ce4538104a70994280/">4c955383</ulink>)
+	</para></listitem>
+
+        <listitem><para>
+                MINOR: KaarPux: Copyright 2015
+        </para><para>
+                (Commit <ulink url="http://sourceforge.net/p/kaarpux/code/ci/6d9b3e3e754e6ce5fb2494b4d387a5d3916e0ba1/">6d9b3e3e</ulink>)
+        </para></listitem>
+
+</itemizedlist>
+
+</section>
+
+<!-- ============================================================ -->
+
+</section>

@@ -29,8 +29,9 @@ bootstrap_7:
         rm tests/ts/swapon/fixpgsz
         kx_step_echo 'check UTIL-LINUX'
         rm -f stdin-fifo; mkfifo -m600 stdin-fifo;
-          make ${KX_MAKE_J} -k  check 0<>stdin-fifo
-          tests/run.sh 0<>stdin-fifo
+          # Need TERM=xterm to avoid FAILED (more/regexp)
+          TERM=xterm make ${KX_MAKE_J} -k  check 0<>stdin-fifo
+          TERM=xterm tests/run.sh 0<>stdin-fifo
         rm -f stdin-fifo
       fi
 

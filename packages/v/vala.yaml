@@ -1,6 +1,6 @@
 package:
   name: vala
-  version: 0.26.1
+  version: 0.26.2
   www: https://live.gnome.org/Vala
   short: |
       Vala is a new programming language that aims to bring modern programming language features to GNOME developers
@@ -8,7 +8,7 @@ package:
 
 download:
   gnomexz: ~
-  checksum: 8407abb19ab3a58bbfc0d288abb47666ef81f76d0540258c03965e7545f59e6b
+  checksum: 37f13f430c56a93b6dac85239084681fd8f31c407d386809c43bc2f2836e03c4
 
 version:
   installed_sh_trailing: valac --version

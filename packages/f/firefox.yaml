@@ -1,6 +1,6 @@
 package:
   name: firefox
-  version: 34.0.5
+  version: 35.0.1
   changelog: http://www.mozilla.org/en-US/firefox/${KX_FIREFOX_VERSION}/releasenotes/
   short: Web browser by Mozilla
   www: https://developer.mozilla.org/en-US/docs/Developer_Guide/Build_Instructions
@@ -22,7 +22,7 @@ doc: |
 download:
   url: ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${KX_FIREFOX_VERSION}/source/
   file: ${KX_FIREFOX}.source.tar.bz2
-  checksum: 1680191ff7d4c465c0e6a5d7d6ff7a426f5bfa64f8d6d68a4bdfa9ac4ee459c8
+  checksum: c92b34e08e39e2d482a61194e79255478331a54bf86bf144dc38f3d4bfbc507a
   verify: asc
 
 version:
@@ -46,6 +46,9 @@ opt:
     # for "make check":
     # check_spidermonkey_style.py works only on source checked out from hg or git
     - get_pkg_file: check_spidermonkey_style.py config
+
+    # https://bugzilla.mozilla.org/show_bug.cgi?id=1083461#c21
+    - patch: firefox-33.0-static-equal.patch
 
     - echo: Configuring
     - get_pkg_file: mozconfig

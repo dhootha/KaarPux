@@ -1,6 +1,6 @@
 package:
   name: systemd
-  version: 217
+  version: 218
   www: http://www.freedesktop.org/wiki/Software/systemd
   short: |
       System and service manager for Linux.
@@ -9,7 +9,7 @@ package:
 download:
   url: http://www.freedesktop.org/software/systemd
   file_tar_xz: ~
-  checksum: a031e6fbcdc7077b37338bae8074d9428ee2fa98033beb4923a62871890f7498
+  checksum: 1b0768b53b6c6d813a93a4b8fe1f80cf53561b09075010a97c7aa08eee3fd59b
 
 version:
   upstream: kxver_scrape_url '', 'http://www.freedesktop.org/software/systemd', qr|systemd-([0-9]+)|;

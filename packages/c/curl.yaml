@@ -1,6 +1,6 @@
 package:
   name: curl
-  version: 7.38.0
+  version: 7.40.0
   www: http://curl.haxx.se/
   short: |
       curl is a command line tool for transferring data with URL syntax, supporting
@@ -9,7 +9,7 @@ package:
 download:
   url: http://curl.haxx.se/download/
   file_tar_lzma: ~
-  checksum: 5bcf1ebe05c691866d0322d687598068e4a8707cc9bcf1bb514dc92d3fef77d5
+  checksum: 47dff2367ff3343ce3a4661ddb0ce8d03b18e868f77fc82ae77b2c23587325a8
   verify: asc
 
 version:

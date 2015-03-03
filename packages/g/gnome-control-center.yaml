@@ -13,6 +13,10 @@ version:
 linux:
 
   - build:
+
+    # https://projects.archlinux.org/svntogit/packages.git/tree/trunk/network-Also-work-with-NM-10.patch?h=packages/gnome-control-center
+    - patch: network-Also-work-with-NM-10.patch
+
     - configure_kx_posix: >
         --disable-documentation
         --disable-ibus

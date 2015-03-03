@@ -1,11 +1,11 @@
 package:
   name: xf86-video-ati
-  version: 7.4.0
+  version: 7.5.0
 
 
 download:
   url: http://xorg.freedesktop.org/releases/individual/driver
-  checksum: 96230ca9859a2a3e347b7f37597b7b344e80b83f378d3a8463ab1ceb69df76d9
+  checksum: ec3e6f06b6cf9a40c72aafa3448aae8b034c80b37410ca9442d5cf6806e07936
 
 version: ~
 

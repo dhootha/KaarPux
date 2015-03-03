@@ -1,12 +1,12 @@
 package:
   name: xz
-  version: 5.0.7
+  version: 5.2.0
   www: http://tukaani.org/xz
   short: XZ Utils is free general-purpose data compression software with high compression ratio.
 
 download:
   url: http://tukaani.org/xz
-  checksum: e8851dc749df2340dac6c9297cb2653eff684e73c3dedf690930119502edd616
+  checksum: f7357d7455a1670229b3cca021da71dd5d13b789db62743c20624bdffc9cc4a5
   verify: sig
 
 version:

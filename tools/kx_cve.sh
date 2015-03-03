@@ -2,7 +2,7 @@
 #
 # KaarPux: http://kaarpux.kaarposoft.dk
 #
-# Copyright (C) 2014: Henrik Kaare Poulsen
+# Copyright (C) 2014, 2015: Henrik Kaare Poulsen
 #
 # License: http://kaarpux.kaarposoft.dk/license.html
 #
@@ -16,7 +16,7 @@ set -o errexit
 
 KX_MASTER="$(cd $(dirname "$0")/..; pwd -P)"
 
-YEARS="2014"
+YEARS="2014 2015"
 TMPDIR="/run/user/$(id -u)/cve"
 CVELIST="${KX_MASTER}/cve_list.txt"
 PKGDIR="${KX_MASTER}/packages/"
@@ -24,7 +24,7 @@ PKGDIR="${KX_MASTER}/packages/"
 # ============================================================
 wget_dialog () {
 	echo 0 > $TMPDIR/wget_rc.txt
-	{ wget --timestamping --directory-prefix=$TMPDIR $1$2 2>&1 || echo $? > $TMPDIR/wget_rc.txt; } | \
+	{ wget --no-check-certificate --timestamping --directory-prefix=$TMPDIR $1$2 2>&1 || echo $? > $TMPDIR/wget_rc.txt; } | \
 	dialog --backtitle "Common Vulnerabilities and Exposures" --title "Downloading $2" --progressbox 20 80
 RC=$(cat $TMPDIR/wget_rc.txt)
 	test $RC = 0 || {

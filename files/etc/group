@@ -9,6 +9,7 @@ lp:x:7:kaarpux
 mem:x:8:
 kmem:x:9:
 wheel:x:10:kaarpux
+man:x:12:
 messagebus:x:18:
 haldaemon:x:19:
 cdrom:x:20:

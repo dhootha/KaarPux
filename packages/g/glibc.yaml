@@ -1,7 +1,7 @@
 package:
   name: glibc
 #  version: 2.20
-  version: 2.20-205-ga39208b
+  version: 2.20-480-g46abb64
   www: http://www.gnu.org/software/libc/
   short: |
       Any Unix-like operating system needs a C library:
@@ -13,9 +13,9 @@ lfs:
 
 download:
   # gnux: ~
-  url: http://pkgs.fedoraproject.org/repo/pkgs/glibc/glibc-2.20-205-ga39208b.tar.gz/6a95cb9979ad4f189f2e21e6929e3d3f/
+  url: http://pkgs.fedoraproject.org/repo/pkgs/glibc/glibc-${KX_GLIBC_VERSION}.tar.gz/ca27ede0a7704d4417885f96470a9279/
   file_tar_gz: ~
-  checksum: 6a95cb9979ad4f189f2e21e6929e3d3f
+  checksum: ca27ede0a7704d4417885f96470a9279
 
 version:
   installed_sh_trailing: ldd --version

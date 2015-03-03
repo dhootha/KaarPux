@@ -1,6 +1,6 @@
 package:
   name: icedtea7
-  version: 2.5.3
+  version: 2.5.4
   www: http://icedtea.classpath.org/
   short: |
       The IcedTea project provides a harness to build the source code from OpenJDK
@@ -60,20 +60,21 @@ download:
   url: http://icedtea.classpath.org/download/source
   file: icedtea-${KX_ICEDTEA7_VERSION}.tar.gz
   dir: icedtea-${KX_ICEDTEA7_VERSION}
-  checksum: 44df11ac8e5ace7194e7372ef169909e0dab31d6b2f6bbae9a9c33af2cc54540
+  checksum: 5301b9a8592af2cf8e3e7a3650e5e1fe744c6d2de7f8ff78080b2eeae86a9800
   verify: sig
 
 
 additional_downloads:
   # see Makefile.am and hotspot.map
   # No need to verify GPG signatures, as SHA checksums where taken from signed icedtea tarball
-  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/hotspot.tar.bz2 hotspot.tar.bz2 8c8e1f7e97f47fe4029e0b0ba42b3515474adabe64e1fbee15c0e2e22a13aa28 /icedtea-2.5.3
-  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/corba.tar.bz2 corba.tar.bz2 8ceb2cd60782b7fc14b88e3d366f273873fa5436cf0e36b86406c0905b7dc43c /icedtea-2.5.3
-  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/jaxp.tar.bz2 jaxp.tar.bz2 2d13a82078f3f2b8831d1e670e5e75719336a56490df64f16ab7647674a272ef /icedtea-2.5.3
-  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/jaxws.tar.bz2 jaxws.tar.bz2 5a63d85307203f1aed1e31459ad5e32687909e0640d424ff6f540d9b1cceeb1e /icedtea-2.5.3
-  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/jdk.tar.bz2 jdk.tar.bz2 40c4dda969be0ecd213e79269184e19cfc32100b83777dc529b3cf4b6aa3e12f /icedtea-2.5.3
-  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/langtools.tar.bz2 langtools.tar.bz2 516f6c21719f4b5a2092847c147cde7890c5a30d4aed9425ff667c0164ef1dd0 /icedtea-2.5.3
-  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.3/openjdk.tar.bz2 openjdk.tar.bz2 3ba1a30762f5d5890e8ee6af11f52213ab9c574c01f07c75a081c42034f5d5c9 /icedtea-2.5.3
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.4/hotspot.tar.bz2 hotspot.tar.bz2 4825f8543aa0c065530b05b0a95915a44eea153bbb696d2ffc4b50a398813e34 /icedtea-2.5.4
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.4/corba.tar.bz2 corba.tar.bz2 7411fe2df795981124ae2e4da0ddb7d98db0a94c9399a12876be03e7177eaa0b /icedtea-2.5.4
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.4/jaxp.tar.bz2 jaxp.tar.bz2 84623e50b69710d12209fc761a49953c78f1a664ff54e022a77e35e25489f2f3 /icedtea-2.5.4
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.4/jaxws.tar.bz2 jaxws.tar.bz2 4bd38a8121d85c422b425177ce648afdee9da18812c91c5b74939c58db33ab4b /icedtea-2.5.4
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.4/jdk.tar.bz2 jdk.tar.bz2 e99b65baf66d8818e3c8fd31d71fbad4ad0ceb0b7fa4c2e0607eca3a40f2ba09 /icedtea-2.5.4
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.4/langtools.tar.bz2 langtools.tar.bz2 4fd76cbdf18174128863514b4d3997cb623368697bf4f5af6d079dbbcd7b378a /icedtea-2.5.4
+  - http://icedtea.classpath.org/download/drops/icedtea7/2.5.4/openjdk.tar.bz2 openjdk.tar.bz2 88c92a3cab37446352086876771733229b1602d4f79ef68629a151180652e1f1 /icedtea-2.5.4
+
 
 version:
   sensitive: 1

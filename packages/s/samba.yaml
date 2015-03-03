@@ -1,13 +1,13 @@
 package:
   name: samba
-  version: 4.1.12
+  version: 4.1.16
   www: http://www.samba.org/
   short: Samba is the standard Windows interoperability suite of programs for Linux and Unix.
 
 download:
   url: http://samba.org/samba/ftp/stable/
   file_tar_gz: ~
-  checksum: 033604674936bf5c77d7df299b0626052b84a41505a6a6afe902f6274fc29898
+  checksum: 12a09c167bfa25f50b82775bcbeda94c71c5d71d3b0d1210f6dae0f23020a87b
 
 version:
   installed_sh_trailing: smbclient --version

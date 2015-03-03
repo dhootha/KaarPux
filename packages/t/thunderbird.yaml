@@ -1,6 +1,6 @@
 package:
   name: thunderbird
-  version: 31.3.0
+  version: 31.4.0
   changelog: http://www.mozilla.org/en-US/thunderbird/${KX_THUNDERBIRD_VERSION}/releasenotes/
   www: http://www.mozilla.org/en-US/thunderbird/
   short: Mozilla Thunderbird is a free email application that's easy to set up and customize.
@@ -20,7 +20,7 @@ doc: |
 download:
   url: ftp://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${KX_THUNDERBIRD_VERSION}/source/
   file: thunderbird-${KX_THUNDERBIRD_VERSION}.source.tar.bz2
-  checksum: b742782965ce9c65b69c1dc470497ea456f11caeb8fda3ea593ee31ad496f556
+  checksum: 3e4b6cb5934b7a8e51a673044e0691eb7cd88a08415494673cd7eadb35cd90c3
   verify: asc
 
 version:

@@ -1,6 +1,6 @@
 package:
   name: patch
-  version: 2.7.1
+  version: 2.7.3
   www: http://savannah.gnu.org/projects/patch/
   short: |
       Patch takes a patch file containing a difference listing produced by the diff program
@@ -8,7 +8,7 @@ package:
 
 download:
   gnux: ~
-  checksum: 9124ba46db0abd873d0995c2ca880e81252676bb6c03e0a37dfc5f608a9b0ceb
+  checksum: d09022de9d629561bf4dad44625ef4b1ead15178b210412113531730cdb6f19d
 
 version:
   wiz_savannah: ~

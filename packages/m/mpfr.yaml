@@ -17,6 +17,9 @@ version:
   installed: kxver_header_file("MPFR", "/include/mpfr.h", "PATCHLEVEL");
 
 bootstrap_5:
+  # CVE-2014-9474 mpfr buffer overflow in mpfr_strtofr
+  # http://pkgs.fedoraproject.org/cgit/mpfr.git/tree/limboverflow.patch
+  - patch: limboverflow.patch
   - configure_kx: --enable-thread-safe --disable-static
   - make: ~
   - check: ~ 

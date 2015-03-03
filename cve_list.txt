@@ -1,7 +1,14 @@
 CVE-2003-1599	ignore
 CVE-2009-5142	ignore
+CVE-2010-1441	ignore
+CVE-2010-1442	ignore
+CVE-2010-1443	ignore
+CVE-2010-1444	ignore
+CVE-2010-1445	ignore
+CVE-2010-2062	ignore
 CVE-2010-2236	ignore	spacewalk-java
 CVE-2010-4820	fixed	ghostscript	COMMIT 63c73905c9acfd190c1a07d55917df8e6588ed99
+CVE-2010-5075	ignore
 CVE-2010-5077	ignore
 CVE-2010-5110	n/a	poppler	very old poppler version
 CVE-2010-5111	ignore
@@ -9,17 +16,34 @@ CVE-2010-5298	fixed	openssl	COMMIT 331b01f5af7affebda41b9c76424941b3dcc5cfd
 CVE-2010-5302	ignore
 CVE-2010-5303	ignore
 CVE-2010-5313	n/a	linux	very old Linux version
+CVE-2010-5314	ignore
+CVE-2010-5315	ignore
+CVE-2010-5316	ignore
+CVE-2010-5317	ignore
+CVE-2010-5318	ignore
+CVE-2010-5319	ignore
+CVE-2010-5320	ignore
 CVE-2011-0460	ignore	opensuse
 CVE-2011-1749	ignore	nfs-utils
+CVE-2011-1793	ignore
+CVE-2011-1794	ignore
+CVE-2011-1795	ignore
+CVE-2011-1796	ignore
+CVE-2011-1798	ignore
 CVE-2011-2198	n/a	vte	applies to old vte versions
 CVE-2011-2592	ignore
 CVE-2011-2702	fixed	glibc	COMMIT 07da6006f0b80708b6985afac662e9be51ef8a9f
+CVE-2011-3591	ignore
+CVE-2011-3592	ignore
+CVE-2011-3623	ignore
 CVE-2011-3628	n/a	linux-pam	applies to old linux-pam versions
 CVE-2011-4103	ignore
 CVE-2011-4104	ignore
 CVE-2011-4111	n/a	qemu	applies to old qemu versions
 CVE-2011-4367	ignore
 CVE-2011-4696	ignore	eye-fi
+CVE-2011-4720	ignore
+CVE-2011-4722	ignore
 CVE-2011-4887	ignore
 CVE-2011-4953	ignore
 CVE-2011-5280	ignore	bionic
@@ -29,6 +53,10 @@ CVE-2012-0943	ignore	lightdm
 CVE-2012-0984	ignore
 CVE-2012-1032	ignore
 CVE-2012-1111	ignore
+CVE-2012-1203	ignore
+CVE-2012-1302	ignore
+CVE-2012-1303	ignore
+CVE-2012-1415	ignore
 CVE-2012-1417	ignore
 CVE-2012-1503	ignore
 CVE-2012-1556	ignore
@@ -55,6 +83,7 @@ CVE-2012-5567	ignore	Horde
 CVE-2012-5580	fixed	libproxy	COMMIT a2c6fab85b1a8503ca646206d740b3dc50619604
 CVE-2012-5641	ignore	CouchDB
 CVE-2012-5650	ignore	CouchDB
+CVE-2012-5853	ignore
 CVE-2012-6141	ignore	PERL_App::Context
 CVE-2012-6142	ignore	PERL_Session::Cookie
 CVE-2012-6143	ignore	PERL_poon::Cookie
@@ -65,6 +94,7 @@ CVE-2012-6648	ignore	gdm-guest-session
 CVE-2012-6653	ignore
 CVE-2012-6656	fixed	glibc	COMMIT 07da6006f0b80708b6985afac662e9be51ef8a9f
 CVE-2012-6657	n/a	linux	Very old kernel version
+CVE-2012-6684	ignore
 CVE-2013-0171	ignore	Foreman
 CVE-2013-0191	ignore	libpam-pgsql
 CVE-2013-0201	ignore	ownCloud
@@ -78,10 +108,13 @@ CVE-2013-1641	ignore
 CVE-2013-1890	ignore	ownCloud
 CVE-2013-1893	ignore	ownCloud
 CVE-2013-2045	ignore	ownCloud
+CVE-2013-2131	ignore
 CVE-2013-2595	n/a	linux	only applies to Qualcomm contributions
 CVE-2013-2597	n/a	linux	only applies to Qualcomm contributions
 CVE-2013-2598	ignore
 CVE-2013-2599	ignore
+CVE-2013-2603	ignore
+CVE-2013-2604	ignore
 CVE-2013-2642	ignore	Sophos_Web_Appliance
 CVE-2013-2644	ignore
 CVE-2013-2645	ignore
@@ -101,11 +134,16 @@ CVE-2013-4286	ignore	tomcat
 CVE-2013-4290	ignore	openjpeg
 CVE-2013-4322	ignore	tomcat
 CVE-2013-4352	ignore
+CVE-2013-4440	ignore
+CVE-2013-4442	ignore
 CVE-2013-4444	ignore
 CVE-2013-4544	fixed qemu COMMIT 3683166518e7d6685cccd647919ce8636e5c4a2d
 CVE-2013-4590	ignore	tomcat
 CVE-2013-4594	ignore
+CVE-2013-4663	ignore
 CVE-2013-4710	ignore	android
+CVE-2013-4753	ignore
+CVE-2013-4769	ignore
 CVE-2013-4977	ignore	Hikvision
 CVE-2013-4980	ignore	AVTECH_AVN801_ DV
 CVE-2013-4981	ignore	AVTECH_AVN801_ DV
@@ -120,15 +158,21 @@ CVE-2013-5855	ignore
 CVE-2013-5948	ignore	ASUS_RT
 CVE-2013-5952	ignore	Freichat
 CVE-2013-5953	ignore	Multi_Calendar
+CVE-2013-5958	ignore
 CVE-2013-6031	ignore	Huawei_E355
+CVE-2013-6041	ignore
+CVE-2013-6043	ignore
 CVE-2013-6078	ignore
 CVE-2013-6124	ignore
 CVE-2013-6221	ignore
 CVE-2013-6222	ignore
+CVE-2013-6227	ignore
+CVE-2013-6241	ignore
 CVE-2013-6306	ignore
 CVE-2013-6335	ignore
 CVE-2013-6370	fixed	json-c	COMMIT 32e0008d5bd2c0a950b073c5ff1fdc1a0f9e5365
 CVE-2013-6371	fixed	json-c	COMMIT 32e0008d5bd2c0a950b073c5ff1fdc1a0f9e5365
+CVE-2013-6435	ignore
 CVE-2013-6438	ignore	apache
 CVE-2013-6456	ignore	libvirt
 CVE-2013-6469	ignore	JBoss
@@ -149,12 +193,15 @@ CVE-2013-6661	ignore	chrome
 CVE-2013-6666	ignore	chrome
 CVE-2013-6771	ignore
 CVE-2013-6796	ignore
+CVE-2013-6892	ignore
+CVE-2013-6919	ignore
 CVE-2013-6941	ignore	Citrix_NetScaler
 CVE-2013-6948	ignore	wemo
 CVE-2013-6949	ignore	wemo
 CVE-2013-6950	ignore	wemo
 CVE-2013-6951	ignore	wemo
 CVE-2013-6952	ignore	wemo
+CVE-2013-6998	ignore
 CVE-2013-7041	n/a	linux-pam	KaarPux is not using pam_userdb
 CVE-2013-7144	ignore
 CVE-2013-7180	ignore
@@ -166,8 +213,13 @@ CVE-2013-7389	ignore
 CVE-2013-7391	ignore
 CVE-2013-7392	ignore
 CVE-2013-7394	ignore
+CVE-2013-7401	ignore
+CVE-2013-7402	ignore
 CVE-2013-7408	ignore
 CVE-2013-7409	ignore
+CVE-2013-7417	ignore
+CVE-2013-7418	ignore
+CVE-2013-7420	ignore
 CVE-2014-0001	ignore
 CVE-2014-0002	ignore	apache
 CVE-2014-0003	ignore	apache
@@ -1167,9 +1219,86 @@ CVE-2014-0996	ignore
 CVE-2014-0997	ignore
 CVE-2014-0998	ignore
 CVE-2014-0999	ignore
+CVE-2014-100001	ignore
+CVE-2014-100002	ignore
+CVE-2014-100003	ignore
+CVE-2014-100004	ignore
+CVE-2014-100005	ignore
+CVE-2014-100006	ignore
+CVE-2014-100007	ignore
+CVE-2014-100008	ignore
+CVE-2014-100009	ignore
+CVE-2014-100010	ignore
+CVE-2014-100011	ignore
+CVE-2014-100012	ignore
+CVE-2014-100013	ignore
+CVE-2014-100014	ignore
+CVE-2014-100015	ignore
+CVE-2014-100016	ignore
+CVE-2014-100017	ignore
+CVE-2014-100018	ignore
+CVE-2014-100019	ignore
+CVE-2014-10001	ignore
+CVE-2014-100020	ignore
+CVE-2014-100021	ignore
+CVE-2014-100022	ignore
+CVE-2014-100023	ignore
+CVE-2014-100024	ignore
+CVE-2014-100025	ignore
+CVE-2014-100026	ignore
+CVE-2014-100027	ignore
+CVE-2014-100028	ignore
+CVE-2014-100029	ignore
+CVE-2014-10002	ignore
+CVE-2014-100030	ignore
+CVE-2014-100031	ignore
+CVE-2014-100032	ignore
+CVE-2014-100033	ignore
+CVE-2014-100034	ignore
+CVE-2014-100035	ignore
+CVE-2014-100036	ignore
+CVE-2014-100037	ignore
+CVE-2014-100038	ignore
+CVE-2014-100039	ignore
+CVE-2014-10003	ignore
+CVE-2014-10004	ignore
+CVE-2014-10005	ignore
+CVE-2014-10006	ignore
+CVE-2014-10007	ignore
+CVE-2014-10008	ignore
+CVE-2014-10009	ignore
 CVE-2014-1000	ignore
+CVE-2014-10010	ignore
+CVE-2014-10011	ignore
+CVE-2014-10012	ignore
+CVE-2014-10013	ignore
+CVE-2014-10014	ignore
+CVE-2014-10015	ignore
+CVE-2014-10016	ignore
+CVE-2014-10017	ignore
+CVE-2014-10018	ignore
+CVE-2014-10019	ignore
 CVE-2014-1001	ignore
+CVE-2014-10020	ignore
+CVE-2014-10021	ignore
+CVE-2014-10022	ignore
+CVE-2014-10023	ignore
+CVE-2014-10024	ignore
+CVE-2014-10025	ignore
+CVE-2014-10026	ignore
+CVE-2014-10027	ignore
+CVE-2014-10028	ignore
+CVE-2014-10029	ignore
 CVE-2014-1002	ignore
+CVE-2014-10030	ignore
+CVE-2014-10031	ignore
+CVE-2014-10032	ignore
+CVE-2014-10033	ignore
+CVE-2014-10034	ignore
+CVE-2014-10035	ignore
+CVE-2014-10036	ignore
+CVE-2014-10037	ignore
+CVE-2014-10038	ignore
 CVE-2014-1003	ignore
 CVE-2014-1004	ignore
 CVE-2014-1005	ignore
@@ -3757,11 +3886,11 @@ CVE-2014-3564	ignore
 CVE-2014-3565	ignore
 CVE-2014-3566	ignore
 CVE-2014-3567	ignore
-CVE-2014-3568	ignore
-CVE-2014-3569	ignore
-CVE-2014-3570	ignore
-CVE-2014-3571	ignore
-CVE-2014-3572	ignore
+CVE-2014-3568	fixed	openssl	COMMIT e75f43afc4e963be75ad77133974b3f65e6e565c
+CVE-2014-3569	fixed	openssl	COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
+CVE-2014-3570	fixed	openssl	COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
+CVE-2014-3571	fixed	openssl	COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
+CVE-2014-3572	fixed	openssl	COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
 CVE-2014-3573	ignore
 CVE-2014-3574	ignore
 CVE-2014-3575	ignore
@@ -4137,7 +4266,6 @@ CVE-2014-3944	ignore
 CVE-2014-3945	ignore
 CVE-2014-3946	ignore
 CVE-2014-3947	ignore
-CVE-2014-3947	ignore
 CVE-2014-3948	ignore
 CVE-2014-3949	ignore
 CVE-2014-3951	ignore
@@ -4156,6 +4284,7 @@ CVE-2014-3967	ignore
 CVE-2014-3968	ignore
 CVE-2014-3969	ignore
 CVE-2014-3970	open	pulseaudio	wait for upstream newer than 5.0
+CVE-2014-3971	ignore
 CVE-2014-3973	ignore
 CVE-2014-3974	ignore
 CVE-2014-3975	ignore
@@ -4167,7 +4296,6 @@ CVE-2014-3981	ignore
 CVE-2014-3982	ignore
 CVE-2014-3984	ignore
 CVE-2014-3985	ignore
-CVE-2014-3985	ignore
 CVE-2014-3986	ignore
 CVE-2014-3988	ignore
 CVE-2014-3991	ignore
@@ -4175,8 +4303,6 @@ CVE-2014-3992	ignore
 CVE-2014-3994	ignore
 CVE-2014-3995	ignore
 CVE-2014-3996	ignore
-CVE-2014-3996	ignore
-CVE-2014-3997	ignore
 CVE-2014-3997	ignore
 CVE-2014-4002	ignore
 CVE-2014-4003	ignore
@@ -4196,7 +4322,6 @@ CVE-2014-4018	ignore
 CVE-2014-4020	fixed	wireshark	COMMIT bbb92ca7abe1089bb5c6a9809c434315c7c75aa3
 CVE-2014-4021	ignore
 CVE-2014-4022	ignore
-CVE-2014-4023	ignore
 CVE-2014-4023	ignore
 CVE-2014-4027	fixed	linux	COMMIT 9126f23bbd49455ae2412250e2a399db7f448df3
 CVE-2014-4030	ignore
@@ -4390,6 +4515,7 @@ CVE-2014-4255	ignore
 CVE-2014-4256	ignore
 CVE-2014-4257	ignore
 CVE-2014-4258	ignore
+CVE-2014-4259	ignore
 CVE-2014-4260	ignore
 CVE-2014-4261	ignore
 CVE-2014-4262	fixed	icedtea7	COMMIT 14dc53bc7f0f91c1643b3f1776140f37b4e67f94
@@ -4404,30 +4530,18 @@ CVE-2014-4269	ignore
 CVE-2014-4270	ignore
 CVE-2014-4271	ignore
 CVE-2014-4274	ignore
-CVE-2014-4274	ignore
-CVE-2014-4275	ignore
 CVE-2014-4275	ignore
 CVE-2014-4276	ignore
-CVE-2014-4276	ignore
-CVE-2014-4277	ignore
 CVE-2014-4277	ignore
 CVE-2014-4278	ignore
-CVE-2014-4278	ignore
-CVE-2014-4280	ignore
+CVE-2014-4279	ignore
 CVE-2014-4280	ignore
 CVE-2014-4281	ignore
-CVE-2014-4281	ignore
-CVE-2014-4282	ignore
 CVE-2014-4282	ignore
 CVE-2014-4283	ignore
-CVE-2014-4283	ignore
-CVE-2014-4284	ignore
 CVE-2014-4284	ignore
 CVE-2014-4285	ignore
-CVE-2014-4285	ignore
 CVE-2014-4287	ignore
-CVE-2014-4287	ignore
-CVE-2014-4288	open	icedtea7	open
 CVE-2014-4288	open	icedtea7	open
 CVE-2014-4289	ignore
 CVE-2014-4290	ignore
@@ -4454,6 +4568,7 @@ CVE-2014-4310	ignore
 CVE-2014-4311	ignore
 CVE-2014-4312	ignore
 CVE-2014-4313	ignore
+CVE-2014-4322	ignore
 CVE-2014-4323	n/a	linux	n/a Android
 CVE-2014-4325	ignore
 CVE-2014-4326	ignore
@@ -4576,25 +4691,37 @@ CVE-2014-4461	ignore
 CVE-2014-4462	ignore
 CVE-2014-4463	ignore
 CVE-2014-4465	ignore
-CVE-2014-4465	ignore
 CVE-2014-4466	ignore
-CVE-2014-4466	ignore
-CVE-2014-4468	ignore
+CVE-2014-4467	ignore
 CVE-2014-4468	ignore
 CVE-2014-4469	ignore
-CVE-2014-4469	ignore
-CVE-2014-4470	ignore
 CVE-2014-4470	ignore
 CVE-2014-4471	ignore
-CVE-2014-4471	ignore
-CVE-2014-4472	ignore
 CVE-2014-4472	ignore
 CVE-2014-4473	ignore
-CVE-2014-4473	ignore
-CVE-2014-4474	ignore
 CVE-2014-4474	ignore
 CVE-2014-4475	ignore
-CVE-2014-4475	ignore
+CVE-2014-4476	ignore
+CVE-2014-4477	ignore
+CVE-2014-4479	ignore
+CVE-2014-4480	ignore
+CVE-2014-4481	ignore
+CVE-2014-4483	ignore
+CVE-2014-4484	ignore
+CVE-2014-4485	ignore
+CVE-2014-4486	ignore
+CVE-2014-4487	ignore
+CVE-2014-4488	ignore
+CVE-2014-4489	ignore
+CVE-2014-4491	ignore
+CVE-2014-4492	ignore
+CVE-2014-4493	ignore
+CVE-2014-4494	ignore
+CVE-2014-4495	ignore
+CVE-2014-4496	ignore
+CVE-2014-4497	ignore
+CVE-2014-4498	ignore
+CVE-2014-4499	ignore
 CVE-2014-4501	fixed	bfgminer	COMMIT 8e469c2ca6caeb96c7b849144305836272ac3b2d
 CVE-2014-4502	fixed	bfgminer	COMMIT 8e469c2ca6caeb96c7b849144305836272ac3b2d
 CVE-2014-4503	ignore
@@ -4663,7 +4790,6 @@ CVE-2014-4583	ignore
 CVE-2014-4584	ignore
 CVE-2014-4585	ignore
 CVE-2014-4586	ignore
-CVE-2014-4586	ignore
 CVE-2014-4587	ignore
 CVE-2014-4588	ignore
 CVE-2014-4589	ignore
@@ -4692,14 +4818,23 @@ CVE-2014-4618	ignore
 CVE-2014-4619	ignore
 CVE-2014-4620	ignore
 CVE-2014-4621	ignore
-CVE-2014-4621	ignore
-CVE-2014-4622	ignore
 CVE-2014-4622	ignore
 CVE-2014-4623	ignore
 CVE-2014-4624	ignore
+CVE-2014-4626	ignore
 CVE-2014-4627	ignore
+CVE-2014-4628	ignore
 CVE-2014-4629	ignore
+CVE-2014-4630	ignore
 CVE-2014-4631	ignore
+CVE-2014-4632	ignore
+CVE-2014-4633	ignore
+CVE-2014-4634	ignore
+CVE-2014-4635	ignore
+CVE-2014-4636	ignore
+CVE-2014-4637	ignore
+CVE-2014-4638	ignore
+CVE-2014-4639	ignore
 CVE-2014-4643	ignore
 CVE-2014-4644	ignore
 CVE-2014-4645	ignore
@@ -4740,10 +4875,7 @@ CVE-2014-4698	ignore
 CVE-2014-4699	fixed	linux	COMMIT 97f954fb9ff22bacfa8327e6a7e57ce26ac5c7d2
 CVE-2014-4700	ignore
 CVE-2014-4701	ignore
-CVE-2014-4701	ignore
 CVE-2014-4702	ignore
-CVE-2014-4702	ignore
-CVE-2014-4703	ignore
 CVE-2014-4703	ignore
 CVE-2014-4710	ignore
 CVE-2014-4715	ignore
@@ -4784,8 +4916,6 @@ CVE-2014-4759	ignore
 CVE-2014-4760	ignore
 CVE-2014-4761	ignore
 CVE-2014-4762	ignore
-CVE-2014-4762	ignore
-CVE-2014-4763	ignore
 CVE-2014-4763	ignore
 CVE-2014-4764	ignore
 CVE-2014-4765	ignore
@@ -4803,27 +4933,23 @@ CVE-2014-4788	ignore
 CVE-2014-4789	ignore
 CVE-2014-4790	ignore
 CVE-2014-4792	ignore
-CVE-2014-4792	ignore
 CVE-2014-4793	ignore
+CVE-2014-4801	ignore
 CVE-2014-4802	ignore
 CVE-2014-4805	ignore
 CVE-2014-4806	ignore
 CVE-2014-4807	ignore
 CVE-2014-4808	ignore
-CVE-2014-4808	ignore
 CVE-2014-4809	ignore
 CVE-2014-4810	ignore
 CVE-2014-4811	ignore
-CVE-2014-4811	ignore
 CVE-2014-4812	ignore
-CVE-2014-4814	ignore
 CVE-2014-4814	ignore
 CVE-2014-4815	ignore
 CVE-2014-4816	ignore
 CVE-2014-4817	ignore
 CVE-2014-4819	ignore
 CVE-2014-4820	ignore
-CVE-2014-4821	ignore
 CVE-2014-4821	ignore
 CVE-2014-4822	ignore
 CVE-2014-4823	ignore
@@ -4838,12 +4964,13 @@ CVE-2014-4831	ignore
 CVE-2014-4832	ignore
 CVE-2014-4833	ignore
 CVE-2014-4834	ignore
+CVE-2014-4835	ignore
 CVE-2014-4836	ignore
 CVE-2014-4837	ignore
 CVE-2014-4838	ignore
 CVE-2014-4839	ignore
-CVE-2014-4839	ignore
 CVE-2014-4840	ignore
+CVE-2014-4844	ignore
 CVE-2014-4845	ignore
 CVE-2014-4846	ignore
 CVE-2014-4847	ignore
@@ -4869,7 +4996,6 @@ CVE-2014-4870	ignore
 CVE-2014-4871	ignore
 CVE-2014-4872	ignore
 CVE-2014-4873	ignore
-CVE-2014-4874	ignore
 CVE-2014-4874	ignore
 CVE-2014-4877	fixed	wget	COMMIT 4f5ea11cda446e6076fd868dd5a2e7c6e3b6e33f
 CVE-2014-4880	ignore
@@ -4903,6 +5029,7 @@ CVE-2014-4911	ignore
 CVE-2014-4927	ignore
 CVE-2014-4929	ignore
 CVE-2014-4930	ignore
+CVE-2014-4936	ignore
 CVE-2014-4937	ignore
 CVE-2014-4938	ignore
 CVE-2014-4939	ignore
@@ -5047,7 +5174,18 @@ CVE-2014-5204	ignore
 CVE-2014-5205	ignore
 CVE-2014-5206	fixed	linux	COMMIT d86ba0d0e7e7376d0706a265014056fcf15fb87a
 CVE-2014-5207	fixed	linux	COMMIT d86ba0d0e7e7376d0706a265014056fcf15fb87a
+CVE-2014-5208	ignore
 CVE-2014-5210	ignore
+CVE-2014-5211	ignore
+CVE-2014-5212	ignore
+CVE-2014-5213	ignore
+CVE-2014-5214	ignore
+CVE-2014-5215	ignore
+CVE-2014-5216	ignore
+CVE-2014-5217	ignore
+CVE-2014-5231	ignore
+CVE-2014-5232	ignore
+CVE-2014-5233	ignore
 CVE-2014-5234	ignore
 CVE-2014-5235	ignore
 CVE-2014-5237	ignore
@@ -5095,17 +5233,14 @@ CVE-2014-5308	ignore
 CVE-2014-5313	ignore
 CVE-2014-5314	ignore
 CVE-2014-5315	ignore
-CVE-2014-5315	ignore
 CVE-2014-5316	ignore
 CVE-2014-5317	ignore
-CVE-2014-5318	ignore
 CVE-2014-5318	ignore
 CVE-2014-5319	ignore
 CVE-2014-5320	ignore
 CVE-2014-5321	ignore
 CVE-2014-5322	ignore
 CVE-2014-5323	ignore
-CVE-2014-5324	ignore
 CVE-2014-5324	ignore
 CVE-2014-5325	ignore
 CVE-2014-5326	ignore
@@ -5120,7 +5255,7 @@ CVE-2014-5337	ignore
 CVE-2014-5338	ignore
 CVE-2014-5339	ignore
 CVE-2014-5340	ignore
-CVE-2014-5342	ignore
+CVE-2014-5341	ignore
 CVE-2014-5342	ignore
 CVE-2014-5343	ignore
 CVE-2014-5344	ignore
@@ -5131,7 +5266,11 @@ CVE-2014-5348	ignore
 CVE-2014-5349	ignore
 CVE-2014-5350	ignore
 CVE-2014-5351	n/a	krb5	We are only installing the libraries
+CVE-2014-5353	n/a	krb5	n/a
+CVE-2014-5354	n/a	krb5	n/a
 CVE-2014-5356	ignore
+CVE-2014-5359	ignore
+CVE-2014-5360	ignore
 CVE-2014-5368	ignore
 CVE-2014-5369	ignore
 CVE-2014-5375	ignore
@@ -5141,8 +5280,9 @@ CVE-2014-5382	ignore
 CVE-2014-5383	ignore
 CVE-2014-5384	ignore
 CVE-2014-5385	ignore
+CVE-2014-5386	ignore
 CVE-2014-5387	ignore
-CVE-2014-5388	open	qemu	open
+CVE-2014-5388	fixed	qemu	COMMIT 49340dc09caf5d373e3507e40a1ca094941a088e
 CVE-2014-5389	ignore
 CVE-2014-5391	ignore
 CVE-2014-5392	ignore
@@ -5153,14 +5293,14 @@ CVE-2014-5397	ignore
 CVE-2014-5398	ignore
 CVE-2014-5399	ignore
 CVE-2014-5407	ignore
-CVE-2014-5407	ignore
 CVE-2014-5408	ignore
-CVE-2014-5410	ignore
 CVE-2014-5410	ignore
 CVE-2014-5411	ignore
 CVE-2014-5412	ignore
 CVE-2014-5413	ignore
 CVE-2014-5417	ignore
+CVE-2014-5418	ignore
+CVE-2014-5419	ignore
 CVE-2014-5420	ignore
 CVE-2014-5421	ignore
 CVE-2014-5422	ignore
@@ -5170,6 +5310,8 @@ CVE-2014-5425	ignore
 CVE-2014-5426	ignore
 CVE-2014-5429	ignore
 CVE-2014-5430	ignore
+CVE-2014-5437	ignore
+CVE-2014-5438	ignore
 CVE-2014-5440	ignore
 CVE-2014-5441	ignore
 CVE-2014-5444	ignore
@@ -5188,11 +5330,11 @@ CVE-2014-5457	ignore
 CVE-2014-5458	ignore
 CVE-2014-5459	ignore
 CVE-2014-5460	ignore
-CVE-2014-5460	ignore
 CVE-2014-5461	fixed	lua	COMMIT 78ae93a4a81c2d1539773b59bb9c9e03746e1d00
 CVE-2014-5462	ignore
 CVE-2014-5464	ignore
 CVE-2014-5465	ignore
+CVE-2014-5466	ignore
 CVE-2014-5471	fixed	linux	COMMIT a44d20e06cab777291ceea4b3ba6f6d1d6d37436
 CVE-2014-5472	fixed	linux	COMMIT a44d20e06cab777291ceea4b3ba6f6d1d6d37436
 CVE-2014-5501	ignore
@@ -5713,11 +5855,11 @@ CVE-2014-6035	ignore
 CVE-2014-6036	ignore
 CVE-2014-6037	ignore
 CVE-2014-6040	fixed	glibc	COMMIT 45cfc8703270abbfaaa81b90386f4e14878b9e22
-CVE-2014-6040	fixed	glibc	COMMIT 45cfc8703270abbfaaa81b90386f4e14878b9e22
 CVE-2014-6041	ignore
 CVE-2014-6043	ignore
-CVE-2014-6043	ignore
 CVE-2014-6051	ignore
+CVE-2014-6052	ignore
+CVE-2014-6053	ignore
 CVE-2014-6054	ignore
 CVE-2014-6055	ignore
 CVE-2014-6060	fixed	dhcpcd	COMMIT 400aea408339a06bf57d297430ee8b1dadf73968
@@ -5725,7 +5867,18 @@ CVE-2014-6064	ignore
 CVE-2014-6070	ignore
 CVE-2014-6074	ignore
 CVE-2014-6075	ignore
+CVE-2014-6076	ignore
+CVE-2014-6077	ignore
+CVE-2014-6078	ignore
 CVE-2014-6079	ignore
+CVE-2014-6080	ignore
+CVE-2014-6082	ignore
+CVE-2014-6083	ignore
+CVE-2014-6084	ignore
+CVE-2014-6086	ignore
+CVE-2014-6087	ignore
+CVE-2014-6088	ignore
+CVE-2014-6089	ignore
 CVE-2014-6091	ignore
 CVE-2014-6093	ignore
 CVE-2014-6095	ignore
@@ -5739,31 +5892,66 @@ CVE-2014-6105	ignore
 CVE-2014-6107	ignore
 CVE-2014-6110	ignore
 CVE-2014-6114	ignore
-CVE-2014-6114	ignore
 CVE-2014-6116	ignore
+CVE-2014-6119	ignore
+CVE-2014-6121	ignore
+CVE-2014-6122	ignore
+CVE-2014-6123	ignore
 CVE-2014-6125	ignore
-CVE-2014-6125	ignore
-CVE-2014-6126	ignore
 CVE-2014-6126	ignore
 CVE-2014-6130	ignore
+CVE-2014-6132	ignore
 CVE-2014-6133	ignore
+CVE-2014-6135	ignore
+CVE-2014-6136	ignore
 CVE-2014-6138	ignore
 CVE-2014-6140	ignore
+CVE-2014-6141	ignore
 CVE-2014-6143	ignore
+CVE-2014-6145	ignore
 CVE-2014-6146	ignore
 CVE-2014-6148	ignore
-CVE-2014-6149	ignore
 CVE-2014-6149	ignore
 CVE-2014-6150	ignore
 CVE-2014-6151	ignore
 CVE-2014-6152	ignore
+CVE-2014-6153	ignore
+CVE-2014-6155	ignore
+CVE-2014-6158	ignore
 CVE-2014-6159	ignore
+CVE-2014-6160	ignore
 CVE-2014-6161	ignore
 CVE-2014-6163	ignore
+CVE-2014-6164	ignore
+CVE-2014-6166	ignore
+CVE-2014-6167	ignore
+CVE-2014-6168	ignore
+CVE-2014-6170	ignore
+CVE-2014-6171	ignore
+CVE-2014-6172	ignore
+CVE-2014-6173	ignore
+CVE-2014-6174	ignore
+CVE-2014-6176	ignore
+CVE-2014-6177	ignore
+CVE-2014-6178	ignore
+CVE-2014-6179	ignore
+CVE-2014-6180	ignore
+CVE-2014-6181	ignore
+CVE-2014-6182	ignore
 CVE-2014-6183	ignore
+CVE-2014-6186	ignore
+CVE-2014-6187	ignore
+CVE-2014-6188	ignore
+CVE-2014-6193	ignore
 CVE-2014-6196	ignore
+CVE-2014-6197	ignore
+CVE-2014-6199	ignore
+CVE-2014-6209	ignore
+CVE-2014-6210	ignore
+CVE-2014-6212	ignore
 CVE-2014-6215	ignore
-CVE-2014-6230	ignore
+CVE-2014-6228	ignore
+CVE-2014-6229	ignore
 CVE-2014-6230	ignore
 CVE-2014-6231	ignore
 CVE-2014-6232	ignore
@@ -5779,11 +5967,19 @@ CVE-2014-6241	ignore
 CVE-2014-6242	ignore
 CVE-2014-6243	ignore
 CVE-2014-6251	open	cpuminer	open
-CVE-2014-6251	open	cpuminer	open
 CVE-2014-6252	ignore
+CVE-2014-6253	ignore
+CVE-2014-6254	ignore
+CVE-2014-6255	ignore
+CVE-2014-6256	ignore
+CVE-2014-6257	ignore
+CVE-2014-6258	ignore
+CVE-2014-6259	ignore
+CVE-2014-6260	ignore
+CVE-2014-6261	ignore
+CVE-2014-6268	ignore
 CVE-2014-6269	ignore
 CVE-2014-6270	ignore
-CVE-2014-6271	fixed	bash	COMMIT 8d325c1a6467062be9ae689c181f90c7791ef8de
 CVE-2014-6271	fixed	bash	COMMIT 8d325c1a6467062be9ae689c181f90c7791ef8de
 CVE-2014-6273	ignore
 CVE-2014-6277	fixed	bash	COMMIT 8d325c1a6467062be9ae689c181f90c7791ef8de
@@ -5792,28 +5988,16 @@ CVE-2014-6280	ignore
 CVE-2014-6283	ignore
 CVE-2014-6287	ignore
 CVE-2014-6288	ignore
-CVE-2014-6288	ignore
-CVE-2014-6289	ignore
 CVE-2014-6289	ignore
 CVE-2014-6290	ignore
-CVE-2014-6290	ignore
-CVE-2014-6291	ignore
 CVE-2014-6291	ignore
 CVE-2014-6292	ignore
-CVE-2014-6292	ignore
-CVE-2014-6293	ignore
 CVE-2014-6293	ignore
 CVE-2014-6294	ignore
-CVE-2014-6294	ignore
-CVE-2014-6295	ignore
 CVE-2014-6295	ignore
 CVE-2014-6296	ignore
-CVE-2014-6296	ignore
-CVE-2014-6297	ignore
 CVE-2014-6297	ignore
 CVE-2014-6298	ignore
-CVE-2014-6298	ignore
-CVE-2014-6299	ignore
 CVE-2014-6299	ignore
 CVE-2014-6300	ignore
 CVE-2014-6308	ignore
@@ -5824,29 +6008,21 @@ CVE-2014-6316	ignore
 CVE-2014-6317	ignore
 CVE-2014-6318	ignore
 CVE-2014-6319	ignore
-CVE-2014-6319	ignore
 CVE-2014-6321	ignore
 CVE-2014-6322	ignore
 CVE-2014-6323	ignore
 CVE-2014-6324	ignore
 CVE-2014-6325	ignore
-CVE-2014-6325	ignore
-CVE-2014-6326	ignore
 CVE-2014-6326	ignore
 CVE-2014-6327	ignore
-CVE-2014-6327	ignore
-CVE-2014-6328	ignore
 CVE-2014-6328	ignore
 CVE-2014-6329	ignore
-CVE-2014-6329	ignore
-CVE-2014-6330	ignore
 CVE-2014-6330	ignore
 CVE-2014-6331	ignore
 CVE-2014-6332	ignore
 CVE-2014-6333	ignore
 CVE-2014-6334	ignore
 CVE-2014-6335	ignore
-CVE-2014-6336	ignore
 CVE-2014-6336	ignore
 CVE-2014-6337	ignore
 CVE-2014-6339	ignore
@@ -5865,44 +6041,38 @@ CVE-2014-6351	ignore
 CVE-2014-6352	ignore
 CVE-2014-6353	ignore
 CVE-2014-6355	ignore
-CVE-2014-6355	ignore
-CVE-2014-6356	ignore
 CVE-2014-6356	ignore
 CVE-2014-6357	ignore
-CVE-2014-6357	ignore
-CVE-2014-6360	ignore
 CVE-2014-6360	ignore
 CVE-2014-6361	ignore
-CVE-2014-6361	ignore
-CVE-2014-6363	ignore
 CVE-2014-6363	ignore
 CVE-2014-6364	ignore
-CVE-2014-6364	ignore
-CVE-2014-6365	ignore
 CVE-2014-6365	ignore
 CVE-2014-6366	ignore
-CVE-2014-6366	ignore
-CVE-2014-6368	ignore
 CVE-2014-6368	ignore
 CVE-2014-6369	ignore
-CVE-2014-6369	ignore
-CVE-2014-6373	ignore
 CVE-2014-6373	ignore
 CVE-2014-6374	ignore
-CVE-2014-6374	ignore
 CVE-2014-6375	ignore
-CVE-2014-6375	ignore
-CVE-2014-6376	ignore
 CVE-2014-6376	ignore
 CVE-2014-6377	ignore
 CVE-2014-6378	ignore
 CVE-2014-6379	ignore
 CVE-2014-6380	ignore
+CVE-2014-6381	ignore
+CVE-2014-6382	ignore
+CVE-2014-6383	ignore
+CVE-2014-6384	ignore
+CVE-2014-6385	ignore
+CVE-2014-6386	ignore
 CVE-2014-6387	ignore
 CVE-2014-6389	ignore
 CVE-2014-6392	ignore
-CVE-2014-6392	ignore
 CVE-2014-6394	ignore
+CVE-2014-6395	ignore
+CVE-2014-6396	ignore
+CVE-2014-6407	ignore
+CVE-2014-6408	ignore
 CVE-2014-6409	ignore
 CVE-2014-6410	fixed	linux	COMMIT 261d8141e71ce679d938cb5bd74f24c502857835
 CVE-2014-6414	ignore
@@ -5926,17 +6096,14 @@ CVE-2014-6434	ignore
 CVE-2014-6439	ignore
 CVE-2014-6445	ignore
 CVE-2014-6446	ignore
-CVE-2014-6446	ignore
 CVE-2014-6452	ignore
 CVE-2014-6453	ignore
 CVE-2014-6454	ignore
 CVE-2014-6455	ignore
 CVE-2014-6456	open	icedtea7	open
-CVE-2014-6456	open	icedtea7	open
 CVE-2014-6457	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
 CVE-2014-6458	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
 CVE-2014-6458	open	icedtea7	open
-CVE-2014-6459	ignore
 CVE-2014-6459	ignore
 CVE-2014-6460	ignore
 CVE-2014-6461	ignore
@@ -5946,7 +6113,6 @@ CVE-2014-6464	ignore
 CVE-2014-6465	ignore
 CVE-2014-6466	open	icedtea7	open
 CVE-2014-6467	ignore
-CVE-2014-6468	ignore
 CVE-2014-6468	ignore
 CVE-2014-6469	ignore
 CVE-2014-6470	ignore
@@ -5960,6 +6126,8 @@ CVE-2014-6476	open	icedtea7	open
 CVE-2014-6477	ignore
 CVE-2014-6478	ignore
 CVE-2014-6479	ignore
+CVE-2014-6480	ignore
+CVE-2014-6481	ignore
 CVE-2014-6482	ignore
 CVE-2014-6483	ignore
 CVE-2014-6484	ignore
@@ -5987,17 +6155,26 @@ CVE-2014-6505	ignore
 CVE-2014-6506	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
 CVE-2014-6507	ignore
 CVE-2014-6508	ignore
+CVE-2014-6509	ignore
+CVE-2014-6510	ignore
 CVE-2014-6511	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
 CVE-2014-6512	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
 CVE-2014-6513	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
+CVE-2014-6514	ignore
 CVE-2014-6515	open	icedtea7	open
 CVE-2014-6516	ignore
 CVE-2014-6517	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
+CVE-2014-6518	ignore
 CVE-2014-6519	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
 CVE-2014-6520	ignore
+CVE-2014-6521	ignore
 CVE-2014-6522	ignore
 CVE-2014-6523	ignore
+CVE-2014-6524	ignore
+CVE-2014-6525	ignore
+CVE-2014-6526	ignore
 CVE-2014-6527	open	icedtea7	open
+CVE-2014-6528	ignore
 CVE-2014-6529	ignore
 CVE-2014-6530	ignore
 CVE-2014-6531	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
@@ -6010,18 +6187,22 @@ CVE-2014-6537	ignore
 CVE-2014-6538	ignore
 CVE-2014-6539	ignore
 CVE-2014-6540	ignore
+CVE-2014-6541	ignore
 CVE-2014-6542	ignore
 CVE-2014-6543	ignore
 CVE-2014-6544	ignore
 CVE-2014-6545	ignore
 CVE-2014-6546	ignore
 CVE-2014-6547	ignore
+CVE-2014-6548	ignore
+CVE-2014-6549	ignore
 CVE-2014-6550	ignore
 CVE-2014-6551	ignore
 CVE-2014-6552	ignore
 CVE-2014-6553	ignore
 CVE-2014-6554	ignore
 CVE-2014-6555	ignore
+CVE-2014-6556	ignore
 CVE-2014-6557	ignore
 CVE-2014-6558	fixed	icedtea7	COMMIT 43eeeb83fafcc4e2af5a98cf6758ed288f8ff862
 CVE-2014-6559	ignore
@@ -6030,32 +6211,61 @@ CVE-2014-6561	ignore
 CVE-2014-6562	ignore
 CVE-2014-6563	ignore
 CVE-2014-6564	ignore
+CVE-2014-6565	ignore
+CVE-2014-6566	ignore
+CVE-2014-6567	ignore
+CVE-2014-6568	ignore
+CVE-2014-6569	ignore
+CVE-2014-6570	ignore
+CVE-2014-6571	ignore
+CVE-2014-6572	ignore
+CVE-2014-6573	ignore
+CVE-2014-6574	ignore
+CVE-2014-6575	ignore
+CVE-2014-6576	ignore
+CVE-2014-6577	ignore
+CVE-2014-6578	ignore
+CVE-2014-6579	ignore
+CVE-2014-6580	ignore
+CVE-2014-6581	ignore
+CVE-2014-6582	ignore
+CVE-2014-6583	ignore
+CVE-2014-6584	ignore
+CVE-2014-6585	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2014-6586	ignore
+CVE-2014-6587	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2014-6588	ignore
+CVE-2014-6589	ignore
+CVE-2014-6590	ignore
+CVE-2014-6591	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2014-6592	ignore
+CVE-2014-6593	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2014-6594	ignore
+CVE-2014-6595	ignore
+CVE-2014-6596	ignore
+CVE-2014-6597	ignore
+CVE-2014-6598	ignore
+CVE-2014-6599	ignore
+CVE-2014-6600	ignore
+CVE-2014-6601	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
 CVE-2014-6602	ignore
 CVE-2014-6603	ignore
 CVE-2014-6607	ignore
 CVE-2014-6609	ignore
 CVE-2014-6610	ignore
 CVE-2014-6611	ignore
-CVE-2014-6611	ignore
 CVE-2014-6618	ignore
 CVE-2014-6619	ignore
 CVE-2014-6620	ignore
 CVE-2014-6621	ignore
-CVE-2014-6621	ignore
-CVE-2014-6622	ignore
 CVE-2014-6622	ignore
 CVE-2014-6623	ignore
 CVE-2014-6624	ignore
-CVE-2014-6624	ignore
-CVE-2014-6625	ignore
 CVE-2014-6625	ignore
 CVE-2014-6626	ignore
-CVE-2014-6626	ignore
-CVE-2014-6627	ignore
 CVE-2014-6627	ignore
 CVE-2014-6631	ignore
 CVE-2014-6632	ignore
-CVE-2014-6635	ignore
 CVE-2014-6635	ignore
 CVE-2014-6636	ignore
 CVE-2014-6637	ignore
@@ -6141,13 +6351,11 @@ CVE-2014-6717	ignore
 CVE-2014-6718	ignore
 CVE-2014-6719	ignore
 CVE-2014-6720	ignore
-CVE-2014-6720	ignore
 CVE-2014-6721	ignore
 CVE-2014-6722	ignore
 CVE-2014-6723	ignore
 CVE-2014-6724	ignore
 CVE-2014-6725	ignore
-CVE-2014-6726	ignore
 CVE-2014-6726	ignore
 CVE-2014-6727	ignore
 CVE-2014-6728	ignore
@@ -6539,6 +6747,7 @@ CVE-2014-7131	ignore
 CVE-2014-7132	ignore
 CVE-2014-7134	ignore
 CVE-2014-7135	ignore
+CVE-2014-7136	ignore
 CVE-2014-7137	ignore
 CVE-2014-7138	ignore
 CVE-2014-7139	ignore
@@ -6556,11 +6765,10 @@ CVE-2014-7156	ignore
 CVE-2014-7157	ignore
 CVE-2014-7158	ignore
 CVE-2014-7169	fixed	bash	COMMIT 8d325c1a6467062be9ae689c181f90c7791ef8de
-CVE-2014-7169	fixed	bash	COMMIT 8d325c1a6467062be9ae689c181f90c7791ef8de
+CVE-2014-7170	ignore
 CVE-2014-7176	ignore
 CVE-2014-7177	ignore
 CVE-2014-7178	ignore
-CVE-2014-7180	ignore
 CVE-2014-7180	ignore
 CVE-2014-7181	ignore
 CVE-2014-7182	ignore
@@ -6573,7 +6781,7 @@ CVE-2014-7189	ignore
 CVE-2014-7190	ignore
 CVE-2014-7191	ignore
 CVE-2014-7192	ignore
-CVE-2014-7192	ignore
+CVE-2014-7193	ignore
 CVE-2014-7194	ignore
 CVE-2014-7195	ignore
 CVE-2014-7199	ignore
@@ -6585,6 +6793,8 @@ CVE-2014-7204	ignore
 CVE-2014-7205	ignore
 CVE-2014-7206	ignore
 CVE-2014-7207	ignore
+CVE-2014-7208	ignore
+CVE-2014-7209	ignore
 CVE-2014-7217	ignore
 CVE-2014-7226	ignore
 CVE-2014-7228	ignore
@@ -6593,26 +6803,20 @@ CVE-2014-7230	ignore
 CVE-2014-7231	ignore
 CVE-2014-7235	ignore
 CVE-2014-7237	ignore
-CVE-2014-7243	ignore
+CVE-2014-7241	ignore
 CVE-2014-7243	ignore
 CVE-2014-7246	ignore
 CVE-2014-7247	ignore
 CVE-2014-7248	ignore
+CVE-2014-7249	ignore
 CVE-2014-7250	ignore
 CVE-2014-7251	ignore
 CVE-2014-7252	ignore
-CVE-2014-7252	ignore
-CVE-2014-7253	ignore
 CVE-2014-7253	ignore
 CVE-2014-7254	ignore
-CVE-2014-7254	ignore
-CVE-2014-7255	ignore
 CVE-2014-7255	ignore
 CVE-2014-7256	ignore
-CVE-2014-7256	ignore
 CVE-2014-7258	ignore
-CVE-2014-7258	ignore
-CVE-2014-7259	ignore
 CVE-2014-7259	ignore
 CVE-2014-7260	ignore
 CVE-2014-7261	ignore
@@ -6620,27 +6824,36 @@ CVE-2014-7262	ignore
 CVE-2014-7263	ignore
 CVE-2014-7264	ignore
 CVE-2014-7265	ignore
+CVE-2014-7266	ignore
+CVE-2014-7267	ignore
+CVE-2014-7268	ignore
+CVE-2014-7269	ignore
+CVE-2014-7270	ignore
 CVE-2014-7273	ignore
 CVE-2014-7274	ignore
 CVE-2014-7275	ignore
 CVE-2014-7277	ignore
-CVE-2014-7277	ignore
-CVE-2014-7278	ignore
 CVE-2014-7278	ignore
 CVE-2014-7280	ignore
 CVE-2014-7281	ignore
 CVE-2014-7283	fixed	linux	COMMIT a063a3f3a075fffa9fabc9c7cdaaa61436de6b84
 CVE-2014-7284	fixed	linux	COMMIT 8d88070d4831bf3614cbc93552dd3f4c7031f4f2
-CVE-2014-7290	ignore
+CVE-2014-7285	ignore
+CVE-2014-7286	ignore
+CVE-2014-7287	ignore
+CVE-2014-7288	ignore
+CVE-2014-7289	ignore
 CVE-2014-7290	ignore
 CVE-2014-7291	ignore
 CVE-2014-7292	ignore
+CVE-2014-7293	ignore
+CVE-2014-7294	ignore
 CVE-2014-7295	ignore
 CVE-2014-7296	ignore
 CVE-2014-7297	ignore
 CVE-2014-7298	ignore
-CVE-2014-7298	ignore
 CVE-2014-7299	ignore
+CVE-2014-7300	fixed	gnome-shell	COMMIT 04ae750e7929a26c221749a6256fd19ec485eb24
 CVE-2014-7307	ignore
 CVE-2014-7309	ignore
 CVE-2014-7310	ignore
@@ -7036,12 +7249,13 @@ CVE-2014-7802	ignore
 CVE-2014-7803	ignore
 CVE-2014-7804	ignore
 CVE-2014-7807	ignore
-CVE-2014-7807	ignore
 CVE-2014-7809	ignore
-CVE-2014-7809	ignore
-CVE-2014-7815	open	qemu	open
+CVE-2014-7811	ignore
+CVE-2014-7812	ignore
+CVE-2014-7814	ignore
+CVE-2014-7815	fixed	qemu	COMMIT 49340dc09caf5d373e3507e40a1ca094941a088e
 CVE-2014-7816	ignore
-CVE-2014-7817	open	glibc	open
+CVE-2014-7817	fixed	glibc	COMMIT a10cdf001dfc00bb3f67ccb03515b9fcf54e8025
 CVE-2014-7818	ignore
 CVE-2014-7819	ignore
 CVE-2014-7821	ignore
@@ -7049,7 +7263,6 @@ CVE-2014-7823	ignore
 CVE-2014-7824	fixed	dbus	COMMIT 5da1b91cea02804b97d739bdee75e825a510a32f
 CVE-2014-7825	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
 CVE-2014-7826	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
-CVE-2014-7828	ignore
 CVE-2014-7828	ignore
 CVE-2014-7829	ignore
 CVE-2014-7830	ignore
@@ -7062,6 +7275,7 @@ CVE-2014-7836	ignore
 CVE-2014-7837	ignore
 CVE-2014-7838	ignore
 CVE-2014-7839	ignore
+CVE-2014-7840	fixed	qemu	COMMIT 49340dc09caf5d373e3507e40a1ca094941a088e
 CVE-2014-7841	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
 CVE-2014-7842	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
 CVE-2014-7843	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
@@ -7072,7 +7286,7 @@ CVE-2014-7848	ignore
 CVE-2014-7850	ignore
 CVE-2014-7852	ignore
 CVE-2014-7861	ignore
-CVE-2014-7866	ignore
+CVE-2014-7864	ignore
 CVE-2014-7866	ignore
 CVE-2014-7867	ignore
 CVE-2014-7868	ignore
@@ -7082,34 +7296,52 @@ CVE-2014-7871	ignore
 CVE-2014-7874	ignore
 CVE-2014-7875	ignore
 CVE-2014-7877	ignore
-CVE-2014-7877	ignore
 CVE-2014-7878	ignore
 CVE-2014-7879	ignore
-CVE-2014-7879	ignore
-CVE-2014-7899	ignore
+CVE-2014-7880	ignore
+CVE-2014-7881	ignore
+CVE-2014-7882	ignore
 CVE-2014-7899	ignore
 CVE-2014-7900	ignore
-CVE-2014-7900	ignore
-CVE-2014-7901	ignore
 CVE-2014-7901	ignore
 CVE-2014-7902	ignore
-CVE-2014-7902	ignore
-CVE-2014-7903	ignore
 CVE-2014-7903	ignore
 CVE-2014-7904	ignore
-CVE-2014-7904	ignore
-CVE-2014-7905	ignore
 CVE-2014-7905	ignore
 CVE-2014-7906	ignore
-CVE-2014-7906	ignore
-CVE-2014-7907	ignore
 CVE-2014-7907	ignore
 CVE-2014-7908	ignore
-CVE-2014-7908	ignore
-CVE-2014-7909	ignore
 CVE-2014-7909	ignore
 CVE-2014-7910	ignore
-CVE-2014-7910	ignore
+CVE-2014-7911	ignore
+CVE-2014-7923	ignore
+CVE-2014-7924	ignore
+CVE-2014-7925	ignore
+CVE-2014-7926	ignore
+CVE-2014-7927	ignore
+CVE-2014-7928	ignore
+CVE-2014-7929	ignore
+CVE-2014-7930	ignore
+CVE-2014-7931	ignore
+CVE-2014-7932	ignore
+CVE-2014-7933	ignore
+CVE-2014-7934	ignore
+CVE-2014-7935	ignore
+CVE-2014-7936	ignore
+CVE-2014-7937	ignore
+CVE-2014-7938	ignore
+CVE-2014-7939	ignore
+CVE-2014-7940	ignore
+CVE-2014-7941	ignore
+CVE-2014-7942	ignore
+CVE-2014-7943	ignore
+CVE-2014-7944	ignore
+CVE-2014-7945	ignore
+CVE-2014-7946	ignore
+CVE-2014-7947	ignore
+CVE-2014-7948	ignore
+CVE-2014-7956	ignore
+CVE-2014-7957	ignore
 CVE-2014-7958	ignore
 CVE-2014-7959	ignore
 CVE-2014-7960	ignore
@@ -7132,20 +7364,48 @@ CVE-2014-7989	ignore
 CVE-2014-7990	ignore
 CVE-2014-7991	ignore
 CVE-2014-7992	ignore
+CVE-2014-7993	ignore
+CVE-2014-7994	ignore
+CVE-2014-7995	ignore
 CVE-2014-7996	ignore
 CVE-2014-7997	ignore
 CVE-2014-7998	ignore
+CVE-2014-7999	ignore
 CVE-2014-8000	ignore
 CVE-2014-8001	ignore
 CVE-2014-8002	ignore
 CVE-2014-8003	ignore
-CVE-2014-8003	ignore
 CVE-2014-8004	ignore
 CVE-2014-8005	ignore
-CVE-2014-8009	ignore
+CVE-2014-8006	ignore
+CVE-2014-8007	ignore
+CVE-2014-8008	ignore
 CVE-2014-8009	ignore
 CVE-2014-8010	ignore
-CVE-2014-8010	ignore
+CVE-2014-8012	ignore
+CVE-2014-8013	ignore
+CVE-2014-8014	ignore
+CVE-2014-8015	ignore
+CVE-2014-8016	ignore
+CVE-2014-8017	ignore
+CVE-2014-8018	ignore
+CVE-2014-8019	ignore
+CVE-2014-8020	ignore
+CVE-2014-8021	ignore
+CVE-2014-8022	ignore
+CVE-2014-8024	ignore
+CVE-2014-8025	ignore
+CVE-2014-8026	ignore
+CVE-2014-8027	ignore
+CVE-2014-8028	ignore
+CVE-2014-8029	ignore
+CVE-2014-8030	ignore
+CVE-2014-8031	ignore
+CVE-2014-8032	ignore
+CVE-2014-8033	ignore
+CVE-2014-8034	ignore
+CVE-2014-8035	ignore
+CVE-2014-8036	ignore
 CVE-2014-8068	ignore
 CVE-2014-8069	ignore
 CVE-2014-8070	ignore
@@ -7161,43 +7421,68 @@ CVE-2014-8079	ignore
 CVE-2014-8080	ignore
 CVE-2014-8081	ignore
 CVE-2014-8082	ignore
+CVE-2014-8083	ignore
+CVE-2014-8084	ignore
+CVE-2014-8085	ignore
 CVE-2014-8086	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
 CVE-2014-8088	ignore
 CVE-2014-8090	fixed	ruby	COMMIT 6f65df2a5219cfd0f4c79883997753d73b778da1
-CVE-2014-8091	open	xorg-server	open
-CVE-2014-8091	open	xorg-server	open
-CVE-2014-8092	open	xorg-server	open
-CVE-2014-8092	open	xorg-server	open
-CVE-2014-8093	open	xorg-server	open
-CVE-2014-8093	open	xorg-server	open
-CVE-2014-8094	open	xorg-server	open
-CVE-2014-8094	open	xorg-server	open
-CVE-2014-8095	open	xorg-server	open
-CVE-2014-8095	open	xorg-server	open
-CVE-2014-8096	open	xorg-server	open
-CVE-2014-8096	open	xorg-server	open
-CVE-2014-8097	open	xorg-server	open
-CVE-2014-8097	open	xorg-server	open
-CVE-2014-8098	open	xorg-server	open
-CVE-2014-8098	open	xorg-server	open
-CVE-2014-8099	open	xorg-server	open
-CVE-2014-8099	open	xorg-server	open
-CVE-2014-8100	open	xorg-server	open
-CVE-2014-8100	open	xorg-server	open
-CVE-2014-8101	open	xorg-server	open
-CVE-2014-8101	open	xorg-server	open
-CVE-2014-8102	open	xorg-server	open
-CVE-2014-8102	open	xorg-server	open
-CVE-2014-8103	open	xorg-server	open
-CVE-2014-8103	open	xorg-server	open
+CVE-2014-8091	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8092	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8093	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8094	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8095	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8096	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8097	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8098	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8099	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8100	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8101	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8102	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
+CVE-2014-8103	fixed	xorg-server	COMMIT ba528c259ef387324278342c56ec96f26a52f910
 CVE-2014-8104	ignore
 CVE-2014-8106	ignore
+CVE-2014-8108	ignore
+CVE-2014-8109	ignore
+CVE-2014-8116	ignore
+CVE-2014-8117	ignore
+CVE-2014-8118	ignore
+CVE-2014-8120	ignore
 CVE-2014-8123	ignore
-CVE-2014-8123	ignore
+CVE-2014-8124	ignore
+CVE-2014-8131	ignore
+CVE-2014-8132	ignore
+CVE-2014-8133	fixed	linux	COMMIT a0ba2cfa66ecd012df9a4793466f84892a954c74
+CVE-2014-8134	fixed	linux	COMMIT 40dfa7d16d06e49d7f229c6b00aa9bbf8b2d3857
+CVE-2014-8135	n/a	libvirt	n/a
+CVE-2014-8136	n/a	libvirt	n/a
+CVE-2014-8137	fixed	jasper	COMMIT d423363c320d22767b484d3f03d6d1c1287b4d0f
+CVE-2014-8138	fixed	jasper	COMMIT d423363c320d22767b484d3f03d6d1c1287b4d0f
+CVE-2014-8142	ignore
+CVE-2014-8143	fixed	samba	COMMIT 82db4de5e467a1ecf9fcc468b8e5a4695ae27640
+CVE-2014-8144	ignore
+CVE-2014-8145	ignore
+CVE-2014-8148	ignore
+CVE-2014-8150	fixed	curl	COMMIT 3b750bf25785f8ced8c9c12794ed8d2e8b058741
+CVE-2014-8151	fixed	curl	COMMIT 3b750bf25785f8ced8c9c12794ed8d2e8b058741
+CVE-2014-8152	ignore
+CVE-2014-8153	ignore
+CVE-2014-8154	fixed	vala	COMMIT 8fd01aadd870c894c8cfb37b9d0eab478d6378ad
+CVE-2014-8157	open	jasper	open
+CVE-2014-8158	open	jasper	open
 CVE-2014-8240	ignore
 CVE-2014-8243	ignore
 CVE-2014-8244	ignore
+CVE-2014-8246	ignore
+CVE-2014-8247	ignore
+CVE-2014-8248	ignore
+CVE-2014-8266	ignore
+CVE-2014-8267	ignore
+CVE-2014-8268	ignore
+CVE-2014-8269	ignore
 CVE-2014-8270	ignore
+CVE-2014-8272	ignore
+CVE-2014-8275	fixed	openssl COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
 CVE-2014-8293	ignore
 CVE-2014-8294	ignore
 CVE-2014-8295	ignore
@@ -7233,7 +7518,7 @@ CVE-2014-8331	ignore
 CVE-2014-8333	ignore
 CVE-2014-8334	ignore
 CVE-2014-8339	ignore
-CVE-2014-8346	ignore
+CVE-2014-8340	ignore
 CVE-2014-8346	ignore
 CVE-2014-8349	ignore
 CVE-2014-8350	ignore
@@ -7247,6 +7532,7 @@ CVE-2014-8366	ignore
 CVE-2014-8367	ignore
 CVE-2014-8368	ignore
 CVE-2014-8369	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
+CVE-2014-8370	ignore
 CVE-2014-8371	ignore
 CVE-2014-8372	ignore
 CVE-2014-8373	ignore
@@ -7257,9 +7543,14 @@ CVE-2014-8378	ignore
 CVE-2014-8379	ignore
 CVE-2014-8380	ignore
 CVE-2014-8381	ignore
-CVE-2014-8387	ignore
+CVE-2014-8386	ignore
 CVE-2014-8387	ignore
 CVE-2014-8388	ignore
+CVE-2014-8394	ignore
+CVE-2014-8395	ignore
+CVE-2014-8396	ignore
+CVE-2014-8397	ignore
+CVE-2014-8398	ignore
 CVE-2014-8399	ignore
 CVE-2014-8412	ignore
 CVE-2014-8413	ignore
@@ -7283,36 +7574,20 @@ CVE-2014-8442	fixed	flash_player_11	COMMIT bf5990eddf5c3f59d3f8a521da4efd328cac5
 CVE-2014-8443	fixed	flash_player_11	COMMIT 10671957b6316e5116deb734d12e7a5f4ec6bbde
 CVE-2014-8443	ignore
 CVE-2014-8445	ignore
-CVE-2014-8445	ignore
-CVE-2014-8446	ignore
 CVE-2014-8446	ignore
 CVE-2014-8447	ignore
-CVE-2014-8447	ignore
-CVE-2014-8448	ignore
 CVE-2014-8448	ignore
 CVE-2014-8449	ignore
-CVE-2014-8449	ignore
-CVE-2014-8451	ignore
 CVE-2014-8451	ignore
 CVE-2014-8452	ignore
-CVE-2014-8452	ignore
-CVE-2014-8453	ignore
 CVE-2014-8453	ignore
 CVE-2014-8454	ignore
-CVE-2014-8454	ignore
-CVE-2014-8455	ignore
 CVE-2014-8455	ignore
 CVE-2014-8456	ignore
-CVE-2014-8456	ignore
-CVE-2014-8457	ignore
 CVE-2014-8457	ignore
 CVE-2014-8458	ignore
-CVE-2014-8458	ignore
-CVE-2014-8459	ignore
 CVE-2014-8459	ignore
 CVE-2014-8460	ignore
-CVE-2014-8460	ignore
-CVE-2014-8461	ignore
 CVE-2014-8461	ignore
 CVE-2014-8469	ignore
 CVE-2014-8471	ignore
@@ -7321,77 +7596,57 @@ CVE-2014-8473	ignore
 CVE-2014-8474	ignore
 CVE-2014-8475	ignore
 CVE-2014-8476	ignore
-CVE-2014-8480	open	linux	open
-CVE-2014-8481	open	linux	open
+CVE-2014-8478	ignore
+CVE-2014-8479	ignore
+CVE-2014-8480	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
+CVE-2014-8481	fixed	linux   COMMIT 747533aef2348067603ab84718a2ae8c02e70951
 CVE-2014-8483	ignore
-CVE-2014-8484	open	binutils	open
-CVE-2014-8484	open	binutils	open
-CVE-2014-8485	open	binutils	open
-CVE-2014-8485	open	binutils	open
+CVE-2014-8484	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
+CVE-2014-8485	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
 CVE-2014-8488	ignore
-CVE-2014-8488	ignore
+CVE-2014-8489	ignore
 CVE-2014-8493	ignore
 CVE-2014-8494	ignore
 CVE-2014-8495	ignore
 CVE-2014-8496	ignore
-CVE-2014-8496	ignore
 CVE-2014-8498	ignore
 CVE-2014-8499	ignore
 CVE-2014-8500	ignore
-CVE-2014-8500	ignore
-CVE-2014-8501	open	binutils	open
-CVE-2014-8501	open	binutils	open
-CVE-2014-8502	open	binutils	open
-CVE-2014-8502	open	binutils	open
-CVE-2014-8503	open	binutils	open
-CVE-2014-8503	open	binutils	open
-CVE-2014-8504	open	binutils	open
-CVE-2014-8504	open	binutils	open
+CVE-2014-8501	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
+CVE-2014-8502	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
+CVE-2014-8503	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
+CVE-2014-8504	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
 CVE-2014-8505	ignore
 CVE-2014-8506	ignore
+CVE-2014-8507	ignore
 CVE-2014-8508	ignore
 CVE-2014-8509	ignore
 CVE-2014-8510	ignore
+CVE-2014-8511	ignore
+CVE-2014-8512	ignore
+CVE-2014-8513	ignore
+CVE-2014-8514	ignore
+CVE-2014-8515	ignore
 CVE-2014-8517	ignore
 CVE-2014-8518	ignore
-CVE-2014-8518	ignore
-CVE-2014-8519	ignore
 CVE-2014-8519	ignore
 CVE-2014-8520	ignore
-CVE-2014-8520	ignore
-CVE-2014-8521	ignore
 CVE-2014-8521	ignore
 CVE-2014-8522	ignore
-CVE-2014-8522	ignore
-CVE-2014-8523	ignore
 CVE-2014-8523	ignore
 CVE-2014-8524	ignore
-CVE-2014-8524	ignore
-CVE-2014-8525	ignore
 CVE-2014-8525	ignore
 CVE-2014-8526	ignore
-CVE-2014-8526	ignore
-CVE-2014-8527	ignore
 CVE-2014-8527	ignore
 CVE-2014-8528	ignore
-CVE-2014-8528	ignore
-CVE-2014-8529	ignore
 CVE-2014-8529	ignore
 CVE-2014-8530	ignore
-CVE-2014-8530	ignore
-CVE-2014-8531	ignore
 CVE-2014-8531	ignore
 CVE-2014-8532	ignore
-CVE-2014-8532	ignore
-CVE-2014-8533	ignore
 CVE-2014-8533	ignore
 CVE-2014-8534	ignore
-CVE-2014-8534	ignore
-CVE-2014-8535	ignore
 CVE-2014-8535	ignore
 CVE-2014-8536	ignore
-CVE-2014-8536	ignore
-CVE-2014-8537	ignore
 CVE-2014-8537	ignore
 CVE-2014-8538	ignore
 CVE-2014-8539	ignore
@@ -7406,8 +7661,8 @@ CVE-2014-8548	ignore
 CVE-2014-8549	ignore
 CVE-2014-8551	ignore
 CVE-2014-8552	ignore
+CVE-2014-8553	ignore
 CVE-2014-8554	ignore
-CVE-2014-8555	ignore
 CVE-2014-8555	ignore
 CVE-2014-8557	ignore
 CVE-2014-8558	ignore
@@ -7419,6 +7674,7 @@ CVE-2014-8577	ignore
 CVE-2014-8578	ignore
 CVE-2014-8580	ignore
 CVE-2014-8582	ignore
+CVE-2014-8583	ignore
 CVE-2014-8584	ignore
 CVE-2014-8585	ignore
 CVE-2014-8586	ignore
@@ -7430,25 +7686,35 @@ CVE-2014-8591	ignore
 CVE-2014-8592	ignore
 CVE-2014-8593	ignore
 CVE-2014-8594	ignore
-CVE-2014-8594	ignore
-CVE-2014-8595	ignore
 CVE-2014-8595	ignore
 CVE-2014-8596	ignore
 CVE-2014-8598	ignore
 CVE-2014-8600	ignore
 CVE-2014-8601	ignore
-CVE-2014-8601	ignore
 CVE-2014-8602	ignore
-CVE-2014-8602	ignore
+CVE-2014-8608	ignore
+CVE-2014-8609	ignore
+CVE-2014-8610	ignore
+CVE-2014-8612	ignore
+CVE-2014-8613	ignore
 CVE-2014-8622	ignore
+CVE-2014-8625	ignore
 CVE-2014-8626	ignore
 CVE-2014-8627	ignore
 CVE-2014-8629	ignore
-CVE-2014-8629	ignore
-CVE-2014-8631	fixed	firefox	COMMIT 11821f894e0f5912db8c22436a3f5b11f99b3897
+CVE-2014-8630	ignore
 CVE-2014-8631	fixed	firefox	COMMIT 11821f894e0f5912db8c22436a3f5b11f99b3897
 CVE-2014-8632	fixed	firefox	COMMIT 11821f894e0f5912db8c22436a3f5b11f99b3897
-CVE-2014-8632	fixed	firefox	COMMIT 11821f894e0f5912db8c22436a3f5b11f99b3897
+CVE-2014-8634	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8635	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8636	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8637	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8638	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8639	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8640	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8641	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8642	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
+CVE-2014-8643	fixed	firefox	COMMIT c83be1926416636efaf150d664b8cea125ad1d65
 CVE-2014-8651	ignore
 CVE-2014-8652	ignore
 CVE-2014-8653	ignore
@@ -7473,7 +7739,6 @@ CVE-2014-8671	ignore
 CVE-2014-8672	ignore
 CVE-2014-8678	ignore
 CVE-2014-8680	ignore
-CVE-2014-8680	ignore
 CVE-2014-8681	ignore
 CVE-2014-8682	ignore
 CVE-2014-8683	ignore
@@ -7483,19 +7748,17 @@ CVE-2014-8711	fixed	wireshark	COMMIT 1e722d9c0b99beb6b7951ec9878e94271e035f96
 CVE-2014-8712	fixed	wireshark	COMMIT 1e722d9c0b99beb6b7951ec9878e94271e035f96
 CVE-2014-8713	fixed	wireshark	COMMIT 1e722d9c0b99beb6b7951ec9878e94271e035f96
 CVE-2014-8714	fixed	wireshark	COMMIT 1e722d9c0b99beb6b7951ec9878e94271e035f96
+CVE-2014-8724	ignore
 CVE-2014-8727	ignore
 CVE-2014-8728	ignore
 CVE-2014-8730	ignore
-CVE-2014-8730	ignore
 CVE-2014-8732	ignore
 CVE-2014-8734	ignore
-CVE-2014-8734	ignore
-CVE-2014-8735	ignore
 CVE-2014-8735	ignore
 CVE-2014-8736	ignore
-CVE-2014-8736	ignore
-CVE-2014-8737	open	binutils	open
-CVE-2014-8737	open	binutils	open
+CVE-2014-8737	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
+CVE-2014-8738	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
+CVE-2014-8738	fixed	binutils	COMMIT a5941e19eb3f8a53170a8dc72cff4d3069f6bae1
 CVE-2014-8743	ignore
 CVE-2014-8744	ignore
 CVE-2014-8745	ignore
@@ -7504,10 +7767,11 @@ CVE-2014-8747	ignore
 CVE-2014-8748	ignore
 CVE-2014-8749	ignore
 CVE-2014-8750	ignore
+CVE-2014-8751	ignore
+CVE-2014-8752	ignore
 CVE-2014-8754	ignore
 CVE-2014-8755	ignore
 CVE-2014-8756	ignore
-CVE-2014-8760	ignore
 CVE-2014-8760	ignore
 CVE-2014-8761	ignore
 CVE-2014-8762	ignore
@@ -7524,20 +7788,67 @@ CVE-2014-8772	ignore
 CVE-2014-8773	ignore
 CVE-2014-8774	ignore
 CVE-2014-8775	ignore
+CVE-2014-8779	ignore
 CVE-2014-8788	ignore
 CVE-2014-8789	ignore
+CVE-2014-8790	ignore
 CVE-2014-8791	ignore
+CVE-2014-8793	ignore
 CVE-2014-8799	ignore
 CVE-2014-8800	ignore
-CVE-2014-8800	ignore
 CVE-2014-8801	ignore
+CVE-2014-8802	ignore
+CVE-2014-8809	ignore
+CVE-2014-8810	ignore
+CVE-2014-8816	ignore
+CVE-2014-8817	ignore
+CVE-2014-8819	ignore
+CVE-2014-8820	ignore
+CVE-2014-8821	ignore
+CVE-2014-8822	ignore
+CVE-2014-8823	ignore
+CVE-2014-8824	ignore
+CVE-2014-8825	ignore
+CVE-2014-8826	ignore
+CVE-2014-8827	ignore
+CVE-2014-8828	ignore
+CVE-2014-8829	ignore
+CVE-2014-8830	ignore
+CVE-2014-8831	ignore
+CVE-2014-8832	ignore
+CVE-2014-8833	ignore
+CVE-2014-8834	ignore
+CVE-2014-8835	ignore
+CVE-2014-8836	ignore
+CVE-2014-8837	ignore
+CVE-2014-8838	ignore
+CVE-2014-8839	ignore
+CVE-2014-8840	ignore
 CVE-2014-8866	ignore
 CVE-2014-8867	ignore
 CVE-2014-8868	ignore
+CVE-2014-8869	ignore
+CVE-2014-8870	ignore
 CVE-2014-8874	ignore
-CVE-2014-8877	ignore
+CVE-2014-8875	ignore
 CVE-2014-8877	ignore
 CVE-2014-8884	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
+CVE-2014-8890	ignore
+CVE-2014-8893	ignore
+CVE-2014-8894	ignore
+CVE-2014-8895	ignore
+CVE-2014-8896	ignore
+CVE-2014-8897	ignore
+CVE-2014-8898	ignore
+CVE-2014-8899	ignore
+CVE-2014-8901	ignore
+CVE-2014-8902	ignore
+CVE-2014-8904	ignore
+CVE-2014-8913	ignore
+CVE-2014-8914	ignore
+CVE-2014-8917	ignore
+CVE-2014-8918	ignore
+CVE-2014-8920	ignore
 CVE-2014-8948	ignore
 CVE-2014-8949	ignore
 CVE-2014-8950	ignore
@@ -7546,43 +7857,35 @@ CVE-2014-8952	ignore
 CVE-2014-8953	ignore
 CVE-2014-8954	ignore
 CVE-2014-8955	ignore
+CVE-2014-8956	ignore
 CVE-2014-8958	ignore
 CVE-2014-8959	ignore
 CVE-2014-8960	ignore
 CVE-2014-8961	ignore
 CVE-2014-8962	fixed	flac	COMMIT fb8c7ef43c53c641db6cc6b61c11ba9e92b61cc4
+CVE-2014-8964	ignore
 CVE-2014-8966	ignore
-CVE-2014-8966	ignore
+CVE-2014-8967	ignore
 CVE-2014-8986	ignore
 CVE-2014-8988	ignore
 CVE-2014-8989	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
 CVE-2014-8990	ignore
-CVE-2014-8990	ignore
 CVE-2014-8991	ignore
+CVE-2014-8992	ignore
+CVE-2014-8993	ignore
+CVE-2014-8993	ignore
 CVE-2014-8994	ignore
 CVE-2014-8995	ignore
-CVE-2014-8995	ignore
-CVE-2014-8996	ignore
 CVE-2014-8996	ignore
 CVE-2014-8997	ignore
-CVE-2014-8997	ignore
-CVE-2014-8998	ignore
 CVE-2014-8998	ignore
 CVE-2014-8999	ignore
-CVE-2014-8999	ignore
-CVE-2014-9000	ignore
 CVE-2014-9000	ignore
 CVE-2014-9001	ignore
-CVE-2014-9001	ignore
-CVE-2014-9002	ignore
 CVE-2014-9002	ignore
 CVE-2014-9003	ignore
-CVE-2014-9003	ignore
-CVE-2014-9004	ignore
 CVE-2014-9004	ignore
 CVE-2014-9005	ignore
-CVE-2014-9005	ignore
-CVE-2014-9006	ignore
 CVE-2014-9006	ignore
 CVE-2014-9015	ignore
 CVE-2014-9016	ignore
@@ -7597,7 +7900,7 @@ CVE-2014-9025	ignore
 CVE-2014-9026	ignore
 CVE-2014-9027	ignore
 CVE-2014-9028	fixed	flac	COMMIT fb8c7ef43c53c641db6cc6b61c11ba9e92b61cc4
-CVE-2014-9029	open	jasper	open
+CVE-2014-9029	fixed	jasper	COMMIT d423363c320d22767b484d3f03d6d1c1287b4d0f
 CVE-2014-9030	ignore
 CVE-2014-9031	ignore
 CVE-2014-9032	ignore
@@ -7608,17 +7911,24 @@ CVE-2014-9036	ignore
 CVE-2014-9037	ignore
 CVE-2014-9038	ignore
 CVE-2014-9039	ignore
+CVE-2014-9041	ignore
+CVE-2014-9042	ignore
+CVE-2014-9043	ignore
+CVE-2014-9044	ignore
+CVE-2014-9045	ignore
+CVE-2014-9046	ignore
+CVE-2014-9047	ignore
+CVE-2014-9048	ignore
+CVE-2014-9049	ignore
 CVE-2014-9050	ignore
+CVE-2014-9057	ignore
 CVE-2014-9059	ignore
 CVE-2014-9060	ignore
 CVE-2014-9065	ignore
-CVE-2014-9065	ignore
-CVE-2014-9066	ignore
 CVE-2014-9066	ignore
 CVE-2014-9087	fixed	libksba	COMMIT df6443dcfce2948275a236b4191ee9429746bebf
 CVE-2014-9089	ignore
 CVE-2014-9090	fixed	linux	COMMIT 747533aef2348067603ab84718a2ae8c02e70951
-CVE-2014-9091	ignore
 CVE-2014-9091	ignore
 CVE-2014-9093	open	libreoffice	open
 CVE-2014-9094	ignore
@@ -7634,22 +7944,19 @@ CVE-2014-9103	ignore
 CVE-2014-9104	ignore
 CVE-2014-9112	ignore
 CVE-2014-9113	ignore
+CVE-2014-9115	ignore
 CVE-2014-9116	ignore
 CVE-2014-9117	ignore
-CVE-2014-9120	ignore
+CVE-2014-9119	ignore
 CVE-2014-9120	ignore
 CVE-2014-9129	ignore
-CVE-2014-9129	ignore
-CVE-2014-9130	open	yaml	open
+CVE-2014-9130	fixed	yaml	COMMIT 8e8c259e9dc1bad5a03b1eccee6610d3317d43ce
 CVE-2014-9134	ignore
-CVE-2014-9140	open	tcpdump	open
+CVE-2014-9135	ignore
 CVE-2014-9140	open	tcpdump	open
 CVE-2014-9141	ignore
 CVE-2014-9142	ignore
-CVE-2014-9142	ignore
 CVE-2014-9143	ignore
-CVE-2014-9143	ignore
-CVE-2014-9144	ignore
 CVE-2014-9144	ignore
 CVE-2014-9150	ignore
 CVE-2014-9151	ignore
@@ -7660,18 +7967,12 @@ CVE-2014-9155	ignore
 CVE-2014-9156	ignore
 CVE-2014-9157	ignore
 CVE-2014-9158	ignore
-CVE-2014-9158	ignore
 CVE-2014-9159	ignore
-CVE-2014-9159	ignore
-CVE-2014-9162	fixed	flash_player_11	COMMIT 10671957b6316e5116deb734d12e7a5f4ec6bbde
+CVE-2014-9161	ignore
 CVE-2014-9162	fixed	flash_player_11	COMMIT 10671957b6316e5116deb734d12e7a5f4ec6bbde
 CVE-2014-9163	fixed	flash_player_11	COMMIT 10671957b6316e5116deb734d12e7a5f4ec6bbde
-CVE-2014-9163	fixed	flash_player_11	COMMIT 10671957b6316e5116deb734d12e7a5f4ec6bbde
-CVE-2014-9164	fixed	flash_player_11	COMMIT 10671957b6316e5116deb734d12e7a5f4ec6bbde
 CVE-2014-9164	fixed	flash_player_11	COMMIT 10671957b6316e5116deb734d12e7a5f4ec6bbde
 CVE-2014-9165	ignore
-CVE-2014-9165	ignore
-CVE-2014-9166	ignore
 CVE-2014-9166	ignore
 CVE-2014-9173	ignore
 CVE-2014-9174	ignore
@@ -7685,15 +7986,31 @@ CVE-2014-9181	ignore
 CVE-2014-9182	ignore
 CVE-2014-9183	ignore
 CVE-2014-9184	ignore
+CVE-2014-9185	ignore
+CVE-2014-9188	ignore
+CVE-2014-9190	ignore
+CVE-2014-9191	ignore
 CVE-2014-9192	ignore
+CVE-2014-9193	ignore
+CVE-2014-9194	ignore
+CVE-2014-9195	ignore
+CVE-2014-9197	ignore
+CVE-2014-9198	ignore
+CVE-2014-9199	ignore
+CVE-2014-9200	ignore
 CVE-2014-9212	ignore
-CVE-2014-9212	ignore
-CVE-2014-9215	ignore
 CVE-2014-9215	ignore
 CVE-2014-9217	ignore
 CVE-2014-9218	ignore
 CVE-2014-9219	ignore
 CVE-2014-9220	open	openvas-manager	open
+CVE-2014-9221	ignore
+CVE-2014-9221	ignore
+CVE-2014-9222	ignore
+CVE-2014-9223	ignore
+CVE-2014-9224	ignore
+CVE-2014-9225	ignore
+CVE-2014-9226	ignore
 CVE-2014-9234	ignore
 CVE-2014-9235	ignore
 CVE-2014-9236	ignore
@@ -7704,39 +8021,69 @@ CVE-2014-9240	ignore
 CVE-2014-9241	ignore
 CVE-2014-9242	ignore
 CVE-2014-9243	ignore
+CVE-2014-9245	ignore
+CVE-2014-9247	ignore
+CVE-2014-9248	ignore
+CVE-2014-9249	ignore
+CVE-2014-9250	ignore
+CVE-2014-9251	ignore
+CVE-2014-9252	ignore
+CVE-2014-9253	ignore
+CVE-2014-9254	ignore
+CVE-2014-9258	ignore
 CVE-2014-9263	ignore
 CVE-2014-9264	ignore
 CVE-2014-9265	ignore
 CVE-2014-9266	ignore
 CVE-2014-9267	ignore
 CVE-2014-9268	ignore
+CVE-2014-9269	ignore
 CVE-2014-9270	ignore
+CVE-2014-9271	ignore
+CVE-2014-9272	ignore
 CVE-2014-9273	ignore
 CVE-2014-9274	ignore
-CVE-2014-9274	ignore
 CVE-2014-9275	ignore
-CVE-2014-9275	ignore
+CVE-2014-9276	ignore
+CVE-2014-9276	ignore
+CVE-2014-9277	ignore
+CVE-2014-9277	ignore
 CVE-2014-9278	ignore
 CVE-2014-9279	ignore
 CVE-2014-9280	ignore
 CVE-2014-9281	ignore
-CVE-2014-9281	ignore
 CVE-2014-9292	ignore
-CVE-2014-9292	ignore
+CVE-2014-9293	ignore
+CVE-2014-9294	ignore
+CVE-2014-9295	ignore
+CVE-2014-9296	ignore
 CVE-2014-9300	ignore
 CVE-2014-9301	ignore
 CVE-2014-9302	ignore
 CVE-2014-9303	ignore
 CVE-2014-9304	ignore
 CVE-2014-9305	ignore
-CVE-2014-9316	ignore
+CVE-2014-9308	ignore
 CVE-2014-9316	ignore
 CVE-2014-9317	ignore
-CVE-2014-9317	ignore
-CVE-2014-9318	ignore
 CVE-2014-9318	ignore
 CVE-2014-9319	ignore
-CVE-2014-9319	ignore
+CVE-2014-9322	fixed	linux	COMMIT a0ba2cfa66ecd012df9a4793466f84892a954c74
+CVE-2014-9323	ignore
+CVE-2014-9324	ignore
+CVE-2014-9325	ignore
+CVE-2014-9328	ignore
+CVE-2014-9330	open	libtiff	open
+CVE-2014-9330	open	libtiff	open
+CVE-2014-9331	ignore
+CVE-2014-9334	ignore
+CVE-2014-9335	ignore
+CVE-2014-9336	ignore
+CVE-2014-9337	ignore
+CVE-2014-9338	ignore
+CVE-2014-9339	ignore
+CVE-2014-9340	ignore
+CVE-2014-9341	ignore
 CVE-2014-9342	ignore
 CVE-2014-9343	ignore
 CVE-2014-9344	ignore
@@ -7747,17 +8094,612 @@ CVE-2014-9348	ignore
 CVE-2014-9349	ignore
 CVE-2014-9350	ignore
 CVE-2014-9351	ignore
-CVE-2014-9351	ignore
 CVE-2014-9352	ignore
-CVE-2014-9352	ignore
-CVE-2014-9360	ignore
+CVE-2014-9355	ignore
+CVE-2014-9357	ignore
+CVE-2014-9358	ignore
 CVE-2014-9360	ignore
 CVE-2014-9361	ignore
-CVE-2014-9361	ignore
-CVE-2014-9362	ignore
 CVE-2014-9362	ignore
 CVE-2014-9363	ignore
-CVE-2014-9363	ignore
 CVE-2014-9364	ignore
-CVE-2014-9364	ignore
-CVE-2014-9365	open	Python	open
+CVE-2014-9365	open	Python,Python2	Python: wait for 3.4.3; Python2: COMMIT 1080f944100c7a7ecc522946a82853a9b1a145b1
+CVE-2014-9367	ignore
+CVE-2014-9368	ignore
+CVE-2014-9371	ignore
+CVE-2014-9372	ignore
+CVE-2014-9373	ignore
+CVE-2014-9374	ignore
+CVE-2014-9376	ignore
+CVE-2014-9377	ignore
+CVE-2014-9378	ignore
+CVE-2014-9379	ignore
+CVE-2014-9380	ignore
+CVE-2014-9381	ignore
+CVE-2014-9385	ignore
+CVE-2014-9386	ignore
+CVE-2014-9387	ignore
+CVE-2014-9388	ignore
+CVE-2014-9389	ignore
+CVE-2014-9389	ignore
+CVE-2014-9391	ignore
+CVE-2014-9392	ignore
+CVE-2014-9393	ignore
+CVE-2014-9394	ignore
+CVE-2014-9395	ignore
+CVE-2014-9396	ignore
+CVE-2014-9397	ignore
+CVE-2014-9398	ignore
+CVE-2014-9399	ignore
+CVE-2014-9400	ignore
+CVE-2014-9401	ignore
+CVE-2014-9403	ignore
+CVE-2014-9406	ignore
+CVE-2014-9407	ignore
+CVE-2014-9408	ignore
+CVE-2014-9412	ignore
+CVE-2014-9413	ignore
+CVE-2014-9414	ignore
+CVE-2014-9415	ignore
+CVE-2014-9416	ignore
+CVE-2014-9417	ignore
+CVE-2014-9418	ignore
+CVE-2014-9419	fixed	linux	COMMIT 40dfa7d16d06e49d7f229c6b00aa9bbf8b2d3857
+CVE-2014-9420	fixed	linux	COMMIT 40dfa7d16d06e49d7f229c6b00aa9bbf8b2d3857
+CVE-2014-9424	ignore
+CVE-2014-9425	ignore
+CVE-2014-9426	ignore
+CVE-2014-9427	ignore
+CVE-2014-9427	ignore
+CVE-2014-9428	fixed	linux	COMMIT 40dfa7d16d06e49d7f229c6b00aa9bbf8b2d3857
+CVE-2014-9429	ignore
+CVE-2014-9430	ignore
+CVE-2014-9431	ignore
+CVE-2014-9432	ignore
+CVE-2014-9433	ignore
+CVE-2014-9434	ignore
+CVE-2014-9434	ignore
+CVE-2014-9435	ignore
+CVE-2014-9435	ignore
+CVE-2014-9436	ignore
+CVE-2014-9436	ignore
+CVE-2014-9437	ignore
+CVE-2014-9437	ignore
+CVE-2014-9438	ignore
+CVE-2014-9438	ignore
+CVE-2014-9439	ignore
+CVE-2014-9439	ignore
+CVE-2014-9440	ignore
+CVE-2014-9440	ignore
+CVE-2014-9441	ignore
+CVE-2014-9441	ignore
+CVE-2014-9442	ignore
+CVE-2014-9442	ignore
+CVE-2014-9443	ignore
+CVE-2014-9443	ignore
+CVE-2014-9444	ignore
+CVE-2014-9444	ignore
+CVE-2014-9445	ignore
+CVE-2014-9445	ignore
+CVE-2014-9446	ignore
+CVE-2014-9446	ignore
+CVE-2014-9447	fixed	elfutils	COMMIT 012fc8c4b0b4b16877fa07e6f767bb3d78c82db8
+CVE-2014-9448	ignore
+CVE-2014-9448	ignore
+CVE-2014-9449	ignore
+CVE-2014-9450	ignore
+CVE-2014-9450	ignore
+CVE-2014-9451	ignore
+CVE-2014-9451	ignore
+CVE-2014-9452	ignore
+CVE-2014-9452	ignore
+CVE-2014-9453	ignore
+CVE-2014-9453	ignore
+CVE-2014-9454	ignore
+CVE-2014-9454	ignore
+CVE-2014-9455	ignore
+CVE-2014-9455	ignore
+CVE-2014-9456	ignore
+CVE-2014-9456	ignore
+CVE-2014-9457	ignore
+CVE-2014-9457	ignore
+CVE-2014-9458	ignore
+CVE-2014-9458	ignore
+CVE-2014-9459	ignore
+CVE-2014-9459	ignore
+CVE-2014-9460	ignore
+CVE-2014-9460	ignore
+CVE-2014-9461	ignore
+CVE-2014-9461	ignore
+CVE-2014-9464	ignore
+CVE-2014-9464	ignore
+CVE-2014-9471	fixed	coreutils	COMMIT c064d2186996aff53b205a0e45c1f413202b2a15
+CVE-2014-9473	ignore
+CVE-2014-9473	ignore
+CVE-2014-9475	ignore
+CVE-2014-9476	ignore
+CVE-2014-9477	ignore
+CVE-2014-9478	ignore
+CVE-2014-9479	ignore
+CVE-2014-9480	ignore
+CVE-2014-9490	ignore
+CVE-2014-9490	ignore
+CVE-2014-9491	ignore
+CVE-2014-9491	ignore
+CVE-2014-9493	ignore
+CVE-2014-9493	ignore
+CVE-2014-9494	ignore
+CVE-2014-9494	ignore
+CVE-2014-9495	fixed	libpng	COMMIT 1089c057005f5e190d1cde58eb392a06d9190fa9
+CVE-2014-9496	fixed	libsndfile	COMMIT 0d51c813ac99ae57017adafb3d070aedf87c877a
+CVE-2014-9498	ignore
+CVE-2014-9499	ignore
+CVE-2014-9500	ignore
+CVE-2014-9501	ignore
+CVE-2014-9505	ignore
+CVE-2014-9506	ignore
+CVE-2014-9506	ignore
+CVE-2014-9507	ignore
+CVE-2014-9507	ignore
+CVE-2014-9508	ignore
+CVE-2014-9508	ignore
+CVE-2014-9509	ignore
+CVE-2014-9509	ignore
+CVE-2014-9510	ignore
+CVE-2014-9516	ignore
+CVE-2014-9516	ignore
+CVE-2014-9517	ignore
+CVE-2014-9517	ignore
+CVE-2014-9518	ignore
+CVE-2014-9518	ignore
+CVE-2014-9519	ignore
+CVE-2014-9519	ignore
+CVE-2014-9520	ignore
+CVE-2014-9520	ignore
+CVE-2014-9521	ignore
+CVE-2014-9521	ignore
+CVE-2014-9522	ignore
+CVE-2014-9522	ignore
+CVE-2014-9523	ignore
+CVE-2014-9523	ignore
+CVE-2014-9524	ignore
+CVE-2014-9524	ignore
+CVE-2014-9525	ignore
+CVE-2014-9525	ignore
+CVE-2014-9526	ignore
+CVE-2014-9526	ignore
+CVE-2014-9527	ignore
+CVE-2014-9528	ignore
+CVE-2014-9529	fixed	linux	COMMIT bc0df9d67cde34fd9d8921f32f12465c557bd712
+CVE-2014-9556	ignore
+CVE-2014-9559	ignore
+CVE-2014-9560	ignore
+CVE-2014-9561	ignore
+CVE-2014-9562	ignore
+CVE-2014-9567	ignore
+CVE-2014-9567	ignore
+CVE-2014-9568	ignore
+CVE-2014-9569	ignore
+CVE-2014-9569	ignore
+CVE-2014-9570	ignore
+CVE-2014-9571	ignore
+CVE-2014-9572	ignore
+CVE-2014-9573	ignore
+CVE-2014-9574	ignore
+CVE-2014-9575	ignore
+CVE-2014-9575	ignore
+CVE-2014-9576	ignore
+CVE-2014-9576	ignore
+CVE-2014-9577	ignore
+CVE-2014-9577	ignore
+CVE-2014-9578	ignore
+CVE-2014-9578	ignore
+CVE-2014-9579	ignore
+CVE-2014-9579	ignore
+CVE-2014-9580	ignore
+CVE-2014-9580	ignore
+CVE-2014-9581	ignore
+CVE-2014-9581	ignore
+CVE-2014-9582	ignore
+CVE-2014-9582	ignore
+CVE-2014-9583	ignore
+CVE-2014-9583	ignore
+CVE-2014-9584	fixed	linux	COMMIT 40dfa7d16d06e49d7f229c6b00aa9bbf8b2d3857
+CVE-2014-9585	fixed	linux	COMMIT bc0df9d67cde34fd9d8921f32f12465c557bd712
+CVE-2014-9587	ignore
+CVE-2014-9593	ignore
+CVE-2014-9594	ignore
+CVE-2014-9595	ignore
+CVE-2014-9596	ignore
+CVE-2014-9597	ignore
+CVE-2014-9597	ignore
+CVE-2014-9598	ignore
+CVE-2014-9598	ignore
+CVE-2014-9599	ignore
+CVE-2014-9600	ignore
+CVE-2014-9601	ignore
+CVE-2014-9602	ignore
+CVE-2014-9603	ignore
+CVE-2014-9604	ignore
+CVE-2014-9620	fixed	file	COMMIT 5609a7a20c6da48f065aaf224f28e22c69d6649a
+CVE-2014-9620	fixed	file	COMMIT 5609a7a20c6da48f065aaf224f28e22c69d6649a
+CVE-2014-9621	fixed	file	COMMIT 5609a7a20c6da48f065aaf224f28e22c69d6649a
+CVE-2014-9621	fixed	file	COMMIT 5609a7a20c6da48f065aaf224f28e22c69d6649a
+CVE-2014-9622	ignore
+CVE-2014-9622	ignore
+CVE-2014-9623	ignore
+CVE-2014-9633	ignore
+CVE-2014-9638	ignore
+CVE-2014-9639	ignore
+CVE-2014-9640	ignore
+CVE-2014-9646	ignore
+CVE-2014-9647	ignore
+CVE-2014-9648	ignore
+CVE-2014-9649	ignore
+CVE-2014-9650	ignore
+CVE-2015-0001	ignore
+CVE-2015-0002	ignore
+CVE-2015-0004	ignore
+CVE-2015-0006	ignore
+CVE-2015-0011	ignore
+CVE-2015-0014	ignore
+CVE-2015-0015	ignore
+CVE-2015-0016	ignore
+CVE-2015-0204	fixed	openssl	COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
+CVE-2015-0205	fixed	openssl	COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
+CVE-2015-0206	fixed	openssl	COMMIT 5bd8b171c665bdcf8987cc9c0152170a77ef495d
+CVE-2015-0219	ignore
+CVE-2015-0220	ignore
+CVE-2015-0221	ignore
+CVE-2015-0222	ignore
+CVE-2015-0223	ignore
+CVE-2015-0231	ignore
+CVE-2015-0232	ignore
+CVE-2015-0235	fixed	glibc	COMMIT 5f8e6e16824adc1609e172ea51cdbd2407bc00c7
+CVE-2015-0236	ignore
+CVE-2015-0301	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0302	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0303	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0304	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0305	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0306	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0307	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0308	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0309	fixed	flash_player_11	COMMIT 11eb572a2e371c13609805b067bd177c13eb7a73
+CVE-2015-0310	fixed	flash_player_11	COMMIT e24ba5d01720a53e10e49892a7417491347821fb
+CVE-2015-0311	fixed	flash_player_11	COMMIT 42081ec6fbe5b438e4386a869258366123387bbd
+CVE-2015-0312	fixed	flash_player_11	COMMIT 42081ec6fbe5b438e4386a869258366123387bbd
+CVE-2015-0313	fixed	flash_player_11	COMMIT 2fc8d3c3e4a5b0c7dcf283290a6a678a135099d4
+CVE-2015-0313	fixed	flash_player_11	COMMIT 2fc8d3c3e4a5b0c7dcf283290a6a678a135099d4
+CVE-2015-0361	ignore
+CVE-2015-0361	ignore
+CVE-2015-0362	ignore
+CVE-2015-0362	ignore
+CVE-2015-0363	ignore
+CVE-2015-0363	ignore
+CVE-2015-0364	ignore
+CVE-2015-0364	ignore
+CVE-2015-0365	ignore
+CVE-2015-0365	ignore
+CVE-2015-0366	ignore
+CVE-2015-0366	ignore
+CVE-2015-0367	ignore
+CVE-2015-0367	ignore
+CVE-2015-0368	ignore
+CVE-2015-0368	ignore
+CVE-2015-0369	ignore
+CVE-2015-0369	ignore
+CVE-2015-0370	ignore
+CVE-2015-0370	ignore
+CVE-2015-0371	ignore
+CVE-2015-0371	ignore
+CVE-2015-0372	ignore
+CVE-2015-0372	ignore
+CVE-2015-0373	ignore
+CVE-2015-0373	ignore
+CVE-2015-0374	ignore
+CVE-2015-0374	ignore
+CVE-2015-0375	ignore
+CVE-2015-0375	ignore
+CVE-2015-0376	ignore
+CVE-2015-0376	ignore
+CVE-2015-0377	ignore
+CVE-2015-0377	ignore
+CVE-2015-0378	ignore
+CVE-2015-0378	ignore
+CVE-2015-0379	ignore
+CVE-2015-0379	ignore
+CVE-2015-0380	ignore
+CVE-2015-0380	ignore
+CVE-2015-0381	ignore
+CVE-2015-0381	ignore
+CVE-2015-0382	ignore
+CVE-2015-0382	ignore
+CVE-2015-0383	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0383	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0384	ignore
+CVE-2015-0384	ignore
+CVE-2015-0385	ignore
+CVE-2015-0385	ignore
+CVE-2015-0386	ignore
+CVE-2015-0386	ignore
+CVE-2015-0387	ignore
+CVE-2015-0387	ignore
+CVE-2015-0388	ignore
+CVE-2015-0388	ignore
+CVE-2015-0389	ignore
+CVE-2015-0389	ignore
+CVE-2015-0390	ignore
+CVE-2015-0390	ignore
+CVE-2015-0391	ignore
+CVE-2015-0391	ignore
+CVE-2015-0392	ignore
+CVE-2015-0392	ignore
+CVE-2015-0393	ignore
+CVE-2015-0393	ignore
+CVE-2015-0394	ignore
+CVE-2015-0394	ignore
+CVE-2015-0395	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0395	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0396	ignore
+CVE-2015-0396	ignore
+CVE-2015-0397	ignore
+CVE-2015-0397	ignore
+CVE-2015-0398	ignore
+CVE-2015-0398	ignore
+CVE-2015-0399	ignore
+CVE-2015-0399	ignore
+CVE-2015-0400	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0400	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0401	ignore
+CVE-2015-0401	ignore
+CVE-2015-0402	ignore
+CVE-2015-0402	ignore
+CVE-2015-0403	open	icedtea7	open
+CVE-2015-0403	open	icedtea7	open
+CVE-2015-0404	ignore
+CVE-2015-0404	ignore
+CVE-2015-0406	open	icedtea7	open
+CVE-2015-0406	open	icedtea7	open
+CVE-2015-0407	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0407	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0408	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0408	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0409	ignore
+CVE-2015-0409	ignore
+CVE-2015-0410	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0410	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0411	ignore
+CVE-2015-0411	ignore
+CVE-2015-0412	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0412	fixed	icedtea7	COMMIT f957eb029237639208b05d8f0552a7c854c2d839
+CVE-2015-0413	open	icedtea7	open
+CVE-2015-0413	open	icedtea7	open
+CVE-2015-0414	ignore
+CVE-2015-0414	ignore
+CVE-2015-0415	ignore
+CVE-2015-0415	ignore
+CVE-2015-0416	ignore
+CVE-2015-0416	ignore
+CVE-2015-0417	ignore
+CVE-2015-0417	ignore
+CVE-2015-0418	ignore
+CVE-2015-0418	ignore
+CVE-2015-0419	ignore
+CVE-2015-0419	ignore
+CVE-2015-0420	ignore
+CVE-2015-0420	ignore
+CVE-2015-0421	open	icedtea7	open
+CVE-2015-0421	open	icedtea7	open
+CVE-2015-0422	ignore
+CVE-2015-0422	ignore
+CVE-2015-0424	ignore
+CVE-2015-0424	ignore
+CVE-2015-0425	ignore
+CVE-2015-0425	ignore
+CVE-2015-0426	ignore
+CVE-2015-0426	ignore
+CVE-2015-0427	ignore
+CVE-2015-0427	ignore
+CVE-2015-0428	ignore
+CVE-2015-0428	ignore
+CVE-2015-0429	ignore
+CVE-2015-0429	ignore
+CVE-2015-0430	ignore
+CVE-2015-0430	ignore
+CVE-2015-0431	ignore
+CVE-2015-0431	ignore
+CVE-2015-0432	ignore
+CVE-2015-0432	ignore
+CVE-2015-0434	ignore
+CVE-2015-0434	ignore
+CVE-2015-0435	ignore
+CVE-2015-0435	ignore
+CVE-2015-0436	ignore
+CVE-2015-0436	ignore
+CVE-2015-0437	ignore
+CVE-2015-0437	ignore
+CVE-2015-0512	ignore
+CVE-2015-0513	ignore
+CVE-2015-0513	ignore
+CVE-2015-0514	ignore
+CVE-2015-0514	ignore
+CVE-2015-0515	ignore
+CVE-2015-0515	ignore
+CVE-2015-0516	ignore
+CVE-2015-0516	ignore
+CVE-2015-0552	ignore
+CVE-2015-0553	ignore
+CVE-2015-0553	ignore
+CVE-2015-0554	ignore
+CVE-2015-0554	ignore
+CVE-2015-0559	fixed	wireshark	COMMIT a5a5c811cb8461f220a6088b2acd61865fc8d858
+CVE-2015-0560	fixed	wireshark	COMMIT a5a5c811cb8461f220a6088b2acd61865fc8d858
+CVE-2015-0561	fixed	wireshark	COMMIT a5a5c811cb8461f220a6088b2acd61865fc8d858
+CVE-2015-0562	fixed	wireshark	COMMIT a5a5c811cb8461f220a6088b2acd61865fc8d858
+CVE-2015-0563	fixed	wireshark	COMMIT a5a5c811cb8461f220a6088b2acd61865fc8d858
+CVE-2015-0564	fixed	wireshark	COMMIT a5a5c811cb8461f220a6088b2acd61865fc8d858
+CVE-2015-0577	ignore
+CVE-2015-0578	ignore
+CVE-2015-0579	ignore
+CVE-2015-0581	ignore
+CVE-2015-0582	ignore
+CVE-2015-0583	ignore
+CVE-2015-0586	ignore
+CVE-2015-0588	ignore
+CVE-2015-0590	ignore
+CVE-2015-0591	ignore
+CVE-2015-0595	ignore
+CVE-2015-0596	ignore
+CVE-2015-0597	ignore
+CVE-2015-0599	ignore
+CVE-2015-0862	ignore
+CVE-2015-0866	ignore
+CVE-2015-0867	ignore
+CVE-2015-0867	ignore
+CVE-2015-0868	ignore
+CVE-2015-0869	ignore
+CVE-2015-0870	ignore
+CVE-2015-0917	ignore
+CVE-2015-0917	ignore
+CVE-2015-0918	ignore
+CVE-2015-0918	ignore
+CVE-2015-0919	ignore
+CVE-2015-0919	ignore
+CVE-2015-0920	ignore
+CVE-2015-0920	ignore
+CVE-2015-0921	ignore
+CVE-2015-0922	ignore
+CVE-2015-0924	ignore
+CVE-2015-0925	ignore
+CVE-2015-0925	ignore
+CVE-2015-0926	ignore
+CVE-2015-0929	ignore
+CVE-2015-0930	ignore
+CVE-2015-0973	fixed	libpng	COMMIT 1089c057005f5e190d1cde58eb392a06d9190fa9
+CVE-2015-1028	ignore
+CVE-2015-1029	ignore
+CVE-2015-1030	ignore
+CVE-2015-1030	ignore
+CVE-2015-1032	ignore
+CVE-2015-1032	ignore
+CVE-2015-1038	ignore
+CVE-2015-1038	ignore
+CVE-2015-1039	ignore
+CVE-2015-1040	ignore
+CVE-2015-1041	ignore
+CVE-2015-1043	ignore
+CVE-2015-1044	ignore
+CVE-2015-1048	ignore
+CVE-2015-1048	ignore
+CVE-2015-1049	ignore
+CVE-2015-1050	ignore
+CVE-2015-1051	ignore
+CVE-2015-1052	ignore
+CVE-2015-1053	ignore
+CVE-2015-1054	ignore
+CVE-2015-1055	ignore
+CVE-2015-1056	ignore
+CVE-2015-1057	ignore
+CVE-2015-1058	ignore
+CVE-2015-1059	ignore
+CVE-2015-1060	ignore
+CVE-2015-1164	ignore
+CVE-2015-1164	ignore
+CVE-2015-1175	ignore
+CVE-2015-1176	ignore
+CVE-2015-1178	ignore
+CVE-2015-1179	ignore
+CVE-2015-1180	ignore
+CVE-2015-1182	ignore
+CVE-2015-1191	fixed	pigz	COMMIT e88172ae8fb229e31ef19612c82572f7ba39df85
+CVE-2015-1192	ignore
+CVE-2015-1192	ignore
+CVE-2015-1193	ignore
+CVE-2015-1194	ignore
+CVE-2015-1195	ignore
+CVE-2015-1196	fixed	patch	COMMIT 95365ec89dc59ce218c88a038bdde239f08edb1b
+CVE-2015-1200	ignore
+CVE-2015-1201	ignore
+CVE-2015-1204	ignore
+CVE-2015-1205	ignore
+CVE-2015-1306	ignore
+CVE-2015-1307	ignore
+CVE-2015-1308	ignore
+CVE-2015-1309	ignore
+CVE-2015-1309	ignore
+CVE-2015-1310	ignore
+CVE-2015-1310	ignore
+CVE-2015-1311	ignore
+CVE-2015-1311	ignore
+CVE-2015-1312	ignore
+CVE-2015-1312	ignore
+CVE-2015-1346	ignore
+CVE-2015-1347	ignore
+CVE-2015-1348	ignore
+CVE-2015-1357	ignore
+CVE-2015-1359	ignore
+CVE-2015-1360	ignore
+CVE-2015-1361	ignore
+CVE-2015-1362	ignore
+CVE-2015-1363	ignore
+CVE-2015-1364	ignore
+CVE-2015-1365	ignore
+CVE-2015-1366	ignore
+CVE-2015-1367	ignore
+CVE-2015-1368	ignore
+CVE-2015-1369	ignore
+CVE-2015-1370	ignore
+CVE-2015-1371	ignore
+CVE-2015-1372	ignore
+CVE-2015-1373	ignore
+CVE-2015-1374	ignore
+CVE-2015-1375	ignore
+CVE-2015-1376	ignore
+CVE-2015-1380	ignore
+CVE-2015-1381	ignore
+CVE-2015-1382	ignore
+CVE-2015-1383	ignore
+CVE-2015-1384	ignore
+CVE-2015-1385	ignore
+CVE-2015-1393	ignore
+CVE-2015-1400	ignore
+CVE-2015-1402	ignore
+CVE-2015-1403	ignore
+CVE-2015-1404	ignore
+CVE-2015-1405	ignore
+CVE-2015-1419	ignore
+CVE-2015-1422	ignore
+CVE-2015-1423	ignore
+CVE-2015-1424	ignore
+CVE-2015-1428	ignore
+CVE-2015-1433	ignore
+CVE-2015-1437	ignore
+CVE-2015-1441	ignore
+CVE-2015-1448	ignore
+CVE-2015-1449	ignore
+CVE-2015-1450	ignore
+CVE-2015-1451	ignore
+CVE-2015-1452	ignore
+CVE-2015-1453	ignore
+CVE-2015-1454	ignore
+CVE-2015-1455	ignore
+CVE-2015-1456	ignore
+CVE-2015-1457	ignore
+CVE-2015-1458	ignore
+CVE-2015-1459	ignore
+CVE-2015-1460	ignore
+CVE-2015-1461	ignore
+CVE-2015-1462	ignore
+CVE-2015-1463	ignore
+CVE-2015-1469	ignore
+CVE-2015-1475	ignore
+CVE-2015-1476	ignore
+CVE-2015-1477	ignore
+CVE-2015-1478	ignore
+CVE-2015-1479	ignore
+CVE-2015-1480	ignore
+CVE-2015-1481	ignore
+CVE-2015-1481	ignore
+CVE-2015-1482	ignore
+CVE-2015-1482	ignore

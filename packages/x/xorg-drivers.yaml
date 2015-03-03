@@ -5,20 +5,20 @@ package:
 xorg:
 
   - driver_modules: |
-      P 0c0c4aa393cb027a2304967944867a21a340bcad2e5efe630291b6906c3abc35 xf86-input-evdev-2.9.0.tar.bz2    kxver_pkgconfig('xorg-evdev')
+      P 0ce30328adfeac90a6f4b508d992fb834d8e50b484b29d3d58cf6683fa8502f9 xf86-input-evdev-2.9.1.tar.bz2 kxver_pkgconfig('xorg-evdev')
       . 3361e1a65d9b84c464752fd612bdf6087622c6dd204121715366a170e5c3ccd7  xf86-video-cirrus-1.5.2.tar.bz2
       . 7704b1ea35098769787a9c93e903b827be97a99facfb1696aa5236a58ff1c7d7 xf86-video-mga-1.6.3.tar.bz2
       . 8b2d295f1842d07304a75da1cfb9bf139b320a6539970eaf8d5ecc010cd36ee0  xf86-video-r128-6.9.2.tar.bz2
       . 041d4205c9222c1780fba6e0e397a559aed393b7a7991b58fa79ba8cccc54a44 xf86-video-savage-2.3.7.tar.bz2
-      . c1bab3160bae96d485fc93a048d19775398aa85b407bac53020675f7e995db9d xf86-video-nouveau-1.0.10.tar.bz2
+      . f84fe2b2787f3ea9419eac3aa86462b929a551b3dbc4de550cc83b67f3216848 xf86-video-nouveau-1.0.11.tar.bz2
 #      . c8ba3d2cead3620dba2cbf5defb7f1759b2b96f4fe209f4bf6976832b6763c54  xf86-video-vmware-13.0.2.tar.bz2
       . 56f84fcbc515685529ad8e10bca1072731d9c096b97c5d35ddc95cd589b98680  xf86-video-dummy-0.3.7.tar.bz2
-      . 409a819f4ac3e7c9432dd4acafe4621bbb3702adb34b1ea942b2e6d7c71eed01 xf86-video-intel-2.99.916.tar.bz2
 
 # The following are in separate packages, as patching (sed) or GCC is necessary:
 # vesa
 # fbdev
 # ati
+# intel
 
 # xf86-video-qxl is installed much later,
 # as it needs spice libraries to build Xspice

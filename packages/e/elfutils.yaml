@@ -1,13 +1,13 @@
 package:
   name: elfutils
-  version: 0.160
+  version: 0.161
   www: https://fedorahosted.org/elfutils/
   short: A collection of libraries and utilities for working with ELF object files and DWARF debugging information.
 
 download:
   url: https://fedorahosted.org/releases/e/l/elfutils/${KX_ELFUTILS_VERSION}
   file_tar_bz2: ~
-  checksum: 741b556863c069ceab2d81eb54aeda8c34f46728859704eaf9baef8503e9a9d1
+  checksum: 570c91a1783fa5386aaa2dfdd08dda1de777c2b63bf3b9c1437d635ffdd7a070
   verify: sig
 
 version:
@@ -15,6 +15,9 @@ version:
   upstream: kxver_scrape_url undef, "https://fedorahosted.org/releases/e/l/elfutils/", qr|"([0-9]+[0-9.]+[0-9]+)/"|;
 
 bootstrap_8:
+
+  # Fix dir traversal vuln in ar extraction (CVE-2014-9447)
+  - patch: 3943a3893619466d0927495485bca8a9b96a3dc9..147018e729e7c22eeabf15b82d26e4bf68a0d18e.patch
 
   # -g required for test-suite success
   - sh: export CFLAGS="-g"

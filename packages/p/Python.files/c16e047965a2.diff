@@ -1,0 +1,26 @@
+
+# HG changeset patch
+# User Benjamin Peterson <benjamin@python.org>
+# Date 1415045447 18000
+# Node ID c16e047965a27dfd393106951d8e5b59a95ae04c
+# Parent  eac54f7a80185cc882959cf4a491d4d1dce82b4b
+move idna test domain to pythontest.net
+
+diff --git a/Lib/test/test_socket.py b/Lib/test/test_socket.py
+--- a/Lib/test/test_socket.py
++++ b/Lib/test/test_socket.py
+@@ -775,9 +775,10 @@ class GeneralModuleTests(unittest.TestCa
+     def test_idna(self):
+         support.requires('network')
+         # these should all be successful
+-        socket.gethostbyname('испытание.python.org')
+-        socket.gethostbyname_ex('испытание.python.org')
+-        socket.getaddrinfo('испытание.python.org',0,socket.AF_UNSPEC,socket.SOCK_STREAM)
++        domain = 'испытание.pythontest.net'
++        socket.gethostbyname(domain)
++        socket.gethostbyname_ex(domain)
++        socket.getaddrinfo(domain,0,socket.AF_UNSPEC,socket.SOCK_STREAM)
+         # this may not work if the forward lookup choses the IPv6 address, as that doesn't
+         # have a reverse entry yet
+         # socket.gethostbyaddr('испытание.python.org')
+

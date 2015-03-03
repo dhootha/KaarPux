@@ -78,6 +78,9 @@
 <!ENTITY kx_changes_4_7_1       SYSTEM "changes_4_7_1.xml">
 <!ENTITY kx_changes_4_7_2       SYSTEM "changes_4_7_2.xml">
 <!ENTITY kx_changes_4_8_0       SYSTEM "changes_4_8_0.xml">
+<!ENTITY kx_changes_4_8_1       SYSTEM "changes_4_8_1.xml">
+<!ENTITY kx_changes_4_8_2       SYSTEM "changes_4_8_2.xml">
+<!ENTITY kx_changes_4_8_3       SYSTEM "changes_4_8_3.xml">
 
 <!ENTITY kx_building_kaarpux    SYSTEM "building_kaarpux.xml">
 <!ENTITY kx_building_overview   SYSTEM "building_overview.xml">

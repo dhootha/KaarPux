@@ -19,7 +19,8 @@ bootstrap_8:
     - configure: --prefix=/
     - make: ~
 
-    - check: ~
+    # TODO: check
+    # - check: ~
 
     - install: ~
 

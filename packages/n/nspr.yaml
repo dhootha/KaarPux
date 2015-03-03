@@ -1,13 +1,13 @@
 package:
   name: nspr
-  version: 4.10.7
+  version: 4.10.8
   www: http://www.mozilla.org/projects/nspr/
   short: Netscape Portable Runtime (NSPR) provides a platform-neutral API for system level and libc like functions
 
 download:
   url: ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${KX_NSPR_VERSION}/src
   file_tar_gz: ~
-  checksum: 389af5cfa863ea9bc6de7b30c15f8a4f9bddd8002f8c6fdc8b33caef43893938
+  checksum: 507ea57c525c0c524dae4857a642b4ef5c9d795518754c7f83422d22fe544a15
 
 version:
   installed_pkgconfig: ~

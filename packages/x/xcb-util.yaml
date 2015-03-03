@@ -1,6 +1,6 @@
 package:
   name: xcb-util
-  version: 0.3.9
+  version: 0.4.0
   www: http://xcb.freedesktop.org/
   short: |
       The X protocol C-language Binding (XCB) is a replacement for Xlib
@@ -10,7 +10,7 @@ package:
 download:
   url: http://xcb.freedesktop.org/dist/
   file_tar_bz2: ~
-  checksum: 01dcc7a16d5020530552712710646ea2
+  checksum: 46e49469cb3b594af1d33176cd7565def2be3fa8be4371d62271fabb5eae50e9
 
 version: ~
 

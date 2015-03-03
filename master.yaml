@@ -169,43 +169,40 @@
 
     - parallel:
       - pkg: berkeley-db
+      - pkg: inetutils
       - pkg: linux-firmware
-
-    - parallel:
       - pkg: icu
       - pkg: popt
       - pkg: psmisc
 
     - parallel:
+      - pkg: autoconf
       - pkg: e2fsprogs
-      - pkg: gptfdisk
-      - pkg: procps-ng
-      - pkg: inetutils
-
-    - pkg: autoconf
-
-    - parallel:
-      - pkg: libtool
+      - pkg: elfutils
       - pkg: file
+      - pkg: gptfdisk
       - pkg: groff
       - pkg: help2man
+      - pkg: procps-ng
 
     - parallel:
       - pkg: automake
-      - pkg: gdbm
-
-    - parallel:
       - pkg: check
       - pkg: expat
+      - pkg: gdbm
       - pkg: kmod
       - pkg: libpipeline
-      - pkg: libtirpc
+
+    - parallel:
+      - pkg: libtool
       - pkg: PERLMODULE_YAML-Tiny
-      - pkg: elfutils
-      - pkg: libffi
       - pkg: lsb-release
       - pkg: os-prober
       - pkg: pciutils
+
+    - parallel:
+      - pkg: libtirpc
+      - pkg: libffi
 
     - parallel:
       - pkg: busybox
@@ -473,6 +470,7 @@
       - pkg: libquvi
       - pkg: astroid
       - pkg: smartmontools
+      - pkg: libatomic_ops
 
     - parallel:
       - pkg: openvas-scanner
@@ -480,6 +478,8 @@
       - pkg: openvas-cli
       - pkg: pylint
       - pkg: cliapp
+      - pkg: libunistring
+      - pkg: gc
 
     - parallel:
       - pkg: nss-mdns
@@ -488,6 +488,7 @@
       - pkg: libgphoto2
       - pkg: quvi
       - pkg: ttystatus
+      - pkg: guile
 
     - parallel:
       - pkg: libdvdnav
@@ -503,6 +504,7 @@
       - pkg: libaio
       - pkg: dialog
       - pkg: cmdtest
+      - pkg: autogen
 
     - sudo: update_mandb.sh
 
@@ -537,6 +539,7 @@
     - pkg: MesaLib
     - pkg: dbus
     - pkg: dbus-glib
+    - pkg: libepoxy
     - xorg_pkg: xorg-utils2
 
     - parallel:
@@ -554,6 +557,7 @@
       - pkg: xf86-video-vesa
       - pkg: xf86-video-fbdev
       - pkg: xf86-video-ati
+      - pkg: xf86-video-intel
 
     - pkg: freeglut
     - pkg: mesa-demos
@@ -913,17 +917,18 @@
     - pkg: firefox
 
     - parallel:
+      - pkg: addon-sdk
+      - pkg: provider_for_google_calendar
+      - pkg: lesscss
+      - pkg: lshw
+
+    - parallel:
+      - pkg: privacybadgerfirefox
       - pkg: icedtea-cacerts
       - pkg: icedtea-web
-      - pkg: provider_for_google_calendar
-      - pkg: adblockplus
-      - pkg: ghostery
-      - pkg: noscript
-      - pkg: lesscss
       - pkg: mercurial
       - pkg: wireshark
       - pkg: gimp
-      - pkg: lshw
       - pkg: gnuplot
 
 #   ------------------------------------------------------------
@@ -944,7 +949,10 @@
 
     - parallel:
       - pkg: ghc
-      - pkg: codelite
+
+      # temporarily disabled
+      # - pkg: codelite
+
       - pkg: ocaml
 
     # We are not really installing the haskell-platform

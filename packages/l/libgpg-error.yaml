@@ -1,13 +1,13 @@
 package:
   name: libgpg-error
-  version: 1.13
+  version: 1.17
   www: http://www.gnupg.org/related_software/libgpg-error/
   short: Small library that defines common error values for all GnuPG components.
 
 download:
   url: ftp://ftp.gnupg.org/gcrypt/libgpg-error
   file_tar_bz2: ~
-  checksum: f8aba9038d8a46cefe6a6c4a7e4527144c029eb4e3ca1ed27011b962102c9b0a
+  checksum: 3ff4e5a71116eb862cd14185fcd282850927b8608e3b4186834fd940fbef57b5
 
 version:
   installed_sh_trailing: gpg-error --version

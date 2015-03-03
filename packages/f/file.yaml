@@ -1,13 +1,13 @@
 package:
   name: file
-  version: 5.20
+  version: 5.22
   www: http://www.darwinsys.com/file/
   short: The file command is "a file type guesser", that is, a command-line tool that tells you in words what kind of data a file contains.
 
 download:
   file_tar_gz: ~
   url: ftp://ftp.astron.com/pub/file
-  checksum: 5bc36bfbb83a009da25a7174848f1bc5824be03192a8fdce7f83dc897ed2d247
+  checksum: c4e3a8e44cb888c5e4b476e738503e37fb9de3b25a38c143e214bfc12109fc0b
 
 version: ~
 
